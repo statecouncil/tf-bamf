@@ -1,0 +1,4 @@
+Reference this list, then pick what you need: https://developer.valvesoftware.com/wiki/Team_Fortress_2/Soundscapes
+https://www.youtube.com/watch?v=Ao8Krh0ADN8
+https://www.youtube.com/watch?v=tB7sjwyq3bc
+This folder only includes soundscapes with additional position markers, since ones without extra positions can simply be placed via the entity tool.

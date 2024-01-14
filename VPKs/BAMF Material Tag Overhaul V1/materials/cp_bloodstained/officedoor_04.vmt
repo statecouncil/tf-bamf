@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "cp_bloodstained/officedoor_04"
+	"$selfillum" 1
+	"$surfaceprop" "metal"
+	"%keywords" "tf"
+}

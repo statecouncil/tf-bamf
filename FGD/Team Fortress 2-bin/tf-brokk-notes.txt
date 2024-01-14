@@ -1,0 +1,153 @@
+Ignore this document, this is just me trying to catalogue stuff Da Spud Lord did. Is not used by hammer. -Brokk
+
+<<BASE ENTITY TPYES: FAKE KEYVALUES>>
+
+SDoesNotFunction			does_not_function(string) readonly
+SDoesNotFunctionPartial		does_not_function(string) readonly
+SDoNotPlace					does_not_function(string) readonly
+SPreservedEntity			preserved_entity(string) readonly
+
+
+SPECIAL
+SScript					vscripts(scriptlist), thinkfunction(string), various inputs
+
+<<BASE CLASSES: MODEL TYPES>>
+
+SModel					model(studio)
+SPowerupModel			powerup_model(studio)
+SFlagModel				flag_model(studio)
+SHelperModel			model(choices)
+SPlayerHelper			model(choices)
+
+
+<<BASE CLASS PROPERTIES>>
+
+STargetname				targetname(target_source)
+SParentname				parentname(target_destination)
+SOrigin					origin(origin)
+SAngles					angles(angle)
+SAnglesPitchInv			angles(angle_negative_pitch)
+SBaseIO					targetname(target_source), base inputs/outputs
+
+
+<<BASE CLASS PACKAGES>>
+
+SBaseEntity				STargetname, SParentname, SAngles, SBaseIO
+SBaseEntityOrigin		STargetname, SParentname, SOrigin, SAngles, SBaseIO
+SBaseLogical			STargetname, SBaseIO
+SBaseAnglesLight		STargetname, SAnglesPitchInv, SPitchInvTest, SBaseIO
+
+
+<<LONE BUT COMMON KEYVALES>>
+
+SActivateDeactivate		StartActive(choices) def yes, inputs
+SCollisions				solid(choices) def vphysics
+SControlPoint			controlpoint(target_destination)
+SDamageFilter			damagefilter(filterclass), input SetSDamageFilter
+SDamageTypes			damagetype(choices) def 0
+SDispenserTrigger		touch_trigger(target_destination), spawnflag 4
+SDispenserTriggerdef	helper_trigger_mins(vector) readonly,helper_trigger_maxs(vector) readonly
+SEnableDisable			StartDisabled(choices) def 0, input/output
+SGlobalStates			globalstate(choices) def nothing
+SHealth					health(integer) def 100, input SetHealth
+SHealthMax				max_health(integer) def 100
+SModelBodyGroup			body(integer) def 0, hitboxset(string), texframeindex(integer)
+SModelSkin				skin(integer) def 0
+SPropDynamicIO			all the dynamic prop i/o
+SResetDelay				wait(integer) def -1
+SRotateDistance			distance(integer) def 90
+SSolidBSP				solidbsp(choices) def 0
+SSoundscapes			soundscape(choices) def tf2.general_ambient, radius(integer) def 128, position keyvalues and i/o
+SSpeed					speed(float) def 100
+SStartStopSounds		noise1(sound), noise2(sound)
+STFConditions			condition(choices) def -1
+STFTeam					TeamNum(choices) def 0, input SetTeam, input TeamNum
+SToggle					input Toggle(void)
+
+
+<<PARTIAL KEYVALUE PACKAGES>>
+
+SBoss					SHealth, SSpeed, STFTeam + health(integer) def 10000, various i/o
+SDoor					SSpeed, spawnpos(choices) def 0,forceclosed(choices) def 0, various i/o
+SEngieBuilding			parentname(target_destination), defupgrade(choices) def 0, spawnflag 2, various i/o
+SModelLighting			disableshadows(choices) def 0, shadowcastdist(integer), LightingOrigin(target_destination)
+SVelocity				velocity(vector), basevelocity(vector), avelocity(vector)
+
+
+<<FULL PACKAGES WITH DIVIDERS>>
+
+SBreakable				SBreakableDiv, SDamageFilter
+						physdamagescale(float) def 1.0, minhealthdmg(integer), pressuredelay(float)
+						PerformanceMode(choices) def 0, various i/o
+
+SModelSettings			SModelSettingsDiv
+						fademindist(float) def -1, fademaxdist(float) def 0, screenspacefade(choices) def 0, fadescale(float) def 1.0
+
+SModelDynamic			SModelDynamicDiv
+						lots of inputs
+
+SPhysics				SPhysicsDiv
+						massScale(float) def 1.0, nodamageforces(choices) def 0, damagetoenablemotion(integer)
+						forcetoenablemotion(float), Damagetype(choices) def 0, overridescript(string), various i/o
+
+SRenderModes			SRenderModesDiv
+						effects(choices) def 0, rendermode(choices) def 0, rendercolor(color255) def 255 255 255
+						renderamt(integer) def 255, renderfx(choices) def 0, various inputs
+
+STrigger				STriggerDiv, SEnableDisable, SToggle
+						filtername(filterclass), various spawnflags
+	
+
+<<INCOMPLETE BASE TYPES>>
+
+SBaseBreakableBrush		SBreakable, SHealth, SBreakBrushDiv
+						propdata(choices) def 0, material(choices) def 0, explosion(choices) def 0
+						gibdir(angle) def 0 0 0, gibmodel(studio), various spawnflags
+
+SBaseBreakableModel		SBreakable, various spawnflags, output
+
+SBaseDynamicBrush		SRenderModes, SDynamicBrushDiv
+						vrad_brush_cast_shadows(choices) def 0, disablereceiveshadows(choices) def 0
+						_minlight(float), texframeindex(integer)
+
+SBaseDynamicModel		SModelDynamic, SModelLighting, SModelSettings, SRenderModes
+
+SBaseBrushDoor			SDoor, SResetDelay, SBaseBrushDoorDiv, SStartStopSounds
+						startclosesound(sound), closesound(sound), locked_sound(sound) unlocked_sound(sound)
+						loopmovesound(choices) def 0, ignoredebris(choices) def 0, chainstodoor(target_destination)
+						various spawnflags, input
+
+SBaseItem				SBaseItemDiv, SEnableDisable, STFTeam
+						TeamNum(choices) def 0, AutoMaterialize(choices) def 1, various outputs.
+
+SBaseNPC				SNPCDiv1, SHealth, SVelocity, SNPCDiv2
+						target(target_destination), additionalequipment(string), ExpressionOverride(string)
+						sleepstate(choices) def 0, wakeradius(float) def 0, wakesquad(choices) def 0
+						hintgroup(String), hintlimiting(choices) def 0
+						relationship(string), squadname(String), enemyfilter(filterclass)
+						ignoreunseenenemies(choices) def 0, DontUseSpeechSemaphore(choices) 0, various spawnflags.
+						lots and lots of i/o
+
+
+<<BASE ENTITY TYPES>>
+
+SBaseConstraint			SBaseEntity, SBaseDiv
+						attach1(target_destination) def nothing, attach2(target_destination) def nothing
+						constraintsystem(target_destination), forcelimit(float) def 0, torquelimit(float) def 0
+						breaksound(sound), teleportfollowdistance(float) def 0, various spawnflags and i/o
+
+SBaseFilter				SBaseLogical, SBaseDiv
+						Negated(choices) def 0, various i/o
+
+SBaseTrigger			SBaseEntityOrigin, STrigger
+						lots of i/o
+
+
+<<WORLDSPAWN>>
+
+worldspawn				SPreservedEntity, SBaseLogical, SBaseDiv
+						message(string), author(string), skyname(choices) def sky_tf2_04
+						detailvbsp(choices) def detail.vbsp, detailmaterial(choices) def detailsprites
+						maxpropscreenwidth(float) def -1, minpropscreenwidth(float) def 0
+						maxoccludeearea(float) def 0.0, minoccluderarea(float) def 0.0, _minlight(float) def 0.0
+						startdark(choices) def nothing, no_decomp(choices) def nothing

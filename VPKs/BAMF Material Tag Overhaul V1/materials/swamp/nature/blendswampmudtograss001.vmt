@@ -1,0 +1,18 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "swamp/Nature/swampmud005"
+	"$basetexture2" "swamp/Nature/swampgrass001"
+	"$bumpmap2" "Nature/dirtground001_height-ssbump"
+//	"$bumpmap" "Nature/dirtground003_height-ssbump"
+	"$blendmodulatetexture" "Nature/grass_blendmask"
+	"%keywords" "tf"
+//	"%detailtype" "tf_grass"
+	"$surfaceprop" "dirt"
+	"$ssbump" "1"
+	"%tooltexture" "editor-abs/blendttx/swamp/nature/blendswampmudtograss001"
+
+
+}
+
+// TF2Maps.net Swamp Theme
+// http://tf2maps.net

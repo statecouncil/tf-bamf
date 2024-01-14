@@ -1,0 +1,10 @@
+"LightMappedGeneric"
+{
+	"$baseTexture" "concrete/stripe_blue"
+	"$decal" "1"
+	"$translucent" 1
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"%keywords" "tf"
+	"$surfaceprop" "concrete"
+}

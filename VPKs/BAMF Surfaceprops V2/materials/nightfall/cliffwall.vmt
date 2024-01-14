@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "nightfall/cliffwall"
+	"$basetexture2" "Nature/grass_08"
+	"$blendmodulatetexture" "Nature/grass_blendmask"
+	"$bumpmap" "nightfall/cliffwall_height-ssbump"
+        "$ssbump" "1"
+	"%keywords" "tf"
+	"$surfaceprop" "rock"
+}

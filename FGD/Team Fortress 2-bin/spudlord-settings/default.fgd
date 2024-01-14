@@ -1,0 +1,95 @@
+//FGD for a LORD settings, updated for V5
+
+// DO NOT CHANGE ANY OF THESE UNLESS YOU KNOW WHAT YOU'RE DOING. You can find the user settings at the top of tf-brokk.fgd. -Brokk
+// Do not include in Hammer directly or use without tf-brokk.fgd.
+
+//----- NO LINE DIVIDERS -----//
+
+// Every line divider BaseClass, but blank (without the actual line divider keyvalue). If line dividers are enabled by the end user in the User Settings section, these BaseClasses will be overridden to contain line dividers by importing the "spudlord_settings/linediv.fgd" AFTER this FGD.
+
+@BaseClass = SBaseDiv [
+] // end SBaseDiv
+@BaseClass = SBreakableDiv [
+] // end SBreakableDiv
+@BaseClass = SModelSettingsDiv [
+] // end SModelSettingsDiv
+@BaseClass = SModelDynamicDiv [
+] // end SModelDynamicDiv
+@BaseClass = SPhysicsDiv [
+] // end SPhysicsDiv
+@BaseClass = SRenderModesDiv [
+] // end SRenderModesDiv
+@BaseClass = STriggerDiv [
+] // end STriggerDiv
+@BaseClass = SBreakBrushDiv [
+] // end SBreakBrushDiv
+@BaseClass = SDynamicBrushDiv [
+] // end SDynamicBrushDiv
+@BaseClass = SBaseBrushDoorDiv [
+] // end SBaseBrushDoorDiv
+@BaseClass = SBaseItemDiv [
+] // end SBaseItemDiv
+@BaseClass = SNPCDiv1 [
+] // end SNPCDiv1
+@BaseClass = SNPCDiv2 [
+] // end SNPCDiv2
+@BaseClass = STrainDiv [
+] // end STrainDiv
+@BaseClass = SLightDiv [
+] // end SLightDiv
+@BaseClass = SClassDiv1 [
+] // end SClassDiv1
+@BaseClass = SClassDiv2 [
+] // end SClassDiv2
+@BaseClass = SClassDiv3 [
+] // end SClassDiv3
+
+
+
+//----- SETTINGS STUFF -----//
+
+// DO NOT TOUCH THESE! Change settings at the top of tf-brokk.fgd instead.
+
+@BaseClass = SPitchInv [
+	pitch(integer) : "Pitch Override" : 0 : "This value sets the pitch of this entity, overriding the value in Pitch Yaw Roll if it is specified and not 0 (if this is 0, Hammer will still consider this value to override Pitch Yaw Roll, but in-game the Pitch Yaw Roll value will be used). The pitch on this entity functions inversely to the pitch on most entities: 90 is straight up, 0 is horizontal, and -90 is straight down. This keyvalue can be hidden under the 'User Settings' in tf2_spud.fgd."
+] // end SPitchInv
+@BaseClass = SPitchInvTest [
+] // end SPitchInvTest
+
+
+@BaseClass = STeamSpawnDefault [
+	model(string) readonly: "Helper Model (Hammer Only)" : "models/editor/playerstart.mdl" : "He is lean, he is mean, and he is green."
+	modelscale(float) readonly: "Model Scale" : "1.08" : "A multiplier for the display size of the model. Hammer-only."
+] // end SPlayerHelper
+
+
+@BaseClass = STeamSpawnPuddy [
+	model(choices) : "Helper Model (Hammer Only)" : "models/editor-puddy/hngineer.mdl" : "Model this entity should appear as in Hammer, to assist with placement or identification. Any model can be specified, not just ones listed here. This will NOT affect how the entity appears in-game." = [
+		"models/editor-puddy/hngineer.mdl" : "Dev Engineer by Puddy"
+		"models/editor-abs/dev_engy.mdl" : "Dev Engineer by ABS"
+		"models/editor/playerstart.mdl" : "Dev Gordon"
+		"models/editor/cone_helper.mdl" : "Blue Cone Helper"
+		"models/editor-ficool2/cone_helper_gray.mdl" : "Gray Cone Helper"
+		"models/editor/axis_helper_thick.mdl" : "Thick Axis Helper"
+		"models/editor/camera.mdl" : "Camera Helper"
+	] // end model
+] // end SPlayerHelper
+
+
+@BaseClass = STeamSpawnABS [
+	model(choices) : "Helper Model (Hammer Only)" : "models/editor-abs/dev_engy.mdl" : "Model this entity should appear as in Hammer, to assist with placement or identification. Any model can be specified, not just ones listed here. This will NOT affect how the entity appears in-game." = [
+		"models/editor-puddy/hngineer.mdl" : "Dev Engineer by Puddy"
+		"models/editor-abs/dev_engy.mdl" : "Dev Engineer by ABS"
+		"models/editor/playerstart.mdl" : "Dev Gordon"
+		"models/editor/cone_helper.mdl" : "Blue Cone Helper"
+		"models/editor-ficool2/cone_helper_gray.mdl" : "Gray Cone Helper"
+		"models/editor/axis_helper_thick.mdl" : "Thick Axis Helper"
+		"models/editor/camera.mdl" : "Camera Helper"
+	] // end model
+] // end SPlayerHelper
+
+
+
+// +-+-+ +-+-+-+-+ +-+-+-+-+
+// |D|A| |S|P|U|D| |L|O|R|D| and also brokk
+// +-+-+ +-+-+-+-+ +-+-+-+-+

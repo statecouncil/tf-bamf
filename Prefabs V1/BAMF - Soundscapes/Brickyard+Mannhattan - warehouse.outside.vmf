@@ -1,0 +1,206 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "6264"
+	"mapversion" "336"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "127167"
+	"mapversion" "336"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail_2fort.vbsp"
+	"detailmaterial" "detail/detailsprites_2fort"
+	group
+	{
+		"id" "127168"
+		editor
+		{
+			"color" "205 162 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "127169"
+	"classname" "env_soundscape"
+	"position0" "ss_WH_out_&i_pos0"
+	"position1" "ss_WH_out_&i_pos1"
+	"position2" "ss_WH_out_&i_pos2"
+	"position3" "ss_WH_out_&i_pos3"
+	"position4" "ss_WH_out_&i_pos4"
+	"position5" "ss_WH_out_&i_pos5"
+	"position6" "ss_WH_out_&i_pos6"
+	"position7" "ss_WH_out_&i_pos7"
+	"radius" "-1"
+	"soundscape" "warehouse.outside"
+	"targetname" "ss_WH_out_&i"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -10268]"
+	}
+}
+entity
+{
+	"id" "127180"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos0"
+	"origin" "16 0 8"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/train_01.wav ambient/mvm_warehouse/train_02.wav ambient/mvm_warehouse/train_03.wav ambient/cp_harbor/train_1shot_04.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127182"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos1"
+	"origin" "16 0 24"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/                                 mvm_warehouse/car_horn_(01-05).wav           mvm_warehouse/car_passby_(03-07).wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127184"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos2"
+	"origin" "16 0 40"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/                                 mvm_warehouse/car_horn_(01-05).wav           mvm_warehouse/car_passby_(01-05).wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127186"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos3"
+	"origin" "16 0 56"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/seagull_01.wav ambient/mvm_warehouse/seagull_02.wav ambient/mvm_warehouse/seagull_03.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127188"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos4"
+	"origin" "16 0 72"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/seagull_01.wav ambient/mvm_warehouse/seagull_02.wav ambient/mvm_warehouse/seagull_03.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127190"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos5"
+	"origin" "16 0 88"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/ship_horn_01.wav ambient/mvm_warehouse/ship_horn_02.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127192"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos6"
+	"origin" "16 0 104"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/warehouse_city.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "127194"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_WH_out_&i_pos7"
+	"origin" "16 0 120"
+	editor
+	{
+		"color" "205 162 0"
+		"groupid" "127168"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/mvm_warehouse/warehouse_harbor.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}

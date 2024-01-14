@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+
+{
+	"$basetexture" "soho/WindowBig001"
+
+	"%keywords" "tf"
+
+	"$surfaceprop"	"glass"
+}

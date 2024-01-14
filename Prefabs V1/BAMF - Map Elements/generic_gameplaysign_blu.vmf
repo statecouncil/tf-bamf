@@ -1,0 +1,68 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8861"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "24"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"detailmaterial" "detail/detailsprites_2fort"
+	"detailvbsp" "detail_2fort.vbsp"
+	"maxpropscreenwidth" "-1"
+	"skyname" "sky_tf2_04"
+	group
+	{
+		"id" "25"
+		editor
+		{
+			"color" "158 247 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "26"
+	"classname" "light"
+	"_light" "97 199 193 16"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" "1"
+	"_quadratic_attn" "1"
+	"origin" "-7.74999 -7.99001e-06 16.4145"
+	editor
+	{
+		"color" "158 247 0"
+		"groupid" "25"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[7500 -12768]"
+	}
+}
+entity
+{
+	"id" "31"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"model" "models/props_gameplay/sign_gameplay01.mdl"
+	"skin" "10"
+	"solid" "0"
+	"origin" "-23.75 -3.73023e-06 16"
+	editor
+	{
+		"color" "158 247 0"
+		"groupid" "25"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 -14768]"
+	}
+}

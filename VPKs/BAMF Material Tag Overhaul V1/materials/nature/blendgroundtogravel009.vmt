@@ -1,0 +1,15 @@
+"WorldVertexTransition"
+{
+	"$basetexture2" "Nature/concretegravel001"
+	"$basetexture" "concrete/concretefloor003"
+	"%tooltexture" "editor-abs/blendttx/nature/blendgroundtogravel009"
+
+	"$blendmodulatetexture" "winter/snowgravelblend"
+
+//"$blendmodulatetexture" "Nature/concretegravel001_blendmask"
+	"%keywords" "tf"
+//	"%detailtype" "tf_grass"
+	"$surfaceprop" "dirt"
+
+
+}

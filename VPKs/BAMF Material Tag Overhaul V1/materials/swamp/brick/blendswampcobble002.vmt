@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$baseTexture" "swamp/brick/swampcobblewall001"
+	"$basetexture2" "winter/cobblewall002"
+	"$bumpmap" "Brick/cobblewall001_normal"
+	"$bumpmap2" "Brick/cobblewall001_normal"
+       	 "$ssbump" "1"
+	"%keywords" "tf"
+	"%tooltexture" "editor-abs/blendttx/swamp/brick/blendswampcobble002"
+}

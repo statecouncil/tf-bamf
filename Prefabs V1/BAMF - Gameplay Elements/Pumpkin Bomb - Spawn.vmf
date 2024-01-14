@@ -1,0 +1,33 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "4715"
+	"mapversion" "223"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "67016"
+	"mapversion" "223"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail.vbsp"
+	"detailmaterial" "detail/detailsprites"
+}
+entity
+{
+	"id" "67017"
+	"classname" "entity_spawn_point"
+	"spawn_manager_name" "pumpkin_manager"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "Place as many of these as you want and then see the entity_spawn_manager for further details."
+		"logicalpos" "[0 0]"
+	}
+}

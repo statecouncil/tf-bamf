@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$baseTexture"	"medieval/pasterbeam002"
+	"$bumpmap"	"medieval/pasterwall_ssbump"
+	"$ssbump"	"1"
+	"$surfaceprop"	"plaster"
+	"%keywords"	"tf"
+}

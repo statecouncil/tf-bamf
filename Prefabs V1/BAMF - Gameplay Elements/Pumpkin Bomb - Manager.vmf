@@ -1,0 +1,38 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "4715"
+	"mapversion" "223"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "67009"
+	"mapversion" "223"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail.vbsp"
+	"detailmaterial" "detail/detailsprites"
+}
+entity
+{
+	"id" "67010"
+	"classname" "entity_spawn_manager"
+	"drop_to_ground" "1"
+	"entity_count" "1"
+	"entity_name" "tf_pumpkin_bomb"
+	"random_rotation" "1"
+	"respawn_time" "15"
+	"targetname" "pumpkin_manager"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "IMPORTANT: Set the entity count to how many pumpkins you want to exist at once. They will appear randomly at the spawn points. For reference, harvest_event had 59 points and an entity count of 16."
+		"logicalpos" "[0 0]"
+	}
+}

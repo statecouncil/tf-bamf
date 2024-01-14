@@ -1,0 +1,12 @@
+"LightmappedGeneric"
+{
+	"$basetexture"	"swamp/props/fishingnet001"
+	"$surfaceprop"	"dirt"
+	"$nodecal" 1
+
+	"$AlphaTest" "1"
+	"$AlphaTestReference" "0.37"
+	"$AllowAlphaToCoverage" "1"
+	
+	"%keywords" "tf"
+}

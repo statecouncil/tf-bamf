@@ -1,0 +1,844 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8864"
+	"mapversion" "3"
+	"formatversion" "100"
+	"prefab" "1"
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "64"
+}
+palette_plus
+{
+	"color0" "255 255 255"
+	"color1" "255 255 255"
+	"color2" "255 255 255"
+	"color3" "255 255 255"
+	"color4" "255 255 255"
+	"color5" "255 255 255"
+	"color6" "255 255 255"
+	"color7" "255 255 255"
+	"color8" "255 255 255"
+	"color9" "255 255 255"
+	"color10" "255 255 255"
+	"color11" "255 255 255"
+	"color12" "255 255 255"
+	"color13" "255 255 255"
+	"color14" "255 255 255"
+	"color15" "255 255 255"
+}
+colorcorrection_plus
+{
+	"name0" ""
+	"weight0" "1"
+	"name1" ""
+	"weight1" "1"
+	"name2" ""
+	"weight2" "1"
+	"name3" ""
+	"weight3" "1"
+}
+light_plus
+{
+	"samples_sun" "6"
+	"samples_ambient" "40"
+	"samples_vis" "256"
+	"texlight" ""
+	"incremental_delay" "0"
+	"bake_dist" "1024"
+	"radius_scale" "1"
+	"brightness_scale" "1"
+	"ao_scale" "0"
+	"bounced" "1"
+	"incremental" "1"
+	"supersample" "0"
+	"bleed_hack" "1"
+	"soften_cosine" "0"
+	"debug" "0"
+	"cubemap" "1"
+	"hdr" "0"
+}
+bgimages_plus
+{
+}
+world
+{
+	"id" "556"
+	"mapversion" "3"
+	"classname" "worldspawn"
+	"_minlight" "0.0"
+	"detailmaterial" "detail/detailsprites_2fort"
+	"detailvbsp" "detail_2fort.vbsp"
+	"maxoccludeearea" "0.0"
+	"maxpropscreenwidth" "-1"
+	"minoccluderarea" "0.0"
+	"skyname" "sky_tf2_04"
+	group
+	{
+		"id" "747"
+		editor
+		{
+			"color" "171 120 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "650"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "1"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_steelsupport02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "908.949 150 -519.677"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 13500]"
+	}
+}
+entity
+{
+	"id" "557"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_vents01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-108 348 -205"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -15768]"
+	}
+}
+entity
+{
+	"id" "561"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_railing03.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-96 351 41"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -10268]"
+	}
+}
+entity
+{
+	"id" "565"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_pipes02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-839 320 -48"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 15500]"
+	}
+}
+entity
+{
+	"id" "569"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_pipes03.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "111 518 278"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 16000]"
+	}
+}
+entity
+{
+	"id" "573"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_roof01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "848 510 -144"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -14268]"
+	}
+}
+entity
+{
+	"id" "578"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_entry02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "848 456 -144"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -12768]"
+	}
+}
+entity
+{
+	"id" "582"
+	"classname" "prop_dynamic"
+	"angles" "0 315 0"
+	"DefaultAnim" "idle"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"disableshadows" "1"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props_moonbase/radar_outpost02.mdl"
+	"modelscale" "1.0"
+	"PerformanceMode" "0"
+	"physdamagescale" "1.0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"origin" "1044 196 -41"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[7000 2500]"
+	}
+}
+entity
+{
+	"id" "586"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_roof04.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "1120 384 -384"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -9768]"
+	}
+}
+entity
+{
+	"id" "590"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_roof02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "848 511 -144"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -13768]"
+	}
+}
+entity
+{
+	"id" "594"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_pipes04.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "1150 748 393"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -16268]"
+	}
+}
+entity
+{
+	"id" "598"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_roof03.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "1346 1324 307"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -14768]"
+	}
+}
+entity
+{
+	"id" "602"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_center02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "392 576 306"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 14500]"
+	}
+}
+entity
+{
+	"id" "606"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_doors02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "395 1005 192"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13000 1000]"
+	}
+}
+entity
+{
+	"id" "610"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_doors01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "395 1005 192"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13000 1500]"
+	}
+}
+entity
+{
+	"id" "614"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_center01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "392 576 1122"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 14000]"
+	}
+}
+entity
+{
+	"id" "618"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_radar01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-12.81 632.79 1399"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -15268]"
+	}
+}
+entity
+{
+	"id" "622"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_center03.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "392 576 306"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -11768]"
+	}
+}
+entity
+{
+	"id" "626"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_entry01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "336 176 -228"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -13268]"
+	}
+}
+entity
+{
+	"id" "630"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "256"
+	"lightmapresolutiony" "256"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_conduit01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "1120 384 -384"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -9268]"
+	}
+}
+entity
+{
+	"id" "634"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_pipes01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-555 776 707"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 15000]"
+	}
+}
+entity
+{
+	"id" "638"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_railing01.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-846 762 455"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -12268]"
+	}
+}
+entity
+{
+	"id" "642"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_railing04.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "392 576 306"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -11268]"
+	}
+}
+entity
+{
+	"id" "646"
+	"classname" "prop_static"
+	"angles" "0 0 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"generatelightmaps" "1"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "128"
+	"lightmapresolutiony" "128"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_moonbase/moon_bluebase_railing02.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "0"
+	"origin" "-614 302 38"
+	editor
+	{
+		"color" "171 120 0"
+		"groupid" "747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[13500 -10768]"
+	}
+}

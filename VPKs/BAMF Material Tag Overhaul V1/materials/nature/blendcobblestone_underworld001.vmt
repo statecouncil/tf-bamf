@@ -1,0 +1,9 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "nature/underworld_dirt001"
+	"$basetexture2" "Nature/underworld_cobblestone001"
+	"%tooltexture" "editor-abs/blendttx/nature/blendcobblestone_underworld001"
+	"$blendmodulatetexture" "Nature/grass_blendmask"
+	"%keywords" "tf"
+	"$surfaceprop" "dirt"
+}

@@ -1,0 +1,14 @@
+"LightMappedGeneric"
+{
+"$baseTexture" "passtime/passtime_static"
+"$surfaceprop" "Default"
+"Proxies" 
+{ 
+"AnimatedTexture" 
+{ 
+"animatedTextureVar" "$basetexture" 
+"animatedTextureFrameNumVar" "$frame" 
+"animatedTextureFrameRate" "100" 
+}
+} 
+}

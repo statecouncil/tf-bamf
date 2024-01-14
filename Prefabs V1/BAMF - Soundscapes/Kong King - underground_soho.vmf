@@ -1,0 +1,166 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "6264"
+	"mapversion" "324"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "126129"
+	"mapversion" "324"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail_2fort.vbsp"
+	"detailmaterial" "detail/detailsprites_2fort"
+	group
+	{
+		"id" "126130"
+		editor
+		{
+			"color" "108 137 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "126131"
+	"classname" "env_soundscape"
+	"position0" "ss_KK_und_&i_pos0"
+	"position1" "ss_KK_und_&i_pos1"
+	"position2" "ss_KK_und_&i_pos2"
+	"position3" "ss_KK_und_&i_pos3"
+	"position4" "ss_KK_und_&i_pos4"
+	"position5" "ss_KK_und_&i_pos5"
+	"radius" "-1"
+	"soundscape" "underground_soho"
+	"targetname" "ss_KK_und_&i"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -10268]"
+	}
+}
+entity
+{
+	"id" "126142"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos0"
+	"origin" "16 0 8"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient\levels\canals\waterleak_loop1.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "126144"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos1"
+	"origin" "16 0 24"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/lighthum.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "126146"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos2"
+	"origin" "16 0 40"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient\cp_harbor\indoor_lp_01.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "126148"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos3"
+	"origin" "16 0 56"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient\levels\canals\waterleak_loop1.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "126150"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos4"
+	"origin" "16 0 72"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/lighthum.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "126152"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_KK_und_&i_pos5"
+	"origin" "16 0 88"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "126130"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient\cp_harbor\indoor_lp_01.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}

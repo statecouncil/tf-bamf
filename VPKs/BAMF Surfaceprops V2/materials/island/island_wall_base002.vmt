@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "island/island_wall_base002"
+//	"$bumpmap" "Brick/brickwall001_height-ssbump"
+	"%keywords" "tf"
+//	"$ssbump" "1"
+//	"$nocull" 1
+	"$surfaceprop" "Wood_Panel"
+}

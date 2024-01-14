@@ -1,0 +1,52 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "7937"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "20"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail_2fort.vbsp"
+	"detailmaterial" "detail/detailsprites_2fort"
+}
+entity
+{
+	"id" "21"
+	"classname" "env_tonemap_controller"
+	"targetname" "tonemap_global"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "23"
+	"classname" "logic_auto"
+	"spawnflags" "1"
+	connections
+	{
+		"OnMapSpawn" "tonemap_global,SetAutoExposureMin,.7,0,-1"
+		"OnMapSpawn" "tonemap_global,SetAutoExposureMax,1,0,-1"
+		"OnMapSpawn" "tonemap_global,SetBloomScale,.4,0,-1"
+	}
+	"origin" "0 0 24"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[1000 0]"
+	}
+}

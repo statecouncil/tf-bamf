@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "winter/grass_08"
+	"$basetexture2" "nature/grass_07"
+	"$blendmodulatetexture" "Nature/grass_blendmask"
+	"$ssbump" "1"
+	"$surfaceprop" "grass"
+	"%keywords" "tf"
+	"%tooltexture" "editor-abs/blendttx/winter/blendgrasstograss002"
+}

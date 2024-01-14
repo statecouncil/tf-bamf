@@ -1,0 +1,105 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8864"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "107"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"_minlight" "0.0"
+	"detailmaterial" "detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxoccludeearea" "0.0"
+	"maxpropscreenwidth" "-1"
+	"minoccluderarea" "0.0"
+	"skyname" "sky_tf2_04"
+}
+entity
+{
+	"id" "108"
+	"classname" "light_spot"
+	"_cone" "25"
+	"_exponent" "1"
+	"_inner_cone" "15"
+	"_light" "255 88 40 600"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" "1"
+	"_quadratic_attn" "1"
+	"angles" "-30 180 0"
+	"pitch" "-30"
+	"origin" "-31.2645 -0.0983772 -7.97711"
+	editor
+	{
+		"color" "174 183 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 3000]"
+	}
+}
+entity
+{
+	"id" "116"
+	"classname" "prop_static"
+	"angles" "30 180 0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"model" "models/props_lights/spotlight001a.mdl"
+	"skin" "4"
+	"solid" "6"
+	"origin" "-17.4084 -0.098376 0.0228855"
+	editor
+	{
+		"color" "174 183 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 2500]"
+	}
+}
+entity
+{
+	"id" "120"
+	"classname" "point_spotlight"
+	"angles" "30 180 0"
+	"HDRColorScale" "1.0"
+	"renderamt" "255"
+	"rendercolor" "255 88 40"
+	"spawnflags" "3"
+	"spotlightlength" "500"
+	"spotlightwidth" "100"
+	"origin" "-27.8005 -0.0983769 -5.97711"
+	editor
+	{
+		"color" "174 183 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 3500]"
+	}
+}
+entity
+{
+	"id" "123"
+	"classname" "prop_static"
+	"angles" "0 180 0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"model" "models/props_lights/spotlight001a_bracket.mdl"
+	"skin" "0"
+	"solid" "6"
+	"origin" "-17.4084 -0.098376 0.0228855"
+	editor
+	{
+		"color" "255 255 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 2500]"
+	}
+}

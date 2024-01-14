@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmap
+	"$basetexture" "Dev/graygrid"
+	"$surfaceprop" "concrete"
+	"%keywords" "tf,dev"
+}

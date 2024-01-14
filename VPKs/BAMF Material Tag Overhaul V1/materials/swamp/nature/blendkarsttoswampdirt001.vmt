@@ -1,0 +1,16 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "swamp/Nature/karst_rock001"
+	"$basetexture2" "swamp/Nature/swampmud003"
+	"$blendmodulatetexture" "swamp/Nature/karst_blendmask"
+
+	"%keywords" "tf"
+//	"%detailtype" "tf_rock"
+	"$surfaceprop" "rock"
+	"%tooltexture" "editor-abs/blendttx/swamp/nature/blendkarsttoswampdirt001"
+
+
+}
+
+// TF2Maps.net Swamp Theme
+// http://tf2maps.net

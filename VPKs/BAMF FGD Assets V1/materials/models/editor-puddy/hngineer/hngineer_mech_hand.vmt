@@ -1,0 +1,12 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/editor-puddy/hngineer/engineer_mech_hand"
+
+	"$detailscale" "1"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+
+	"$yellow" "0"
+	"$one" "1"
+}

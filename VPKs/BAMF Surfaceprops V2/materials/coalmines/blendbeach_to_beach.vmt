@@ -1,0 +1,9 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "coalmines/beach_dry"
+	"$basetexture2" "coalmines/beach_wet"
+	"%tooltexture" "coalmines/beach_wet"
+	
+	"$surfaceprop"	"sand"
+	"$surfaceprop2"	"mud"
+}

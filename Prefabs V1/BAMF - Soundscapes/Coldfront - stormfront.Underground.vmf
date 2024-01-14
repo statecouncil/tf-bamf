@@ -1,0 +1,127 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "4975"
+	"mapversion" "286"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "113995"
+	"mapversion" "286"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail_2fort.vbsp"
+	"detailmaterial" "detail/detailsprites_2fort"
+	group
+	{
+		"id" "113996"
+		editor
+		{
+			"color" "108 137 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "113997"
+	"classname" "env_soundscape"
+	"position2" "ss_CF_und_&i_pos2"
+	"position3" "ss_CF_und_&i_pos3"
+	"position4" "ss_CF_und_&i_pos4"
+	"position5" "ss_CF_und_&i_pos5"
+	"radius" "-1"
+	"soundscape" "stormfront.Underground"
+	"targetname" "ss_CF_und_&i"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "113996"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/underground.wav ambient/windwinterinside.wav ambient/lighthum.wav ambient/machine_hum2.wav"
+		"logicalpos" "[0 -10268]"
+	}
+}
+entity
+{
+	"id" "114008"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_CF_und_&i_pos2"
+	"origin" "16 0 40"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "113996"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/computer_working2.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "114010"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_CF_und_&i_pos3"
+	"origin" "16 0 56"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "113996"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/machine_hum.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "114012"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_CF_und_&i_pos4"
+	"origin" "16 0 72"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "113996"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/computer_working.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "114014"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_CF_und_&i_pos5"
+	"origin" "16 0 88"
+	editor
+	{
+		"color" "108 137 0"
+		"groupid" "113996"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient\alarms\alarm_citizen_loop1.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}

@@ -1,0 +1,64 @@
+// Base file containing the line dividers. Do not include in Hammer directly or use without tf-brokk.fgd.
+
+//----- LINE DIVIDERS -----//
+
+@BaseClass = SBaseDiv [
+	linediv_baseent_1(string) readonly : "" : ""
+] // end SBaseDiv
+@BaseClass = SBreakableDiv [
+	linediv_break_1(string) readonly : "" : ""
+] // end SBreakableDiv
+@BaseClass = SModelSettingsDiv [
+	linediv_modelset_1(string) readonly : "" : ""
+] // end SModelSettingsDiv
+@BaseClass = SModelDynamicDiv [
+	linediv_modelsetdyn_1(string) readonly : "" : ""
+] // end SModelDynamicDiv
+@BaseClass = SPhysicsDiv [
+	linediv_physics_1(string) readonly : "" : ""
+] // end SPhysicsDiv
+@BaseClass = SRenderModesDiv [
+	linediv_render_1(string) readonly : "" : ""
+] // end SRenderModesDiv
+@BaseClass = STriggerDiv [
+	linediv_trigger_1(string) readonly : "" : ""
+] // end STriggerDiv
+@BaseClass = SBreakBrushDiv [
+	linediv_breakbrush_1(string) readonly : "" : ""
+] // end SBreakBrushDiv
+@BaseClass = SDynamicBrushDiv [
+	linediv_dynbrush_1(string) readonly : "" : ""
+] // end SDynamicBrushDiv
+@BaseClass = SBaseBrushDoorDiv [
+	linediv_brushdoor_1(string) readonly : "" : ""
+] // end SBaseBrushDoorDiv
+@BaseClass = SBaseItemDiv [
+	linediv_baseitem_1(string) readonly : "" : ""
+] // end SBaseItemDiv
+@BaseClass = SNPCDiv1 [
+	linediv_npc_1(string) readonly : "" : ""
+] // end SNPCDiv1
+@BaseClass = SNPCDiv2 [
+	linediv_npc_2(string) readonly : "" : ""
+] // end SNPCDiv2
+@BaseClass = STrainDiv [
+	linediv_train_1(string) readonly : "" : ""
+] // end STrainDiv
+@BaseClass = SLightDiv [
+	linediv_light_1(string) readonly : "" : ""
+] // end SLightDiv
+@BaseClass = SClassDiv1 [
+	linediv_class_1(string) readonly : "" : ""
+] // end SClassDiv1
+@BaseClass = SClassDiv2 [
+	linediv_class_2(string) readonly : "" : ""
+] // end SClassDiv2
+@BaseClass = SClassDiv3 [
+	linediv_class_3(string) readonly : "" : ""
+] // end SClassDiv3
+
+
+
+// +-+-+ +-+-+-+-+ +-+-+-+-+
+// |D|A| |S|P|U|D| |L|O|R|D|
+// +-+-+ +-+-+-+-+ +-+-+-+-+

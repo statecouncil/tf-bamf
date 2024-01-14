@@ -1,0 +1,12 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "Nature/dirtground009"
+	"$basetexture2" "Nature/snow_full001"
+	"$blendmodulatetexture" "Nature/snowwall_blendmask"
+	"%tooltexture" "editor-abs/blendttx/nature/blendgroundtosnow001"
+	"$bumpmap" "Nature/snow_grass01_normal"
+	"$bumpmap2" "Nature/snow_full001_normal"
+	"$surfaceprop" "snow"
+
+	"%keywords" "tf"
+}

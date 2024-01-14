@@ -1,0 +1,7 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "coalmines/beach_dry"
+	"$basetexture2" "coalmines/beach_wet"
+	"%tooltexture" "editor-abs/blendttx/coalmines/blendbeach_to_beach"
+	"%keywords" "tf"
+}

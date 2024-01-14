@@ -1,0 +1,16 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "Nature/gravelgrayred001"
+	"$basetexture2" "coalmines/dirtground004"
+	"%tooltexture" "editor-abs/blendttx/coalmines/blendgroundtograss_coalmines2"
+//	"%detailtype" "tf_grass"
+
+	"%keywords" "tf"
+	"$surfaceprop" "dirt"
+
+	"$bumpmap" "Nature/dirtground006_height-ssbump"
+	"$bumpmap2" "Nature/dirtground003_height-ssbump"
+        "$ssbump" "1"
+
+
+}

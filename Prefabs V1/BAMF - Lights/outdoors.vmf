@@ -1,0 +1,199 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8862"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "167"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"detailmaterial" "detail/detailsprites_2fort"
+	"detailvbsp" "detail_2fort.vbsp"
+	"maxpropscreenwidth" "-1"
+	"skyname" "sky_tf2_04"
+}
+entity
+{
+	"id" "168"
+	"classname" "prop_static"
+	"angles" "-22.8573 82.9157 42.9171"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "2275"
+	"fademindist" "2142"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_lights/flood_light_right001.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "-12.2933 6.01104 0.280338"
+	editor
+	{
+		"color" "255 255 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[-13268 -3768]"
+	}
+}
+entity
+{
+	"id" "172"
+	"classname" "light_spot"
+	"_cone" "50"
+	"_distance" "1"
+	"_exponent" "1"
+	"_fifty_percent_distance" "90"
+	"_inner_cone" "10"
+	"_light" "216 225 226 800"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" "1"
+	"_quadratic_attn" "1"
+	"_zero_percent_distance" "700"
+	"angles" "-48.6127 132.813 -32.22"
+	"pitch" "-48.6127"
+	"origin" "-35.7013 34.878 -24.7787"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[4000 -10768]"
+	}
+}
+entity
+{
+	"id" "178"
+	"classname" "point_spotlight"
+	"angles" "43.51 150.47 3.48534"
+	"HDRColorScale" "1.0"
+	"mindxlevel" "90"
+	"renderamt" "255"
+	"rendercolor" "116 116 116"
+	"spawnflags" "3"
+	"spotlightlength" "250"
+	"spotlightwidth" "100"
+	"origin" "-33.1833 20.003 -21.6117"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[8000 2500]"
+	}
+}
+entity
+{
+	"id" "180"
+	"classname" "prop_static"
+	"angles" "0 90 0"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "2283"
+	"fademindist" "2149"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_lights/flood_light_base001.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "-3.29334 0.0110359 -1.11966"
+	editor
+	{
+		"color" "255 255 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[-13268 -3268]"
+	}
+}
+entity
+{
+	"id" "184"
+	"classname" "light_spot"
+	"_cone" "60"
+	"_exponent" "1"
+	"_fifty_percent_distance" "120"
+	"_inner_cone" "20"
+	"_light" "255 255 255 800"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" "1"
+	"_quadratic_attn" "1"
+	"_zero_percent_distance" "700"
+	"angles" "-27 33.5 0"
+	"pitch" "-27"
+	"origin" "26.2987 46.1531 -10.1777"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[4000 -9768]"
+	}
+}
+entity
+{
+	"id" "190"
+	"classname" "point_spotlight"
+	"angles" "39.0246 48.675 -13.3967"
+	"HDRColorScale" "1.0"
+	"mindxlevel" "90"
+	"renderamt" "255"
+	"rendercolor" "116 116 116"
+	"spawnflags" "3"
+	"spotlightlength" "250"
+	"spotlightwidth" "100"
+	"origin" "22.3277 26.9071 -19.6027"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[8000 2000]"
+	}
+}
+entity
+{
+	"id" "192"
+	"classname" "prop_static"
+	"angles" "-45 90 -30"
+	"disableselfshadowing" "0"
+	"disableshadows" "0"
+	"disablevertexlighting" "0"
+	"fademaxdist" "2279"
+	"fademindist" "2146"
+	"fadescale" "1"
+	"generatelightmaps" "0"
+	"ignorenormals" "0"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"model" "models/props_lights/flood_light_left001.mdl"
+	"screenspacefade" "0"
+	"skin" "0"
+	"solid" "6"
+	"origin" "5.70666 6.01104 0.280338"
+	editor
+	{
+		"color" "255 255 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[-13268 -4268]"
+	}
+}

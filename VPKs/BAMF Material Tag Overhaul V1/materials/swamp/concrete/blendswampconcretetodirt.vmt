@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$baseTexture" "swamp/concrete/swampcrete001"
+	"$basetexture2" "Nature/dirtground010"
+	"$bumpmap" "Concrete/concretefloor007_height-ssbump"
+	"$bumpmap2" "nature/dirtground001_height-ssbump"
+	"%tooltexture" "editor-abs/blendttx/swamp/concrete/blendswampconcretetodirt"
+	"$ssbump" "1"
+	"%keywords" "tf"
+}

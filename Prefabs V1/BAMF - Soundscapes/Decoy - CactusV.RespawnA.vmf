@@ -1,0 +1,67 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "6264"
+	"mapversion" "315"
+	"formatversion" "100"
+	"prefab" "1"
+}
+world
+{
+	"id" "119797"
+	"mapversion" "315"
+	"classname" "worldspawn"
+	"skyname" "sky_tf2_04"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail_2fort.vbsp"
+	"detailmaterial" "detail/detailsprites_2fort"
+	group
+	{
+		"id" "119798"
+		editor
+		{
+			"color" "209 134 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+}
+entity
+{
+	"id" "119799"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "ss_CV_rspA_&i_pos1"
+	"origin" "16 0 24"
+	editor
+	{
+		"color" "209 134 0"
+		"groupid" "119798"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/computer_working.wav"
+		"logicalpos" "[0 -9768]"
+	}
+}
+entity
+{
+	"id" "119801"
+	"classname" "env_soundscape"
+	"position1" "ss_CV_rspA_&i_pos1"
+	"radius" "-1"
+	"soundscape" "CactusV.RespawnA"
+	"targetname" "ss_CV_rspA_&i"
+	"origin" "0 0 8"
+	editor
+	{
+		"color" "209 134 0"
+		"groupid" "119798"
+		"visgroupid" "16"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "ambient/underground.wav ambient/machine_hum2.wav"
+		"logicalpos" "[0 -10268]"
+	}
+}

@@ -1,0 +1,13 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "cp_mountainlab/nature/ground001"
+	"$basetexture2" "cp_mountainlab/nature/grass001"
+	"$blendmodulatetexture" "nature/grass_blendmask"
+	"%detailtype" "tf_forest_grass"
+	"%keywords" "tf"
+	"$surfaceprop" "dirt"
+	"%tooltexture" "editor-abs/blendttx/cp_mountainlab/nature/groundtograss001"
+
+}
+
+

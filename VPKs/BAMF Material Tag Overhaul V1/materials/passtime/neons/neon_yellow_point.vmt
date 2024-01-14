@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "passtime/neons/neon_yellow_point"
+	"$surfaceprop" "Glass" "$selfillum" 1
+	"%keywords" "tf"
+}
