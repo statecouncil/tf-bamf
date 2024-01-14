@@ -26,3 +26,5 @@
 
 # FEATURES UNLIKELY TO BE ADDED
 -precompiler and FGD keyvalues that allow prop_static resizing or mirroring
+
+## Brokk's Assorted Mapping Fixes (BAMF) © 2024 by Brokkhouse is licensed under CC BY-SA 4.0 
