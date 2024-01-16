@@ -1,0 +1,1 @@
+The maps in this directory are owned by their respective creators. Assets are not included, and the VMFs are merely for reference purposes. You will need to ask for permission before distributing them in any way.
