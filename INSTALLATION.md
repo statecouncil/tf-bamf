@@ -2,7 +2,7 @@
 
 # Installation
 
-Click [HERE](xxxxxxxx) to download the whole package, unzip it, then follow the steps below, depending on which parts you want to install.
+Click **Releases** on the right to download the whole pack, unzip it, then follow the steps below, depending on which parts you want to install.
 
 Each module can be installed individually, unless otherwise noted.
 

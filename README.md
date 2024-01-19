@@ -1,6 +1,7 @@
 # Brokk's Assorted Mapping Fixes
 
-A TF2 Mapping Starter Pack of the modern era
+### A TF2 Mapping Starter Pack of the modern era.
+Click [HERE](https://github.com/statecouncil/tf-bamf/blob/main/INSTALLATION.md) for an installation guide. Installer coming soon.
 
 ## CURRENT FEATURES (all are modular, can be enabled/disabled individually)
 
