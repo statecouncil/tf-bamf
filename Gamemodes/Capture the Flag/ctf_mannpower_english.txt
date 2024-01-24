@@ -1,0 +1,7 @@
+Objective:
+To win a point, steal the enemy's intelligence briefcase and return it to your base.
+
+Other Notes:
+Players drop the intelligence when they die. Dropped intelligence returns to its Base after 15 seconds.
+
+Powerups can be picked up to give you various enhancements. You can only carry one powerup at a time, and you drop your powerup when you die. You have access to a grapple hook that you can use to fly around the map.

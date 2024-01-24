@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "hud/hud_icon_item"
+	"$ignorez" "1"
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$no_fullbright" "1"
+}

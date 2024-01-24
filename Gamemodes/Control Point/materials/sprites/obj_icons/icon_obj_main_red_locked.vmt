@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"sprites/obj_icons/icon_obj_main_red_locked"
+	"$translucent"	"1"
+	"$vertexcolor"	"1"
+	"$vertexalpha"	"1"
+	"$ignorez"	"1"
+	"%notooltexture"	"1"
+}

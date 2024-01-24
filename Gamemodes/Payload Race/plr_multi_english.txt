@@ -1,0 +1,7 @@
+Objective:
+Escort your payload cart to the finish line before the opposing team can deliver theirs. Stand near the cart to make it move.
+
+Other Notes:
+Win either of the first two rounds to have your cart's starting position advance in the following round.
+
+Enemies can block the cart by getting close to it.

@@ -1,0 +1,5 @@
+Objective:
+RED team wins by defending their Control Points. BLU team wins by capturing all control points before the time runs out.
+
+Other Notes:
+Control Points cannot be captured while they are locked. RED team cannot regain control of a point once BLU has captured it. RED team cannot regain control of a point once BLU has captured it.

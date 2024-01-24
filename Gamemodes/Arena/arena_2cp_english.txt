@@ -1,0 +1,5 @@
+Objective:
+Your team must either eliminate all players on the opposing team or capture and own both of the control points.
+
+Other Notes:
+There is no respawning in Arena mode.

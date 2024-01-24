@@ -1,0 +1,5 @@
+Objective:
+To win the round, a team must control all six territories. Win new territories by capturing the enemy's control point in each stage.
+
+Other Notes:
+New stages will be selected until one team owns all territories.

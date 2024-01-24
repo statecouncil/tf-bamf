@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"overviews/tc_example"
+	"$translucent"	"1"
+	"$vertexcolor"	"1"
+	"$vertexalpha"	"1"
+	"$ignorez"	"1"
+	"%notooltexture"	"1"
+}

@@ -1,0 +1,98 @@
+//-----------------------------------------------------------------------------
+// Team
+//-----------------------------------------------------------------------------
+
+"CaptureFlag.TeamCaptured"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"rndwave"
+	{
+		"wave"		"vo/announcer_sd_generic_success_fail02.mp3"
+		"wave"		"vo/announcer_sd_generic_success_fail03.mp3"
+	}
+}
+
+"CaptureFlag.TeamReturned"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"wave"			"vo/announcer_sd_drop_site02.mp3"
+}
+
+"CaptureFlag.TeamStolen"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"rndwave"
+	{
+		"wave"		"vo/announcer_sd_possession02.mp3"
+		"wave"		"vo/announcer_sd_possession17.mp3"
+		"wave"		"vo/announcer_sd_possession18.mp3"
+		"wave"		"vo/announcer_sd_possession22.mp3"
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+// Enemy
+//-----------------------------------------------------------------------------
+
+"CaptureFlag.EnemyCaptured"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"wave"			"vo/announcer_sd_generic_success_fail05.mp3"
+}
+
+"CaptureFlag.EnemyReturned"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"rndwave"
+	{
+		"wave"	"vo/announcer_sd_possession11.mp3"
+		"wave"	"vo/announcer_sd_possession12.mp3"
+		"wave"	"vo/announcer_sd_possession20.mp3"
+	}
+}
+
+
+"CaptureFlag.EnemyStolen"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NONE"
+
+	"rndwave"
+	{
+		"wave"		"vo/announcer_sd_possession04.mp3"
+		"wave"		"vo/announcer_sd_possession05.mp3"
+		"wave"		"vo/announcer_sd_possession08.mp3"
+		"wave"		"vo/announcer_sd_possession09.mp3"
+		"wave"		"vo/announcer_sd_possession14.mp3"
+		"wave"		"vo/announcer_sd_possession15.mp3"
+	}
+}

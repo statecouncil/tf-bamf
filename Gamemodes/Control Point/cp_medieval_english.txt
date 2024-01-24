@@ -1,0 +1,7 @@
+Objective:
+RED team wins by defending the final Control Point. BLU team wins by capturing the final Control Point before time runs out.
+
+To get inside the keep, capture Control Point A and B. Capture Control Point C before the gate closes again!
+
+Other Notes:
+Honorable hand to sword combat only!

@@ -1,0 +1,5 @@
+Objective:
+Deliver the Australium to the rocket warhead to win the round.
+
+Other Notes:
+Players drop the Australium when they die. Dropped Australium returns to its home after 15 seconds.

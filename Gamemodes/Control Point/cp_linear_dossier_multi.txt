@@ -1,0 +1,5 @@
+Objective:
+BLU team wins by capturing both Control Points on each of three stages before the time runs out. RED team wins by preventing all the points from beign captured.
+
+Other Notes:
+BLU can only capture while carrying the intel. Control Points cannot be captured while they are locked. RED team cannot regain control of a point once BLU has captured it.

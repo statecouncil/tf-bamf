@@ -1,0 +1,5 @@
+Objective:
+To win a point, escort your Intelligence to the enemy base.
+
+Other Notes:
+If the Intelligence is dropped, it will return to the Base.

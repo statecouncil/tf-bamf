@@ -1,0 +1,5 @@
+Objective:
+Pick up A from fallen enemies and deposit these into the B to score points.
+
+Other Notes:
+You can block an enemy team deposit by standing in the capture zone.
