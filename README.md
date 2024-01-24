@@ -12,6 +12,7 @@ Click [HERE](https://github.com/statecouncil/tf-bamf/blob/main/INSTALLATION.md) 
 - Extra Dev Textures by Aulli. Adds several dev texture variants in common TF2 shades so you can show your players what your map will eventually be themed as without giving up on the cleanliness of a nice and tidy whitebox.
 - Decompiled map library featuring all Valve maps (plus the SDK VMFs), decompiled with the latest version of BSPsrc
 - Radshadowman (automatic prop texture shadows includer) and compile config
+- All gamemode prefabs by Lacry, with the exception of VSH, ZI, and Sulfur's CP variant, as those are owned and maintained by their respective creators.
 
 ## PLANNED FEATURES (to be added before the full release)
 

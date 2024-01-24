@@ -26,7 +26,9 @@ All prefabs are grouped to make placement easier. Stay in Group Select mode to m
 
 There are currently both VPKs and loose folders in the `VPKs` directory. **You only need to install one of each**. Both are included as Compilepal currently cannot automatically pack VPKs. This can be used to stop it from packing things you may not want in your map, like your HUD or Hammer-only replacement materials.
 
-See `README.md` for information on what they contain.
+See `README.md` as well as their respective readme files for information on what they contain.
+
+**I recommend that you use the VPK version of each pack EXCEPT the material tag overhaul, which is intended to be packed into the map.**
 
 ## FGD, Radshadowman and Propper support
 
