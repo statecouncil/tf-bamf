@@ -38,11 +38,11 @@
 
 	// SETTING: CUSTOM PLAYWERMODEL PREVIEW //
 
-//@BaseClass base(STeamSpawnDefault)	= STeamSpawnAppearance []
-@BaseClass base(STeamSpawnABS)		= STeamSpawnAppearance []
-//@BaseClass base(STeamSpawnPuddy)		= STeamSpawnAppearance []
+//@BaseClass base(STeamSpawnDefault)	= STeamSpawnAppearance []	//DEFAULT GREEN GORDON
+@BaseClass base(STeamSpawnABS)		= STeamSpawnAppearance []		//ABS' ENGINEER
+//@BaseClass base(STeamSpawnPuddy)		= STeamSpawnAppearance []	//PUDDY'S ENGINEER
 
-// By default, this FGD will use the green gordon player model in various places, most notably info_player_teamspawn. Comment out the first line above and uncomment the second line to use ABS' spawnpoint engineer, or the third line for Puddy's spawnpoint engineer. Requires them to be installed separately. Note that dear old green gordon is scaled up very slightly to make him as large as TF2 playermodels. info_player_start, being obsolete, will be unaffected and stay at the default HL2 scale.
+// By default, this FGD will use the Engineer retexture by A Boojum Snark as spawnpoint models. Comment out the middle line and uncommend any of the others to use that spawn point appearance. This is a hammer-only visual change and does not affect your map in-game.
 
 
 
