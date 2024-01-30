@@ -1,16 +1,15 @@
 "LightmappedGeneric"
 {
-
 	<dx90
 	{
-		 	"$fallbackmaterial" "water/water_hydro_cheap_dx80"
+		"$fallbackmaterial" "water/water_hydro_cheap_dx80"
 	}
 
-	"%tooltexture" "editor-abs/waterttx/water/water_hydro_cheap"
 	"%keywords" "tf"
+	"%tooltexture" "editor-bamf/waterttx/water/water_hydro_cheap"
+
 	"%compilewater" "1"
 	"%compileKeepLight" 1
-
 
 	"$basetexture" "water/water_hydro_base"
 	"$bumpmap" "water/tfwater001_normal"
@@ -19,7 +18,6 @@
 	"$surfaceprop" "water"
 	"$envmap" "env_cubemap"
 	"$envmaptint" "[.2 .2 .2]"
-//	"$envmapcontrast" ".5"
 
 	"$abovewater" "1"
 
@@ -42,4 +40,3 @@
 		}
 	}
 }
-

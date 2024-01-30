@@ -2,36 +2,37 @@
 {
 	<dx90
 	{
-		"$fallbackmaterial" "water/water_2fort_dx80"
+		"$fallbackmaterial" "water/water_island_cheap"
 	}
-	"Water_DX60"
-	{
-		"$fallbackmaterial" "nature/water_dx70"
-	}
-
 	"%keywords" "tf"
-	"%tooltexture" "editor-bamf/waterttx/water/water_2fort"
+	"%tooltexture" "editor-bamf/waterttx/water/water_island_dx80"
 
 	"%compilewater" 1
 	"$abovewater" 1
 
-	"$underwateroverlay" "effects/water_warp"
 	"$envmap" "env_cubemap"
 	"$refracttexture" "_rt_WaterRefraction"
-	"$refractamount" ".32"
-	"$refractblur" "1"
+
+	"$refractamount" "0.2"
+
+	"$refracttint" "{144 255 240}"
+	"$refractblur" "0"
+
+	"$reflecttexture" "_rt_WaterReflection"
+	"$reflectamount" "1"
+	"$reflecttint" "{208 157 155}"
 
 	"$scale" "[1 1]"
 
-	"$normalmap" "water/tfwater001_normal"
+	"$normalmap" "water/scrolling_water01_normal"
 
 	"$surfaceprop" "water"
-	"$bottommaterial" "water/water_2fort_beneath.vmt"
+	"$bottommaterial" "water/water_well_beneath.vmt"
 	"$bumpframe" "0"
 
 	"$fogenable" 1
-	"$fogcolor" "{51 43 13}"
-	"$fogstart" "-100"
+	"$fogcolor" "{148 197 195}"
+	"$fogstart" "1"
 	"$fogend" "400"
 
 	"$temp" "[0 0]"
@@ -44,7 +45,7 @@
 		{
 			"animatedtexturevar" "$normalmap"
 			"animatedtextureframenumvar" "$bumpframe"
-			"animatedtextureframerate" 30.00
+			"animatedtextureframerate" 10.00
 		}
 		"Sine"
 		{
@@ -74,6 +75,12 @@
 		{
 			"translateVar" "$temp"
 			"resultVar" "$bumptransform"
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$bumptransform"
+			"texturescrollrate" 0.1
+			"texturescrollangle" 315.00
 		}
 		"WaterLOD"
 		{

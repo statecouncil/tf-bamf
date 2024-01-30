@@ -1,28 +1,20 @@
 "Water"
 {
-
-
 	"%keywords" "tf"
-	//	$forcecheap 1
-	
-	"%tooltexture" "editor-abs/waterttx/swamp/water/water_murky"
+	"%tooltexture" "editor-bamf/waterttx/swamp/water/water_murky"
+
 	"%compilewater" 1
 	"$abovewater" 1
-//	"$nofresnel" "1"
 
-	$underwateroverlay "effects/water_warp"
-	"$envmap" "env_cubemap"	
+	"$underwateroverlay" "effects/water_warp"
+	"$envmap" "env_cubemap"
 	"$refracttexture" "_rt_WaterRefraction"
 	"$refractamount" ".12"
-//	"$refracttint" "{88 192 44}"
 	"$refractblur" "1"
-
-
 
 	"$scale" "[1 1]"
 
 	"$basetexture" "swamp/water/water_murky"
-//	"$bumpmap" "water/water_dudv"
 	"$normalmap" "water/tfwater001_normal"
 
 	"$surfaceprop" "water"
@@ -34,10 +26,9 @@
 	"$fogstart" "0"
 	"$fogend" "170"
 
-	 "$temp" "[0 0]"
-	 "$curr" 0.0
-	 "$curr2" 0.0
-
+	"$temp" "[0 0]"
+	"$curr" 0.0
+	"$curr2" 0.0
 
 	"Proxies"
 	{
@@ -47,8 +38,6 @@
 			"animatedtextureframenumvar" "$bumpframe"
 			"animatedtextureframerate" 30.00
 		}
-
-
 		"TextureScroll"
 		{
 			"texturescrollvar" "$bumptransform"
@@ -57,9 +46,7 @@
 		}
 		"WaterLOD"
 		{
-			// fixme!  This has to be here, or material loading barfs.
 			"dummy" 0
 		}
-	
 	}
 }
