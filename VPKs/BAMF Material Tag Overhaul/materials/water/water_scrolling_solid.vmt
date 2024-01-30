@@ -1,6 +1,6 @@
 "LightMappedGeneric"
 {
-	"%keywords" "tf"
+//	"%keywords" "tf" //this (stock) material is broken
 
 	"$basetexture" "Metal/metalchrome002"
 	"$bumpmap" "water/scrolling_water01_normal"
