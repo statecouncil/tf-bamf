@@ -1,11 +1,12 @@
 "UnlitGeneric"
 {
 	"%keywords" "tf"
+
 	"$baseTexture" "water\waterfall002"
-	"$surfaceprop"	"water"
-//	"$translucent" 1
+	"$surfaceprop" "water"
 	"$model" "1"
 	"$nocull" "1"
+
 	"Proxies"
 	{
 		"TextureScroll"

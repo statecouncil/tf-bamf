@@ -2,37 +2,32 @@
 {
 	<dx90
 	{
-		"$fallbackmaterial" "water/water_2fort_dx80"
-	}
-	"Water_DX60"
-	{
-		"$fallbackmaterial" "nature/water_dx70"
+		"$fallbackmaterial" "water/water_well_dx80"
 	}
 
 	"%keywords" "tf"
-	"%tooltexture" "editor-bamf/waterttx/water/water_2fort"
+	"%tooltexture" "editor-bamf/waterttx/water/water_moon_redbase"
 
 	"%compilewater" 1
 	"$abovewater" 1
 
-	"$underwateroverlay" "effects/water_warp"
 	"$envmap" "env_cubemap"
 	"$refracttexture" "_rt_WaterRefraction"
-	"$refractamount" ".32"
-	"$refractblur" "1"
+	"$refractamount" ".2"
+	"$refractblur" "0"
 
 	"$scale" "[1 1]"
 
 	"$normalmap" "water/tfwater001_normal"
 
 	"$surfaceprop" "water"
-	"$bottommaterial" "water/water_2fort_beneath.vmt"
+	"$bottommaterial" "water/water_well_beneath.vmt"
 	"$bumpframe" "0"
 
 	"$fogenable" 1
-	"$fogcolor" "{51 43 13}"
-	"$fogstart" "-100"
-	"$fogend" "400"
+	"$fogcolor" "{53 38 2}"
+	"$fogstart" "1"
+	"$fogend" "300"
 
 	"$temp" "[0 0]"
 	"$curr" 0.0

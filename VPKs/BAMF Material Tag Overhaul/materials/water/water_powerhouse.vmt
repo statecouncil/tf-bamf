@@ -10,15 +10,15 @@
 	}
 
 	"%keywords" "tf"
-	"%tooltexture" "editor-bamf/waterttx/swamp/water/water_swamp"
+	"%tooltexture" "editor-bamf/waterttx/water/water_powerhouse"
 
 	"%compilewater" 1
 	"$abovewater" 1
 
-	"$underwateroverlay" "effects/water_warp"
-	"$envmap" "env_cubemap"
+	$underwateroverlay "effects/water_warp"
+	"$envmap" "env_cubemap"	
 	"$refracttexture" "_rt_WaterRefraction"
-	"$refractamount" ".06"
+	"$refractamount" ".12"
 	"$refractblur" "1"
 
 	"$scale" "[1 1]"
@@ -30,7 +30,7 @@
 	"$bumpframe" "0"
 
 	"$fogenable" 1
-	"$fogcolor" "{27 26 21}"
+	"$fogcolor" "{57 54 44}"
 	"$fogstart" "0"
 	"$fogend" "100"
 
@@ -50,7 +50,7 @@
 		{
 			"texturescrollvar" "$bumptransform"
 			"texturescrollrate" .6
-			"texturescrollangle" 10.00
+			"texturescrollangle" 170.00
 		}
 		"WaterLOD"
 		{
