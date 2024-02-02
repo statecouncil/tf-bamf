@@ -16,6 +16,8 @@ TODOs:
 * Experiment with removing metadata fields from Install script (corporation, versionnumber, etc)
 * Make stuff look good
 * Separate Installer version from TF BAMF version
+* Verify correct TF2 installation directory by aiming at Team Fortress 2/tf/gameinfo.txt
+* Check existence of Team Fortress/bin/vpk.exe prior to automatic VPK cooking
 
 Build-Requirements:
 * NSIS 3.09
