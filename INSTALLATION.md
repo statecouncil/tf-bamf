@@ -35,7 +35,7 @@ See `README.md` as well as their respective readme files for information on what
 *Requires `VPKs/BAMF FGD Assets`.*
 
 1. Paste the content of the `FGD` directory into `Team Fortress 2/bin`. Do NOT paste it into `Team Fortress 2/tf/bin`.
-2. In Hammer, open *Tools -> Options...*, remove the existing Game Configurations, then add `tf-bamf.fgd` as the only new one.
+2. In Hammer, open *Tools -> Options...*, remove the existing Game Configurations, then add `tf-brokk.fgd` as the only new one.
 3. *(Optional)* Open `Team Fortress 2/tf/bin/tf-bamf.fgd` in the text editor of your choice and adjust the options at the start of the document. This should not be necessary for most users.
 
 See `FGD/radshadowman/RadShadowMan_readme.txt` for more information on how to enable textureshadows on all static props.
