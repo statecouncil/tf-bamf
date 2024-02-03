@@ -28,7 +28,7 @@ There are currently both VPKs and loose folders in the `VPKs` directory. **You o
 
 See `README.md` as well as their respective readme files for information on what they contain.
 
-**I recommend that you use the VPK version of each pack EXCEPT the material tag overhaul, which is intended to be packed into the map.**
+**I recommend that you use the VPK version of each pack EXCEPT the Extra Assets pack, which is intended to be packed into the map.**
 
 ## FGD, Radshadowman and Propper support
 
