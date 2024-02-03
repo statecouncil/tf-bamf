@@ -21,6 +21,13 @@ Steps (WIP):
 
 1- Welcome, information, warnings, credits, license, etc.
 2- Selection boxes for which features to install
-3a- If necessary, select Team Fortress 2 installation directory
-3b- If necessary, select CompilePal installation directory
-3c- If necessary, select VMF directory
+	- FGD
+	- Tools
+	- Assets (If FGD selected, FGD Assets NEEDS to be selected)
+	- Prefabs
+	- Gamemode Prefabs
+	- Example VMFs
+	- whatever else we add to this project
+3a- If necessary, select Team Fortress 2 installation directory (location of gameinfo.txt)
+3b- If necessary, select CompilePal installation directory (location of compilepal.exe)
+3c- If necessary, select VMF directory (user choice)
