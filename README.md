@@ -1,3 +1,4 @@
+ ![bamflogo](/docs/img/BAMFLOGO2.png)
 # Brokk's Assorted Mapping Fixes
 
 ### A TF2 Mapping Starter Pack of the modern era.
