@@ -1,250 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Game Mode List</title>
-	<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
-</head>
-<body>
-
-<div class="block header">
-	<h1>TF2 Game Modes</h1>
-	A list of all game modes in Team Fortress 2.
-</div>
-
-<div class="block">
-	<table>
-		<tr class="sticky">
-			<th>Game Mode</th>
-			<th>Example</th>
-			<th>Notes</th>
-		</tr>
-		<tr>
-			<td>arena_1cp</td>
-			<td>arena_lumberyard</td>
-			<td><p>Arena, but with only 1 Control Point that opens after 60 seconds</p></td>
-		</tr>
-		<tr>
-			<td>arena_2cp</td>
-			<td>arena_byre</td>
-			<td><p>Arena, but with 2 Control Points that are open from the start</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>ctf_standard</td>
-			<td>ctf_2fort</td>
-			<td><p>It's just Capture the Flag, fun is infinite in this game mode</p></td>
-		</tr>
-		<tr>
-			<td>ctf_mannpower</td>
-			<td>ctf_hellfire</td>
-			<td><p>The Mannpower version of Capture the Flag</p></td>
-		</tr>
-		<tr>
-			<td>ctf_reverse</td>
-			<td>ctf_crasher</td>
-			<td><p>Capture the Flag, but the Intelligence is in your base and you have to deliver it to the other team</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>cp_1cp</td>
-			<td>cp_cloak</td>
-			<td><p>It's exactly like KOTH, the only difference is that when you cap you automatically win, and also it takes forever to cap... Don't blame me, Valve created this game mode</p></td>
-		</tr>
-		<tr>
-			<td>cp_3cp</td>
-			<td>cp_powerhouse</td>
-			<td><p>Symmetric Control Point, with 3 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_5cp</td>
-			<td>cp_well</td>
-			<td><p>Symmetric Control Point, with 5 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_1s_2cp</td>
-			<td>cp_gorge</td>
-			<td><p>Attack/Defense, with only 1 Stage with 2 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_1s_3cp</td>
-			<td>cp_mercenarypark</td>
-			<td><p>Attack/Defense, with only 1 Stage with 3 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_2s_6cp</td>
-			<td>cp_snowplow</td>
-			<td><p>Attack/Defense, with 2 Stages and each one with 3 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_3s_6cp</td>
-			<td>cp_dustbowl</td>
-			<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_3s_6cp_open</td>
-			<td>cp_frostwatch</td>
-			<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points, but on Stage 2, both Control Points are available for capture at the same time</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_3s_6cp_open</td>
-			<td>cp_frostwatch</td>
-			<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points, but on Stage 2, both Control Points are available for capture at the same time</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_dossier_single</td>
-			<td>cp_carrier</td>
-			<td><p>Attack/Defense, but to capture you need to bring the intel into the control point, with only 1 stage</p></td>
-		</tr>
-		<tr>
-			<td>cp_linear_dossier_multi</td>
-			<td>ctf_haarp</td>
-			<td><p>Attack/Defense, but to capture you need to bring the intel into the control point, with 3 stage</p></td>
-		</tr>
-		<tr>
-			<td>cp_centralized</td>
-			<td>cp_steel</td>
-			<td><p>There is various Control Points for BLU to cap, but only the last one is necessary to win and it's always open</p></td>
-		</tr>
-		<tr>
-			<td>cp_domination</td>
-			<td>cp_standin_final</td>
-			<td><p>Both teams have to cap all 3 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>cp_pyramid</td>
-			<td>cp_gravelpit</td>
-			<td><p>BLU must capture A + B to capture C, and RED must defend</p></td>
-		</tr>
-		<tr>
-			<td>cp_medieval</td>
-			<td>cp_degrootkeep</td>
-			<td><p>Basically the same as the last one, but with only melee weapons, and there is a small timer for the last Control Point</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>koth_example</td>
-			<td>koth_viaduct</td>
-			<td><p>It's just King of the Hill, by default the timer is set to 3 minutes, but there is maps in the game with other times, like 5 minutes (Los Muertos) or 7 minutes (Ghost Fort)</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>mvm_example</td>
-			<td>mvm_bigrock</td>
-			<td><p>It's just Mann vs. Machine, this one already came with the Source SDK, so thank you Valve!</p></td>
-		</tr>
-		<tr>
-			<td>mvm_gates</td>
-			<td>mvm_mannhattan</td>
-			<td><p>The Gates version of Mann vs. Machine</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>pass_example</td>
-			<td>pass_brickyard</td>
-			<td><p>It's just PASS Time, thanks to 14Bit for their <a href="https://tf2maps.net/downloads/the-improved-pass-time-prefab.9700/">PASS Prefab</a>!</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>pl_1s_3cp</td>
-			<td>pl_rumford_event</td>
-			<td><p>Payload, with only 1 Stage with 3 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>pl_1s_4cp</td>
-			<td>pl_upward</td>
-			<td><p>Payload, with only 1 Stage with 4 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>pl_1s_4cp_chew</td>
-			<td>pl_frontier_final</td>
-			<td><p>Basically the same as the last one, but with the Li'l Chew Chew cart model</p></td>
-		</tr>
-		<tr>
-			<td>pl_1s_5cp</td>
-			<td>pl_pier</td>
-			<td><p>Payload, with only 1 Stage with 5 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>pl_2s_5cp</td>
-			<td>pl_cactuscanyon</td>
-			<td><p>Payload, with 2 Stages with 2 Control Points on Stage 1, and 3 Control Points in Stage 2</p></td>
-		</tr>
-		<tr>
-			<td>pl_3s_6cp</td>
-			<td>pl_hoodoo_final</td>
-			<td><p>Payload, with 3 Stages and each one with 2 Control Points</p></td>
-		</tr>
-		<tr>
-			<td>pl_3s_7cp</td>
-			<td>pl_goldrush</td>
-			<td><p>Payload, with 3 Stages with 2 Control Points on Stag 1 and 2, and 3 Control Points in Stage 3</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>plr_single</td>
-			<td>plr_hightower</td>
-			<td><p>Payload Race, with only 1 Stage</p></td>
-		</tr>
-		<tr>
-			<td>plr_multi</td>
-			<td>plr_pipeline</td>
-			<td><p>Payload Race, with 3 Stages</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>pd_example</td>
-			<td>pd_watergate</td>
-			<td><p>It's just Player Destruction, thanks to Egan for their <a href="https://tf2maps.net/downloads/pd-prefab.858/">PD Prefab</a>!</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>rd_example</td>
-			<td>rd_asteroid</td>
-			<td><p>It's just Robot Destruction, thanks to worMatty for their <a href="https://tf2maps.net/downloads/robot-destruction-rd-prefab.917/">RD Prefab</a>!</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>sd_example</td>
-			<td>sd_doomsday</td>
-			<td><p>It's just Special Delivery, now includes the rocket and elevator!</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-			<td>tc_example</td>
-			<td>tc_hydro</td>
-			<td><p>It's just Territorial Control, thanks to 14Bit for their <a href="https://tf2maps.net/downloads/14bits-improved-territorial-control-prefab.14774/">TC Prefab</a>!</p></td>
-		</tr>
-		<tr>
-			<td class="pad" colspan="3"></td>
-		</tr>
-		<tr>
-	</table>
-	<p>Note: I also made an extended list with all the maps and game modes that you can check <a href="https://docs.google.com/spreadsheets/d/1f0EHdOZ_wHGV4u2cug8pS1NUUtD3GmhdDwSKiSkt5y0/edit#gid=0">here</a>.</p>
-</div>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Game Mode List</title>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!--Header Block-->
+		<div class="block header">
+			<h1>TF2 Game Modes</h1>
+			A list of almost every game mode in TF2.
+		</div>
+		
+		<!--Game Mode Table-->
+		<div class="block">
+			<table >
+				<tr class="sticky">
+					<th>Game Mode</th>
+					<th>Example</th>
+					<th>Notes</th>
+				</tr>
+				<tr>
+					<td>arena_1cp</td>
+					<td>arena_lumberyard</td>
+					<td><p>Arena, but with 1 Control Point that opens after 60 seconds</p></td>
+				</tr>
+				<tr>
+					<td>arena_2cp</td>
+					<td>arena_byre</td>
+					<td><p>Arena, but with 2 Control Points that are open from the start</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>ctf_standard</td>
+					<td>ctf_2fort</td>
+					<td><p>It's just Capture the Flag, fun is infinite in this game mode</p></td>
+				</tr>
+				<tr>
+					<td>ctf_mannpower</td>
+					<td>ctf_hellfire</td>
+					<td><p>Capture the Flag, but with the powerups of Mannpower</p></td>
+				</tr>
+				<tr>
+					<td>ctf_reverse</td>
+					<td>ctf_crasher</td>
+					<td><p>Capture the Flag, but you have to escort the Intelligence to the enemy base</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>cp_1cp</td>
+					<td>cp_cloak</td>
+					<td><p>It's exactly like KOTH, the only difference is that when you cap you automatically win, and also it takes forever to cap... Don't blame me, Valve created this game mode</p></td>
+				</tr>
+				<tr>
+					<td>cp_3cp</td>
+					<td>cp_powerhouse</td>
+					<td><p>Symmetric Control Point, with 3 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_5cp</td>
+					<td>cp_well</td>
+					<td><p>Symmetric Control Point, with 5 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_1s_2cp</td>
+					<td>cp_gorge</td>
+					<td><p>Attack/Defense, with 1 Stage with 2 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_1s_3cp</td>
+					<td>cp_mercenarypark</td>
+					<td><p>Attack/Defense, with 1 Stage with 3 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_2s_6cp</td>
+					<td>cp_snowplow</td>
+					<td><p>Attack/Defense, with 2 Stages and each one with 3 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_3s_6cp</td>
+					<td>cp_dustbowl</td>
+					<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_3s_6cp_open</td>
+					<td>cp_frostwatch</td>
+					<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points, but on Stage 2, both Control Points are available for capture at the same time</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_3s_6cp_open</td>
+					<td>cp_frostwatch</td>
+					<td><p>Attack/Defense, with 3 Stages and each one with 2 Control Points, but on Stage 2, both Control Points are available for capture at the same time</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_dossier_single</td>
+					<td>cp_carrier</td>
+					<td><p>Attack/Defense, but to capture you need to bring the intel into the control point, with 1 stage</p></td>
+				</tr>
+				<tr>
+					<td>cp_linear_dossier_multi</td>
+					<td>ctf_haarp</td>
+					<td><p>Attack/Defense, but to capture you need to bring the intel into the control point, with 3 stages</p></td>
+				</tr>
+				<tr>
+					<td>cp_centralized</td>
+					<td>cp_steel</td>
+					<td><p>There is various Control Points for BLU to cap, but only the last one is necessary to win and it's always open</p></td>
+				</tr>
+				<tr>
+					<td>cp_domination</td>
+					<td>cp_standin_final</td>
+					<td><p>Both teams have to cap all 3 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>cp_pyramid</td>
+					<td>cp_gravelpit</td>
+					<td><p>BLU must capture A + B to capture C, and RED must defend</p></td>
+				</tr>
+				<tr>
+					<td>cp_medieval</td>
+					<td>cp_degrootkeep</td>
+					<td><p>Basically the same as the last one, but with only melee weapons, and there is a small timer for the last Control Point</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>koth_example</td>
+					<td>koth_viaduct</td>
+					<td><p>It's just King of the Hill, by default the timer is set to 3 minutes, but there is maps in the game with other times, like 5 minutes (Los Muertos) or 7 minutes (Ghost Fort)</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>mvm_example</td>
+					<td>mvm_bigrock</td>
+					<td><p>It's just Mann vs. Machine, this one already came with the Source SDK, so thank you Valve!</p></td>
+				</tr>
+				<tr>
+					<td>mvm_gates</td>
+					<td>mvm_mannhattan</td>
+					<td><p>Mann vs. Machine, but with gates that robots will try to capture</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>pass_example</td>
+					<td>pass_brickyard</td>
+					<td><p>It's just PASS Time, thanks to 14Bit for their <a href="https://tf2maps.net/downloads/the-improved-pass-time-prefab.9700/">PASS Prefab</a>!</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>pl_1s_3cp</td>
+					<td>pl_rumford_event</td>
+					<td><p>Payload, with 1 Stage with 3 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>pl_1s_4cp</td>
+					<td>pl_upward</td>
+					<td><p>Payload, with 1 Stage with 4 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>pl_1s_4cp_chew</td>
+					<td>pl_frontier_final</td>
+					<td><p>Basically the same as the last one, but with the Li'l Chew Chew cart model</p></td>
+				</tr>
+				<tr>
+					<td>pl_1s_5cp</td>
+					<td>pl_pier</td>
+					<td><p>Payload, with 1 Stage with 5 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>pl_2s_5cp</td>
+					<td>pl_cactuscanyon</td>
+					<td><p>Payload, with 2 Stages with 2 Control Points on Stage 1, and 3 Control Points in Stage 2</p></td>
+				</tr>
+				<tr>
+					<td>pl_3s_6cp</td>
+					<td>pl_hoodoo_final</td>
+					<td><p>Payload, with 3 Stages and each one with 2 Control Points</p></td>
+				</tr>
+				<tr>
+					<td>pl_3s_7cp</td>
+					<td>pl_goldrush</td>
+					<td><p>Payload, with 3 Stages with 2 Control Points on Stage 1 and 2, and 3 Control Points in Stage 3</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>plr_single</td>
+					<td>plr_hightower</td>
+					<td><p>Payload Race, with 1 Stage</p></td>
+				</tr>
+				<tr>
+					<td>plr_multi</td>
+					<td>plr_pipeline</td>
+					<td><p>Payload Race, with 3 Stages</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>pd_example</td>
+					<td>pd_watergate</td>
+					<td><p>It's just Player Destruction, thanks to Egan for their <a href="https://tf2maps.net/downloads/pd-prefab.858/">PD Prefab</a>!</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>rd_example</td>
+					<td>rd_asteroid</td>
+					<td><p>It's just Robot Destruction, thanks to worMatty for their <a href="https://tf2maps.net/downloads/robot-destruction-rd-prefab.917/">RD Prefab</a>!</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>sd_example</td>
+					<td>sd_doomsday</td>
+					<td><p>It's just Special Delivery, now includes the rocket and elevator!</p></td>
+				</tr>
+				<tr>
+					<td class="pad" colspan="3"></td>
+				</tr>
+				<tr>
+					<td>tc_example</td>
+					<td>tc_hydro</td>
+					<td><p>It's just Territorial Control, thanks to 14Bit for their <a href="https://tf2maps.net/downloads/14bits-improved-territorial-control-prefab.14774/">TC Prefab</a>!</p></td>
+				</tr>
+			</table>
+			<hr>
+			Lacry also made an extended list with all the maps and game modes that you can check <a href="https://docs.google.com/spreadsheets/d/1f0EHdOZ_wHGV4u2cug8pS1NUUtD3GmhdDwSKiSkt5y0/edit#gid=0">here</a>
+		</div>
+	</body>
 </html>
