@@ -10,37 +10,101 @@ Team Fortress 2/tf/custom/...
 "Prefabs" directory-content:  
 Team Fortress 2/bin/Prefabs/...
 
-Ignore "Installer and "docs" directory-content!
+Do NOT include "installer" and "docs" directories!
 
-All other directories (*entire* directories, not just content!) to be placed at a user-decided location
-Alternative/Default: Team Fortress 2/tf_bamf/...
-
+All other directories (*entire* directories, not just content!) to be placed at a user-decided location. Default: Team Fortress 2/tf_bamf/...
 
 
-Steps (WIP):
 
-Page 1 - Welcome, information, warnings, credits, license, etc.
-	Page 1a - auto-open documentation, ask user to read carefully /before/ installing stuff
-Page 2 - Accept license
-Page 3 - Selection boxes for which features to install:
-		- FGD
-		- Tools
-			- Hammer++ (IF AT ALL POSSIBLE - talk to ficool) - would need to be externally downloaded by installer
-			- Radshadowman
-				- Hammer/Hammer++ compile settings?
-			- Propper (currently not included)
-				- Hammer/Hammer++ compile settings?
-		- Assets
-			- Extra Materials: (Loose recommended)
-			- FGD Assets: (Required if FGD selected above, VPK recommended)
-			- Material Tag Overhaul: (VPK recommended)
-			- Surfaceprops: (Loose recommended)
-		- Prefabs
-		- Gamemode Prefabs
-		- Example VMFs
-			- Valve (decompiles + SDK + valvebase)
-			- Community (decompiles + creator-submitted)
-Page 4a - If necessary, select Team Fortress 2 installation directory (location of gameinfo.txt)
-Page 4b - If necessary, select CompilePal installation directory (location of compilepal.exe)
-Page 4c - If necessary, select VMF directory (user choice)
-Page 5 - Installation complete
+# INSTALL PAGES
+
+##########################################################################
+
+**Page 1** - INTRODUCTION
+
+## Brokk's Assorted Mapping Fixes
+### A TF2 Mapping Starter Pack of the modern era
+
+[picture of Merasmus here]
+
+Merasmus will guide you through the installation process.
+For a full documentation, click HERE [github pages docs].
+
+Attention: Some features of this mapping pack will require Hammer++ and CompilePal to be installed BEFORE running this installer.
+
+**FEATURES**
+
+[shortlist of features here]
+
+**CREDITS**
+
+[shortlist of _all_ creators here]
+
+Welcome, information, warnings, credits, license, etc.
+
+
+<NEXT> <CANCEL>
+
+##########################################################################
+
+**Page 2** - LICENSE
+
+blablabla license.txt
+
+
+<BACK> <I HAVE READ AND UNDERSTOOD THE LICENSE> <CANCEL>
+
+##########################################################################
+
+**Page 3** - FEATURE SELECTION
+see [ ] vs. [x] for which features should be enabled/disabled by default. The default selection tries to stay as close as possible to the predecessor pack by A Boojum Snark.
+
+
+1 [x] - **Hammer Stuff**
+	a [x] - FGD
+	b [ ] - "Expert Compile" sequences for Propper and Radshadowman
+	c [ ] - Advanced CompilePal sequences
+2 [ ] - **Tools**
+	a [ ] - Radshadowman
+	b [ ] - Propper
+3 [ ] - **Assets**
+	a [x] - FGD Assets (VPK)
+	b [x] - Material Tag Overhaul (VPK)
+	c [ ] - Extra Materials (Loose Files)
+	d [ ] - Surfaceprop Overhaul (Loose Files)
+4 [x] - **Prefabs**
+5 [x] - **Gamemode Prefabs**
+6 [ ] - **Example VMFs**
+	a [x] - Valve-owned Maps
+	b [ ] - Community-owned Maps
+
+##########################################################################
+
+(this page is WIP)
+If 1a was selected:
+**Page 4** - CONFIGURE FGD
+
+The FGD fit for a LORD features several customization options. You may change any of these manually by editing the top of Team Fortress 2/bin/tf-bamf.fgd when this installation is complete.
+
+(options here)
+
+##########################################################################
+
+**Page 5** - DIRECTORY SELECTION
+
+1- If any of 1, 2, 3, or 4 were selected:
+Find/select location of "Team Fortress 2/tf/gameinfo.txt"
+
+2- If 1c was selected:
+Find/select location of "CompilePalX.exe"
+
+3 - If any of 5 or 6 were selected:
+Select location where VMFs should be saved ("mapsrc")
+
+##########################################################################
+
+**Page 5** - FINISHED
+
+Installation successful! Merasmus will now return to his castle. [picture of racoon here]
+
+##########################################################################

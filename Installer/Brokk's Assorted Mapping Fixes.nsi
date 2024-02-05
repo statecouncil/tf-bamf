@@ -5,10 +5,10 @@
 ############################################################################################
 
 # THIS HAS TO BE CUSTOMIZED FOR A FUNCTIONING BUILD:
-!define REPO_LOCATION "" # Should be global, i.e. "C:\i_store_my_code_projects_here\tf-bamf"
+!define REPO_LOCATION "D:\GitHub\tf-bamf" # Should be global, i.e. "C:\i_store_my_code_projects_here\tf-bamf"
 
 # THIS CAN BE CUSTOMIZED TO PREFERENCE
-!define COMPILE_OUTPUT "${REPO_LOCATION}" # Where the compiled installer.exe is to be written, REPO_LOCATION by default
+!define COMPILE_OUTPUT "${REPO_LOCATION}\Installer" # Where the compiled installer.exe is to be written, REPO_LOCATION by default
 
 
 !define APP_NAME "Brokk's Assorted Mapping Fixes"

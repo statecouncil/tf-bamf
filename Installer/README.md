@@ -22,5 +22,9 @@ TODOs:
 Build-Requirements:
 * NSIS 3.09
 * NUI Plugin for NSIS
+Future plugin requirements:
+* Banner or Splash
+* nsDialogs
+* vPatch
 
 Further documentation TBC
