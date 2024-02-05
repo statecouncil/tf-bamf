@@ -2125,9 +2125,10 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 // TODO: Test and better describe some of these keyvalues
 @SolidClass base(SBaseLogical, SBaseDiv) color(50 50 200) sphere(FadeStartDist) sphere(FadeDist) = func_areaportalwindow : "A special areaportal that fades out and closes over distance. If you seal off an area with them, when the viewer moves the specified distance away from them, they will go opaque and the parts inside the area will not be drawn. The 'Opaque Window' brush model should enclose the func_areaportalwindow so no parts of it are culled by the window. If you specify the optional Foreground Brush, then it should enclose the Opaque Window brush model." [
+	PortalVersion(integer)	readonly	: "Portal Version"      : 1  : "(Don't change). Differentiates between shipping HL2 maps and maps using new engine features."
 	FadeStartDist(integer) : "Fade Start Distance" : 256 : "Distance that the fade into the Rendered Window brush entity begins. The further back the player views, the more visible the brush entity will be."
 	FadeDist(integer) : "Fade End Distance"   : 512 : "Distance at which the Rendered Window is fully visible, and the portal closes."
-	target(target_destination) : "Opaque Window" :  : "The brush entity that fills the gap left by the portal when closed. Can be inside the areaportal."
+	target(target_destination) : "Rendered Window" :  : "The brush entity that fills the gap left by the portal when closed. Can be inside the areaportal."
 	TranslucencyLimit(float) : "Translucency Limit"  : "0.0" : "Prevents the Rendered Window brush's visibility from ever going below this amount. Useful if your rendered window uses an opaque glass material."
 	BackgroundBModel(target_destination) : "Foreground Brush"  :  : "Optional brush entity that is drawn after the fading brush model. This model should have alpha in its textures so you can see through it."
 
