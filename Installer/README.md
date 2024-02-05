@@ -21,6 +21,6 @@ TODOs:
 
 Build-Requirements:
 * NSIS 3.09
-* /at least/ NUI Plugin for NSIS
+* NUI Plugin for NSIS
 
 Further documentation TBC
