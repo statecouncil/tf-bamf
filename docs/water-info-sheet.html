@@ -1,607 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Water Info Sheet</title>
-	<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
-</head>
-<body>
-
-<div class="block header">
-	<h1>TF2 Water Materials</h1>
-	An info sheet about water materials in Team Fortress 2.
-</div>
-
-<div class="block">
-	<p>
-		This is an info sheet about water materials in Team Fortress 2. A "material" is simply a list of properties and textures that a surface or volume can have. This page <em>only</em> covers materials that were made for TF2 and ignores the HL2 assets that also happen to be in the game.
-	</p><p>
-		Water materials always come in pairs: A <em>top</em> (or <em>surface</em>) material and a <em>bottom</em> (or <em>beneath</em>) material. The top material controls what the surface looks like when watching it from above. It's the material you actually use in Hammer. The bottom material controls what the water looks like once you are swimming inside of it. It should never be used in Hammer! At least for now, this page only covers the surface materials, but knowing which bottom material is used by which top material is still important.
-	</p><p>
-		TF2 water materials are mostly quite similar and can be grouped into the following 3 categories:
-		<br>
-		<table>
-			<tr>
-				<th class="regular">Regular Water</th>
-				<td><p>
-					Most water materials in TF2 fall into this category.
-					<br>The material uses the <code>Water</code> shader, has cube-map reflections on the surface, an underwater refraction effect, a thick colored fog, and an animated normal-map. A Proxy is used to move the normal-map around. However, this only affects the refractions and doesn't look like any coherent movement.
-				</p></td>
-			</tr><tr>
-				<th class="expensive">Expensive Water</th>
-				<td><p>
-					This category is rather rare as it requires more processing power to render.
-					<br>
-					On top of what "Regular Water" does, this material renders real-time reflections of the world <em>instead</em> of using a nearby cube-map. Proxies will affect both refractions and reflections, allowing the water to visually flow in a specific direction or pattern.
-					<br>
-					Water becomes expensive if it includes any parameter that affects reflections, such as <code>$ReflectTint</code> and <code>$ReflectAmount</code>.
-				</p></td>
-			</tr><tr>
-				<th class="cheap">Cheap Water</th>
-				<td><p>
-					Water in this category is the easiest one to render and is therefore quite popular for purely visual effects.
-					<br>
-					Unlike what "Regular Water" does, this material does not have any fog. The surface may not even be see-through and the shader may be replaced with <code>LightmappedGeneric</code>.
-					<br>
-					Water becomes cheap if it uses a shader other than <code>Water</code> or if either <code>$CompileKeepLight</code> or <code>$ForceCheap</code> is set to <code>1</code>.
-				</p></td>
-			</tr>
-		</table>
-	</p><p>
-		For more information about water in the Source Engine as a whole, read the VDC: <a href="https://developer.valvesoftware.com/wiki/Water" title="Water - Valve Developer Community">https://developer.valvesoftware.com/wiki/Water</a>
-	</p>
-</div>
-
-<div class="block">
-	<h2 id="Surface Materials">Surface Materials</h2>
-	Here is the list of all water top materials that are included in TF2 by default.
-	
-	<hr>
-
-	<h3>swamp/water/water_murky</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/swamp/water/water_murky.png" title="swamp/water/water_murky" width="200" height="200" alt="An in-game screenshot of the water with the number 170. The number is pointing at the fog.">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Water Info Sheet</title>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!--Header Block-->
+		<div class="block header">
+			<h1>TF2 Water Materials</h1>
+			An info sheet about water materials in Team Fortress 2.
 		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(35,32,20)"><span class="key">$FogColor:</span> {35&nbsp;32&nbsp;20}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 170</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.32</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.02&emsp;<span class="key">Angle:</span> 10 (east)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>swamp/water/water_murky_beneath.vmt</code></td>
-				</tr>
-			</table>
+		
+		<!--Intro Block-->
+		<div class="block">
 			<p>
-				The VMT includes the line <code>"$basetexture" "swamp/water/water_murky"</code>. This base texture is 4 times larger than the normal-map texture, so the game scales up the normal-map accordingly. However, the <code>Water</code> shader does not actually render base textures, so the increased scale was most likely unintentional.
+				This is an info sheet about water materials in Team Fortress 2. A "material" is simply a list of properties and textures that a surface or volume can have. This page <em>only</em> covers materials that were made for TF2 and ignores the HL2 assets that also happen to be in the game.
+			</p><p>
+				Water materials always come in pairs: A <em>top</em> (or <em>surface</em>) material and a <em>bottom</em> (or <em>beneath</em>) material. The top material controls what the surface looks like when watching it from above. It's the material you actually use in Hammer. The bottom material controls what the water looks like once you are swimming inside of it. It should never be used in Hammer! At least for now, this page only covers the surface materials, but knowing which bottom material is used by which top material is still important.
+			</p><p>
+				TF2 water materials are mostly quite similar and can be grouped into the following 3 categories:
+				<br>
+				<table>
+					<tr>
+						<th class="regular">Regular Water</th>
+						<td><p>
+							Most water materials in TF2 fall into this category.
+							<br>The material uses the <code>Water</code> shader, has cube-map reflections on the surface, an underwater refraction effect, a thick colored fog, and an animated normal-map. A Proxy is used to move the normal-map around. However, this only affects the refractions and doesn't look like any coherent movement.
+						</p></td>
+					</tr><tr>
+						<th class="expensive">Expensive Water</th>
+						<td><p>
+							This category is rather rare as it requires more processing power to render.
+							<br>
+							On top of what "Regular Water" does, this material renders real-time reflections of the world <em>instead</em> of using a nearby cube-map. Proxies will affect both refractions and reflections, allowing the water to visually flow in a specific direction or pattern.
+							<br>
+							Water becomes expensive if it includes any parameter that affects reflections, such as <code>$ReflectTint</code> and <code>$ReflectAmount</code>.
+						</p></td>
+					</tr><tr>
+						<th class="cheap">Cheap Water</th>
+						<td><p>
+							Water in this category is the easiest one to render and is therefore quite popular for purely visual effects.
+							<br>
+							Unlike what "Regular Water" does, this material does not have any fog. The surface may not even be see-through and the shader may be replaced with <code>LightmappedGeneric</code>.
+							<br>
+							Water becomes cheap if it uses a shader other than <code>Water</code> or if either <code>$CompileKeepLight</code> or <code>$ForceCheap</code> is set to <code>1</code>.
+						</p></td>
+					</tr>
+				</table>
+			</p><p>
+				For more information about water in the Source Engine as a whole, read the VDC: <a href="https://developer.valvesoftware.com/wiki/Water" title="Water - Valve Developer Community">https://developer.valvesoftware.com/wiki/Water</a>
 			</p>
 		</div>
-	</div>
-
-	<hr>
-
-	<h3>swamp/water/water_swamp</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/swamp/water/water_swamp.png" title="swamp/water/water_swamp" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
+		
+		<!--Surface Block-->
+		<div class="block">
+			<h2 id="Surface Materials">Surface Materials</h2>
+			Here is the list of all water top materials that are included in TF2 by default.
+			
+			<hr>
+			
+			<h3>swamp/water/water_murky</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/swamp/water/water_murky.png" title="swamp/water/water_murky" width="200" height="200" alt="An in-game screenshot of the water with the number 170. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(35,32,20)"><span class="key">$FogColor:</span> {35&nbsp;32&nbsp;20}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 170</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.32</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.02&emsp;<span class="key">Angle:</span> 10 (east)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>swamp/water/water_murky_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>
+						The VMT includes the line <code>"$basetexture" "swamp/water/water_murky"</code>. This base texture is 4 times larger than the normal-map texture, so the game scales up the normal-map accordingly. However, the <code>Water</code> shader does not actually render base textures, so the increased scale was most likely unintentional.
+					</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>swamp/water/water_swamp</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/swamp/water/water_swamp.png" title="swamp/water/water_swamp" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(27,26,21)"><span class="key">$FogColor:</span> {27&nbsp;26&nbsp;21}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.06</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_2fort</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_2fort.png" title="water/water_2fort" width="200" height="200" alt="An in-game screenshot of the water with the number 400. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> -100&emsp;<span class="key">$FogEnd:</span> 400</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.32</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_2fort_dx80</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_2fort_dx80.png" title="water/water_2fort_dx80" width="200" height="200" alt="An in-game screenshot of the water with the number 400. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span> <span class="fallback">Used As Fallback</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> -100&emsp;<span class="key">$FogEnd:</span> 400</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.6</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_2fort_expensive</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_2fort_expensive.png" title="water/water_2fort_expensive" width="200" height="200" alt="An in-game screenshot of the water with the text 'Expensive' at the top, the text 'Flow' below with an arrow that circles back into itself next to it and the number 400 below all that. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="expensive">Expensive Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 400</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.32</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_2fort_skybox</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_2fort_skybox.png" title="water/water_2fort_skybox" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_skybox_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+					<p>This water is completely opaque.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_2fort_skybox_dx80</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_2fort_skybox_dx80.png" title="water/water_2fort_skybox_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>This water is completely opaque.</p>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_doublecross</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_doublecross.png" title="water/water_doublecross" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 300</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.12</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_hydro_cheap</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_hydro_cheap.png" title="water/water_hydro_cheap" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is transparent and there is no fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span></p>
+					<table>
+						<tr>
+							<th>Shader</th>
+							<td><code>LightMappedGeneric</code></td>
+						</tr><tr>
+							<th>Base Texture</th>
+							<td><code>water/water_hydro_base</code></td>
+						</tr><tr>
+							<th>Reflection Settings</th>
+							<td style="color:#fff;background:rgb(20%,20%,20%)"><span class="key">$EnvMapTint:</span> [0.2&nbsp;0.2&nbsp;0.2]</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_hydro_cheap_dx80</code></td>
+						</tr>
+					</table>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+					<p>The base texture does not tile, literally. It only appears near the origin of the map. The border pixels stretch out to infinity. This visually splits the map into 4 quadrants.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_hydro_cheap_dx80</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_hydro_cheap_dx80.png" title="water/water_hydro_cheap_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
+					<table>
+						<tr>
+							<th>Shader</th>
+							<td><code>LightMappedGeneric</code></td>
+						</tr><tr>
+							<th>Base Texture</th>
+							<td><code>water/water_hydro_base</code></td>
+						</tr><tr>
+							<th>Reflection Settings</th>
+							<td style="color:#fff;background:rgb(20%,20%,20%)"><span class="key">$EnvMapTint:</span> [0.2&nbsp;0.2&nbsp;0.2]</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>This water is completely opaque.</p>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+					<p>The base texture does not tile, literally. It only appears near the origin of the map. The border pixels stretch out to infinity. This visually splits the map into 4 quadrants.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_island_cheap</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_island_cheap.png" title="water/water_island_cheap" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top and the text 'Static' right below. The surface is translucent and there is no fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
+					<table>
+						<tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>This water is completely translucent.</p>
+					<p>This material uses a different normal-map than usual. It is not animated.</p>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_island_dx80</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_island_dx80.png" title="water/water_island_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Expensive' at the top, the text 'Flow' below with an arrow pointing down and to the left next to it and the number 400 below all that. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="expensive">Expensive Water</span></p>
+					<table>
+						<tr>
+							<th>Reflection Settings</th>
+							<td style="color:#000;background:rgb(208,157,155)"><span class="key">$ReflectTint:</span> {208&nbsp;157&nbsp;155}&emsp;<span class="key">$ReflectAmount:</span> 1</td>
+						</tr><tr>
+							<th>Fog Settings</th>
+							<td style="color:#000;background:rgb(148,197,195)"><span class="key">$FogColor:</span> {148&nbsp;197&nbsp;195}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 400</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td style="color:#000;background:rgb(144,255,240)"><span class="key">$RefractTint:</span> {144&nbsp;255&nbsp;240}&emsp;<span class="key">$RefractAmount:</span> 0.2</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.1&emsp;<span class="key">Angle:</span> 315 (south-west)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_island_cheap</code></td>
+						</tr>
+					</table>
+					<p>This material uses a different normal-map than usual. It is not animated.</p>
+					<p>The material also has a TextureTransform proxy. However, the TextureScroll proxy is placed right after, overwriting it.</p>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_moon_redbase</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_moon_redbase.png" title="water/water_moon_redbase" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(53,38,2)"><span class="key">$FogColor:</span> {53&nbsp;38&nbsp;2}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.2</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_well_dx80</code></td>
+						</tr>
+					</table>
+					<p>The colors of the bottom and fallback materials do not match the fog color of this material.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_powerhouse</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_powerhouse.png" title="water/water_powerhouse" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.12</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 170 (west)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_sawmill</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_sawmill.png" title="water/water_sawmill" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.12</td>
+						</tr><tr>
+							<th>TextureScroll Proxy</th>
+							<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_2fort_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_underworld</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_underworld.png" title="water/water_underworld" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(1,1,1)"><span class="key">$FogColor:</span> {1&nbsp;1&nbsp;1}</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_underworld_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+					<p>This water is completely opaque.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_underworld2</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_underworld2.png" title="water/water_underworld2" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
+				</div>
+				<div class="col rt">
+					<p><span class="cheap">Cheap Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(1,1,1)"><span class="key">$FogColor:</span> {1&nbsp;1&nbsp;1}</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_underworld_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+						</tr>
+					</table>
+					<p>This water is completely opaque.</p>
+					<p>The normal-map animates at 28 fps instead of the usual 30 fps.</p>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_well</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_well.png" title="water/water_well" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(24,38,53)"><span class="key">$FogColor:</span> {24&nbsp;38&nbsp;53}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td><span class="key">$RefractAmount:</span> 0.2</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr><tr>
+							<th>Fallback Materials</th>
+							<td><span class="key">&lt;dx90:</span> <code>water/water_well_dx80</code></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<h3>water/water_well_dx80</h2>
+			<div class="row">
+				<div class="col lf">
+					<img src="img/water-info-sheet/water/water_well_dx80.png" title="water/water_well_dx80" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
+				</div>
+				<div class="col rt">
+					<p><span class="regular">Regular Water</span> <span class="fallback">Used As Fallback</span></p>
+					<table>
+						<tr>
+							<th>Fog Settings</th>
+							<td style="color:#fff;background:rgb(24,38,53)"><span class="key">$FogColor:</span> {24&nbsp;38&nbsp;53}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
+						</tr><tr>
+							<th>Refraction Settings</th>
+							<td style="color:#000;background:rgb(184,191,208)"><span class="key">$RefractTint:</span> {184&nbsp;191&nbsp;208}&emsp;<span class="key">$RefractAmount:</span> 0.6</td>
+						</tr><tr>
+							<th>TextureTransform Proxy</th>
+							<td>repeating, sinusoidal motion</td>
+						</tr><tr>
+							<th>Bottom Material</th>
+							<td><code>water/water_well_beneath.vmt</code></td>
+						</tr>
+					</table>
+					<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
+				</div>
+			</div>
 		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(27,26,21)"><span class="key">$FogColor:</span> {27&nbsp;26&nbsp;21}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.06</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_2fort</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_2fort.png" title="water/water_2fort" width="200" height="200" alt="An in-game screenshot of the water with the number 400. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> -100&emsp;<span class="key">$FogEnd:</span> 400</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.32</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_2fort_dx80</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_2fort_dx80.png" title="water/water_2fort_dx80" width="200" height="200" alt="An in-game screenshot of the water with the number 400. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span> <span class="fallback">Used As Fallback</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> -100&emsp;<span class="key">$FogEnd:</span> 400</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.6</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr>
-			</table>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_2fort_expensive</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_2fort_expensive.png" title="water/water_2fort_expensive" width="200" height="200" alt="An in-game screenshot of the water with the text 'Expensive' at the top, the text 'Flow' below with an arrow that circles back into itself next to it and the number 400 below all that. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="expensive">Expensive Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 400</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.32</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_2fort_skybox</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_2fort_skybox.png" title="water/water_2fort_skybox" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_skybox_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-			<p>This water is completely opaque.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_2fort_skybox_dx80</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_2fort_skybox_dx80.png" title="water/water_2fort_skybox_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(51,43,13)"><span class="key">$FogColor:</span> {51&nbsp;43&nbsp;13}</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr>
-			</table>
-			<p>This water is completely opaque.</p>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_doublecross</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_doublecross.png" title="water/water_doublecross" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 300</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.12</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_hydro_cheap</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_hydro_cheap.png" title="water/water_hydro_cheap" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is transparent and there is no fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span></p>
-			<table>
-				<tr>
-					<th>Shader</th>
-					<td><code>LightMappedGeneric</code></td>
-				</tr><tr>
-					<th>Base Texture</th>
-					<td><code>water/water_hydro_base</code></td>
-				</tr><tr>
-					<th>Reflection Settings</th>
-					<td style="color:#fff;background:rgb(20%,20%,20%)"><span class="key">$EnvMapTint:</span> [0.2&nbsp;0.2&nbsp;0.2]</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_hydro_cheap_dx80</code></td>
-				</tr>
-			</table>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-			<p>The base texture does not tile, literally. It only appears near the origin of the map. The border pixels stretch out to infinity. This visually splits the map into 4 quadrants.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_hydro_cheap_dx80</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_hydro_cheap_dx80.png" title="water/water_hydro_cheap_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
-			<table>
-				<tr>
-					<th>Shader</th>
-					<td><code>LightMappedGeneric</code></td>
-				</tr><tr>
-					<th>Base Texture</th>
-					<td><code>water/water_hydro_base</code></td>
-				</tr><tr>
-					<th>Reflection Settings</th>
-					<td style="color:#fff;background:rgb(20%,20%,20%)"><span class="key">$EnvMapTint:</span> [0.2&nbsp;0.2&nbsp;0.2]</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr>
-			</table>
-			<p>This water is completely opaque.</p>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-			<p>The base texture does not tile, literally. It only appears near the origin of the map. The border pixels stretch out to infinity. This visually splits the map into 4 quadrants.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_island_cheap</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_island_cheap.png" title="water/water_island_cheap" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top and the text 'Static' right below. The surface is translucent and there is no fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span> <span class="fallback">Used As Fallback</span></p>
-			<table>
-				<tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr>
-			</table>
-			<p>This water is completely translucent.</p>
-			<p>This material uses a different normal-map than usual. It is not animated.</p>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_island_dx80</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_island_dx80.png" title="water/water_island_dx80" width="200" height="200" alt="An in-game screenshot of the water with the text 'Expensive' at the top, the text 'Flow' below with an arrow pointing down and to the left next to it and the number 400 below all that. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="expensive">Expensive Water</span></p>
-			<table>
-				<tr>
-					<th>Reflection Settings</th>
-					<td style="color:#000;background:rgb(208,157,155)"><span class="key">$ReflectTint:</span> {208&nbsp;157&nbsp;155}&emsp;<span class="key">$ReflectAmount:</span> 1</td>
-				</tr><tr>
-					<th>Fog Settings</th>
-					<td style="color:#000;background:rgb(148,197,195)"><span class="key">$FogColor:</span> {148&nbsp;197&nbsp;195}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 400</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td style="color:#000;background:rgb(144,255,240)"><span class="key">$RefractTint:</span> {144&nbsp;255&nbsp;240}&emsp;<span class="key">$RefractAmount:</span> 0.2</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.1&emsp;<span class="key">Angle:</span> 315 (south-west)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_island_cheap</code></td>
-				</tr>
-			</table>
-			<p>This material uses a different normal-map than usual. It is not animated.</p>
-			<p>The material also has a TextureTransform proxy. However, the TextureScroll proxy is placed right after, overwriting it.</p>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_moon_redbase</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_moon_redbase.png" title="water/water_moon_redbase" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(53,38,2)"><span class="key">$FogColor:</span> {53&nbsp;38&nbsp;2}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.2</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_well_dx80</code></td>
-				</tr>
-			</table>
-			<p>The colors of the bottom and fallback materials do not match the fog color of this material.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_powerhouse</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_powerhouse.png" title="water/water_powerhouse" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.12</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 170 (west)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_sawmill</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_sawmill.png" title="water/water_sawmill" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(57,54,44)"><span class="key">$FogColor:</span> {57&nbsp;54&nbsp;44}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.12</td>
-				</tr><tr>
-					<th>TextureScroll Proxy</th>
-					<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_2fort_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_underworld</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_underworld.png" title="water/water_underworld" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(1,1,1)"><span class="key">$FogColor:</span> {1&nbsp;1&nbsp;1}</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_underworld_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-			<p>This water is completely opaque.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_underworld2</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_underworld2.png" title="water/water_underworld2" width="200" height="200" alt="An in-game screenshot of the water with the text 'Cheap' at the top. The surface is opaque.">
-		</div>
-		<div class="col rt">
-			<p><span class="cheap">Cheap Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(1,1,1)"><span class="key">$FogColor:</span> {1&nbsp;1&nbsp;1}</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_underworld_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
-				</tr>
-			</table>
-			<p>This water is completely opaque.</p>
-			<p>The normal-map animates at 28 fps instead of the usual 30 fps.</p>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_well</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_well.png" title="water/water_well" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(24,38,53)"><span class="key">$FogColor:</span> {24&nbsp;38&nbsp;53}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td><span class="key">$RefractAmount:</span> 0.2</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr><tr>
-					<th>Fallback Materials</th>
-					<td><span class="key">&lt;dx90:</span> <code>water/water_well_dx80</code></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-	<h3>water/water_well_dx80</h2>
-	<div class="row">
-		<div class="col lf">
-			<img src="img/water/water_well_dx80.png" title="water/water_well_dx80" width="200" height="200" alt="An in-game screenshot of the water with the number 300. The number is pointing at the fog.">
-		</div>
-		<div class="col rt">
-			<p><span class="regular">Regular Water</span> <span class="fallback">Used As Fallback</span></p>
-			<table>
-				<tr>
-					<th>Fog Settings</th>
-					<td style="color:#fff;background:rgb(24,38,53)"><span class="key">$FogColor:</span> {24&nbsp;38&nbsp;53}&emsp;<span class="key">$FogStart:</span> 1&emsp;<span class="key">$FogEnd:</span> 300</td>
-				</tr><tr>
-					<th>Refraction Settings</th>
-					<td style="color:#000;background:rgb(184,191,208)"><span class="key">$RefractTint:</span> {184&nbsp;191&nbsp;208}&emsp;<span class="key">$RefractAmount:</span> 0.6</td>
-				</tr><tr>
-					<th>TextureTransform Proxy</th>
-					<td>repeating, sinusoidal motion</td>
-				</tr><tr>
-					<th>Bottom Material</th>
-					<td><code>water/water_well_beneath.vmt</code></td>
-				</tr>
-			</table>
-			<p>The normal-map is DXT1 compressed. This means it has blocky artifacts but takes up less VRAM.</p>
-		</div>
-	</div>
-</div>
-
-</body>
+	</body>
 </html>
