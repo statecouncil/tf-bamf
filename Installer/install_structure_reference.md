@@ -60,23 +60,23 @@ blablabla license.txt
 see [ ] vs. [x] for which features should be enabled/disabled by default. The default selection tries to stay as close as possible to the predecessor pack by A Boojum Snark.
 
 
-1 [x] - **Hammer Stuff**
-	a [x] - FGD
-	b [ ] - "Expert Compile" sequences for Propper and Radshadowman
-	c [ ] - Advanced CompilePal sequences
-2 [ ] - **Tools**
-	a [ ] - Radshadowman
-	b [ ] - Propper
-3 [ ] - **Assets**
-	a [x] - FGD Assets (VPK)
-	b [x] - Material Tag Overhaul (VPK)
-	c [ ] - Extra Materials (Loose Files)
-	d [ ] - Surfaceprop Overhaul (Loose Files)
-4 [x] - **Prefabs**
-5 [x] - **Gamemode Prefabs**
-6 [ ] - **Example VMFs**
-	a [x] - Valve-owned Maps
-	b [ ] - Community-owned Maps
+1 [x] - **Hammer Stuff**  
+	a [x] - FGD  
+	b [ ] - "Expert Compile" sequences for Propper and Radshadowman  
+	c [ ] - Advanced CompilePal sequences  
+2 [ ] - **Tools**  
+	a [ ] - Radshadowman  
+	b [ ] - Propper  
+3 [ ] - **Assets**  
+	a [x] - FGD Assets (VPK)  
+	b [x] - Material Tag Overhaul (VPK)  
+	c [ ] - Extra Materials (Loose Files)  
+	d [ ] - Surfaceprop Overhaul (Loose Files)  
+4 [x] - **Prefabs**  
+5 [x] - **Gamemode Prefabs**  
+6 [ ] - **Example VMFs**  
+	a [x] - Valve-owned Maps  
+	b [ ] - Community-owned Maps  
 
 ##########################################################################
 
