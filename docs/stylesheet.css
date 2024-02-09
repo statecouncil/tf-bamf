@@ -15,6 +15,7 @@ html{
 
 /* Text */
 body {
+	color: white;
 	background: #1E1C1C;
 	max-width: 1152px;
 	width: calc(100% - 40px);
