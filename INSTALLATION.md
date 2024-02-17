@@ -10,7 +10,7 @@ Each module can be installed individually, unless otherwise noted.
 
 1. Drag the VMFs anywhere you want. Hammer can read them from anywhere.
 
-Note that the maps in the `Community Maps` directory will feature ERROR models and textures. If you don't want to see those, you will need to download the asset packs separately from the respective authors. Assets and VMFs are owned by their creators.
+Note that the maps in the `Community Maps` directory will feature ERROR models and textures. If you don't want to see those, you will need to download the asset packs separately from the respective authors. Assets and VMFs are owned by their creators (which is why they're not included in this pack).
 
 ## Prefabs
 
@@ -20,7 +20,7 @@ Note that the maps in the `Community Maps` directory will feature ERROR models a
 4. Select the prefab you want to place in the **Objects** dropdown menu just below.
 5. Place the prefab by clicking into the 3D Viewport, just like you would when placing a point entity. Move and rotate as usual.
 
-All prefabs are grouped to make placement easier. Stay in Group Select mode to move the whole thing at once and press **CTRL+B** to align to the grid.
+All prefabs are grouped to make placement easier. Stay in Group Select mode to move the whole thing at once and press **CTRL+B** to align to the grid, if necessary. Most prefabs have a skip brush surrounding them for that purpose, which can be deleted once the prefab is placed correctly.
 
 ## VPKs
 
@@ -30,16 +30,16 @@ The VPKs or Folders should be pasted into `Team Fortress 2/tf/custom`.
 
 See `README.md` as well as their respective readme files for information on what they contain.
 
-**I recommend that you use the VPK version of each pack EXCEPT the Extra Assets pack, which is intended to be packed into the map.**
+**I recommend that you use the VPK version of each pack EXCEPT the Extra Materials pack, which is intended to be packed into the map.**
 
 ## FGD, Radshadowman and Propper support
 
 *Requires `VPKs/BAMF FGD Assets`.*
 
 1. Paste the content of the `FGD` directory into `Team Fortress 2/bin`. Do NOT paste it into `Team Fortress 2/tf/bin`.
-2. In Hammer, open *Tools -> Options...*, remove the existing Game Configurations, then add `tf-brokk.fgd` as the only new one.
+2. In Hammer, open *Tools -> Options...*, remove all existing Game Configurations, then add `tf-brokk.fgd` as the **only** new one.
 3. *(Optional)* Open `Team Fortress 2/tf/bin/tf-bamf.fgd` in the text editor of your choice and adjust the options at the start of the document. This should not be necessary for most users.
 
 See `FGD/radshadowman/RadShadowMan_readme.txt` for more information on how to enable textureshadows on all static props.
 
-## Coming soon: Compilepal presets
+## This pack is still in alpha. Please report any issues to Brokk on Discord or make an issue on GitHub. Thank you for your support!
