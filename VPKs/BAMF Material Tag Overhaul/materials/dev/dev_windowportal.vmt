@@ -1,4 +1,6 @@
 "WindowImposter"
 {
 	"$envmap" "env_cubemap"
+	
+	"%keywords" "tf,dev"
 }
