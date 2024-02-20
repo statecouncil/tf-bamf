@@ -29,3 +29,8 @@ XPStyle on
 InstallDir "$PROGRAMFILES/"
 
 !include "MUI.nsh"
+
+
+Section
+MessageBox MB_OK "Okay, let's start this from the beginning."
+SectionEnd
