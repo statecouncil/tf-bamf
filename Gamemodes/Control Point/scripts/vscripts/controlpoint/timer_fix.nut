@@ -1,5 +1,6 @@
 // Negative Time Fix (version 1.0)
 // by Sarexicus, for CP_Sulfur
+// Published with permission as part of BAMF
 
 // INFO: Adding negative time can bypass the win condition on a KoTH map.
 // This should bypass that by reading the timer value directly.
