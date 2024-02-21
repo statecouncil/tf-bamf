@@ -1,0 +1,10 @@
+Objective:
+RED team wins by defending Control Point E until the time runs out. BLU must capture Control Point E at any time to win the game. Capturing the surrounding points will make taking E easier:
+
+A) Does something.
+B) Does something.
+C) Does something.
+D) Does something.
+
+Other Notes:
+Control Points cannot be captured while they are locked.

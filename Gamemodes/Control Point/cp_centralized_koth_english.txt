@@ -1,0 +1,5 @@
+Objective:
+RED team wins by defending the last Control Point until their timer runs out. BLU must capture the last Control Point to start decreasing their timer and win. Capturing the surrounding points will decrease BLU's timer and increase RED's timer.
+
+Other Notes:
+Control Points cannot be captured while they are locked.
