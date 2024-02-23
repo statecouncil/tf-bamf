@@ -1,0 +1,6 @@
+VertexLitGeneric
+{
+	$basetexture "models/editor/overlay_helper"
+	$translucent 1
+	$model 1
+}
