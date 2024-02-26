@@ -1,5 +1,5 @@
 # THIS HAS TO BE CUSTOMIZED FOR A FUNCTIONING BUILD:
-!define REPO_LOCATION "D:\GitHub\tf-bamf" # Should be global, i.e. "C:\i_store_my_code_projects_here\tf-bamf"
+!define REPO_LOCATION "D:\Code\tf-bamf" # Should be global, i.e. "C:\i_store_my_code_projects_here\tf-bamf"
 
 # THIS CAN BE CUSTOMIZED TO PREFERENCE
 !define COMPILE_OUTPUT "${REPO_LOCATION}\Installer" # Where the compiled installer.exe is to be written, REPO_LOCATION by default
@@ -8,8 +8,8 @@
 !define APP_NAME "Brokk's Assorted Mapping Fixes"
 !define COMP_NAME "Brokk"
 !define WEB_SITE "https://github.com/statecouncil/tf-bamf"
-!define VERSION "0.3.2.0"
-!define COPYRIGHT "lco-sp � 2024"
+!define VERSION "0.4.0.0"
+!define COPYRIGHT "lco-sp © 2024"
 !define DESCRIPTION "Asset Pack"
 !define LICENSE_TXT "${REPO_LOCATION}\LICENSE.txt"
 !define INSTALLER_NAME "${COMPILE_OUTPUT}\tf_bamf_installer_${VERSION}.exe"
@@ -46,10 +46,10 @@ InstallDir "$PROGRAMFILES/"
 
 !insertmacro MUI_PAGE_DIRECTORY
 
-!ifdef REG_START_MENU
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Brokk's Assorted Mapping Fixes"
-!insertmacro MUI_PAGE_STARTMENU Application $SM_Folder
-!endif
+#!ifdef REG_START_MENU
+#!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Brokk's Assorted Mapping Fixes"
+#!insertmacro MUI_PAGE_STARTMENU Application $SM_Folder
+#!endif
 
 !insertmacro MUI_PAGE_INSTFILES
 
@@ -94,31 +94,24 @@ SectionEnd
 
 Section -Icons_Reg
 SetOutPath "$INSTDIR"
-WriteUninstaller "$INSTDIR\uninstall_tf_bamf.exe"
+WriteUninstaller "$INSTDIR\tf_bamf\uninstall_tf_bamf.exe"
 SectionEnd
 
 Section Uninstall
 ${INSTALL_TYPE}
-Delete "$INSTDIR\tf\custom\_readme*"
-Delete "$INSTDIR\tf\custom\BAMF*"
-Delete "$INSTDIR\bin\Prefabs\readme.txt"
-Delete "$INSTDIR\bin\tf-brokk*"
-Delete "$INSTDIR\bin\hammerplusplus\hammerplusplus_sequences.cfg"
-RmDir /r "$INSTDIR\bin\spudlord-settings"
-RmDir /r "$INSTDIR\tf_bamf"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Doors"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Gameplay Elements"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Lights"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Map Elements"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Payload Tracks"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Pickups"
-RmDir /r "$INSTDIR\bin\Prefabs\BAMF - Soundscapes"
-RmDir "$INSTDIR\bin\Prefabs"
-RmDir /r "$INSTDIR\bin\Radshadowman"
-RmDir /r "$INSTDIR\tf\custom\BAMF Extra Materials"
-RmDir /r "$INSTDIR\tf\custom\BAMF FGD Assets"
-RmDir /r "$INSTDIR\tf\custom\BAMF Material Tag Overhaul"
-RmDir /r "$INSTDIR\tf\custom\BAMF Surfaceprops"
- 
-Delete "$INSTDIR\uninstall_tf_bamf.exe"
+Delete "$INSTDIR\..\tf\custom\_readme-extra-materials.txt"
+Delete "$INSTDIR\..\tf\custom\_readme-fgd-assets.txt"
+Delete "$INSTDIR\..\tf\custom\_readme-surfaceprops.txt"
+Delete "$INSTDIR\..\tf\custom\_readme-tag-overhaul.txt"
+Delete "$INSTDIR\..\tf\custom\BAMF*"
+RmDir /r "$INSTDIR\..\tf\custom\BAMF Extra Materials"
+RmDir /r "$INSTDIR\..\tf\custom\BAMF FGD Assets"
+RmDir /r "$INSTDIR\..\tf\custom\BAMF Material Tag Overhaul"
+RmDir /r "$INSTDIR\..\tf\custom\BAMF Surfaceprops"
+Delete "$INSTDIR\..\bin\tf-brokk*"
+RmDir /r "$INSTDIR\..\bin\spudlord-settings"
+RmDir "$INSTDIR\..\bin\Prefabs"
+RmDir /r "$INSTDIR\..\bin\Radshadowman"
+Delete "$INSTDIR\..\tf_bamf\uninstall_tf_bamf.exe"
+RmDir /r "$INSTDIR\..\tf_bamf"
 SectionEnd
