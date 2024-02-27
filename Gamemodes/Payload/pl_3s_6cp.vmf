@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9540"
-	"mapversion" "27"
+	"mapversion" "30"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "27"
+	"mapversion" "30"
 	"classname" "worldspawn"
 	"coldworld" "0"
 	"detailmaterial" "detail/detailsprites_2fort"
@@ -1916,10 +1916,10 @@ world
 	}
 	group
 	{
-		"id" "1796"
+		"id" "2188"
 		editor
 		{
-			"color" "104 229 0"
+			"color" "190 223 0"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -2082,7 +2082,6 @@ entity
 {
 	"id" "20"
 	"classname" "phys_constraint"
-	"angles" "0 0 0"
 	"attach1" "minecart_tracktrain"
 	"attach2" "minecart_physprop"
 	"spawnflags" "1"
@@ -2118,9 +2117,9 @@ entity
 	connections
 	{
 		"OnNumCappersChanged" "minecart_watcher1SetNumTrainCappers0-1"
-		"OnNumCappersChanged" "train_remapInValue0-1"
 		"OnNumCappersChanged" "minecart_watcher2SetNumTrainCappers0-1"
 		"OnNumCappersChanged" "minecart_watcher3SetNumTrainCappers0-1"
+		"OnNumCappersChanged" "light_caseSetValueCompare0-1"
 	}
 	solid
 	{
@@ -2481,6 +2480,194 @@ entity
 		"visgroupautoshown" "1"
 		"comments" "Train MUST be oriented in Hammer facing 0 degrees (east/right) in order to work properly."
 		"logicalpos" "[0 4500]"
+	}
+}
+entity
+{
+	"id" "114"
+	"classname" "prop_dynamic"
+	"angles" "0 0 0"
+	"disableshadows" "1"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props_trainyard/track_midcap.mdl"
+	"modelscale" "1.0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"skin" "0"
+	"solid" "0"
+	"targetname" "cp_oneA_prop"
+	"origin" "-992 0 0"
+	editor
+	{
+		"color" "190 195 0"
+		"groupid" "1740"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8000]"
+	}
+}
+entity
+{
+	"id" "100"
+	"classname" "team_control_point"
+	"angles" "0 0 0"
+	"point_default_owner" "2"
+	"point_printname" "#Goldrush_cap_1_A"
+	"point_warn_on_cap" "2"
+	"point_warn_sound" "ControlPoint.CaptureWarn"
+	"spawnflags" "12"
+	"targetname" "cp_oneA"
+	"team_bodygroup_0" "3"
+	"team_bodygroup_2" "1"
+	"team_bodygroup_3" "1"
+	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
+	"team_icon_2" "sprites/obj_icons/icon_obj_red"
+	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
+	"team_model_0" "models/effects/cappoint_hologram.mdl"
+	"team_model_2" "models/effects/cappoint_hologram.mdl"
+	"team_model_3" "models/effects/cappoint_hologram.mdl"
+	"team_previouspoint_3_0" "cp_oneA"
+	connections
+	{
+		"OnCapTeam2" "cap_areaSetControlPointcp_oneB01"
+	}
+	"origin" "-992 0 8"
+	editor
+	{
+		"color" "190 195 0"
+		"groupid" "1740"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 15000]"
+	}
+}
+entity
+{
+	"id" "150"
+	"classname" "prop_dynamic"
+	"angles" "0 0 0"
+	"disableshadows" "1"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props_trainyard/track_midcap.mdl"
+	"modelscale" "1.0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"skin" "0"
+	"solid" "0"
+	"targetname" "cp_twoA_prop"
+	"origin" "32 0 0"
+	editor
+	{
+		"color" "160 253 0"
+		"groupid" "1747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8000]"
+	}
+}
+entity
+{
+	"id" "154"
+	"classname" "team_control_point"
+	"angles" "0 0 0"
+	"point_default_owner" "2"
+	"point_index" "2"
+	"point_printname" "#Goldrush_cap_2_A"
+	"point_warn_on_cap" "2"
+	"point_warn_sound" "ControlPoint.CaptureWarn"
+	"spawnflags" "12"
+	"targetname" "cp_twoA"
+	"team_bodygroup_0" "3"
+	"team_bodygroup_2" "1"
+	"team_bodygroup_3" "1"
+	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
+	"team_icon_2" "sprites/obj_icons/icon_obj_red"
+	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
+	"team_model_0" "models/effects/cappoint_hologram.mdl"
+	"team_model_2" "models/effects/cappoint_hologram.mdl"
+	"team_model_3" "models/effects/cappoint_hologram.mdl"
+	"team_previouspoint_3_0" "cp_twoA"
+	connections
+	{
+		"OnCapTeam2" "cap_areaSetControlPointcp_twoB01"
+	}
+	"origin" "32 0 8"
+	editor
+	{
+		"color" "160 253 0"
+		"groupid" "1747"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 15000]"
+	}
+}
+entity
+{
+	"id" "182"
+	"classname" "prop_dynamic"
+	"angles" "0 0 0"
+	"disableshadows" "1"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props_trainyard/track_midcap.mdl"
+	"modelscale" "1.0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"skin" "0"
+	"solid" "0"
+	"targetname" "cp_threeA_prop"
+	"origin" "1088 0 0"
+	editor
+	{
+		"color" "194 171 0"
+		"groupid" "1754"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8000]"
+	}
+}
+entity
+{
+	"id" "172"
+	"classname" "team_control_point"
+	"angles" "0 0 0"
+	"point_default_owner" "2"
+	"point_index" "4"
+	"point_printname" "#Goldrush_cap_3_A"
+	"point_warn_on_cap" "2"
+	"point_warn_sound" "ControlPoint.CaptureWarn"
+	"spawnflags" "12"
+	"targetname" "cp_threeA"
+	"team_bodygroup_0" "3"
+	"team_bodygroup_2" "1"
+	"team_bodygroup_3" "1"
+	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
+	"team_icon_2" "sprites/obj_icons/icon_obj_red"
+	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
+	"team_model_0" "models/effects/cappoint_hologram.mdl"
+	"team_model_2" "models/effects/cappoint_hologram.mdl"
+	"team_model_3" "models/effects/cappoint_hologram.mdl"
+	"team_previouspoint_3_0" "cp_threeA"
+	connections
+	{
+		"OnCapTeam2" "cap_areaSetControlPointcp_threeB01"
+	}
+	"origin" "1088 0 8"
+	editor
+	{
+		"color" "194 171 0"
+		"groupid" "1754"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 15000]"
 	}
 }
 entity
@@ -3120,6 +3307,7 @@ entity
 	"angles" "0 270 0"
 	"round_bluespawn" "minecart_round_2"
 	"round_redspawn" "minecart_round_1"
+	"spawnflags" "511"
 	"TeamNum" "0"
 	"origin" "-480 192 16"
 	editor
@@ -3303,6 +3491,7 @@ entity
 	"angles" "0 270 0"
 	"round_bluespawn" "minecart_round_3"
 	"round_redspawn" "minecart_round_2"
+	"spawnflags" "511"
 	"TeamNum" "0"
 	"origin" "544 191.75 16"
 	editor
@@ -3486,6 +3675,7 @@ entity
 	"classname" "info_player_teamspawn"
 	"angles" "0 0 0"
 	"round_bluespawn" "minecart_round_1"
+	"spawnflags" "511"
 	"TeamNum" "0"
 	"origin" "-1472 0 16"
 	editor
@@ -3503,6 +3693,7 @@ entity
 	"classname" "info_player_teamspawn"
 	"angles" "0 180 0"
 	"round_redspawn" "minecart_round_3"
+	"spawnflags" "511"
 	"TeamNum" "0"
 	"origin" "1216 128 16"
 	editor
@@ -4469,190 +4660,24 @@ entity
 }
 entity
 {
-	"id" "114"
-	"classname" "prop_dynamic"
-	"angles" "0 0 0"
-	"disableshadows" "1"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props_trainyard/track_midcap.mdl"
-	"modelscale" "1.0"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "0"
-	"targetname" "cp_oneA_prop"
-	"origin" "-992 0 0"
-	editor
-	{
-		"color" "190 195 0"
-		"groupid" "1740"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
-	}
-}
-entity
-{
-	"id" "100"
-	"classname" "team_control_point"
-	"angles" "0 0 0"
-	"point_default_owner" "2"
-	"point_printname" "#Goldrush_cap_1_A"
-	"point_warn_on_cap" "2"
-	"point_warn_sound" "ControlPoint.CaptureWarn"
-	"spawnflags" "12"
-	"targetname" "cp_oneA"
-	"team_bodygroup_0" "3"
-	"team_bodygroup_2" "1"
-	"team_bodygroup_3" "1"
-	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
-	"team_icon_2" "sprites/obj_icons/icon_obj_red"
-	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
-	"team_model_0" "models/effects/cappoint_hologram.mdl"
-	"team_model_2" "models/effects/cappoint_hologram.mdl"
-	"team_model_3" "models/effects/cappoint_hologram.mdl"
-	"team_previouspoint_3_0" "cp_oneA"
+	"id" "2105"
+	"classname" "logic_compare"
+	"CompareValue" "0"
+	"InitialValue" "0"
+	"targetname" "light_case"
 	connections
 	{
-		"OnCapTeam2" "cap_areaSetControlPointcp_oneB01"
+		"OnNotEqualTo" "cart_particlesStart0-1"
+		"OnEqualTo" "cart_particlesStop0-1"
 	}
-	"origin" "-992 0 8"
+	"origin" "-1232 128 160"
 	editor
 	{
-		"color" "190 195 0"
-		"groupid" "1740"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
-		"logicalpos" "[0 15000]"
-	}
-}
-entity
-{
-	"id" "150"
-	"classname" "prop_dynamic"
-	"angles" "0 0 0"
-	"disableshadows" "1"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props_trainyard/track_midcap.mdl"
-	"modelscale" "1.0"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "0"
-	"targetname" "cp_twoA_prop"
-	"origin" "32 0 0"
-	editor
-	{
-		"color" "160 253 0"
-		"groupid" "1747"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
-	}
-}
-entity
-{
-	"id" "154"
-	"classname" "team_control_point"
-	"angles" "0 0 0"
-	"point_default_owner" "2"
-	"point_index" "2"
-	"point_printname" "#Goldrush_cap_2_A"
-	"point_warn_on_cap" "2"
-	"point_warn_sound" "ControlPoint.CaptureWarn"
-	"spawnflags" "12"
-	"targetname" "cp_twoA"
-	"team_bodygroup_0" "3"
-	"team_bodygroup_2" "1"
-	"team_bodygroup_3" "1"
-	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
-	"team_icon_2" "sprites/obj_icons/icon_obj_red"
-	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
-	"team_model_0" "models/effects/cappoint_hologram.mdl"
-	"team_model_2" "models/effects/cappoint_hologram.mdl"
-	"team_model_3" "models/effects/cappoint_hologram.mdl"
-	"team_previouspoint_3_0" "cp_twoA"
-	connections
-	{
-		"OnCapTeam2" "cap_areaSetControlPointcp_twoB01"
-	}
-	"origin" "32 0 8"
-	editor
-	{
-		"color" "160 253 0"
-		"groupid" "1747"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 15000]"
-	}
-}
-entity
-{
-	"id" "182"
-	"classname" "prop_dynamic"
-	"angles" "0 0 0"
-	"disableshadows" "1"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props_trainyard/track_midcap.mdl"
-	"modelscale" "1.0"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "0"
-	"targetname" "cp_threeA_prop"
-	"origin" "1088 0 0"
-	editor
-	{
-		"color" "194 171 0"
-		"groupid" "1754"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
-	}
-}
-entity
-{
-	"id" "172"
-	"classname" "team_control_point"
-	"angles" "0 0 0"
-	"point_default_owner" "2"
-	"point_index" "4"
-	"point_printname" "#Goldrush_cap_3_A"
-	"point_warn_on_cap" "2"
-	"point_warn_sound" "ControlPoint.CaptureWarn"
-	"spawnflags" "12"
-	"targetname" "cp_threeA"
-	"team_bodygroup_0" "3"
-	"team_bodygroup_2" "1"
-	"team_bodygroup_3" "1"
-	"team_icon_0" "sprites/obj_icons/icon_obj_neutral"
-	"team_icon_2" "sprites/obj_icons/icon_obj_red"
-	"team_icon_3" "sprites/obj_icons/icon_obj_blu"
-	"team_model_0" "models/effects/cappoint_hologram.mdl"
-	"team_model_2" "models/effects/cappoint_hologram.mdl"
-	"team_model_3" "models/effects/cappoint_hologram.mdl"
-	"team_previouspoint_3_0" "cp_threeA"
-	connections
-	{
-		"OnCapTeam2" "cap_areaSetControlPointcp_threeB01"
-	}
-	"origin" "1088 0 8"
-	editor
-	{
-		"color" "194 171 0"
-		"groupid" "1754"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 15000]"
+		"logicalpos" "[3500 -5768]"
 	}
 }
 entity
@@ -4664,8 +4689,8 @@ entity
 	"origin" "-1248 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 0]"
@@ -4688,8 +4713,8 @@ entity
 	"origin" "-1248 128 160"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "You only need one logic_auto. If you already have one copy it's outputs here."
@@ -4713,8 +4738,8 @@ entity
 	"origin" "-1248 128 128"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 14500]"
@@ -4741,8 +4766,8 @@ entity
 	"origin" "-1248 128 64"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Timer length and increases upon point capture are starting places. Adjust them to your map accordingly."
@@ -4760,8 +4785,8 @@ entity
 	"origin" "-1248 128 48"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -15768]"
@@ -4789,8 +4814,8 @@ entity
 	"origin" "-1264 128 112"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 7500]"
@@ -4806,8 +4831,8 @@ entity
 	"origin" "-1200 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "This is used so only the cart prop will activate the final capture and explosion."
@@ -4824,8 +4849,8 @@ entity
 	"origin" "-1184 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "This is used to prevent players from being hurt by the cart."
@@ -4842,8 +4867,8 @@ entity
 	"origin" "-1168 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use this filter for any entity that should be usable by the owner of the Second CP of the First Stage. (spawn door triggers, etc)"
@@ -4860,8 +4885,8 @@ entity
 	"origin" "-1152 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use this filter for any entity that should be usable by the owner of the Second CP of the Second Stage. (spawn door triggers, etc)"
@@ -4891,8 +4916,8 @@ entity
 	"origin" "-1248 128 80"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use outputs here to enable props/doors for confining players to Stage 3 and disable props/doors for confing players to Stage 2."
@@ -4920,8 +4945,8 @@ entity
 	"origin" "-1248 128 96"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use outputs here to enable props/doors for confining players to Stage 2 and disable props/doors for confing players to Stage 1."
@@ -4939,8 +4964,8 @@ entity
 	"origin" "-1248 128 112"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 15500]"
@@ -4969,8 +4994,8 @@ entity
 	"origin" "-1264 128 96"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 7500]"
@@ -4999,8 +5024,8 @@ entity
 	"origin" "-1264 128 80"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 7500]"
@@ -5020,8 +5045,8 @@ entity
 	"origin" "-1264 128 128"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 5000]"
@@ -5036,8 +5061,8 @@ entity
 	"origin" "-1232 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use these to restrict team access on things such as spawn doors. Unrelated to the game type logic."
@@ -5053,74 +5078,12 @@ entity
 	"origin" "-1264 128 144"
 	editor
 	{
-		"color" "104 229 0"
-		"groupid" "1796"
+		"color" "190 223 0"
+		"groupid" "2188"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Use these to restrict team access on things such as spawn doors. Unrelated to the game type logic."
 		"logicalpos" "[0 1500]"
-	}
-}
-entity
-{
-	"id" "813"
-	"classname" "logic_case"
-	"Case01" "0"
-	"Case02" "1"
-	"Case03" "2"
-	"Case04" "3"
-	"targetname" "train_case"
-	connections
-	{
-		"OnCase01" "minecart_tracktrainSetSpeedDirAccel00-1"
-		"OnCase02" "minecart_tracktrainSetSpeedDirAccel0.550-1"
-		"OnCase03" "minecart_tracktrainSetSpeedDirAccel0.770-1"
-		"OnCase04" "minecart_tracktrainSetSpeedDirAccel1.00-1"
-		"OnCase01" "minecart_physpropsparksStopSpark0-1"
-		"OnCase01" "minecart_physpropsparksStopSpark0-1"
-		"OnCase02" "minecart_physpropsparksStopSpark0-1"
-		"OnCase02" "minecart_physpropsparksStopSpark0-1"
-		"OnCase03" "minecart_physpropsparksStopSpark0-1"
-		"OnCase03" "minecart_physpropsparksStopSpark0-1"
-		"OnCase04" "minecart_physpropsparksStopSpark0-1"
-		"OnCase04" "minecart_physpropsparksStopSpark0-1"
-		"OnCase01" "cart_particlesStop0-1"
-		"OnCase02" "cart_particlesStart0-1"
-		"OnCase03" "cart_particlesStart0-1"
-		"OnCase04" "cart_particlesStart0-1"
-	}
-	"origin" "-1232 128 160"
-	editor
-	{
-		"color" "104 229 0"
-		"groupid" "1796"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[3500 -5768]"
-	}
-}
-entity
-{
-	"id" "815"
-	"classname" "math_remap"
-	"in1" "0"
-	"in2" "3"
-	"out1" "0"
-	"out2" "3"
-	"spawnflags" "2"
-	"targetname" "train_remap"
-	connections
-	{
-		"OutValue" "train_caseInValue0-1"
-	}
-	"origin" "-1264 128 160"
-	editor
-	{
-		"color" "104 229 0"
-		"groupid" "1796"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[3500 -6268]"
 	}
 }
 cameras
