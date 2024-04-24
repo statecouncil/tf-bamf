@@ -1,0 +1,16 @@
+{
+  "Name": "VRAD2",
+  "Path": "$vrad$",
+  "Arguments": "",
+  "Order": 3.1,
+  "DoRun": true,
+  "ReadOutput": true,
+  "Description": "Generates static lighting.",
+  "Warning": "",
+  "PresetDefault": false,
+  "CheckExitCode": false,
+  "BasisString": " -game $game$ $vmfFile$",
+  "SupportsBSP": false,
+  "IncompatibleGames": null,
+  "CompatibleGames": null
+}

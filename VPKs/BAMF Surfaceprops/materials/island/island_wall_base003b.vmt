@@ -1,8 +1,0 @@
-"LightmappedGeneric"
-{
-	"$basetexture" "island/island_wall_base003b"
-	"$bumpmap" "island/island_wall_base003_normal"
-	"%keywords" "tf"
-//	"$nocull" 1
-	"$surfaceprop" "Wood_Panel"
-}

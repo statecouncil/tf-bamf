@@ -1,0 +1,8 @@
+ -ldr,
+ -bounce,128
+ -final,
+ -extrasky,10
+ -StaticPropLighting,
+ -StaticPropPolys,
+ -TextureShadows,
+ -verbose,

@@ -1,11 +1,11 @@
 //----- AN FGD FIT FOR A LORD -----//
-//      VERSION 7
-//		Last updated 19th January 2024
+//      VERSION 7a
+//		Last updated 24th April 2024
 
 
 //----- USER SETTINGS -----//
 
-// To make it easy for mappers to fine-tune their Hammer experience, a number of options have been made simpler to customize. Changing a setting is done by "commenting" or "uncommenting" a line of FGD code, usually the line directly beneath the setting's name. "Commenting" a line means adding two forward-slashes to the front of its line (//), while "uncommenting" a line is removing these forward-slashes from a line.
+// To make it easy for mappers to fine-tune their Hammer experience, a number of options have been made customizable. Changing a setting is done by "commenting" or "uncommenting" a line of FGD code, usually the line directly beneath the setting's name. "Commenting" a line means adding two forward-slashes to the front of its line (//), while "uncommenting" a line is removing these forward-slashes from a line.
 // Any changes to these settings will not appear in Hammer until Hammer is restarted.
 // NOTE: DO NOT UNCOMMENT ANY LINES OF DOCUMENTATION (any line which describes features of this FGD or how to use it, like this one). This will cause errors when Hammer attempts to load the file.
 

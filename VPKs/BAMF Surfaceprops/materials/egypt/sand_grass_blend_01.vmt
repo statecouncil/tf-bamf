@@ -1,8 +1,0 @@
-"WorldVertexTransition"
-{
-	"$basetexture"	"egypt\sand_floor_05"
-	"$basetexture2" "Nature/grass_03"
-	"$ssbump" "1"
-	"$surfaceprop" "sand"
-	"$surfaceprop2" "grass"
-}

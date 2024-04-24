@@ -4,4 +4,5 @@
 	"$basetexture" "Tools/toolshint"
 	"%compilehint" 1
 	"%keywords" "tf"
+	"$nocull" 1
 }

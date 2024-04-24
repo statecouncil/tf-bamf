@@ -5,15 +5,17 @@
 Click [HERE](https://github.com/statecouncil/tf-bamf/blob/main/INSTALLATION.md) for an installation guide. Installer coming soon.
 
 ## CURRENT FEATURES (all are modular, can be enabled/disabled individually)
+Click [HERE](LINKME) for a full feature list.
 
-- An FGD Fit For a LORD - Brokk Edition. Adds a myriad of previously undocumented entities, as well as completely new or widely expanded descriptions, keyvalues, display changes, and icons for all of TF2's entities. Built-in Propper support and easy customizability. By far the most complete TF2 FGD available. Based on work by ficool2, Puddy, Da Spud Lord, and A Boojum Snark.
-- Expanded prefab libary based on the work by A Boojum Snark, but with many, many more prefabs. Soundscapes, pickups, common gameplay and map elements, logic, lighting, and more. Features content by Brokk, A Boojum Snark, Tumby, as well as others.
-- Material Tag Overhaul as seen in ABS' pack. Adds the "tf" and "dev" tags to any and all relevant materials in both HL2 and TF2, making the material browser significantly more useful.
-- Surface Prop Overhaul by Adam. Gives fitting surface prop parameters to a large amount of materials that were previously lacking them. Needs to be packed via Compilepal in a finished map to have any effect, but does not require any other kind of set up
-- Extra Dev Textures by Aulli. Adds several dev texture variants in common TF2 shades so you can show your players what your map will eventually be themed as without giving up on the cleanliness of a nice and tidy whitebox.
-- Decompiled map library featuring all Valve maps (plus the SDK VMFs), decompiled with the latest version of BSPsrc
-- Radshadowman (automatic prop texture shadows includer) and compile config
+- Configurable installer for all features below (WIP!)
+- An FGD Fit For a LORD - Brokk Edition
+- Expanded prefab libary
+- Material Tag Overhaul
+- Extra Dev Textures
+- Decompiled map library
+- Radshadowman (automatic prop texture shadows includer)
 - All gamemode prefabs by Lacry, with the exception of VSH, ZI, and Sulfur's CP variant, as those are owned and maintained by their respective creators.
+- Various other little improvements, tools, features, and whatever else I can think of
 
 ## PLANNED FEATURES (to be added before the full release)
 
@@ -24,10 +26,10 @@ Click [HERE](https://github.com/statecouncil/tf-bamf/blob/main/INSTALLATION.md) 
 - Compilepal Presets "Valve", "Imp", "Super Duper", and "Radshadowman"
 - Payload collision enabler prefab
 - MORE PREFABS AAAAAAA
+- Complete documentation
 
 ## NICE-TO-HAVE FEATURES (unplanned unless anyone will help me with them)
 
-- automatic installer script
 - promo art for download page, install guide, and hammer cheat sheet
 - showcase map for FGD, prefabs, and dev textures
 - Additional vscript support like example scripts or tie-in prefabs
