@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9540"
-	"mapversion" "14"
+	"mapversion" "21"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "14"
+	"mapversion" "21"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites_2fort"
 	"detailvbsp" "detail_2fort.vbsp"
@@ -778,570 +778,6 @@ world
 }
 entity
 {
-	"id" "180"
-	"classname" "info_player_teamspawn"
-	"angles" "0 0 0"
-	"round_bluespawn" "plr_singleround"
-	"TeamNum" "3"
-	"origin" "-576 -192 16"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "Copy this to create 16 spawn points. Used by BLU."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "182"
-	"classname" "info_player_teamspawn"
-	"angles" "0 0 0"
-	"round_redspawn" "plr_singleround"
-	"TeamNum" "2"
-	"origin" "-576 192 16"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "Copy this to create 16 spawn points. Used by RED."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "194"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_blu_pathA_1"
-	"targetname" "plr_blu_path_start"
-	"origin" "-192 -128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "202"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_blu_path_end"
-	"targetname" "plr_blu_pathA_hillA3"
-	"origin" "512 -128 112"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "206"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"targetname" "plr_blu_path_end"
-	connections
-	{
-		"OnPass" "plr_blu_pushzoneCaptureCurrentCP01"
-		"OnPass" "plr_timerEnable0-1"
-		"OnPass" "plr_capturebellPlaySound01"
-		"OnPass" "cp_bluSetOwner30.11"
-	}
-	"origin" "640 -128 112"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[6731.56 4369.6]"
-	}
-}
-entity
-{
-	"id" "216"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_red_pathA_1"
-	"targetname" "plr_red_path_start"
-	"origin" "-192 128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "226"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"targetname" "plr_red_path_end"
-	connections
-	{
-		"OnPass" "plr_red_pushzoneCaptureCurrentCP01"
-		"OnPass" "plr_timerEnable0-1"
-		"OnPass" "plr_capturebellPlaySound01"
-		"OnPass" "cp_redSetOwner20.11"
-	}
-	"origin" "640 128 112"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[6726.9 5856.61]"
-	}
-}
-entity
-{
-	"id" "232"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_blu_pathA_hillA2"
-	"targetname" "plr_blu_pathA_hillA1"
-	"origin" "288 -128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "236"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_red_crossover2_end"
-	"targetname" "plr_red_crossover2_start"
-	connections
-	{
-		"OnPass" "plr_red_crossover2_branchTest0-1"
-		"OnPass" "plr_blu_crossover2_branchSetValue00-1"
-	}
-	"origin" "-704 96 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "240"
-	"classname" "logic_branch"
-	"InitialValue" "1"
-	"targetname" "plr_red_crossover2_branch"
-	connections
-	{
-		"OnTrue" "plr_red_pushzoneDisable0-1"
-		"OnTrue" "plr_red_trainSetSpeedDirAccel.550.5-1"
-		"OnFalse" "plr_red_pushzoneDisable0-1"
-		"OnTrue" "plr_red_crossover2_relayEnable0-1"
-	}
-	"origin" "-704 96 64"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1500]"
-	}
-}
-entity
-{
-	"id" "242"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "plr_blu_crossover2_relay"
-	connections
-	{
-		"OnTrigger" "plr_red_pushzoneEnable0-1"
-		"OnTrigger" "plr_blu_pushzoneEnable0.01-1"
-		"OnTrigger" "plr_red_crossover2_branchKill0-1"
-		"OnTrigger" "plr_blu_trainSetSpeedDirAccel00-1"
-	}
-	"origin" "-512 96 64"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 2000]"
-	}
-}
-entity
-{
-	"id" "244"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"targetname" "plr_blu_crossover2_end"
-	connections
-	{
-		"OnPass" "plr_blu_crossover2_relayTrigger0-1"
-	}
-	"origin" "-512 96 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "248"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"targetname" "plr_red_crossover2_end"
-	connections
-	{
-		"OnPass" "plr_red_crossover2_relayTrigger0-1"
-	}
-	"origin" "-512 -96 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "252"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "plr_red_crossover2_relay"
-	connections
-	{
-		"OnTrigger" "plr_blu_pushzoneEnable0-1"
-		"OnTrigger" "plr_red_pushzoneEnable0.01-1"
-		"OnTrigger" "plr_blu_crossover2_branchKill0-1"
-		"OnTrigger" "plr_red_trainSetSpeedDirAccel00-1"
-	}
-	"origin" "-512 -96 64"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 2000]"
-	}
-}
-entity
-{
-	"id" "254"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_blu_crossover2_end"
-	"targetname" "plr_blu_crossover2_start"
-	connections
-	{
-		"OnPass" "plr_blu_crossover2_branchTest0-1"
-		"OnPass" "plr_red_crossover2_branchSetValue00-1"
-	}
-	"origin" "-704 -96 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "258"
-	"classname" "logic_branch"
-	"InitialValue" "1"
-	"targetname" "plr_blu_crossover2_branch"
-	connections
-	{
-		"OnTrue" "plr_blu_pushzoneDisable0-1"
-		"OnTrue" "plr_blu_trainSetSpeedDirAccel.550.5-1"
-		"OnFalse" "plr_blu_pushzoneDisable0-1"
-		"OnTrue" "plr_blu_crossover2_relayEnable0-1"
-	}
-	"origin" "-704 -96 64"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
-		"logicalpos" "[0 1500]"
-	}
-}
-entity
-{
-	"id" "260"
-	"classname" "func_door"
-	"disablereceiveshadows" "0"
-	"disableshadows" "0"
-	"dmg" "0"
-	"forceclosed" "0"
-	"health" "0"
-	"ignoredebris" "0"
-	"lip" "0"
-	"locked_sentence" "0"
-	"loopmovesound" "0"
-	"movedir" "90 0 0"
-	"origin" "192 0 64"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"renderfx" "0"
-	"rendermode" "0"
-	"spawnflags" "0"
-	"spawnpos" "0"
-	"speed" "300"
-	"targetname" "setupgate_stage1"
-	"unlocked_sentence" "0"
-	"wait" "-1"
-	solid
-	{
-		"id" "261"
-		side
-		{
-			"id" "126"
-			"plane" "(-384 -16 128) (-384 16 128) (768 16 128)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "125"
-			"plane" "(-384 16 0) (-384 -16 0) (768 -16 0)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "124"
-			"plane" "(768 16 0) (768 16 128) (-384 16 128)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "123"
-			"plane" "(-384 -16 0) (-384 -16 128) (768 -16 128)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "122"
-			"plane" "(768 -16 0) (768 -16 128) (768 16 128)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[0 1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "121"
-			"plane" "(-384 16 0) (-384 16 128) (-384 -16 128)"
-			"material" "DEV/GRAYGRID"
-			"uaxis" "[0 1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		editor
-		{
-			"color" "220 30 220"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "Important settings to use on your own setup doors: Name, Delay Before Reset, 'Touch Opens' flag is NOT checked."
-		"logicalpos" "[0 6500]"
-	}
-}
-entity
-{
-	"id" "266"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_blu_pathA_hillA3"
-	"targetname" "plr_blu_pathA_hillA2"
-	"origin" "320 -128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "270"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_red_pathA_hillA3"
-	"targetname" "plr_red_pathA_hillA2"
-	"origin" "320 128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "274"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_red_pathA_hillA2"
-	"targetname" "plr_red_pathA_hillA1"
-	"origin" "288 128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "278"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "32"
-	"target" "plr_red_path_end"
-	"targetname" "plr_red_pathA_hillA3"
-	"origin" "512 128 112"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "This is a normal speed hill with auto-rollback."
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "286"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_blu_pathA_hillA1"
-	"targetname" "plr_blu_pathA_1"
-	"origin" "-144 -128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
-	"id" "290"
-	"classname" "path_track"
-	"angles" "0 0 0"
-	"orientationtype" "1"
-	"spawnflags" "0"
-	"target" "plr_red_pathA_hillA1"
-	"targetname" "plr_red_pathA_1"
-	"origin" "-144 128 48"
-	editor
-	{
-		"color" "255 192 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
-	}
-}
-entity
-{
 	"id" "5"
 	"classname" "prop_physics_override"
 	"angles" "0 180 0"
@@ -1803,6 +1239,11 @@ entity
 	"team_spawn_3" "0"
 	"team_startcap_2" "1"
 	"team_startcap_3" "1"
+	connections
+	{
+		"OnNumCappersChanged" "plr_blu_watcherSetNumTrainCappers0-1"
+		"OnNumCappersChanged" "light_blu_caseSetValueCompare0-1"
+	}
 	solid
 	{
 		"id" "91"
@@ -2352,6 +1793,11 @@ entity
 	"team_spawn_3" "0"
 	"team_startcap_2" "1"
 	"team_startcap_3" "1"
+	connections
+	{
+		"OnNumCappersChanged" "plr_red_watcherSetNumTrainCappers0-1"
+		"OnNumCappersChanged" "light_red_caseSetValueCompare0-1"
+	}
 	solid
 	{
 		"id" "179"
@@ -2699,43 +2145,15 @@ entity
 }
 entity
 {
-	"id" "1383"
-	"classname" "math_remap"
-	"in1" "0"
-	"in2" "3"
-	"out1" "0"
-	"out2" "3"
-	"spawnflags" "2"
-	"targetname" "train_remap_blu"
-	connections
-	{
-		"OutValue" "train_case_bluInValue0-1"
-	}
-	"origin" "-448 -32 96"
-	editor
-	{
-		"color" "247 248 0"
-		"groupid" "2056"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[3500 -6268]"
-	}
-}
-entity
-{
 	"id" "1385"
-	"classname" "logic_case"
-	"Case01" "0"
-	"Case02" "1"
-	"Case03" "2"
-	"Case04" "3"
-	"targetname" "train_case_blu"
+	"classname" "logic_compare"
+	"CompareValue" "0"
+	"InitialValue" "0"
+	"targetname" "light_blu_case"
 	connections
 	{
-		"OnCase01" "plr_blu_flashinglightStop0-1"
-		"OnCase02" "plr_blu_flashinglightStart0-1"
-		"OnCase03" "plr_blu_flashinglightStart0-1"
-		"OnCase04" "plr_blu_flashinglightStart0-1"
+		"OnNotEqualTo" "plr_blu_flashinglightStart0-1"
+		"OnEqualTo" "plr_blu_flashinglightStop0-1"
 	}
 	"origin" "-448 -16 96"
 	editor
@@ -2750,18 +2168,14 @@ entity
 entity
 {
 	"id" "1387"
-	"classname" "logic_case"
-	"Case01" "0"
-	"Case02" "1"
-	"Case03" "2"
-	"Case04" "3"
-	"targetname" "train_case_red"
+	"classname" "logic_compare"
+	"CompareValue" "0"
+	"InitialValue" "0"
+	"targetname" "light_red_case"
 	connections
 	{
-		"OnCase01" "plr_red_flashinglightStop0-1"
-		"OnCase02" "plr_red_flashinglightStart0-1"
-		"OnCase03" "plr_red_flashinglightStart0-1"
-		"OnCase04" "plr_red_flashinglightStart0-1"
+		"OnNotEqualTo" "plr_red_flashinglightStart0-1"
+		"OnEqualTo" "plr_red_flashinglightStop0-1"
 	}
 	"origin" "-448 16 96"
 	editor
@@ -2771,30 +2185,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[3500 -5768]"
-	}
-}
-entity
-{
-	"id" "1389"
-	"classname" "math_remap"
-	"in1" "0"
-	"in2" "3"
-	"out1" "0"
-	"out2" "3"
-	"spawnflags" "2"
-	"targetname" "train_remap_red"
-	connections
-	{
-		"OutValue" "train_case_redInValue0-1"
-	}
-	"origin" "-448 32 96"
-	editor
-	{
-		"color" "247 248 0"
-		"groupid" "2056"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[3500 -6268]"
 	}
 }
 entity
@@ -2914,6 +2304,572 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "180"
+	"classname" "info_player_teamspawn"
+	"angles" "0 0 0"
+	"round_bluespawn" "plr_singleround"
+	"spawnflags" "511"
+	"TeamNum" "3"
+	"origin" "-576 -192 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "Copy this to create 16 spawn points. Used by BLU."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "182"
+	"classname" "info_player_teamspawn"
+	"angles" "0 0 0"
+	"round_redspawn" "plr_singleround"
+	"spawnflags" "511"
+	"TeamNum" "2"
+	"origin" "-576 192 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "Copy this to create 16 spawn points. Used by RED."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "194"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_blu_pathA_1"
+	"targetname" "plr_blu_path_start"
+	"origin" "-192 -128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "202"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_blu_path_end"
+	"targetname" "plr_blu_pathA_hillA3"
+	"origin" "512 -128 112"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "206"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"targetname" "plr_blu_path_end"
+	connections
+	{
+		"OnPass" "plr_blu_pushzoneCaptureCurrentCP01"
+		"OnPass" "plr_timerEnable0-1"
+		"OnPass" "plr_capturebellPlaySound01"
+		"OnPass" "cp_bluSetOwner30.11"
+	}
+	"origin" "640 -128 112"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[6731.56 4369.6]"
+	}
+}
+entity
+{
+	"id" "216"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_red_pathA_1"
+	"targetname" "plr_red_path_start"
+	"origin" "-192 128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "226"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"targetname" "plr_red_path_end"
+	connections
+	{
+		"OnPass" "plr_red_pushzoneCaptureCurrentCP01"
+		"OnPass" "plr_timerEnable0-1"
+		"OnPass" "plr_capturebellPlaySound01"
+		"OnPass" "cp_redSetOwner20.11"
+	}
+	"origin" "640 128 112"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[6726.9 5856.61]"
+	}
+}
+entity
+{
+	"id" "232"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_blu_pathA_hillA2"
+	"targetname" "plr_blu_pathA_hillA1"
+	"origin" "288 -128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "236"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_red_crossover2_end"
+	"targetname" "plr_red_crossover2_start"
+	connections
+	{
+		"OnPass" "plr_red_crossover2_branchTest0-1"
+		"OnPass" "plr_blu_crossover2_branchSetValue00-1"
+	}
+	"origin" "-704 96 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "240"
+	"classname" "logic_branch"
+	"InitialValue" "1"
+	"targetname" "plr_red_crossover2_branch"
+	connections
+	{
+		"OnTrue" "plr_red_pushzoneDisable0-1"
+		"OnTrue" "plr_red_trainSetSpeedDirAccel.550.5-1"
+		"OnFalse" "plr_red_pushzoneDisable0-1"
+		"OnTrue" "plr_red_crossover2_relayEnable0-1"
+	}
+	"origin" "-704 96 64"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "242"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"StartDisabled" "1"
+	"targetname" "plr_blu_crossover2_relay"
+	connections
+	{
+		"OnTrigger" "plr_red_pushzoneEnable0-1"
+		"OnTrigger" "plr_blu_pushzoneEnable0.01-1"
+		"OnTrigger" "plr_red_crossover2_branchKill0-1"
+		"OnTrigger" "plr_blu_trainSetSpeedDirAccel00-1"
+	}
+	"origin" "-512 96 64"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "244"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"targetname" "plr_blu_crossover2_end"
+	connections
+	{
+		"OnPass" "plr_blu_crossover2_relayTrigger0-1"
+	}
+	"origin" "-512 96 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "248"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"targetname" "plr_red_crossover2_end"
+	connections
+	{
+		"OnPass" "plr_red_crossover2_relayTrigger0-1"
+	}
+	"origin" "-512 -96 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "252"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"StartDisabled" "1"
+	"targetname" "plr_red_crossover2_relay"
+	connections
+	{
+		"OnTrigger" "plr_blu_pushzoneEnable0-1"
+		"OnTrigger" "plr_red_pushzoneEnable0.01-1"
+		"OnTrigger" "plr_blu_crossover2_branchKill0-1"
+		"OnTrigger" "plr_red_trainSetSpeedDirAccel00-1"
+	}
+	"origin" "-512 -96 64"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "254"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_blu_crossover2_end"
+	"targetname" "plr_blu_crossover2_start"
+	connections
+	{
+		"OnPass" "plr_blu_crossover2_branchTest0-1"
+		"OnPass" "plr_red_crossover2_branchSetValue00-1"
+	}
+	"origin" "-704 -96 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "258"
+	"classname" "logic_branch"
+	"InitialValue" "1"
+	"targetname" "plr_blu_crossover2_branch"
+	connections
+	{
+		"OnTrue" "plr_blu_pushzoneDisable0-1"
+		"OnTrue" "plr_blu_trainSetSpeedDirAccel.550.5-1"
+		"OnFalse" "plr_blu_pushzoneDisable0-1"
+		"OnTrue" "plr_blu_crossover2_relayEnable0-1"
+	}
+	"origin" "-704 -96 64"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "If you duplicate the crossover to have more than one, select all eight entities, press Ctrl+Shift+R, and replace 'crossover1' with 'crossoverX' where X is a unique number."
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "260"
+	"classname" "func_door"
+	"disablereceiveshadows" "0"
+	"disableshadows" "0"
+	"dmg" "0"
+	"forceclosed" "0"
+	"health" "0"
+	"ignoredebris" "0"
+	"lip" "0"
+	"locked_sentence" "0"
+	"loopmovesound" "0"
+	"movedir" "90 0 0"
+	"origin" "192 0 64"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"renderfx" "0"
+	"rendermode" "0"
+	"spawnflags" "0"
+	"spawnpos" "0"
+	"speed" "300"
+	"targetname" "setupgate_stage1"
+	"unlocked_sentence" "0"
+	"wait" "-1"
+	solid
+	{
+		"id" "261"
+		side
+		{
+			"id" "126"
+			"plane" "(-384 -16 128) (-384 16 128) (768 16 128)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "125"
+			"plane" "(-384 16 0) (-384 -16 0) (768 -16 0)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "124"
+			"plane" "(768 16 0) (768 16 128) (-384 16 128)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "123"
+			"plane" "(-384 -16 0) (-384 -16 128) (768 -16 128)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "122"
+			"plane" "(768 -16 0) (768 -16 128) (768 16 128)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "121"
+			"plane" "(-384 16 0) (-384 16 128) (-384 -16 128)"
+			"material" "DEV/GRAYGRID"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "Important settings to use on your own setup doors: Name, Delay Before Reset, 'Touch Opens' flag is NOT checked."
+		"logicalpos" "[0 6500]"
+	}
+}
+entity
+{
+	"id" "266"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_blu_pathA_hillA3"
+	"targetname" "plr_blu_pathA_hillA2"
+	"origin" "320 -128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "270"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_red_pathA_hillA3"
+	"targetname" "plr_red_pathA_hillA2"
+	"origin" "320 128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "274"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_red_pathA_hillA2"
+	"targetname" "plr_red_pathA_hillA1"
+	"origin" "288 128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "278"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "32"
+	"target" "plr_red_path_end"
+	"targetname" "plr_red_pathA_hillA3"
+	"origin" "512 128 112"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "This is a normal speed hill with auto-rollback."
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "286"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_blu_pathA_hillA1"
+	"targetname" "plr_blu_pathA_1"
+	"origin" "-144 -128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "290"
+	"classname" "path_track"
+	"angles" "0 0 0"
+	"orientationtype" "1"
+	"spawnflags" "0"
+	"target" "plr_red_pathA_hillA1"
+	"targetname" "plr_red_pathA_1"
+	"origin" "-144 128 48"
+	editor
+	{
+		"color" "255 192 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
 	}
 }
 cameras
