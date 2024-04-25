@@ -603,7 +603,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end SCollisions
 
 @BaseClass = SControlPoint [
-	controlpoint(target_destination) : "Associated Control Point" :  : "Optionally, the team_control_point associated with this entity. When the round starts, this entity will match its team to the team of the control point. This will not automatically update if the control point changes team mid-round."
+	controlpoint(target_destination) : "Associated Control Point" :  : "Optionally, the team_control_point associated with this entity. When the round starts, this entity will match its team to the team of the control point. This will not automatically update if the control point changes team mid-round. NOTE: This is only intended for 5CP maps and may not work correctly in different gamemodes. If set, this keyvalue will override the StartDisabled and Team keyvalues of teamspawn entities."
 ] // end SControlPoint
 
 @BaseClass = SDamageFilter [
@@ -8625,8 +8625,8 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		1 : "Loser"
 		2 : "Winner"
 	] // end MatchSummary
-	round_redspawn(target_destination) : "Red Spawn for Round" :  : "Red spawn point when the specified team_control_point_round is being played. IMPORTANT: If you have ANY team_control_point_round entities in your map, you MUST set this value."
-	round_bluespawn(target_destination) : "Blue Spawn for Round" :  : "Blue spawn point when the specified team_control_point_round is being played. IMPORTANT: If you have ANY team_control_point_round entities in your map, you MUST set this value."
+	round_redspawn(target_destination) : "Red Spawn for Round" :  : "Red spawn point when the specified team_control_point_round is being played. IMPORTANT: If you have ANY team_control_point_round entities in your map and want this spawnpoint to START enabled, you must enable this. If you want the spawnpoint to start disabled, leave this keyvalue BLANK."
+	round_bluespawn(target_destination) : "Blue Spawn for Round" :  : "Blue spawn point when the specified team_control_point_round is being played. IMPORTANT: If you have ANY team_control_point_round entities in your map and want this spawnpoint to START enabled, you must enable this. If you want the spawnpoint to start disabled, leave this keyvalue BLANK."
 
 	spawnflags(flags) = [
 		1 : "Scouts can spawn here" : 1
