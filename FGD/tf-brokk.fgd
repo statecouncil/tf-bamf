@@ -129,6 +129,7 @@
 // TODO: These could probably use a refresher...
 
 @AutoVisGroup = "World Geometry" [
+@AutoVisGroup = "World Geometry" [
 	"Water" [
 		"func_water"
 		"func_water_analog"
@@ -1077,7 +1078,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end STFTeam
 
 // Hey, if Valve can create a base entity class in code exclusively for the toggle input, then so can I dammit!
-// Beautiful. -Brokk
 @BaseClass = SToggle [
 	input Toggle(void) : "Toggle this entity's state."
 ] // end SToggle
@@ -2123,7 +2123,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input Close(void) : "Close the portal. When the portal is closed it cannot be seen through."
 ] // end func_areaportal
 
-// TODO: Test and better describe some of these keyvalues
 @SolidClass base(SBaseLogical, SBaseDiv) color(50 50 200) sphere(FadeStartDist) sphere(FadeDist) = func_areaportalwindow : "A special areaportal that fades out and closes over distance. If you seal off an area with them, when the viewer moves the specified distance away from them, they will go opaque and the parts inside the area will not be drawn. The 'Opaque Window' brush model should enclose the func_areaportalwindow so no parts of it are culled by the window. If you specify the optional Foreground Brush, then it should enclose the Opaque Window brush model." [
 	PortalVersion(integer)	readonly	: "Portal Version"      : 1  : "(Don't change). Differentiates between shipping HL2 maps and maps using new engine features."
 	FadeStartDist(integer) : "Fade Start Distance" : 256 : "Distance that the fade into the Rendered Window brush entity begins. The further back the player views, the more visible the brush entity will be."
