@@ -1,0 +1,12 @@
+https://www.interlopers.net/errors/
+https://thewall.hehoe.de/content/half-life_2:fehler_probleme
+https://developer.valvesoftware.com/wiki/Compile_Errors
+http://hammer.logout.fr/?p=HLErr&showall
+
+SEVERITY
+0:	Info
+1:	Info
+2	Caution, ignorable
+3	Warning, should be fixed
+4	Error, must be fixed
+5	Fatal Error, must be fixed

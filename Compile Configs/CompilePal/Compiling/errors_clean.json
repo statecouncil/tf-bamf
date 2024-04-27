@@ -1,0 +1,1054 @@
+[
+    {
+        "severity": "4",
+        "regex": "\\*\\*\\*\\*\\s+leaked\\s+\\*\\*\\*\\*\n",
+        "error_short": "**** leaked ****",
+        "error_description": "You have a leak. A leak is a hole in your map that exposes any entity in your map to the void (the black space outside your map).",
+        "error_solution": "Close the leak. A map must be completely internally sealed.",
+        "error_references": [
+            "https://developer.valvesoftware.com/wiki/Leak"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "AllocatedLightmap\\:\\s+lightmap\\s+too\\s+big\\s+to\\s+fit\\s+in\\s+page\n",
+        "error_short": "AllocatedLightmap: lightmap too big to fit in page",
+        "error_description": "I don't know the exact cause, but ive heard rumours that it can be caused by:-lightmaps not set to a legal size (power of 2) To check, select all brushes in your map and set them to a lightmapscale of 16, save to a different mapname and try to compile the map. If you still got the error, the cause lies somewhere else.-big displacements in combination with too small lightmapscale. (seems commonest)-invalid brushes -invalid displacements ",
+        "error_solution": "You may want to start by hiding all your displacements and see if the error persists. If it does, check every lightmapscale in your level first and if that won't help, use visgroups or cordon tools to break your level apart.",
+        "error_references": [
+            "Reference: Finding the cause of unknown "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "bmodel\\s+([\\d\\.,-]+)\\s+has\\s+no\\s+head\\s+node\\s+\\(class\\s+'([\\w\\/\\\\_\\-\\.]+)',\\s+targetname\\s+'([\\w\\/\\\\_\\-\\.]+)'\\)\n",
+        "error_short": "bmodel [sub:1] has no head node (class '[sub:2]', targetname '[sub:3]')",
+        "error_description": "A [sub:2] should be brush-based, but doesn't have a brush tied to it. This can happen for instance when you tie the brushes of this entity to another entity in \"Ignore groups\"-mode.",
+        "error_solution": "Find your entity (use entity report in Hammer to filter for the entities class and/or name) and delete it or tie it to a brush.",
+        "error_references": [
+            "WIKI: Entity "
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "brush\\s+([\\d\\.,-]+)\\s+,\\s+side\\s+([\\d\\.,-]+)\\:\\s+duplicate\\s+plane\n",
+        "error_short": "brush [sub:1] , side [sub:2]: duplicate plane",
+        "error_description": "This error means you have a brush with coplanar planes (a.k.a. an invalid brush). simply put, two sides of the same brush aren't allowed to be on the same plane.",
+        "error_solution": "The fix is to repair the brush, by either merging the two brushsides or moving them so they aren't on the same plane anymore. You can find the brush using view->goto brush number ( [sub:1] ).",
+        "error_references": [
+            "Reference: Invalid solids "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\s+\\:\\s+bounds\\s+out\\s+of\\s+range\n",
+        "error_short": "Brush [sub:1] : bounds out of range",
+        "error_description": "Your map is too big (you have brush(es) too near to the edge of the grid) or you have invalid brushes.",
+        "error_solution": "Find the brush by going to view->go to brush number ( [sub:1] ). This may not always give you the offending brush though.If the problem-checker in Hammer (alt+p) doesn't find any offending brush(es), and you can't see brushes near the edge of the grid, you should use the cordon tools or visgroups to find them.",
+        "error_references": [
+            "reference: Finding the unfindableReference: Invalid solid"
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+areaportal\\s+brush\\s+doesn't\\s+touch\\s+two\\s+areas\n",
+        "error_short": "Brush [sub:1]: areaportal brush doesn't touch two areas",
+        "error_description": "One of your areaportals touches either too many, or to few areas. Possible causes are:-areaportals touching/intersecting each other (this causes them to touch more than two areas)-areaportals not sealing an area ( you can move from one side of the areaportal to the other side, without crossing world geometry or other areaportals). This is also regarded as a leak. ",
+        "error_solution": "The fix would be to move your areaportal(s) around so the above situations don't occur. You may need to read up on the usage of areaportals if you don't understand the problem. I suggest you find your areaportals using it's brushnumber (view->go to brush ( [sub:1] )",
+        "error_references": [
+            "AreaportalsWIKI: Func_areaportal"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+FloatPlane\\:\\s+bad\\s+normal\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Brush [sub:1]: FloatPlane: bad normal Side [sub:2] Texture: [sub:3]",
+        "error_description": "One of your brushes has a face with a bad normal (a 'normal' is a ori\u00ebntation of a texture on a face).",
+        "error_solution": "First see if the problemchecker in Hammer (alt+p) can find and fix it. If it can't, find the brush and fix it manually (usually it's best to delete it and start all over) or select the brush and \"align to face\" it in the texture-tool. You can find the brush using view -> go to brush ( [sub:1] ). The specific brushside will have the [sub:3]-texture, though that may be multiple sides",
+        "error_references": [
+            "Reference: Finding the location of errors "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+MAX_MAP_BRUSHSIDES\n",
+        "error_short": "Brush [sub:1]: MAX_MAP_BRUSHSIDES",
+        "error_description": "You have too many brushsides in your map. The mentioned brush is simply the first one that didn't fit in the buffer. See Max_map_brushsides ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+MAX_MAP_PLANES\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+Not\\s+a\\s+Parse\\s+error\\!\n",
+        "error_short": "Brush [sub:1]: MAX_MAP_PLANES Side [sub:2] Texture: Not a Parse error!",
+        "error_description": "You have too many planes (a plane is a surface from which brushsides are cut) in your map. The mentioned brush is simply the first one that didn't fit in the buffer, it alone is not the cause of the error.See Max_map_planes ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+MAX_MAP_PLANES\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Brush [sub:1]: MAX_MAP_PLANES Side [sub:2] Texture: [sub:3]",
+        "error_description": "Maximum:65536Description:Your map has too many brushsides, or, simpler said, too many brushes. The brush and brushside mentioned are simply the first one in the map that went over the limit.",
+        "error_solution": "Reduce the amount of brushsides, for instance by simplifying existing brushes or removing some of them. Perhaps you can turn a couple of them into models?There is nothing wrong with the mentioned brush, it is the TOTAL amount of brushsides that is your problem",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+no\\s+visible\\s+sides\\s+on\\s+brush\n",
+        "error_short": "Brush [sub:1]: no visible sides on brush",
+        "error_description": "One of your brushes has no visible sides. My best guess is that this is caused by an invalid brush. Rumors have it that this error is caused by mixing tool and non-tool textures.",
+        "error_solution": "Try Hammer's problemchecker (alt+p) to find and fix it (or view-> go to brush number ( [sub:1] ), otherwise you'll have to find the brush yourself and use vertex manipulation or a good ole delete.",
+        "error_references": [
+            "Reference: Finding the cause of errorsReference: Invalid solid"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+nummapbrushes\\s+\\=\\=\\s+MAX_MAP_BRUSHES\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Brush [sub:1]: nummapbrushes == MAX_MAP_BRUSHES Side [sub:2] Texture: [sub:3]",
+        "error_description": "You have too many brushes in your map (more than 8192) The given brush is just the first one to go over the limit, it's properties in this error are useless.",
+        "error_solution": "Delete some brushes, turn some of them into models for area's high in detail. For singleplayer maps, you may decide to add a level transition and split the map into multiple levels. Multiplayer maps that reach this limit are probably too big for multiplayer anyway.",
+        "error_references": [
+            "MAX_MAP_BRUSHES"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+num_entities\\s+\\=\\=\\s+MAX_MAP_ENTITIES\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Brush [sub:1]: num_entities == MAX_MAP_ENTITIES Side [sub:2] Texture: [sub:3]",
+        "error_description": "You have too many entities ( >4096). This excludes func_details, prop_details, and prop_statics (and info_overlays?).",
+        "error_solution": "Remove entities or split the map in two. 4096 is a lot, even getting near this number earns you the Nobel prize.",
+        "error_references": [
+            "Nobel priz"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "brush\\s+([\\d\\.,-]+)\\:\\s+origin\\s+brushes\\s+not\\s+allowed\\s+in\\s+world\n",
+        "error_short": "brush [sub:1]: origin brushes not allowed in world",
+        "error_description": "You have used the ORIGIN texture on a brush that isn't allowed to have the ORIGIN texture. ORIGIN is only allowed on parts of brushbased-entities, and only on brushes that have all sides with ORIGIN.",
+        "error_solution": "Simply replace the offending ORIGIN textures.(there's a replace option in the texture browser menu). Find the brush using view-> go to brush ( [sub:1] ).On a side note, if you turn on helpers (the diamond shaped button in the right, top bar) you can specify an origin without the use of origin-brushes. much easier and safer. The origin-brush is just there for compatibility with hl1 maps, you shouldn't use it for hl2 maps. ",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+ParseDispInfoChunk\\:\\s+nummapdispinfo\\s+\\>\\s+MAX_MAP_DISPINFO\\s+Side\\s+([\\d\\.,-]+)\\s+Texture\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Brush [sub:1]: ParseDispInfoChunk: nummapdispinfo > MAX_MAP_DISPINFO Side [sub:2] Texture: [sub:3]",
+        "error_description": "You have too many/too big displacements",
+        "error_solution": "Destroy, or simplify, some of your displacements",
+        "error_references": [
+            "MAX_MAP_DISPINFO"
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Brush\\s+([\\d\\.,-]+)\\:\\s+WARNING,\\s+microbrush\n",
+        "error_short": "Brush [sub:1]: WARNING, microbrush",
+        "error_description": "One of your brushes is smaller than the smallest allowable brush-size. This size (when it will be warned about) is specified in the compiler, but can be changed (it's an option for vbsp, [ -micro #] default is 1.0 cubic unit). I doubt this will cause problems in your map, but it's a sign that you have detailed brushwork that may be better simplified or turned into models.",
+        "error_solution": "Find the brush using 'view->go to brush number ([brush-id)' in Hammer or ctr+shift+G in Hammer and enter the specified brush number. Either delete it, or enlarge it, whatever you desire. If you need small brushes, you may be better of with models instead.",
+        "error_references": [
+            "WIKI: Vb"
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Can't\\s+load\\s+skybox\\s+file\\s+([\\w\\/\\\\_\\-\\.]+)\\s+to\\s+build\\s+the\\s+default\\s+cubemap\\!\n",
+        "error_short": "Can't load skybox file [sub:1] to build the default cubemap!",
+        "error_description": "You have entered a skybox texture which doesn't seem to be valid. Make sure you don't specify the last three letter (_UP, _DN, etc) of any skybox texture you use. You may also need to fix your vmt files if they are broken. It may also be caused by compiling a non-HDR skybox texture.",
+        "error_solution": "Fix $hdrbasetexture errors firstWIKI: Skybox ",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "ClipWinding\\:\\s+points\\s+exceeded\\s+estimate\n",
+        "error_short": "ClipWinding: points exceeded estimate",
+        "error_description": "There are too many displacement points in your map for VRAD to calculate the lighting. This error will cause VRAD to fail completly.",
+        "error_solution": "Reduce the power of your hight powered displacements. Alternatively, remove some of your displacements.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Compiling\\s+takes\\s+too\\s+long\n",
+        "error_short": "Compiling takes too long",
+        "error_description": "As you create bigger maps, the compile process will take longer and longer. You can prevent a lot of this by optimizing your map. By telling the compile tools what to ignore and how to work, you can seriously decrease the time needed to build your map.",
+        "error_solution": "Optimize your map. Use func_detail and hints to speed up the compile process. Alternatively, you can use visgroups or cordon tools to only compile a part of your level. This is great for checking only a part of your level. Lastly, you can set vvis.exe and vrad.exe to [-fast], so they do a worse job (not for final compiles!) but much faster than before.",
+        "error_references": [
+            "Optimization tutorialWIKI: OptimizationControlling what to compileReference: Compiling theory"
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Could\\s+not\\s+find\\s+lights\\.rad\\s+in\\s+lights\\.rad\n",
+        "error_short": "Could not find lights.rad in lights.rad",
+        "error_description": "Vrad.exe couldn't find lights.rad, a file used to determine which textures can emit light by themselves.",
+        "error_solution": "Move to/make a new lights.rad in the right directory. You should search for the file in your mod's directory, most mods have one.",
+        "error_references": [
+            "Lights.rad tutorial"
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Degenerate\\s+Triangle\n",
+        "error_short": "Degenerate Triangle",
+        "error_description": "A degenerate triangle is a triangle with no area. for instance, when two of its points are at the same place or all three on one line. I believe this error only affects displacements, but i am not entirely sure. It also seems to be used in collision data (for the displacements?)",
+        "error_solution": "Find the triangle (using the coordinates, each set represents a vertex) and see if you can fix it (e.g. by moving one of the vertices, or deleting it. For displacements, you may need to destroy the displacement and start all over if you can't seem to fix it. It wont harm you if you leave it, but make sure the area doesn't look weird because of it. (holes in the displacements, overly stretched textures)",
+        "error_references": [
+            "Finding coordina"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "DispInfo_LoadDisplacements\\:\\s+dispcounts\\s+\\(([\\d\\.,-]+)\\s+and\\s+([\\d\\.,-]+)\\)\\s+don't\\s+match\n",
+        "error_short": "DispInfo_LoadDisplacements: dispcounts ([sub:1] and [sub:1]) don't match",
+        "error_description": "The game has done a miscount on the amount of displacements in your map. ",
+        "error_solution": "Try deleting and recreating your displacements (one at a time or all of them at once), or copy/paste them to another map and back. It seems to be caused by one or more displacements that haven't been saved properly to the mapfile.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Displacement\\s+([\\d\\.,-]+)\\s+has\\s+bad\\s+geometry\\s+near\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+Can't\\s+compile\\s+displacement\\s+physics,\\s+exiting\\.\\s+Texture\\s+is\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Displacement [sub:1] has bad geometry near [sub:2] [sub:3] [sub:4] Can't compile displacement physics, exiting. Texture is [sub:5]",
+        "error_description": "One of your displacements has gone bad, your awesome reshaping of one of them has caused it to become so complicated vbsp is unable to determine its collisions.",
+        "error_solution": "Although you can try to salvage your displacement by reshaping it more, its probably a better idea to destroy the displacement and recreate it. You can find the displacement by going to the coordinates [sub:2] [sub:3] [sub:4] (view-> go to coordinates) and looking for a displacement with the [sub:5] texture.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Ed_alloc\\:\\s+no\\s+free\\s+edicts\n",
+        "error_short": "Ed_alloc: no free edicts",
+        "error_description": "You have too many entities. Either total (4096) or a maximum of a specific entity. Temporary entities such as bullets and particles are also part of this number.",
+        "error_solution": "Reduce the amount of entities as much as possible. Start with particles (dust, func_precipitation), as they are usually huge in numbers, or other entities you have a lot of.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Engine\\s+Error\\:\\s+([\\w\\/\\\\_\\-\\.]+)\\s+with\\s+no\\s+model\\s+at\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\n",
+        "error_short": "Engine Error: [sub:1] with no model at [sub:2] [sub:3] [sub:4]",
+        "error_description": "One of the brush-based entities in your map doesn't have any brushes tied to it",
+        "error_solution": "Find the entity by searching for an origin of the coordinates in the entity report dialog, ( key:origin, value:[sub:2] [sub:3] [sub:4] ) Once found, either delete the entity or tie a (few) brush(es) to it. A brush-based entity without brushes tied to it is completely USELESS!",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Entity\\s+([\\d\\.,-]+)\\:\\s+func_areaportal\\s+can\\s+only\\s+be\\s+a\\s+single\\s+brush\n",
+        "error_short": "Entity [sub:1]: func_areaportal can only be a single brush",
+        "error_description": "Pretty obvious, an func_areaportal(window) can only consist of one brush per entity.",
+        "error_solution": "Make multiple brushes multiple func_areaportal(window)s, or make different windows in a wall the same areaportal(window) (they can go through walls if needed).",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "Entity\\s+([\\w\\/\\\\_\\-\\.]+)\\s+\\(([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\)\\s+leaked\\!\n",
+        "error_short": "Entity [sub:1] ([sub:2] [sub:3] [sub:4]) leaked!",
+        "error_description": "You have a leak. A leak is a hole in your map that exposes any entity in your map to the void (the black space outside your map).",
+        "error_solution": "Fix the leak.",
+        "error_references": [
+            "Reference: LeaksWIKI: leaks "
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Error\\s+loading\\s+studio\\s+model\\s+\"\"\\!\n",
+        "error_short": "Error loading studio model \"\"!",
+        "error_description": "You have an model-based entity (prop_something) without a model specified.",
+        "error_solution": "To fix, delete it or give it a model. It can be hard to find, and if you really cant find it, use this trick:  open your map (.vmf) in wordpad, and search for the string",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Error\\s+loading\\s+studio\\s+model\\s+\"([^\"]+)\"\\!\n",
+        "error_short": "Error loading studio model \"[sub:1]\"!",
+        "error_description": "You have used the wrong model with the wrong entity, or there is another reason the model couldn't be loaded, like an invalid location, errors in the file etc.",
+        "error_solution": "Either change the model, or the entity (eg. like it says in the error, use a prop_physics, prop_dynamic or prop_physics_multiplayer) or whatever the compiler tells you you should use). Just as a thumb rule:-anything that can be picked up is prop_dynamic or prop_physics(_multiplayer)-anything thats completely static is prop_static (you may alsop recognise these with invisible backsides)-anything with dynamic shapes (eg. bodies, matrasses) is prop_ragdoll.There are exceptions offcourse, as allways. The GUI model browser shows you exactly what types of entity a model is suited for.You can find the entity with the offending model using entity report. Enter for key 'model' and for value '[sub:1]'.",
+        "error_references": [
+            "WIKI: Prop types "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Error\\s+opening\\s+mapname\\.bsp\n",
+        "error_short": "Error opening mapname.bsp",
+        "error_description": "Half-life couldn't open your map. Did you recieve any errors in the compile process? Got your paths set up right? Maybe your map is empty?",
+        "error_solution": "Scan your compile-log for other errors and fix those",
+        "error_references": [
+            "Logfile-checker (see search above) "
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "Error\\s+trying\\s+to\\s+allocate\\s+([\\d\\.,-]+)\\s+bytes\n",
+        "error_short": "Error trying to allocate [sub:1] bytes",
+        "error_description": "Vrad.exe did not have enough memory to finish it's task. There are two causes: 1) You are running low on memory (ram + pagefile). 2) Vrad.exe is chocking on some very complicated bit of your map, causing it to ask a lot of memory which doesn't exist (like infinite sizes).",
+        "error_solution": "If you are running low on free memory (ctr+alt+del to see that) try increasing the pagefile if you aren't letting Windows take care of it. If not, use cordon tools to isolate the problemarea in your map (might be a broken brush, or simply too complex geometry) and see what you can do to fix it.Dan Prati informed me that is mostly a problem with very large, open maps, or particularly detailed ones (or as part of an engine limitation to the total amount of lightmaps).Reducing the lightmap resolution on larger surfaces, or particularly complex objects, can fix this problem. If this is not acceptable, or does not fix the error, reducing lightmap resolution across the entire map may be necessary. This provides a solution when there is no single map element that is causing the error, and simply deleting map objects won't fix the problem.",
+        "error_references": [
+            "Reference: Finding the unfindabl"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Error\\!\\s+entity\\s+sky_camera\\s+in\\s+solid\\s+volume\\!\n",
+        "error_short": "Error! entity sky_camera in solid volume!",
+        "error_description": "Either you have placed your sky_camera in a brush, or your map has a leak.",
+        "error_solution": "Use entity report to find the sky_camera and move it, or in case of a leak, fix the leak.",
+        "error_references": [
+            "3d skybox tutorialReference: LeaksWIKI: leak"
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Error\\!\\s+prop_static\\s+using\\s+model\\s+\"([^\"]+)\",\\s+which\\s+must\\s+be\\s+used\\s+on\\s+a\\s+dynamic\\s+entity\\s+\\(i\\.e\\.\\s+prop_physics\\)\\.\\s+Deleted\\.\n",
+        "error_short": "Error! prop_static using model \"[sub:1]\", which must be used on a dynamic entity (i.e. prop_physics). Deleted.",
+        "error_description": "You have used the wrong model with the wrong entity.",
+        "error_solution": "Either change the model, or the entity (eg. like it says in the error, use a prop_physics, prop_dynamic or prop_physics_multiplayer or whatever the compiler tells you you should use). Just as a thumb rule:-anything that can be picked up is prop_dynamic or prop_physics(_multiplayer)-anything thats completely static is prop_static (you may alsop recognise these with invisible backsides)-anything with dynamic shapes (eg. bodies, matrasses) is prop_ragdoll There are exceptions offcourse, as allways.The GUI model browser lists all entity types compatible with a certain model",
+        "error_references": [
+            "WIKI: Prop types "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Error\\!\\s+Too\\s+many\\s+detail\\s+props\\s+emitted\\s+on\\s+this\\s+map\\!\n",
+        "error_short": "Error! Too many detail props emitted on this map!",
+        "error_description": "The amount of detail props (the grasses and such that automatically appear on displacements with certain textures) has exceeded the maximum number of allowable detail props.",
+        "error_solution": "Either reduce the amount of textures/displacements which cause these props to appear, or edit the texture's vmt's to decrease the number of detail props those textures emit.",
+        "error_references": [
+            "WIKI: Displacement grassWIKI: Detail props "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Error\\:\\s+displacement\\s+found\\s+on\\s+a\\(n\\)\\s+([\\w\\/\\\\_\\-\\.]+)\\s+entity\\s+-\\s+not\\s+supported\n",
+        "error_short": "Error: displacement found on a(n) [sub:1] entity - not supported",
+        "error_description": "You have tied a displacement to an entity. Displacements aren't supposed to be entities. (they don't need to be func_detail, vvis.exe ignores them anyway). Displacements can't move around. Period. Forget about parenting them.",
+        "error_solution": "Find your displacement and de-entify it. The easiest method to find it in a big map is to select all displacements at once (select the \"displacements\" visgroup (in the visgroup-window to the right in Hammer), then press \"mark\") in the ignore group mode (button \"IG\"). Now tie all of the displacements to an entity, and \"to world\" them again right after that while they are still selected.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Error\\:\\s+displacement\\s+found\\s+on\\s+a\\(n\\)\\s+([\\w\\/\\\\_\\-\\.]+)\\s+entity\\s+-\\s+not\\s+supported\\s+\\(entity\\s+([\\d\\.,-]+),\\s+brush\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Error: displacement found on a(n) [sub:1] entity - not supported (entity [sub:2], brush [sub:3])",
+        "error_description": "You have tied a displacement to an entity. Displacements aren't supposed to be entities. (they don't need to be func_detail, vvis.exe ignores them anyway). Displacements can't move around. Period. Forget about parenting them.",
+        "error_solution": "Find your displacement and de-entify it. The easiest method to find it in a big map is to select all displacements at once (select the \"displacements\" visgroup (in the visgroup-window to the right in Hammer), then press \"mark\") in the ignore group mode (button \"IG\"). Now tie all of the displacements to an entity, and \"to world\" them again right after that while they are still selected.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Error\\:\\s+material\\s+([\\w\\/\\\\_\\-\\.]+)\\s+doesn't\\s+have\\s+a\\s+\\$bottommaterial\n",
+        "error_short": "Error: material [sub:1] doesn't have a $bottommaterial",
+        "error_description": "You've tried to use a water texture which should only be placed in the map automatically by the compiler, or the water-texture you did use has an invalid bottom-texture. Invalid materials usually end in _beneath or _bottom or _dx* .",
+        "error_solution": "There will be a matching texture without those suffixes which you can use instead. Try another water texture.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Face\\s+List\\s+Count\\s+\\>\\=\\s+OVERLAY_BSP_FACE_COUNT\n",
+        "error_short": "Face List Count >= OVERLAY_BSP_FACE_COUNT",
+        "error_description": "One of your info_overlays is spanning more faces than the maximum of 64. This number is based on the faces after bsp cutting, so it might look allright in Hammer but doesn't work ingame.This can also be caused by an overlay that is applied to a very large brush or a brush that has a very low lightmap scale.",
+        "error_solution": "Check each overlay in your map, and make sure it doesn't cover more than 64 faces. Allthough easier said than done, you must try to find the overlay in Hammer (where you can only guess where your faces are cut) so its best to check big (stretched) overlays first, and also make sure you have no world brushes cutting each other up near these overlays (eg. near stairs, or when you use a small lightmap scale). The use of func_detail will stop that.If you have an overlay that is applied to a very large brush, try cutting up the offending brush so it is not as large. Reset the overlay brush faces and recompile.",
+        "error_references": [
+            "Reference: Finding the unfindabl"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "fastvis\\s+\\=\\s+true\n",
+        "error_short": "fastvis = true",
+        "error_description": "You seem to be running vvis in -fast mode. This is okay for testing purposes, but mind that this will cau",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Find\\s+Visible\\s+Detail\\s+Sides\\.\\.\\.Bad\\s+detail\\s+brush\\s+side\n",
+        "error_short": "Find Visible Detail Sides...Bad detail brush side",
+        "error_description": "The cause for this error is using multiple (incompatible) tool-textures on the same brush, or so it seems.Apart from HINT and SKIP there aren't much combination of tool-textures allowed on the same brush, so any other combination is a possible cause. Tool-textures are the 'tools/' textures you can find using the texture browser in Hammer, and that have a special meaning.",
+        "error_solution": "You will need to find the brush(es) with these tool-textures and replace those textures. The easiest way to find the source of the error is to hide all visgroups except for the visgroups which are for tools textures and then just look around the map in 3d textured mode.",
+        "error_references": [
+            "WIKI: Tool textu"
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "FindPortalSide\\:\\s+Couldn't\\s+find\\s+a\\s+good\\s+match\\s+for\\s+which\\s+brush\\s+to\\s+assign\\s+to\\s+a\\s+portal\\s+near\\s+\\(([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "FindPortalSide: Couldn't find a good match for which brush to assign to a portal near ([sub:1] [sub:2] [sub:3])",
+        "error_description": "This error is usually followed by something like th",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Found\\s+a\\s+displacement\\s+edge\\s+abutting\\s+multiple\\s+other\\s+edges\n",
+        "error_short": "Found a displacement edge abutting multiple other edges",
+        "error_description": "A displacement is touching more than one other displacements at the same point along one of its edges; in other words: at some point, three displacements are touching each other along an entire edge. This may cause lighting errors, as vrad doesn't know which displacements need to have their light smoothed out, if you know what i mean. I guess it can also be a wanted situation, in which cause this 'error' can be ignored.",
+        "error_solution": "The usual cause i can think of is the accidental non-deletion of displacements along the sides of brushes. Eg, if you have two brushes next to each other, and their tops displaced, and you accidentally also displaced the vertical brushsides between these two, you get a T-shaped intersection of three.image: purple: side that should've been destroyed, red: the edge.This is no real error, but it could be the cause of lighting anomalies. There is no easy way to find the displacement either, the fastest way would be to go through your displacements one by one.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "HashVec\\:\\s+point\\s+outside\\s+valid\\s+range\n",
+        "error_short": "HashVec: point outside valid range",
+        "error_description": "Your map is too big (you have brush(es) too near to the edge of the grid) or you have invalid brushes.",
+        "error_solution": "If the problem-checker in Hammer (alt+p) doesn't find any offending brush(es), and you can't see brushes near the edge of the grid, you should use the cordon tools or visgroups to find them.",
+        "error_references": [
+            "Reference: Finding the unfindableReference: Invalid solid"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Host_EndGame\\:\\s+Map\\s+coordinate\\s+extents\\s+are\\s+too\\s+large\n",
+        "error_short": "Host_EndGame: Map coordinate extents are too large",
+        "error_description": "Your map is too big (you have brush(es) too near to the edge of the grid) or you have invalid brushes. In 99.9999% (may be an understatement) of the cases, the cause is an invalid brush.",
+        "error_solution": "If the problem-checker in Hammer (alt+p) doesn't find any offending brush(es), and you can't see brushes near the edge of the grid, check suspicious or recently vertex-edited brushes first. If you still can't find anything, you should use the cordon tools or visgroups to find them.",
+        "error_references": [
+            "Reference: Finding the unfindableReference: Invalid solid"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Host_Error\\:\\s+CVEngineServer\\:\\:PrecacheModel\\:\\s+([\\w\\/\\\\_\\-\\.]+)\\s+overflow,\\s+too\\s+many\\s+models\n",
+        "error_short": "Host_Error: CVEngineServer::PrecacheModel: [sub:1] overflow, too many models",
+        "error_description": "Your map has too much models, this includes  weapons, players, props, bullets, gibs etc. You should seriously remove some!",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Host_Error\\:\\s+Server\\s+is\\s+enforcing\\s+file\\s+consistency\\s+for\\s+some_file\n",
+        "error_short": "Host_Error: Server is enforcing file consistency for some_file",
+        "error_description": "The server wants you to download a file you already have, but you have the wrong version so it overwrites your version with the one the server has (your version is probably a custom one since the server is 'enforced' to overwrite it). Happens untill the file is replaced.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Invalid\\s+\\[entity_type\\]\\s+spawnpoint\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Invalid [entity_type] spawnpoint at ([sub:1], [sub:2], [sub:3])",
+        "error_description": "This means this spawnpoint is invalid. Did you place it inside another volume (e.g. a model, brush)? or does your map has a leak? First check if you didn't place the spawnpoint inside the ground (commonest), so preferably place the spawnpoint one unit above the ground to be sure. Offcourse you can find the coordinates in Hammer to see which one it is. ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Invisible\\s+props\\s+ingame\n",
+        "error_short": "Invisible props ingame",
+        "error_description": "See this topic ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "KeyValues\\s+Error\\:\\s+RecursiveLoadFromBuffer\\:\\s+\\s+got\\s+.\\s+in\\s+key\\s+in\\s+file\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "KeyValues Error: RecursiveLoadFromBuffer:  got [char] in key in file [sub:1]",
+        "error_description": "There seems to be a parsing error in [sub:1]. Fix it if you want the texture or other resource associated with this file to work correctly.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "KeyValues\\s+Error\\:\\s+RecursiveLoadFromBuffer\\:\\s+got\\s+EOF\\s+instead\\s+of\\s+keyname\\s+in\\s+file\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "KeyValues Error: RecursiveLoadFromBuffer: got EOF instead of keyname in file [sub:1]",
+        "error_description": "There was a problem parsing this texture ( [sub:1] ). Looks like you forgot to close a (couple of) brackets in this file? Or perhaps a string not closed with a \"?",
+        "error_solution": "Find the file, open it, and fix it. If you don't know how, see below.",
+        "error_references": [
+            "Valve wiki: Material"
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "Leaf\\s+\\(portal\\s+([\\d\\.,-]+)\\)\\s+with\\s+too\\s+many\\s+portals\\.\\s+Use\\s+vbsp\\s+-glview\\s+to\\s+compile,\\s+then\\s+glview\\s+-portal\\s+-portalhighlight\\s+X\\s+to\\s+view\\s+the\\s+problem\\.\n",
+        "error_short": "Leaf (portal [sub:1]) with too many portals. Use vbsp -glview to compile, then glview -portal -portalhighlight X to view the problem.",
+        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map. e.g. in the example picture, the center leaf would have 12 portals, and all other ones only one. ",
+        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. As the error says, open your map in Glview to find the exact location of the portal.",
+        "error_references": [
+            "Reference: Using GlviewOptimizing can help against this error",
+            "WIKI: visleafs",
+            "WIKI: Glview"
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "Leaf\\s+([\\d\\.,-]+)\\s+\\(portal\\s+\\[portal_id\\]\\)\\s+with\\s+too\\s+many\\s+portals\\.\\s+Use\\s+vbsp\\s+-glview\\s+to\\s+compile,\\s+then\\s+glview\\s+-portal\\s+-portalhighlight\\s+X\\s+or\\s+-leafhighlight\\s+L\\s+to\\s+view\\s+the\\s+problem\\.\\s+\n",
+        "error_short": "Leaf [sub:1] (portal [portal_id]) with too many portals. Use vbsp -glview to compile, then glview -portal -portalhighlight X or -leafhighlight L to view the problem. ",
+        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map. e.g. in the example picture, the center leaf would have 12 portals, and all other ones only one. ",
+        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. As the error says, open your map in Glview to find the exact location of the portal.",
+        "error_references": [
+            "Reference: Using GlviewOptimizing can help against this errorWIKI: visleafsWIKI: Glview"
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "LoadPortals\\:\\s+couldn't\\s+read\\s+([\\w\\/\\\\_\\-\\.]+)\\.prt\n",
+        "error_short": "LoadPortals: couldn't read [sub:1].prt",
+        "error_description": "Vvis.exe cannot find the portalfile, a file that vbsp.exe creates which specifies the location of portals and leafs. Usually because of a leak or other fatal error (see further upwards in your log) in the vbsp process, but may also be because your directories are set up wrong.",
+        "error_solution": "Check your logfile for other errors (mainly leaks), and/or check if you have your directories set up right.",
+        "error_references": [
+            "Reference: The compile processReference: Leak"
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Luxel\\s+axis\\s+perpendicular\\s+to\\s+face\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Luxel axis perpendicular to face at ([sub:1], [sub:2], [sub:3])",
+        "error_description": "See Texture axis perpendicular to fa",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "make_triangles\\:calc_triangle_representation\\:\\s+Cannot\\s+convert\n",
+        "error_short": "make_triangles:calc_triangle_representation: Cannot convert",
+        "error_description": "Usually preceded by some coordinates, the best explanation I can give at the moment is that this is caused by certain models (a b0rked subpart). In particular the \"/wasteland/InteriorFence002d.mdl\"-model. I've also heard small panes of glass and some other (even self-made) models can cause this error to occur, as do some freaky regular brushes. This error can also be caused by bad displacements.If it is displacements they may fail to collide with vehicles and physics objects on the triangles that are causing a problem.  Parts of the displacement may still work others may not.   ",
+        "error_solution": "You can look for ages to find the model causing the problem, after hiding all your models first and see if that is causing your problem. Once found, you can decide to reconstruct that model, there doesn't seem to be a real error in the model itself though. In other words, leave it be, it won't hurt you. Unless you bite first! It may be the case that the game will not load the map because of this error. It would present you with a pup-up with the beloved memory error.The displacement problem as of right now has only 1 solution and it is to delete the displacement. If its a brush, find it with Cordon Tools and delete it. ",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Map\\s+has\\s+too\\s+many\\s+texinfos\\s+\\(has\\s+([\\d\\.,-]+),\\s+can\\s+have\\s+at\\s+most\\s+12288\\)\n",
+        "error_short": "Map has too many texinfos (has [sub:1], can have at most 12288)",
+        "error_description": "See MAX_MAP_TEXINFO",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Material\\s+\"([^\"]+)\"\\s+not\\s+found\n",
+        "error_short": "Material \"[sub:1]\" not found",
+        "error_description": "The error is self-explanatory. Somewhere in your map you have referenced a texture that doesn't exist. Perhaps you used a texture from another modification or game you haven't correctly set your current game up for?",
+        "error_solution": "Make sure you have your mod paths set up correctly and that you are including all mod contents you need.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Material\\s+glass\\/glasswindowbreak070b\\s+is\\s+depending\\s+on\\s+itself\\s+through\\s+materialvar\\s+\\$crackmaterial\\!\n",
+        "error_short": "Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial!",
+        "error_description": "You shouldn't use this texture, but this one: glass/glasswindowbreak070a. The b-texture is used after the glass is broken, so you should never put it into your map manually. Sometimes this error occours and you dont have this texture anywhere in your map. Probably being some strange bug, might as wel leave it, it seems to cause no harm. ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Material\\s+not\\s+found\\!\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Material not found!: [sub:1]",
+        "error_description": "The error is self-explanatory. Somewhere in your map you have referenced a texture that doesn't exist. Perhaps you used a texture from another modification or game you haven't correctly set your current game up for?",
+        "error_solution": "Make sure you have your mod paths set up correctly and that you are including all mod contents you need.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Material\\s+([\\w\\/\\\\_\\-\\.]+)\\s+uses\\s+unknown\\s+detail\\s+object\\s+type\\s+([\\w\\/\\\\_\\-\\.]+)\\!\\s+\n",
+        "error_short": "Material [sub:1] uses unknown detail object type [sub:2]! ",
+        "error_description": "One of your textures is scripted to emit detail props (the grass thingies that appear on displacements), but the detail props specified are not defined in the mod's data files.",
+        "error_solution": "Usually this error is caused by mindlessly porting textures from other mods, without porting the detail props file. The fix is to either get these detail props from that other mod, or fix the texture so it emits detail props that exist in the current mod.",
+        "error_references": [
+            "WIKI: Displacement grassWIKI: Detail_props "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "MaterialSystem_Interface_t\\:\\:AllocateLightmap\\s+\\:\\s+lightmap\\s+\\(([\\d\\.,-]+)x([\\d\\.,-]+)\\)\\s+too\\s+big\\s+to\\s+fit\\s+page\\s+\\(([\\d\\.,-]+)x([\\d\\.,-]+)\\)\n",
+        "error_short": "MaterialSystem_Interface_t::AllocateLightmap : lightmap ([sub:1]x[sub:1]) too big to fit page ([sub:1]x[sub:1])",
+        "error_description": "I don't know the exact cause, but ive heard rumours that it can be caused by:-lightmaps not set to a legal size (power of 2)-big displacements in combination with too small lightmapscale. (seems commonest)-invalid brushes -invalid displacements ",
+        "error_solution": "You may want to start by hiding all your displacements and see if the error persists. If it does, check every lightmapscale in your level first, (using the tool above), or just selecting your entire level and enter a legal size for all brushes) and if that won't help, use visgroups or cordon tools to break your level apart.",
+        "error_references": [
+            "Reference: Finding the cause of unknown "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "MAX_MAP_MODELS\n",
+        "error_short": "MAX_MAP_MODELS",
+        "error_description": "See MAX_MAP_MODELS ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "MAX_TEXLIGHTS\n",
+        "error_short": "MAX_TEXLIGHTS",
+        "error_description": "Maximum:128Description:Your lights.rad has too many entries (there is a maximum of 128 entries) the rest will be skipped.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Memory\\s+leak\\:\\s+mempool\\s+blocks\\s+left\\s+in\\s+memory\\:\\s+([\\d\\.,-]+)\n",
+        "error_short": "Memory leak: mempool blocks left in memory: [sub:1]",
+        "error_description": "These warnings can be completely ignored, they have nothing to do with your map (but with crappy programming by Valve!).",
+        "error_solution": "Become a Valve programmer and fix the problem. ",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Multiple\\s+references\\s+for\\s+cubemap\\s+on\\s+texture\\s+([\\w\\/\\\\_\\-\\.]+)\\!\\!\\!\n",
+        "error_short": "Multiple references for cubemap on texture [sub:1]!!!",
+        "error_description": "You can specify for each cubemap which faces should be using it. However, each face can only have one cubemap attached to itself this way. If you want the face to use multiple cubemaps you shouldn't tie them statically to cubemaps this way, but split the face (into multiple brushes).",
+        "error_solution": "I hope you can find out by the name of the texture which face vbsp is talking about, because that's the only reference you have. No nifty stuff will help you find the problem, you have to check each texture or cubemap individually to find it. Or just leave it, as far as i know it defaults to one of the two env_cubemaps anyway, so it wont harm you one bit if you leave it. ",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "no\\s+samples\\s+x\n",
+        "error_short": "no samples x",
+        "error_description": "Vrad.exe is freaking out over some part of geometry in your map. Did you recently add any complicated/oddshaped brushes?",
+        "error_solution": "Find the brush(es) vrad doesn't like and remove or fix them.",
+        "error_references": [
+            "Reference: Finding the cause of unknown "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "No\\s+such\\s+variable\\s+\"\\$hdrbasetexture\"\\s+for\\s+material\\s+\"([^\"]+)\"\n",
+        "error_short": "No such variable \"$hdrbasetexture\" for material \"[sub:1]\"",
+        "error_description": "You have used a non-hdr skybox texture, while the compile tools expect a hdr skybox instead.",
+        "error_solution": "Either make a HDR skybox, change your skybox to a HDR one or ignore this error. See below for a detailed fix.",
+        "error_references": [
+            "WIKI: HDR skyboxHow to fix this error "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Node\\s+Graph\\s+out\\s+of\\s+Date\\.\\s+Rebuilding\\.\\.\\.\n",
+        "error_short": "Node Graph out of Date. Rebuilding...",
+        "error_description": "This is not an error, it's simply a message telling you the game is making paths (using info_nodes) for npc's to use. It should happen only once for every map, given that you don't change the map afterwards.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "NODRAW\\s+on\\s+terrain\\s+surface\\!\n",
+        "error_short": "NODRAW on terrain surface!",
+        "error_description": "You aren't allowed to have the \"tools/nodraw\" texture one a displacement.",
+        "error_solution": "There are two possible causes, you accidently covered a displacement face in nodraw or you accidently made a hidden face a displacement. In order to fix it in either cases, uncheck the \"auto\" visgroup, then check only the \"displacements\" visgroup. Now, look round the map see if nodraw is anywhere you wanted a real texture. If found open the material browser and find and replace the nodraw texture with any other texture. If there's no vibisible displacement faces with nodraw you'll probably want to destroy them. Open the material browser, check \"Only show used textures\", select NoDraw and press \"Mark\". Open up the face edit sheet, and click \"Destroy\" on the displacement tab.",
+        "error_references": [
+            " Reference: Finding the unfindable "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "numvertexes\\s+\\=\\=\\s+MAX_MAP_VERTS\n",
+        "error_short": "numvertexes == MAX_MAP_VERTS",
+        "error_description": "You have too many vertices in your map (point from which brushes are made). In other words, your map is too big or too detailed.",
+        "error_solution": "Delete or simplify some of your brushes. Perhaps you can convert parts of your map into brushes, or in case of singleplayer maps, divide the map up into multiple parts with a level change?",
+        "error_references": [
+            "MAX_MAP_VERTS "
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Occluder\\s+\"([^\"]+)\"\\s+straddles\\s+multiple\\s+areas\\.\\s+This\\s+is\\s+invalid\\!\n",
+        "error_short": "Occluder \"[sub:1]\" straddles multiple areas. This is invalid!",
+        "error_description": "This error means you have a func_occluder (by the name of [sub:1]) that is touching an areaportal or is inside a brush that's touching two area's. ( An area is a part of your map closed off by a areaportals and world-brushes)",
+        "error_solution": "Move or delete the occluder or areaportal(s).",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Overlay\\s+at\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+has\\s+invalid\\s+render\\s+order\\s+\\(([\\d\\.,-]+)\\)\n",
+        "error_short": "Overlay at [sub:1] [sub:2] [sub:3] has invalid render order ([sub:4])",
+        "error_description": "A render order determines which overlays are drawn on top over the others (or under). These render orders are simple numbers, ranging from 1-3. Other numbers are invalid, causing this error.",
+        "error_solution": "If this error is accompanied by insanely huge numbers, it is most likely a badly placed info_overlay (atleast it was in my case). These entities don't like to be placed on the edge of a brush. If even that is not the case, try to open the map in a texteditor and look for the numbers. They may be caused by a b0rked map, or something along those lines. I recommend to atleast try to remove said overlay (view -> go to coordinates ( [sub:1] [sub:2] [sub:3] ) and recreate it.",
+        "error_references": [
+            "Finding the unfindable "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Overlay\\s+touching\\s+too\\s+many\\s+faces\\s+\\(touching\\s+([\\d\\.,-]+),\\s+max\\s+64\\)\\s+Overlay\\s+([\\w\\/\\\\_\\-\\.]+)\\s+at\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\n",
+        "error_short": "Overlay touching too many faces (touching [sub:1], max 64) Overlay [sub:2] at [sub:3] [sub:4] [sub:5]",
+        "error_description": "You have an overlay (info_overlay) entity that is touching too many brushes, or parts of a brush. The error message tells you also how much you have and allowed (touching [sub:1], max 64)",
+        "error_solution": "You can find the overlay using the coordinates. View -> go to coordinates( [sub:3] [sub:4] [sub:5] ) You can delete, move or resize the overlay.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "prop_physics\\s+at\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+([\\d\\.,-]+)\\s+uses\\s+model\\s+([\\w\\/\\\\_\\-\\.]+),\\s+which\\s+has\\s+no\\s+propdata\\s+which\\s+means\\s+it\\s+must\\s+be\\s+used\\s+on\\s+a\\s+prop_static\\.\\s+DELETED\\.\n",
+        "error_short": "prop_physics at [sub:1] [sub:2] [sub:3] uses model [sub:4], which has no propdata which means it must be used on a prop_static. DELETED.",
+        "error_description": "You have used (created yourself?) a model without the data compiled in it for it to become a non-static entity. These kind of models can only be used on prop_statics, unless you recompile them with the neccesairy data.",
+        "error_solution": "Find them using the coordinates, or simply recompile the model with the appropriate data",
+        "error_references": [
+            "Find coordinates in a mapCompiling model"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Static\\s+prop\\s+([\\w\\/\\\\_\\-\\.]+)\\s+outside\\s+the\\s+map\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Static prop [sub:1] outside the map ([sub:2], [sub:3], [sub:4])",
+        "error_description": "You have a prop_static outside the map, or you have a big leak. You may also have a prop completely inside a world brush (that's the bounding box entirely inside the brush).",
+        "error_solution": "Delete the entity, move the entity into your level (or turn the offending brush into a brush entity), or fix the leak.",
+        "error_references": [
+            "Reference: LeaksWIKI: leak"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "stylenum\\s+\\=\\=\\s+MAX_SWITCHED_LIGHTS\n",
+        "error_short": "stylenum == MAX_SWITCHED_LIGHTS",
+        "error_description": " You have too many (more than 32) differently named lights in your map. You can't have that many independantly switchable lights ",
+        "error_solution": "Remove some lights, or give a few the same name, or remove the names of some lights.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Texture\\s+axis\\s+perpendicular\\s+to\\s+face\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Texture axis perpendicular to face at ([sub:1], [sub:2], [sub:3])",
+        "error_description": "This is vrad's way of saying a texture (face and its corresponding luxel(lightmap)) is aligned to its face at 90 degrees. This is because the \"align\"-settings for that face are setup wrong. ",
+        "error_solution": "Find the face using the coordinates. You will notice a very overstretched appearance of the texture belonging to the offending side. If you can't find it, you must select the entire brush, if you can find the exact face, just select that face in the texture application tool. When you are in the texture application tool, notice the \"align to face\" and \"align to world\" tickboxes. Try the one that isn't currently checked, or both. If they don't work, your brush is broken and needs to be repaired. Either using the vertex-tool, or deleting the brush and recreating it.",
+        "error_references": [
+            "Reference: Finding the location of "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Textures\\s+act\\s+weird\\s+ingame\n",
+        "error_short": "Textures act weird ingame",
+        "error_description": "If your textures act weird (e.g. flash, look brighter from some angles but darker from others) check if you are not using model-textures (models/sometexture or props/sometexture). Since these textures are compiled to be wrapped around a model (and be lit like one) this can cause strange things when you apply them on world brushes. ",
+        "error_solution": "Use another texture (most model-textures have a normal counterpart), or rewrite the texture's vmt (find \"Vertexlitgeneric\" and replace it by \"LightmappedGeneric\").",
+        "error_references": [
+            "WIKI: vmt'"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Textures\\s+are\\s+purple\\/black\\s+checkered\n",
+        "error_short": "Textures are purple/black checkered",
+        "error_description": "Half-life cannot display your textures properly, check to see if you set them up right. (you may need to check not only the directories, but also the vtf's themselves: were they compiled right?).Be sure to use programs like Bspzip or Pakrat to include the textures when you distribute your map to others, as they may not have your custom textures. Models also come with seperate textures, don't forget to add those if you want to distribute custom models.If you haven't placed any env_cubemaps, a purple shine will be all over your textures, so don't forget to add one.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "The\\s+command\\s+failed\\.\\s+Windows\\s+reported\\s+the\\s+error\\:\\s+The\\s+system\\s+cannot\\s+find\\s+the\\s+file\\s+specified\\.\n",
+        "error_short": "The command failed. Windows reported the error: The system cannot find the file specified.",
+        "error_description": "At the end of the compiling process the BSP file is copied from the directory your vmf file is in to the game/maps directory so it can be played. This error means it couldn't find the BSP to copy it.(the message Windows returns may vary on it's language)The cause is usually some fatal error in vbsp.exe (the program that generates the bare bsp-file) so check for other errors in your log. The other cause is some invalid setup of directories, or bad mapnames, too long pathnames etc.In which case you should also see the effects further upwards in the log (something like the other programs not being able to load your map). For mapnames, remember to avoid any strange characters, like brackets, dots, commas and spaces. try to build your mapname out of characters ( a-z ), numbers ( 0-9 ) and the underscore ( _ ) only. The exact cause is usally findable in the logfile.Remember this error is not a cause of your map to not compile, it is merely a sign that your map didn't compile.",
+        "error_solution": "Check your logfile for errors, check your directory setup or rename your map.",
+        "error_references": [
+            "Logfile-checker (see search above) "
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "The\\s+map\\s+overflows\\s+the\\s+max\\s+portal\\s+count\\s+\\(([\\d\\.,-]+)\\s+of\\s+max\\s+32768\\)\\!\\s+\n",
+        "error_short": "The map overflows the max portal count ([sub:1] of max 32768)! ",
+        "error_description": "Your map has too many portals. (your portals is [sub:1], the max is 32768)",
+        "error_solution": "Optimize your map (tie brushes to func_detail) to reduce portals. You may even have to decrease the size of your map.",
+        "error_references": [
+            "Using func_detailMAX_MAP_PORTALSWIKI: Optimiza"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Too\\s+many\\s+indices\\s+for\\s+index\\s+buffer\\.\\.\\s+tell\\s+a\\s+programmer\\s+\\(([\\d\\.,-]+)\\>32768\\)\n",
+        "error_short": "Too many indices for index buffer.. tell a programmer ([sub:1]>32768)",
+        "error_description": "The only time I can over this error is was caused by a func_precipitation that was too big. If you got one in your level, try to decrease its size so it sits under the max again ([sub:1] is the number you currently have, 32768 is the max). You can also try to decrease the density of the effect you were trying to make using this entity. It also seems optimizing helps. ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Too\\s+many\\s+portal\\s+verts\n",
+        "error_short": "Too many portal verts",
+        "error_description": "You have too many portal verts. Portals are doorways between visleafs, verts are their corner points.",
+        "error_solution": "Try tying some world brushes to a func_detail. This will lower the amount of portal verts in your map by erasing some \"doors\" between world brushes. Also try deleting any unnecessary world brushes that are lying around your map.",
+        "error_references": [
+            "MAX_MAP_PORTALVERTSOptimize the ma"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Too\\s+many\\s+t-junctions\\s+to\\s+fix\\s+up\\!\n",
+        "error_short": "Too many t-junctions to fix up!",
+        "error_description": "See h",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Too\\s+many\\s+t-junctions\\s+to\\s+fix\\s+up\\!\\s+\\(([\\d\\.,-]+)\\s+prims,\\s+max\\s+([\\d\\.,-]+)\\s+\\:\\:\\s+([\\d\\.,-]+)\\s+indices,\\s+max\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Too many t-junctions to fix up! ([sub:1] prims, max [sub:2] :: [sub:3] indices, max [sub:4])",
+        "error_description": "(from Jeff Lane, Valve) \"VBSP does cleanup of edges where func_detail geometry meets world geometry to avoid getting visual cracks. One of the ways it does is this by elminating t-junctions. It sounds like you may have hit a limit of the number of those cleanups in the level. ",
+        "error_solution": "If that is the case, you could fix the problem by reducing the number of func_detail brushes in the level, especially ones that touch non-detail geometry. It's probably a sign that you have too much complex brush geometry in the level, and would benefit from having some of it be model geometry instead.\"It is worth noting that func_brush geometry does not perform the same fix ups on compile. Turning some of your func_detail geometry into func_brush geometry may solve this error.The error message shows you that you have [sub:1] primitives (max [sub:2] causing all of this, resulting in [sub:3] t-junctions (max [sub:4])",
+        "error_references": [
+            "WIKI: making models out of brushes with XSI"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Too\\s+many\\s+verts\\s+for\\s+a\\s+dynamic\\s+vertex\\s+buffer\\s+\\(([\\d\\.,-]+)\\>32768\\)\\s+Tell\\s+a\\s+programmer\\s+to\\s+up\\s+VERTEX_BUFFER_SIZE\\.\n",
+        "error_short": "Too many verts for a dynamic vertex buffer ([sub:1]>32768) Tell a programmer to up VERTEX_BUFFER_SIZE.",
+        "error_description": "You have too many dynamic vertices. These are points that make up entity brushes (like func_doors). In Hammer, most lines are dynamic vertices too. (like the leakfile), but the brushes aren't (they dont move in Hammer).",
+        "error_solution": "Tie as much of these entity-brushes to either world (de-entify them) or func_detail (the only, non-dynamic entity). don't be confused with hl1: func_wall should not be used to optimize your map! Instead use func_detail. Proper optimization (with the use of vvis.exe) should reduce the times you see this error. According to steampowered.com, this can also be caused by a broken cache file. A Valve programmer mentiones on the Valve Wiki that this error should only happen on mods with errors in the code, but practice has learned otherwise. (so far for their coders abilities :P ). You currently have [sub:1], and the max is 32768, so there's quite a bit to do.",
+        "error_references": [
+            "How to check your cache fil"
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "Trying\\s+to\\s+create\\s+a\\s+non-quad\\s+displacement\\!\n",
+        "error_short": "Trying to create a non-quad displacement!",
+        "error_description": "lacements can only have four sides, no more, no less.",
+        "error_solution": "Find your displacement (you'll have to check each one in your level) and recreate it so it has four sides again. You may need to be creative with some vertex manipulation for some shapes you want to create with displacements.",
+        "error_references": [
+            "Finding the unfindable "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "unexpected\\s+strips\\s+found\n",
+        "error_short": "unexpected strips found",
+        "error_description": "When compiling with -textureshadows this causes VRAD.exe to ignore every model.",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "5",
+        "regex": "vbsp\\s+crashes\\s+upon\\s+building\\s+physics\\s+collision\\s+data\n",
+        "error_short": "vbsp crashes upon building physics collision data",
+        "error_description": "vbsp crashes upon building the physics collision data, windows may bring up the error pop-up.",
+        "error_solution": "check to see if you have tiny and/or overlapping displacements most likely in a skybox. Replace them with func_detail or models.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "WARNING\\:\\s+areaportal\\s+entity\\s+([\\d\\.,-]+)\\s+\\(brush\\s+([\\d\\.,-]+)\\)\\s+touches\\s+\\>\\s+2\\s+areas\n",
+        "error_short": "WARNING: areaportal entity [sub:1] (brush [sub:2]) touches > 2 areas",
+        "error_description": "One of your areaportals touches too many areas. The probably cause is one or more areaportals touching/intersecting each other or world brushes that seperate atleast two areas (this causes the areaportals to touch more than two areas). ",
+        "error_solution": "The fix would be to move your areaportal(s) around so the above situations don't occur. You may need to read up on the usage of areaportals if you do not understand the problem. I suggest you find your areaportals using it's brushnumber ( [sub:2] )",
+        "error_references": [
+            "AreaportalsWIKI: Func_areaportal"
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "WARNING\\:\\s+BSP\\s+node\\s+with\\s+unbounded\\s+volume\\s+\\(material\\:\\s+\\<NO\\s+BRUSH\\>,\\s+near\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\\)\n",
+        "error_short": "WARNING: BSP node with unbounded volume (material: <NO BRUSH>, near ([sub:1], [sub:2], [sub:3]))",
+        "error_description": "vbsp is having a hard time figuring out your level, it seems to have found a part of your level that is infinite in size. This is, offcourse, invalid",
+        "error_solution": "Look near the coordinates given. It is likely that you either need to func_detail a lot of brushes in that area, or that you have an invalid brush somewhere (Alt-p in hammer to check for them). It may be pretty difficult to hunt down the exact problem though.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "WARNING\\:\\s+Cluster\\s+portals\\s+saw\\s+into\\s+cluster\n",
+        "error_short": "WARNING: Cluster portals saw into cluster",
+        "error_description": "(I think) vbsp.exe has made a concave leaf (or in other ways invalid) that can see into itself. I've also heard about this being caused by overlapping brushes or brushes that are off-grid (thuss causing offgrid visleafs). Allthough i find this unlikely, I am not sure if it isn't, so keep those possibilities open too.",
+        "error_solution": "The solution is to simplify your leafs (func_detail) as much as possible to avoid this error, but usually (or sometimes) you will find no bad things come from it and your map runs as it should. If you got unexpected low FPS somewhere, this may be the cause. Finding it may be hard, and usually ends up in using cordon tools or just not doing it at all. First look at complicated parts of your map, try to use glview glview to find it.",
+        "error_references": [
+            "how to use glviewWIKI: glview"
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "Warning\\:\\s+Couldn't\\s+open\\s+texlight\\s+file\\s+lights\\.rad\n",
+        "error_short": "Warning: Couldn't open texlight file lights.rad",
+        "error_description": "Vrad.exe couldn't find lights.rad, a file used to determine which textures can emit light by themselves.",
+        "error_solution": "Move to/make a new lights.rad in the right directory. You should search for the file in your mod's directory, most mods have one.",
+        "error_references": [
+            "Lights.rad tutorial"
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Warning\\:\\s+Duplication\\s+of\\s+texlight\\s+'([\\w\\/\\\\_\\-\\.]+)'\\s+in\\s+file\\s+'lights\\.rad'\\!\n",
+        "error_short": "Warning: Duplication of texlight '[sub:1]' in file 'lights.rad'!",
+        "error_description": "This texture was listed twice in lights.rad. the fix is obvious, but not necessairy",
+        "error_solution": "Lights.rad tutorial",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Warning\\:\\s+ignoring\\s+bad\\s+texlight\\s+'([\\w\\/\\\\_\\-\\.]+)'\\s+in\\s+lights\\.rad\n",
+        "error_short": "Warning: ignoring bad texlight '[sub:1]' in lights.rad",
+        "error_description": "One of the entries in lights.rad is invalid. Make sure when you edit this file you use plain text-editors, e.g. notepad, wordpad. DON'T SAVE MAKE-UP to this file as MS-Word (from office) will!",
+        "error_solution": "Lights.rad tutorial",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Warning\\:\\s+node\\s+with\\s+unbounded\\s+volume\n",
+        "error_short": "Warning: node with unbounded volume",
+        "error_description": "Your map has a node with an infinite size. (a node is what a clipnode was in hl1, in other words a volume denoting where the player can get to and where not.)",
+        "error_solution": "Unless you just did some vertex-manipulation or placed static props in a wall, or added a funky new displacement, you shouldn't hunt this error down, as it may take you ages to find, unless you get strange effects in your map. Just fix (simplify) the awkward gemetry if you find it. May also be the sign of an invalid brush, or simply vertices offgrid (unlikely?).",
+        "error_references": [
+            "Reference: Finding the unfindable "
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "Warning\\:\\s+node\\s+without\\s+a\\s+volume\n",
+        "error_short": "Warning: node without a volume",
+        "error_description": "Your map has a node without a volume. (a node is what a clipnode was in hl1, in other words a volume denoting where the player can get to and where not.)",
+        "error_solution": "Unless you just did some vertex-manipulation or placed static props in a wall, or added a funky new displacement, you shouldn't hunt this error down, as it may take you ages to find, unless you get strange effects in your map. Just fix (simplify) the awkward gemetry if you find it. May also be the sign of an invalid brush, or simply vertices offgrid (unlikely?).",
+        "error_references": [
+            "Reference: Finding the unfindable "
+        ]
+    },
+    {
+        "severity": "2",
+        "regex": "Warning\\:\\s+overflowed\\s+([\\d\\.,-]+)\\s+displacement\\s+corner-neighbor\\s+lists\\.\n",
+        "error_short": "Warning: overflowed [sub:1] displacement corner-neighbor lists.",
+        "error_description": "There seems to be a fixed amount of displacement-sides allowed that touch other displacements, and you seem to have reached the limit. I've seen this warning show up more and more, mostly with mappers trying to create large tracks of landscapes with lots and lots of displacements. This may be the cause of occasionally reported lighting errors, but that may not be the case in your map.",
+        "error_solution": "The only (theoretically) fix i can think of is to reduce the amount of displacements touching other displacements. You *only* need to fix about [sub:1] displacements, so... I'd only fix this error if you do experience problems in your map.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Warning\\:\\s+Table\\s+modelprecache\\s+is\\s+full,\\s+can't\\s+add\\s+some_model\n",
+        "error_short": "Warning: Table modelprecache is full, can't add some_model",
+        "error_description": "Your map has too much models, this includes  weapons, players, props, bullets, gibs etc. You should seriously remove some! ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "3",
+        "regex": "WARNING\\:\\s+Too\\s+many\\s+light\\s+styles\\s+on\\s+a\\s+face\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "WARNING: Too many light styles on a face at ([sub:1], [sub:2], [sub:3])",
+        "error_description": "There's a face with too many different light styles of light shining on it. (more than six). For every switchable light (that is: any light that is named or has a custom appearance) shining on a face, vrad.exe makes a new lightstyle. Basically, it calculates how the face looks like when:-light 1 is on and light 2 is off-light 1 is on and light 2 is on-light 1 is off and light 2 is off-light 1 is off and light 2 is onI'm sure you understand how 6 switchable lights make 2 ^ 6 lightstyles, and how this enormous amount of memory has to be saved somehow. and limited.",
+        "error_solution": "To stop this error, remove lights, dont give the light names unless you need to, make sure certain lights dont shine on the face (max_shining distance or by blocking it with brushes) or simply dont use that much switchable lights. Dynamic lights are not used by vrad.exe thus dont count. Lights with the same names are counted as the same lights. Find the location of the error using the coordinates.",
+        "error_references": [
+            "Reference: Finding the cause of "
+        ]
+    },
+    {
+        "severity": "4",
+        "regex": "warning\\:\\s+Vis\\s+decompression\\s+overrun\n",
+        "error_short": "warning: Vis decompression overrun",
+        "error_description": "I think you have hit some kind of limit in the vvis process, considering the process (vvis.exe) I suppose this is visleafs, if so, optimizing may work. You may also try to reduce the amount of props in your map, (grasses), I've heard this can help too.",
+        "error_solution": "See above",
+        "error_references": [
+            "Optimizing tutorialHL2 WIKI Optimiza"
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "Water\\s+does\\s+not\\s+look\\s+properly\\s+ingame\n",
+        "error_short": "Water does not look properly ingame",
+        "error_description": "water in hl2 is special. make sure you give all faces the \"nodraw\"-texture and only the top one a water-texture (e.g. the NATURE_ ones, avoid the DX* ones or the _BENEATH ones), make sure it has an env_cubemap (and type \"buildcubemaps\" in the hl2 console), and make sure both vvis.exe and vrad.exe are running properly (that's why leaks will ruin water). You cannot have two levels of water in the same area of your map, unless you use a cheap and a normal watertexture, or use the func_water_analog entity. A func_lod_control is also needed, but will be automatically placed when it's missing.See also:WIKI: Water ",
+        "error_solution": "",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "zero\\s+area\\s+child\\s+patch\n",
+        "error_short": "zero area child patch",
+        "error_description": "A solid in your level has a face with no area. My guess is that vrad.exe is trying to create a lightmap for a face that doesn't exist. Maybe you have an invalid brush?",
+        "error_solution": "First check Hammers problemchecker (alt+p). If that doesn't solve your problems, you can either ignore the error, or try to find it anyway using cordon tools. You would be looking for brushes which might be too complex. I wouldn't recommend the second option.",
+        "error_references": [
+            "Reference: Finding the cause of unknown "
+        ]
+    },
+    {
+        "severity": "0",
+        "regex": "([\\w\\/\\\\_\\-\\.]+)\\:\\s+UTIL_SetModel\\:\\s+Not\\s+Precached\n",
+        "error_short": "[sub:1]: UTIL_SetModel: Not Precached",
+        "error_description": "One of your brush-based entities wasn't tied to any brushes. You probably deleted the brushes belonging to this entity with ignore groups enabled, causing the entity itself to remain. Because of this, the engine cannot precache the brushes belonging to this entity, and crashes when starting the map because no brushes are precached for this entity.",
+        "error_solution": "Use entity report to find the entity and delete it. You likely need to go past every entity of this kind in your map.",
+        "error_references": [
+            ""
+        ]
+    },
+    {
+        "severity": "1",
+        "regex": "([\\d\\.,-]+)\\s+degenerate\\s+face\\(s\\)\n",
+        "error_short": "[sub:1] degenerate face(s)",
+        "error_description": "A degenerate face is a face with no area. For instance, when two of its points are at the same place or three vertices on one line.  Rarely, this error can cause all the lighting in your level to become black.  If this happens, you will have to track down the degenerate face(s).  This is however rare, so only go after the face if your level turns completely dark or you experience other strange errors.",
+        "error_solution": "Don't try to fix this error if you don't experience strange problems, it will take you ages to find them in your level (trial and error, most likely). You will want to examply vertex-manipulated brushes first.",
+        "error_references": [
+            ""
+        ]
+    }
+]
