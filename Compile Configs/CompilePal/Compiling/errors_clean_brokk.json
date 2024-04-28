@@ -444,39 +444,40 @@
         "error_description": "There seems to be a parsing error in [sub:1]. Fix it if you want the texture or other resource associated with this file to work correctly.",
         "error_solution": "",
         "error_references": [
-            ""
         ]
     },
     {
         "severity": "2",
         "regex": "KeyValues\\s+Error\\:\\s+RecursiveLoadFromBuffer\\:\\s+got\\s+EOF\\s+instead\\s+of\\s+keyname\\s+in\\s+file\\s+([\\w\\/\\\\_\\-\\.]+)\n",
         "error_short": "KeyValues Error: RecursiveLoadFromBuffer: got EOF instead of keyname in file [sub:1]",
-        "error_description": "There was a problem parsing this texture ( [sub:1] ). Looks like you forgot to close a (couple of) brackets in this file? Or perhaps a string not closed with a \"?",
-        "error_solution": "Find the file, open it, and fix it. If you don't know how, see below.",
+        "error_description": "There was a problem parsing this texture ([sub:1]). Looks like you forgot to close a (couple of) brackets in this file? Or perhaps a string not closed with a \"?",
+        "error_solution": "Find the file, open it, and fix it.",
         "error_references": [
-            "Valve wiki: Material"
+            "https://developer.valvesoftware.com/wiki/VMT"
         ]
     },
     {
         "severity": "4",
         "regex": "Leaf\\s+\\(portal\\s+([\\d\\.,-]+)\\)\\s+with\\s+too\\s+many\\s+portals\\.\\s+Use\\s+vbsp\\s+-glview\\s+to\\s+compile,\\s+then\\s+glview\\s+-portal\\s+-portalhighlight\\s+X\\s+to\\s+view\\s+the\\s+problem\\.\n",
         "error_short": "Leaf (portal [sub:1]) with too many portals. Use vbsp -glview to compile, then glview -portal -portalhighlight X to view the problem.",
-        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map. e.g. in the example picture, the center leaf would have 12 portals, and all other ones only one. ",
-        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. As the error says, open your map in Glview to find the exact location of the portal.",
+        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map.",
+        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. While the error message suggests the use of GLview, you likely want to use the built-in method in Hammer instead: 'Map' -> 'Load Portal File'. Then find the most egregious clutter of blue and simplify/func_detail the geometry around it.",
         "error_references": [
-            "Reference: Using GlviewOptimizing can help against this error",
-            "WIKI: visleafs",
-            "WIKI: Glview"
+            "https://developer.valvesoftware.com/wiki/VIS_optimization",
+            "https://developer.valvesoftware.com/wiki/Visleaf",
+            "https://developer.valvesoftware.com/wiki/Glview"
         ]
     },
     {
         "severity": "4",
         "regex": "Leaf\\s+([\\d\\.,-]+)\\s+\\(portal\\s+\\[portal_id\\]\\)\\s+with\\s+too\\s+many\\s+portals\\.\\s+Use\\s+vbsp\\s+-glview\\s+to\\s+compile,\\s+then\\s+glview\\s+-portal\\s+-portalhighlight\\s+X\\s+or\\s+-leafhighlight\\s+L\\s+to\\s+view\\s+the\\s+problem\\.\\s+\n",
         "error_short": "Leaf [sub:1] (portal [portal_id]) with too many portals. Use vbsp -glview to compile, then glview -portal -portalhighlight X or -leafhighlight L to view the problem. ",
-        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map. e.g. in the example picture, the center leaf would have 12 portals, and all other ones only one. ",
-        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. As the error says, open your map in Glview to find the exact location of the portal.",
+        "error_description": "One of your leafs is neighbouring too many other leafs. (the 'doorways' between leafs are called 'portals'). This causes vvis.exe to quit compiling your map.",
+        "error_solution": "Find your leaf, and see if you can reduce the number of neighbouring leafs by adding world brushes or turning existing ones into func_detail (or clever placements of hints). Big leafs in the sky should also be avoided. While the error message suggests the use of GLview, you likely want to use the built-in method in Hammer instead: 'Map' -> 'Load Portal File'. Then find the most egregious clutter of blue and simplify/func_detail the geometry around it.",
         "error_references": [
-            "Reference: Using GlviewOptimizing can help against this errorWIKI: visleafsWIKI: Glview"
+            "https://developer.valvesoftware.com/wiki/VIS_optimization",
+            "https://developer.valvesoftware.com/wiki/Visleaf",
+            "https://developer.valvesoftware.com/wiki/Glview"
         ]
     },
     {
@@ -486,7 +487,7 @@
         "error_description": "Vvis.exe cannot find the portalfile, a file that vbsp.exe creates which specifies the location of portals and leafs. Usually because of a leak or other fatal error (see further upwards in your log) in the vbsp process, but may also be because your directories are set up wrong.",
         "error_solution": "Check your logfile for other errors (mainly leaks), and/or check if you have your directories set up right.",
         "error_references": [
-            "Reference: The compile processReference: Leak"
+            "https://developer.valvesoftware.com/wiki/Leak"
         ]
     },
     {
