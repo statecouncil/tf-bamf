@@ -13,13 +13,19 @@ html {
 }
 
 
+/* Embedded Page */
+iframe {
+	border: none;
+	overflow: hidden;
+	height: 70px;
+	max-width: 1152px;
+	width: calc(100% - 40px);
+}
+
+
 /* Text */
 body {
 	color: white;
-	background: #1E1C1C;
-	max-width: 1152px;
-	width: calc(100% - 40px);
-	padding: 15px;
 }
 
 h2, h3 {
@@ -28,8 +34,8 @@ h2, h3 {
 
 p {
 	text-align: left;
-	margin-bottom: 0.5em;
 	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 hr {
@@ -41,6 +47,33 @@ code {
 	font-family: Consolas,"Liberation Mono","Courier New",monospace;
 	padding: 0px 1px;
 	border: 1px solid #1E1C1C;
+}
+
+
+/* List */
+ol {
+	text-align: left;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding: 0;
+	counter-reset: item;
+}
+
+ol>li {
+	margin: 0;
+	padding: 0 0 0 2em;
+	text-indent: -2em;
+	list-style-type: none;
+	counter-increment: item;
+}
+
+ol>li:before {
+	display: inline-block;
+	width: 1.5em;
+	padding-right: 0.5em;
+	font-weight: bold;
+	text-align: right;
+	content: counter(item) ".";
 }
 
 
@@ -88,7 +121,48 @@ a:hover {
 }
 
 
-/* Div Classes */
+/* Images */
+img {
+	vertical-align: middle;
+}
+
+
+/*** Div & Span Classes ***/
+
+
+/* Basic Page Elements */
+.pagehead {
+	background: #33302e;
+}
+
+.pagebody {
+	background: #1E1C1C;
+	max-width: 1200px;
+	width: calc(100% - 40px);
+	padding: 15px;
+}
+
+/* Use with .pagebody for text-only pages */
+.thin {
+	max-width: 900px;
+}
+
+/* Navigation-Bar ONLY */
+.navigation {
+	background: #33302e;
+	height: 70px;
+	position: relative;
+}
+
+/* Center element in all directions */
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Standard Text Block */
 .block {
 	background: #33302E;
 	border-radius: 5px;
@@ -97,6 +171,7 @@ a:hover {
 	margin-top: 20px;
 }
 
+/* Header Block */
 .header {
 	color: #1E1C1C;
 	background: #B6B4AE;
@@ -104,39 +179,62 @@ a:hover {
 	margin-top: 0;
 }
 
-.col {
-	float: left;
-}
-
-.lf {
-	width: 200px;
-	margin-right: 15px;
-}
-
-.rt {
-	/* important: subtract total width of .lf class */
-	width: calc(100% - 215px);
-}
-
+/* Used by the water info sheet and credits page for nice image display */
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
 }
 
+.col {
+	float: left;
+}
+
+/* Specific to water info sheet */
+.water-info-sheet > .col:first-of-type {
+	width: 200px;
+	margin-right: 15px;
+}
+
+.water-info-sheet > .col {
+	/* important: subtract total width of other col classes */
+	width: calc(100% - 215px);
+}
+
+/* this collapses .col elements if screen is less than X px wide */
 @media screen and (max-width: 700px) {
-	/* this collapses .col elements if screen is less than X px wide */
-	.col {
+	.water-info-sheet > .col {
 		width: 100% !important;
 	}
 }
 
+/* Specific to credits page */
+.credits-page > .col:first-of-type {
+	width: 200px;
+}
 
-/* Span Classes */
+.credits-page > .col {
+	/* important: subtract total width of other col classes */
+	width: calc(100% - 400px);
+}
+
+.credits-page > .col:last-of-type {
+	width: 200px;
+}
+
+/* this collapses .col elements if screen is less than X px wide */
+@media screen and (max-width: 750px) {
+	.credits-page > .col {
+		width: 100% !important;
+	}
+}
+
+/* VMT keys */
 .key {
 	font-weight: bold;
 }
 
+/* Stuff for water info sheet */
 .regular {
 	background: #257EF1;
 	font-weight: bold;
