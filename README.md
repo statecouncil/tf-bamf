@@ -2,10 +2,10 @@
 # Brokk's Assorted Mapping Fixes
 
 ### A TF2 Mapping Starter Pack of the modern era.
-Click [HERE](https://github.com/statecouncil/tf-bamf/blob/main/INSTALLATION.md) for an installation guide. Installer coming soon.
+[Installation Guide here!](https://statecouncil.github.io/tf-bamf/installation.html)
 
 ## CURRENT FEATURES (all are modular, can be enabled/disabled individually)
-Click [HERE](LINKME) for a full feature list.
+Click [HERE](https://statecouncil.github.io/tf-bamf/contents-and-features.html) for a full feature list.
 
 - Configurable installer for all features below (WIP!)
 - An FGD Fit For a LORD - Brokk Edition
