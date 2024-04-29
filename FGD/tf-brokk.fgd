@@ -1819,7 +1819,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"sky_upward" : "sky_upward"
 		"sky_well_01" : "sky_well_01"
 	] // end skyname
-	detailvbsp(choices) : "Detail .vbsp File" : "detail.vbsp" : "Detail.vbsp file to use for emitting detail props (found in the /tf directory). A list of official .vbsp files is provided; custom ones can also be typed. Those that don't have a material file with a matching name have their associated material file listed in parentheses. Further info: tf2maps.net/abs/detail_sprites_info.html" = [
+	detailvbsp(choices) : "Detail .vbsp File" : "detail_likeside.vbsp" : "Detail.vbsp file to use for emitting detail props (found in the /tf directory). A list of official .vbsp files is provided; custom ones can also be typed. Those that don't have a material file with a matching name have their associated material file listed in parentheses. Further info: tf2maps.net/abs/detail_sprites_info.html" = [
 		"detail.vbsp" : "detail.vbsp"
 		"detail_2fort.vbsp" : "detail_2fort.vbsp"
 		"detail_doomsday.vbsp" : "detail_doomsday.vbsp (sprites_dustbowl)"
