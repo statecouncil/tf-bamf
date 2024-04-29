@@ -1,8 +1,8 @@
 versioninfo
 {
 	"editorversion" "400"
-	"editorbuild" "9540"
-	"mapversion" "101"
+	"editorbuild" "10042"
+	"mapversion" "109"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "101"
+	"mapversion" "109"
 	"classname" "worldspawn"
 	"coldworld" "0"
 	"detailmaterial" "detail/detailsprites_2fort"
@@ -1268,13 +1268,55 @@ world
 	}
 	group
 	{
-		"id" "1500"
+		"id" "3204"
 		editor
 		{
-			"color" "162 111 0"
+			"color" "204 197 0"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
+	}
+}
+entity
+{
+	"id" "3041"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"targetname" "announcer_red_lead"
+	connections
+	{
+		"OnTrigger" "gamerulesPlayVORedAnnouncer.TeamLead0-1"
+		"OnTrigger" "gamerulesPlayVOBlueAnnouncer.EnemyLead0-1"
+	}
+	"origin" "16 -192 144"
+	editor
+	{
+		"color" "204 197 0"
+		"groupid" "3204"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "3043"
+	"classname" "logic_relay"
+	"spawnflags" "0"
+	"targetname" "announcer_blu_lead"
+	connections
+	{
+		"OnTrigger" "gamerulesPlayVOBlueAnnouncer.TeamLead0-1"
+		"OnTrigger" "gamerulesPlayVORedAnnouncer.EnemyLead0-1"
+	}
+	"origin" "-16 -192 144"
+	editor
+	{
+		"color" "204 197 0"
+		"groupid" "3204"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
 	}
 }
 entity
@@ -1287,8 +1329,8 @@ entity
 	"origin" "16 -192 128"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4500]"
@@ -1304,8 +1346,8 @@ entity
 	"origin" "-16 -192 128"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4500]"
@@ -1321,8 +1363,8 @@ entity
 	"origin" "0 -192 128"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 5500]"
@@ -1338,16 +1380,17 @@ entity
 		"OnMultiNewRound" "pd_logicEnableMaxScoreUpdating0-1"
 		"OnMultiNewRound" "pd_logicDisableMaxScoreUpdating30-1"
 		"OnMultiNewRound" "capture_disableTrigger0-1"
-		"OnMultiNewRound" "gamerulesSetBlueTeamRespawnWaveTime40-1"
-		"OnMultiNewRound" "gamerulesSetRedTeamRespawnWaveTime40-1"
+		"OnMultiNewRound" "gamerulesSetBlueTeamRespawnWaveTime60-1"
+		"OnMultiNewRound" "gamerulesSetRedTeamRespawnWaveTime60-1"
 		"OnMapSpawn" "gamerulesSetRedTeamGoalStringCollect and deposit A into the B to score points!0-1"
 		"OnMapSpawn" "gamerulesSetBlueTeamGoalStringCollect and deposit A into the B to score points!0-1"
+		"OnMultiNewRound" "gamerulesPlayVOAnnouncer.Intro2-1"
 	}
 	"origin" "0 -192 160"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Replace the Goal String for a custom one"
@@ -1372,12 +1415,13 @@ entity
 		"OnTrigger" "gamerulesPlayVOAnnouncer.RoundBegins3Seconds41-1"
 		"OnTrigger" "gamerulesPlayVOAnnouncer.RoundBegins4Seconds40-1"
 		"OnTrigger" "gamerulesPlayVOAnnouncer.RoundBegins5Seconds39-1"
+		"OnTrigger" "gamerulesPlayVOAnnouncer.CaptureEnable45-1"
 	}
 	"origin" "-16 -192 160"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 1500]"
@@ -1396,12 +1440,13 @@ entity
 		"OnTrigger" "pd_logicSetCountdownTimer300-1"
 		"OnTrigger" "capture_zoneEnable0-1"
 		"OnTrigger" "arrow_icon_depositShowSprite0-1"
+		"OnTrigger" "gamerulesPlayVOAnnouncer.CaptureDisable30-1"
 	}
-	"origin" "-16 -192 144"
+	"origin" "16 -192 160"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2000]"
@@ -1423,20 +1468,16 @@ entity
 	"targetname" "pd_logic"
 	connections
 	{
-		"OnRedScoreChanged" "compare_respawn_holderRemap_redInValue0.05-1"
 		"OnRedScoreChanged" "compare_respawn_changerCompare0.05-1"
-		"OnRedScoreChanged" "compare_respawn_big_enablerSetValueCompare0-1"
 		"OnRedScoreChanged" "compare_respawn_changerSetCompareValue0-1"
 		"OnBlueScoreChanged" "compare_respawn_changerCompare0.05-1"
-		"OnBlueScoreChanged" "compare_respawn_holderRemap_blueInValue0.05-1"
-		"OnBlueScoreChanged" "compare_respawn_big_enablerSetValueCompare0-1"
 		"OnBlueScoreChanged" "compare_respawn_changerSetValue0-1"
 	}
 	"origin" "0 -192 144"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "Change the prop model and hud res for custom ones"
@@ -1445,23 +1486,33 @@ entity
 }
 entity
 {
-	"id" "1316"
+	"id" "1586"
 	"classname" "logic_compare"
 	"CompareValue" "0"
 	"InitialValue" "0"
 	"targetname" "compare_respawn_changer"
 	connections
 	{
-		"OnGreaterThan" "gamerulesSetBlueTeamRespawnWaveTime80-1"
-		"OnGreaterThan" "gamerulesSetRedTeamRespawnWaveTime40-1"
-		"OnLessThan" "gamerulesSetRedTeamRespawnWaveTime80-1"
+		"OnEqualTo" "gamerulesSetRedTeamRespawnWaveTime60-1"
+		"OnEqualTo" "gamerulesSetBlueTeamRespawnWaveTime60-1"
+		"OnLessThan" "announcer_red_leadTrigger0-1"
+		"OnGreaterThan" "announcer_blu_leadTrigger0-1"
 		"OnLessThan" "gamerulesSetBlueTeamRespawnWaveTime40-1"
+		"OnLessThan" "gamerulesSetRedTeamRespawnWaveTime80-1"
+		"OnGreaterThan" "gamerulesSetRedTeamRespawnWaveTime40-1"
+		"OnGreaterThan" "gamerulesSetBlueTeamRespawnWaveTime80-1"
+		"OnGreaterThan" "announcer_blu_leadDisable0.01-1"
+		"OnLessThan" "announcer_red_leadDisable0.01-1"
+		"OnEqualTo" "announcer_red_leadEnable0.1-1"
+		"OnEqualTo" "announcer_blu_leadEnable0.1-1"
+		"OnGreaterThan" "announcer_red_leadDisable0.01-1"
+		"OnLessThan" "announcer_blu_leadDisable0.01-1"
 	}
-	"origin" "16 -192 144"
+	"origin" "0 -192 176"
 	editor
 	{
-		"color" "162 111 0"
-		"groupid" "1500"
+		"color" "204 197 0"
+		"groupid" "3204"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "initial is blue - compare is red"
@@ -1626,427 +1677,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"
-	}
-}
-entity
-{
-	"id" "1582"
-	"classname" "math_counter"
-	"max" "100"
-	"min" "0"
-	"startvalue" "0"
-	"targetname" "compare_respawn_holderL_blue"
-	connections
-	{
-		"OnGetValue" "compare_respawn_howmuchSetValueNoFire0-1"
-	}
-	"origin" "-48 -112 160"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1584"
-	"classname" "math_counter"
-	"max" "100"
-	"min" "0"
-	"startvalue" "0"
-	"targetname" "compare_respawn_holderL_red"
-	connections
-	{
-		"OnGetValue" "compare_respawn_howmuchSetValueNoFire0-1"
-	}
-	"origin" "-32 -112 160"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1586"
-	"classname" "logic_compare"
-	"CompareValue" "0"
-	"InitialValue" "0"
-	"targetname" "compare_respawn_changer"
-	connections
-	{
-		"OnGreaterThan" "compare_respawn_holderRelay_F1Trigger0-1"
-		"OnLessThan" "compare_respawn_holderRelay_F2Trigger0-1"
-		"OnEqualTo" "gamerulesSetRedTeamRespawnWaveTime60-1"
-		"OnEqualTo" "gamerulesSetBlueTeamRespawnWaveTime60-1"
-	}
-	"origin" "-40 -112 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "initial is blue - compare is red"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1588"
-	"classname" "math_counter"
-	"max" "100"
-	"min" "0"
-	"startvalue" "0"
-	"targetname" "compare_respawn_howmuch"
-	connections
-	{
-		"OutValue" "compare_respawn_changer_spectrumSetValueCompare0-1"
-	}
-	"origin" "24 -112 208"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1590"
-	"classname" "logic_compare"
-	"CompareValue" ".5"
-	"InitialValue" "0"
-	"targetname" "compare_respawn_changer_spectrum"
-	connections
-	{
-		"OnGreaterThan" "compare_respawn_endRelay_smallTrigger0-1"
-		"OnLessThan" "compare_respawn_endRelay_bigTrigger0-1"
-		"OnEqualTo" "compare_respawn_endRelay_smallTrigger0-1"
-		"OnLessThan" "compare_respawn_endRelay_big_backupTrigger0-1"
-	}
-	"origin" "24 -112 192"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1592"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "compare_respawn_setter1_blue"
-	connections
-	{
-		"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime80-1"
-		"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime40-1"
-	}
-	"origin" "24 -112 144"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "if enabled, blue has the most points"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1594"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "compare_respawn_setter1_red"
-	connections
-	{
-		"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime80-1"
-		"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime40-1"
-	}
-	"origin" "40 -112 144"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "if enabled, red has the most points"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1596"
-	"classname" "math_remap"
-	"in1" "0"
-	"in2" "1"
-	"out1" "0"
-	"out2" "100"
-	"spawnflags" "3"
-	"targetname" "compare_respawn_holderRemap_blue"
-	connections
-	{
-		"OutValue" "compare_respawn_holderL_blueSetValueNoFire0-1"
-		"OutValue" "compare_respawn_holderG_blueSetValueNoFire0-1"
-	}
-	"origin" "-48 -112 176"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1598"
-	"classname" "math_remap"
-	"in1" "0"
-	"in2" "1"
-	"out1" "0"
-	"out2" "100"
-	"spawnflags" "3"
-	"targetname" "compare_respawn_holderRemap_red"
-	connections
-	{
-		"OutValue" "compare_respawn_holderL_redSetValueNoFire0-1"
-		"OutValue" "compare_respawn_holderG_redSetValueNoFire0-1"
-	}
-	"origin" "-32 -112 176"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1600"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"targetname" "compare_respawn_endRelay_small"
-	connections
-	{
-		"OnTrigger" "compare_respawn_setter1_*Trigger0-1"
-	}
-	"origin" "16 -112 160"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1602"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "compare_respawn_endRelay_big"
-	connections
-	{
-		"OnTrigger" "compare_respawn_setter2_*Trigger0-1"
-	}
-	"origin" "40 -112 160"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1604"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"targetname" "compare_respawn_holderRelay_F1"
-	connections
-	{
-		"OnTrigger" "compare_respawn_holderG_blueGetValue0.05-1"
-		"OnTrigger" "compare_respawn_holderL_redGetValue0.05-1"
-		"OnTrigger" "compare_respawn_setter1_blueEnable0-1"
-		"OnTrigger" "compare_respawn_setter1_redDisable0-1"
-		"OnTrigger" "compare_respawn_setter2_blueEnable0-1"
-		"OnTrigger" "compare_respawn_setter2_redDisable0-1"
-	}
-	"origin" "-64 -112 152"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 2000]"
-	}
-}
-entity
-{
-	"id" "1606"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"targetname" "compare_respawn_holderRelay_F2"
-	connections
-	{
-		"OnTrigger" "compare_respawn_holderG_redGetValue0.05-1"
-		"OnTrigger" "compare_respawn_holderL_blueGetValue0.05-1"
-		"OnTrigger" "compare_respawn_setter1_redEnable0-1"
-		"OnTrigger" "compare_respawn_setter1_blueDisable0-1"
-		"OnTrigger" "compare_respawn_setter2_redEnable0-1"
-		"OnTrigger" "compare_respawn_setter2_blueDisable0-1"
-	}
-	"origin" "-16 -112 152"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 2000]"
-	}
-}
-entity
-{
-	"id" "1608"
-	"classname" "math_counter"
-	"max" "100"
-	"min" "0"
-	"startvalue" "0"
-	"targetname" "compare_respawn_holderG_blue"
-	connections
-	{
-		"OnGetValue" "compare_respawn_howmuchDivide0-1"
-	}
-	"origin" "-48 -112 144"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1610"
-	"classname" "math_counter"
-	"max" "100"
-	"min" "0"
-	"startvalue" "0"
-	"targetname" "compare_respawn_holderG_red"
-	connections
-	{
-		"OnGetValue" "compare_respawn_howmuchDivide0-1"
-	}
-	"origin" "-32 -112 144"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1612"
-	"classname" "logic_compare"
-	"CompareValue" ".2"
-	"InitialValue" "0"
-	"targetname" "compare_respawn_big_enabler"
-	connections
-	{
-		"OnEqualTo" "compare_respawn_endRelay_bigEnable0-1"
-		"OnGreaterThan" "compare_respawn_endRelay_bigEnable0-1"
-		"OnEqualTo" "compare_respawn_big_enablerKill0.05-1"
-		"OnGreaterThan" "compare_respawn_big_enablerKill0.05-1"
-		"OnEqualTo" "compare_respawn_endRelay_big_backupDisable0-1"
-		"OnGreaterThan" "compare_respawn_endRelay_big_backupDisable0-1"
-	}
-	"origin" "48 -112 176"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "on larger, enable the big relay"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1614"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "compare_respawn_endRelay_big_backup"
-	connections
-	{
-		"OnTrigger" "compare_respawn_setter1_*Trigger0-1"
-	}
-	"origin" "56 -112 160"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1616"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "compare_respawn_setter2_blue"
-	connections
-	{
-		"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime120-1"
-		"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime00-1"
-	}
-	"origin" "24 -112 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "if enabled, blue has the most points"
-		"logicalpos" "[0 0]"
-	}
-}
-entity
-{
-	"id" "1618"
-	"classname" "logic_relay"
-	"spawnflags" "0"
-	"StartDisabled" "1"
-	"targetname" "compare_respawn_setter2_red"
-	connections
-	{
-		"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime120-1"
-		"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime00-1"
-	}
-	"origin" "40 -112 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"comments" "if enabled, red has the most points"
-		"logicalpos" "[0 0]"
 	}
 }
 cameras

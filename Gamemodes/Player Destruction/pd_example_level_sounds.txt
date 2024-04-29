@@ -1,0 +1,167 @@
+//-----------------------------------------------------------------------------
+// Intro
+//-----------------------------------------------------------------------------
+
+"Announcer.Intro"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"rndwave"
+	{
+		"wave"		"vo/mvm_mann_up_mode04.mp3"
+		"wave"		"vo/mvm_mann_up_mode05.mp3"
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+// Countdown
+//-----------------------------------------------------------------------------
+
+"Announcer.RoundBegins5Seconds"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_begins_5sec.mp3"
+}
+
+"Announcer.RoundBegins4Seconds"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_begins_4sec.mp3"
+}
+
+"Announcer.RoundBegins3Seconds"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_begins_3sec.mp3"
+}
+
+"Announcer.RoundBegins2Seconds"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_begins_2sec.mp3"
+}
+
+"Announcer.RoundBegins1Seconds"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_begins_1sec.mp3"
+}
+
+
+//-----------------------------------------------------------------------------
+// Control Point
+//-----------------------------------------------------------------------------
+
+"Announcer.CaptureEnable"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_am_capenabled02.mp3"
+}
+
+"Announcer.CaptureDisable"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"wave"			"vo/announcer_captureflag_miscspace_19.mp3"
+}
+
+
+//-----------------------------------------------------------------------------
+// Team Winning/Losing
+//-----------------------------------------------------------------------------
+
+"Announcer.TeamLead"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"rndwave"
+	{
+		"wave"		"vo/announcer_plr_racegeneral01.mp3"
+		"wave"		"vo/announcer_plr_racegeneral14.mp3"
+	}
+}
+
+"Announcer.EnemyLead"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NONE"
+	
+	"rndwave"
+	{
+		"wave"		"vo/announcer_plr_racegeneral02.mp3"
+		"wave"		"vo/announcer_plr_racegeneral15.mp3"
+	}
+}
+
+
+//-----------------------------------------------------------------------------
+// Round End
+//-----------------------------------------------------------------------------
+
+"Game.YourTeamWon"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NORM"
+	
+	"wave"			"misc/your_team_won.mp3"
+}
+
+"Game.YourTeamLost"
+{
+	"channel"		"CHAN_VOICE2"
+	"volume"		"VOL_NORM"
+	"pitch"			"PITCH_NORM"
+	
+	"soundlevel"	"SNDLVL_NORM"
+	
+	"wave"			"misc/your_team_lost.mp3"
+}
