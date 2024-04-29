@@ -14,7 +14,7 @@ Click [HERE](https://statecouncil.github.io/tf-bamf/contents-and-features.html) 
 - Extra Dev Textures
 - Decompiled map library
 - Radshadowman (automatic prop texture shadows includer)
-- All gamemode prefabs by Lacry, with the exception of VSH, ZI, and Sulfur's CP variant, as those are owned and maintained by their respective creators.
+- All gamemode prefabs by Lacry, with the exception of VSH, ZI, as those are owned and maintained by their respective creators.
 - Various other little improvements, tools, features, and whatever else I can think of
 
 ## PLANNED FEATURES (to be added before the full release)
