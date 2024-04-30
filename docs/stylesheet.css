@@ -17,9 +17,8 @@ html {
 iframe {
 	border: none;
 	overflow: hidden;
-	height: 70px;
-	max-width: 1152px;
-	width: calc(100% - 40px);
+	max-width: 800px;
+	width: 100%;
 }
 
 
@@ -127,13 +126,10 @@ img {
 }
 
 
-/*** Div & Span Classes ***/
+/*** Custom Classes ***/
 
 
 /* Basic Page Elements */
-.pagehead {
-	background: #33302e;
-}
 
 .pagebody {
 	background: #1E1C1C;
@@ -147,13 +143,6 @@ img {
 	max-width: 900px;
 }
 
-/* Navigation-Bar ONLY */
-.navigation {
-	background: #33302e;
-	height: 70px;
-	position: relative;
-}
-
 /* Center element in all directions */
 .center {
 	position: absolute;
@@ -161,6 +150,44 @@ img {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/* Add to div or p section to increase line spacing */
+.bigspacing {
+	line-height: 1.75em;
+}
+
+/* Header */
+
+.pagehead {
+	background: #33302e;
+}
+
+.pagehead > iframe {
+	height: 70px;
+}
+
+.header {
+	background: #33302e;
+	height: 70px;
+	position: relative;
+}
+
+/* Footer */
+
+.pagefoot {
+	background: #33302e;
+}
+
+.pagefoot > iframe {
+	height: 200px;
+}
+
+.footer {
+	background: #33302e;
+	height: 200px;
+	position: relative;
+}
+
 
 /* Standard Text Block */
 .block {
@@ -172,14 +199,16 @@ img {
 }
 
 /* Header Block */
-.header {
+.block:first-of-type {
 	color: #1E1C1C;
 	background: #B6B4AE;
 	font-size: 1.4em;
 	margin-top: 0;
 }
 
-/* Used by the water info sheet and credits page for nice image display */
+
+/* Columns that collapse with screen width. Values are hardcoded per page. */
+
 .row:after {
 	content: "";
 	display: table;
@@ -190,51 +219,72 @@ img {
 	float: left;
 }
 
-/* Specific to water info sheet */
-.water-info-sheet > .col:first-of-type {
+/* Specific to water page */
+.water-page .col:first-of-type {
 	width: 200px;
 	margin-right: 15px;
 }
 
-.water-info-sheet > .col {
-	/* important: subtract total width of other col classes */
-	width: calc(100% - 215px);
+.water-page .col {
+	width: calc(100% - 215px); /* subtract total width of other .col elements */
 }
 
-/* this collapses .col elements if screen is less than X px wide */
 @media screen and (max-width: 700px) {
-	.water-info-sheet > .col {
+	.water-page .col {
 		width: 100% !important;
+		margin: 15px 0 !important;
 	}
 }
 
 /* Specific to credits page */
-.credits-page > .col:first-of-type {
+.credits-page .col:first-of-type,
+.credits-page .col:last-of-type {
 	width: 200px;
 }
 
-.credits-page > .col {
-	/* important: subtract total width of other col classes */
-	width: calc(100% - 400px);
+.credits-page .col {
+	width: calc(100% - 400px); /* subtract total width of other .col elements */
 }
 
-.credits-page > .col:last-of-type {
-	width: 200px;
-}
-
-/* this collapses .col elements if screen is less than X px wide */
 @media screen and (max-width: 750px) {
-	.credits-page > .col {
+	.credits-page .col {
 		width: 100% !important;
 	}
 }
+
+/* Specific to footer */
+.footer .col {
+	width: 32%;
+	margin-right: 2%;
+}
+
+.footer .col:last-of-type {
+	margin-right: 0;
+}
+
+@media screen and (max-width: 550px) {
+	.footer .col {
+		width: 100% !important;
+		margin: 0 0 2em 0 !important;
+	}
+
+	.footer .col:last-of-type {
+		margin-bottom: 0 !important;
+	}
+
+	.footer,
+	.pagefoot > iframe {
+		height: 550px;
+	}
+}
+
 
 /* VMT keys */
 .key {
 	font-weight: bold;
 }
 
-/* Stuff for water info sheet */
+/* Stuff for water page */
 .regular {
 	background: #257EF1;
 	font-weight: bold;
