@@ -491,33 +491,22 @@
         ]
     },
     {
-        "severity": "3",
-        "regex": "Luxel\\s+axis\\s+perpendicular\\s+to\\s+face\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
-        "error_short": "Luxel axis perpendicular to face at ([sub:1], [sub:2], [sub:3])",
-        "error_description": "See Texture axis perpendicular to fa",
-        "error_solution": "",
-        "error_references": [
-            ""
-        ]
-    },
-    {
-        "severity": "3",
+        "severity": "2",
         "regex": "make_triangles\\:calc_triangle_representation\\:\\s+Cannot\\s+convert\n",
         "error_short": "make_triangles:calc_triangle_representation: Cannot convert",
-        "error_description": "Usually preceded by some coordinates, the best explanation I can give at the moment is that this is caused by certain models (a b0rked subpart). In particular the \"/wasteland/InteriorFence002d.mdl\"-model. I've also heard small panes of glass and some other (even self-made) models can cause this error to occur, as do some freaky regular brushes. This error can also be caused by bad displacements.If it is displacements they may fail to collide with vehicles and physics objects on the triangles that are causing a problem.  Parts of the displacement may still work others may not.   ",
-        "error_solution": "You can look for ages to find the model causing the problem, after hiding all your models first and see if that is causing your problem. Once found, you can decide to reconstruct that model, there doesn't seem to be a real error in the model itself though. In other words, leave it be, it won't hurt you. Unless you bite first! It may be the case that the game will not load the map because of this error. It would present you with a pup-up with the beloved memory error.The displacement problem as of right now has only 1 solution and it is to delete the displacement. If its a brush, find it with Cordon Tools and delete it. ",
+        "error_description": "This error is likely caused by certain models with broken or semi-broken geometry, including some stock Valve assets. It may also be caused by a broken displacement, which may lead to missing or broken collision in-game.",
+        "error_solution": "If this error does not actually give you any trouble in-game and none of your playtesters are complaining, ignore it. As mentioned, even some Valve assets cause it. If there are coordinates given with it, check them out and make sure all displacements are working correctly, and then move on.",
         "error_references": [
-            ""
         ]
     },
     {
         "severity": "5",
         "regex": "Map\\s+has\\s+too\\s+many\\s+texinfos\\s+\\(has\\s+([\\d\\.,-]+),\\s+can\\s+have\\s+at\\s+most\\s+12288\\)\n",
         "error_short": "Map has too many texinfos (has [sub:1], can have at most 12288)",
-        "error_description": "See MAX_MAP_TEXINFO",
-        "error_solution": "",
+        "error_description": "Texinfos (Texture Information) describe the scaling, orientation, alignment and lightmap size of a given texture as applied to a brush face. Multiple faces can use the same texinfo, as long as their info is the same.",
+        "error_solution": "Give multiple brush faces the same values. Reducing the amount of cubemaps may also help. Remember you an apply the same texture settings to multiple faces by selecting a face with Hammer's Texture Tool, then pressing ALT+MOUSE2 on a different face.",
         "error_references": [
-            ""
+            "https://developer.valvesoftware.com/wiki/Applying_Textures"
         ]
     },
     {
@@ -525,9 +514,17 @@
         "regex": "Material\\s+\"([^\"]+)\"\\s+not\\s+found\n",
         "error_short": "Material \"[sub:1]\" not found",
         "error_description": "The error is self-explanatory. Somewhere in your map you have referenced a texture that doesn't exist. Perhaps you used a texture from another modification or game you haven't correctly set your current game up for?",
-        "error_solution": "Make sure you have your mod paths set up correctly and that you are including all mod contents you need.",
+        "error_solution": "Make sure you have your paths set up correctly and that all custom content is mounted correctly.",
         "error_references": [
-            ""
+        ]
+    },
+	{
+        "severity": "2",
+        "regex": "Material\\s+not\\s+found\\!\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
+        "error_short": "Material not found!: [sub:1]",
+        "error_description": "The error is self-explanatory. Somewhere in your map you have referenced a texture that doesn't exist. Perhaps you used a texture from another modification or game you haven't correctly set your current game up for?",
+        "error_solution": "Make sure you have your paths set up correctly and that all custom content is mounted correctly.",
+        "error_references": [
         ]
     },
     {
@@ -535,19 +532,8 @@
         "regex": "Material\\s+glass\\/glasswindowbreak070b\\s+is\\s+depending\\s+on\\s+itself\\s+through\\s+materialvar\\s+\\$crackmaterial\\!\n",
         "error_short": "Material glass/glasswindowbreak070b is depending on itself through materialvar $crackmaterial!",
         "error_description": "You shouldn't use this texture, but this one: glass/glasswindowbreak070a. The b-texture is used after the glass is broken, so you should never put it into your map manually. Sometimes this error occours and you dont have this texture anywhere in your map. Probably being some strange bug, might as wel leave it, it seems to cause no harm. ",
-        "error_solution": "",
+        "error_solution": "Use glass/glasswindowbreak070a instead.",
         "error_references": [
-            ""
-        ]
-    },
-    {
-        "severity": "2",
-        "regex": "Material\\s+not\\s+found\\!\\:\\s+([\\w\\/\\\\_\\-\\.]+)\n",
-        "error_short": "Material not found!: [sub:1]",
-        "error_description": "The error is self-explanatory. Somewhere in your map you have referenced a texture that doesn't exist. Perhaps you used a texture from another modification or game you haven't correctly set your current game up for?",
-        "error_solution": "Make sure you have your mod paths set up correctly and that you are including all mod contents you need.",
-        "error_references": [
-            ""
         ]
     },
     {
@@ -555,9 +541,11 @@
         "regex": "Material\\s+([\\w\\/\\\\_\\-\\.]+)\\s+uses\\s+unknown\\s+detail\\s+object\\s+type\\s+([\\w\\/\\\\_\\-\\.]+)\\!\\s+\n",
         "error_short": "Material [sub:1] uses unknown detail object type [sub:2]! ",
         "error_description": "One of your textures is scripted to emit detail props (the grass thingies that appear on displacements), but the detail props specified are not defined in the mod's data files.",
-        "error_solution": "Usually this error is caused by mindlessly porting textures from other mods, without porting the detail props file. The fix is to either get these detail props from that other mod, or fix the texture so it emits detail props that exist in the current mod.",
+        "error_solution": "Use a different detail sprites file. In Hammer: 'Map' -> 'Map Properties...' -> 'Detail .vbsp File' and select a different entry from the drop-down or type in your own. The default, 'detail_lakeside.vbsp' should be compatible with most materials.",
         "error_references": [
-            "WIKI: Displacement grassWIKI: Detail_props "
+            "https://developer.valvesoftware.com/wiki/Displacement_Grass"
+			"https://developer.valvesoftware.com/wiki/Detail_props"
+			"https://tf2maps.net/abs/detail_sprites_info.html"
         ]
     },
     {
@@ -718,6 +706,16 @@
         "error_solution": "Find the face using the coordinates. You will notice a very overstretched appearance of the texture belonging to the offending side. If you can't find it, you must select the entire brush, if you can find the exact face, just select that face in the texture application tool. When you are in the texture application tool, notice the \"align to face\" and \"align to world\" tickboxes. Try the one that isn't currently checked, or both. If they don't work, your brush is broken and needs to be repaired. Either using the vertex-tool, or deleting the brush and recreating it.",
         "error_references": [
             "Reference: Finding the location of "
+        ]
+    },
+	{
+        "severity": "3",
+        "regex": "Luxel\\s+axis\\s+perpendicular\\s+to\\s+face\\s+at\\s+\\(([\\d\\.,-]+),\\s+([\\d\\.,-]+),\\s+([\\d\\.,-]+)\\)\n",
+        "error_short": "Luxel axis perpendicular to face at ([sub:1], [sub:2], [sub:3])",
+        "error_description": "See Texture axis perpendicular to fa",
+        "error_solution": "",
+        "error_references": [
+            ""
         ]
     },
     {
