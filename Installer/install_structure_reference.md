@@ -1,14 +1,4 @@
-"FGD" directory-content:  
-Team Fortress 2/bin/...
-
-"Tools" directory-content:  
-Team Fortress 2/bin/...
-
-"VPKs" directory-content:  
-Team Fortress 2/tf/custom/...
-
-"Prefabs" directory-content:  
-Team Fortress 2/bin/Prefabs/...
+Follow instructions on https://bamf.tf/installation.html or compare with contents of docs/installation.html
 
 Do NOT include "installer" and "docs" directories!
 
