@@ -20,7 +20,7 @@ All other directories (*entire* directories, not just content!) to be placed at 
 Merasmus will guide you through the installation process.
 For a full documentation, click HERE [github pages docs].
 
-Attention: Some features of this mapping pack will require Hammer++ and CompilePal to be installed BEFORE running this installer.
+Attention: Some features of this mapping pack will require Hammer++ and CompilePal to be installed BEFORE running this installer. Installing them after this pack has been installed will overwrite certain files and may cause errors.
 
 **FEATURES**
 
@@ -74,7 +74,7 @@ see [ ] vs. [x] for which features should be enabled/disabled by default. The de
 If 1a was selected:
 **Page 4** - CONFIGURE FGD
 
-The FGD fit for a LORD features several customization options. You may change any of these manually by editing the top of Team Fortress 2/bin/tf-bamf.fgd when this installation is complete.
+The FGD fit for a LORD features several customization options. You may change any of these manually by editing the top of Team Fortress 2/bin/tf-bamf.fgd when this installation is complete or by running this installer again.
 
 (options here)
 
