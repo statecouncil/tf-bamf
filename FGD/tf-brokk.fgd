@@ -129,7 +129,6 @@
 // TODO: These could probably use a refresher...
 
 @AutoVisGroup = "World Geometry" [
-@AutoVisGroup = "World Geometry" [
 	"Water" [
 		"func_water"
 		"func_water_analog"
