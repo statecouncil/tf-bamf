@@ -31,7 +31,7 @@
 				</ol>
 
 				<p>
-					If you haven't downloaded BAMF yet, you can find the latest version on TF2Maps <span style="color:#f18149;">(TODO: ADD LINK HERE)</span>. For the full project and in-development versions, check the <a href="https://github.com/statecouncil/tf-bamf">GitHub</a>.
+					If you haven't downloaded BAMF yet, you can find the latest version <a href="https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">on TF2Maps</a>. For the full project and in-development versions, check <a href="https://github.com/statecouncil/tf-bamf">GitHub</a>.
 					<br>
 					Using either installation method, each module can be installed or left out individually. Note that some modules depend on each other. For information on what each individual module does, check the <a href="contents-and-features.html">Contents & Features</a> page.
 				</p>
@@ -42,19 +42,19 @@
 				<hr>
 
 				<p>
-					There are currently both VPKs and loose folders in the VPKs directory. You only need to install one of each. Both are included as Compilepal currently does not automatically pack VPKs. This can be used to stop it from packing things you may not want in your map, like your HUD or Hammer-only replacement materials.
+					The "VPK" module currently consists of two .vpk files and a loose folder. This is because the loose folder (Extra Materials) needs to be packed into the map, and CompilePal currently cannot read VPKs. This makes packing assets into VPKs a consistent method of assuring game files don't accidentally end up inside your map file.
 				</p>
 
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
-						The VPKs or Folders from <code>tf-bamf/VPKs/</code> should be pasted into <code>Team Fortress 2/tf/custom/</code>.
+						Paste the content of <code>tf-bamf/VPKs/</code> into <code>Team Fortress 2/tf/custom/</code>.
 						<br>
 						A correct path would look like <code>Team Fortress 2/tf/custom/BAMF FGD Assets.vpk</code> or <code>Team Fortress 2/tf/custom/BAMF Extra Materials/materials/tools/toolshint.vmt</code>.
 						<br>
 						See the <a href="contents-and-features.html">Contents & Features</a> page for more information on what each sub-module contains.
 						<br>
-						<strong>I recommend that you use the VPK version of each pack EXCEPT the Extra Materials pack, which is intended to be packed into the map, and should therefore be a loose folder.</strong>
+					<!--	<strong>I recommend that you use the VPK version of each pack EXCEPT the Extra Materials pack, which is intended to be packed into the map, and should therefore be a loose folder.</strong> -->
 					</li>
 					<li><strong>Usage:</strong>
 						<br>
