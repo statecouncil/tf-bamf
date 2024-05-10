@@ -96,7 +96,7 @@
 
 @MaterialExclusion [
 	"ambulance"
-	"backpack"
+	"backpack" //Hammer++ does not load this folder, even if not listed here. Not that it would help you if it did. -Brokk
 //	"cable"
 	"console"
 	"customcubemaps"
@@ -114,11 +114,11 @@
 //	"logo"
 	"maps"
 	"overviews"
-	"models" //Apparently Hammer never loads this folder anyway? Might wanna do some research into that. -Brokk
+	"models" //Hammer and Hammer++ do not load this folder, even if not listed here. -Brokk
 	"perftest"
 	"scripted"
 	"shadertest"
-//	"sprites"
+//	"sprites" //Occasionally useful
 	"voice"
 	"vr"
 //	"vgui"
