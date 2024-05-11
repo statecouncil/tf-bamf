@@ -34,6 +34,10 @@ h2, h3 {
 p {
 	text-align: left;
 	margin-top: 0.5em;
+	margin-bottom: 1.5em;
+}
+
+p:last-of-type {
 	margin-bottom: 0.5em;
 }
 
@@ -179,14 +183,20 @@ img {
 	background: #33302e;
 }
 
-.pagefoot > iframe {
-	height: 250px;
+.pagefoot > iframe,
+.footer {
+	height: 300px; /* adjust so everything fits */
 }
 
 .footer {
 	background: #33302e;
-	height: 250px;
 	position: relative;
+}
+
+.fineprint {
+	opacity: 60%;
+	font-size: 0.8em;
+	padding: 0 1em;
 }
 
 
@@ -275,7 +285,7 @@ img {
 
 	.footer,
 	.pagefoot > iframe {
-		height: 550px;
+		height: 690px; /* adjust so everything fits */
 	}
 }
 
