@@ -185,7 +185,7 @@ img {
 
 .pagefoot > iframe,
 .footer {
-	height: 300px; /* adjust so everything fits */
+	height: 500px; /* adjust so everything fits */
 }
 
 .footer {
@@ -285,7 +285,7 @@ img {
 
 	.footer,
 	.pagefoot > iframe {
-		height: 690px; /* adjust so everything fits */
+		height: 1000px; /* adjust so everything fits */
 	}
 }
 
