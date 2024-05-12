@@ -319,3 +319,28 @@ img {
 	font-weight: bold;
 	padding: 0.25em 0.5em;
 }
+
+/* Install page */
+.note-yellow {
+	color: #1E1C1C;
+	background: #fae969;
+	font-weight: bold;
+	padding: 0.25em 0.5em;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+.note-yellow a {
+	color: black;
+}
+.note-green {
+	color: #1E1C1C;
+	background: #4A9125;
+	font-weight: bold;
+	padding: 0.25em 0.5em;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+
+}
+.note-green a {
+	color: black;
+}

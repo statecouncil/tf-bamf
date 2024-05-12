@@ -4,12 +4,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Installation</title>
-		<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css" media="screen">
 	</head>
 	<body>
 		<!--Page Header-->
 		<div class="pagehead">
-			<iframe src="header.html" title="Header" ></iframe>
+			<iframe src="../header.html" title="Header" ></iframe>
 		</div>
 
 		<!--Page Body-->
@@ -29,22 +29,18 @@
 					<li><strong>Use the installer</strong> - <span style="color: #f18149;">TBD</span></li>
 					<li><strong>Manual installation</strong> - See below</li>
 				</ol>
-
 				<p>
-					If you haven't downloaded BAMF yet, you can find the latest version <a href="https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">on TF2Maps</a>. For the full project and in-development versions, check <a href="https://github.com/statecouncil/tf-bamf">GitHub</a>.
+					If you haven't downloaded BAMF yet, you can find the latest version <a href="../https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">on TF2Maps</a>. For the full project and in-development versions, check <a href="https://github.com/statecouncil/tf-bamf">GitHub</a>.
 					<br>
 					Using either installation method, each module can be installed or left out individually. Note that some modules depend on each other. For information on what each individual module does, check the <a href="contents-and-features.html">Contents & Features</a> page.
 				</p>
 			</div>
-
 			<div class="block">
 				<h2 id="VPK Module">VPK Module</h2>
 				<hr>
-
 				<p>
 					The "VPK" module currently consists of two .vpk files and a loose folder. This is because the loose folder (Extra Materials) needs to be packed into the map, and CompilePal currently cannot read VPKs. This makes packing assets into VPKs a consistent method of assuring game files don't accidentally end up inside your map file.
 				</p>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -52,7 +48,7 @@
 						<br>
 						A correct path would look like <code>Team Fortress 2/tf/custom/BAMF FGD Assets.vpk</code> or <code>Team Fortress 2/tf/custom/BAMF Extra Materials/materials/tools/toolshint.vmt</code>.
 						<br>
-						See the <a href="contents-and-features.html">Contents & Features</a> page for more information on what each sub-module contains.
+						See the <a href="../contents-and-features.html">Contents & Features</a> page for more information on what each sub-module contains.
 						<br>
 					<!--	<strong>I recommend that you use the VPK version of each pack EXCEPT the Extra Materials pack, which is intended to be packed into the map, and should therefore be a loose folder.</strong> -->
 					</li>
@@ -62,15 +58,14 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="FGD Module with Radshadowman and Propper support">FGD Module with Radshadowman and Propper support</h2>
 				<hr>
-
-				<p>
-					Note that this module requires the BAMF FGD Assets sub-module from the VPK Module.
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-green"><a href="#VPK Module">VPK: BAMF FGD Assets</a></span>
+					<span class="note-yellow"><a href="../tools/hammer++.html">Hammer++</a></span>
 				</p>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -92,11 +87,9 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="Prefab Module">Prefab Module</h2>
 				<hr>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -110,11 +103,9 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="Game Mode Module">Game Mode Module</h2>
 				<hr>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -126,11 +117,9 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="VMF Module">VMF Module</h2>
 				<hr>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -142,11 +131,13 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="Compile Configuration Module - CompilePal">Compile Configuration Module - CompilePal</h2>
 				<hr>
-
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-yellow"><a href="../tools/compilepal.html">CompilePal, duh</a></span>
+				</p>
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -158,15 +149,9 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="Tool - RadShadowMan">Tool - RadShadowMan</h2>
 				<hr>
-
-				<p>
-					This requires the Compile Configuration Module for use with CompilePal or the FGD Module for use with Hammer++ or for you to create your own compile configuration running RadShadowMan.
-				</p>
-
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -178,15 +163,17 @@
 					</li>
 				</ol>
 			</div>
-
 			<div class="block">
 				<h2 id="Tool - Propper">Tool - Propper</h2>
 				<hr>
-
-				<p>
-					This requires the Compile Configuration Module for use with CompilePal or the FGD Module for use with Hammer++ or for you to create your own compile configuration running Propper.
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-green"><a href="#FGD Module with Radshadowman and Propper support">FGD</a></span>
 				</p>
+				<p>
+					If you are not using <span class="note-green"><a href="#Compile Configuration Module - CompilePal">Compile Configuration - CompilePal</a></span>, you will need to create your own compile configuration.
 
+				</p>
 				<ol>
 					<li><strong>Installation:</strong>
 						<br>
@@ -202,7 +189,7 @@
 
 		<!--Page Footer-->
 		<div class="pagefoot">
-			<iframe src="footer.html" title="Footer" ></iframe>
+			<iframe src="../footer.html" title="Footer" ></iframe>
 		</div>
 	</body>
 </html>
