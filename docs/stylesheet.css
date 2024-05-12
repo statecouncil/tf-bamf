@@ -185,7 +185,7 @@ img {
 
 .pagefoot > iframe,
 .footer {
-	height: 500px; /* adjust so everything fits */
+	height: 300px; /* adjust so everything fits */
 }
 
 .footer {
@@ -264,28 +264,43 @@ img {
 }
 
 /* Specific to footer */
-.footer .col {
-	width: 32%;
-	margin-right: 2%;
+.footer .col-left {
+	width: 20%;
+	float:left;
+}
+.footer .col-wide {
+	width: auto;
+	position:absolute;
+	left: 29.5%;
+}
+.footer .col-right {
+	width: 20%;
+
+	float:right;
 }
 
-.footer .col:last-of-type {
-	margin-right: 0;
-}
-
-@media screen and (max-width: 550px) {
-	.footer .col {
+@media screen and (max-width: 650px) {
+	.footer .col-left {
 		width: 100% !important;
+		position: static !important;
 		margin: 0 0 2em 0 !important;
 	}
 
-	.footer .col:last-of-type {
+	.footer .col-wide {
+		width: 100% !important;
+		position: static !important;
+		margin: 0 0 2em 0 !important;
+	}
+
+	.footer .col-right {
+		width: 100% !important;
+		position: static !important;
 		margin-bottom: 0 !important;
 	}
 
 	.footer,
 	.pagefoot > iframe {
-		height: 1000px; /* adjust so everything fits */
+		height: 770px; /* adjust so everything fits */
 	}
 }
 
