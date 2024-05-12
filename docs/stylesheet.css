@@ -264,42 +264,27 @@ img {
 }
 
 /* Specific to footer */
-.footer .col-left {
-	width: 20%;
-	float:left;
+.footer .col:first-of-type {
+	width: 12em;
+	margin-right: 1em;
 }
-.footer .col-wide {
-	width: auto;
-	position:absolute;
-	left: 29.5%;
+.footer .col {
+	width: calc(100% - 26em); /* subtract total width of other .col elements */
 }
-.footer .col-right {
-	width: 20%;
-
-	float:right;
+.footer .col:last-of-type {
+	width: 12em;
+	margin-left: 1em;
 }
 
-@media screen and (max-width: 650px) {
-	.footer .col-left {
+@media screen and (max-width: 700px) {
+	.footer .col {
 		width: 100% !important;
 		position: static !important;
 		margin: 0 0 2em 0 !important;
 	}
 
-	.footer .col-wide {
-		width: 100% !important;
-		position: static !important;
-		margin: 0 0 2em 0 !important;
-	}
-
-	.footer .col-right {
-		width: 100% !important;
-		position: static !important;
-		margin-bottom: 0 !important;
-	}
-
-	.footer,
-	.pagefoot > iframe {
+	.pagefoot > iframe,
+	.footer {
 		height: 770px; /* adjust so everything fits */
 	}
 }
