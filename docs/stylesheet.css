@@ -48,6 +48,7 @@ hr {
 
 code {
 	font-family: Consolas,"Liberation Mono","Courier New",monospace;
+	color: #dabdab;
 	padding: 0px 1px;
 	border: 1px solid #1E1C1C;
 }
@@ -63,7 +64,7 @@ ol {
 }
 
 ol>li {
-	margin: 0;
+	margin: 0.5em 0.5em 0.5em 1em;
 	padding: 0 0 0 2em;
 	text-indent: -2em;
 	list-style-type: none;
@@ -77,6 +78,27 @@ ol>li:before {
 	font-weight: bold;
 	text-align: right;
 	content: counter(item) ".";
+}
+
+ul {
+	text-align: left;
+	margin-top: 0em;
+	margin-bottom: 0.5em;
+	padding: 0;
+}
+
+ul>li {
+	margin: 0.5em 0.5em 0.5em 1em;
+	padding: 0 0 0 2em;
+	text-indent: -2em;
+}
+
+ul>li:before {
+	display: inline-block;
+	width: 1.5em;
+	padding-right: 0.5em;
+	font-weight: bold;
+	text-align: right;
 }
 
 
@@ -264,28 +286,28 @@ img {
 }
 
 /* Specific to footer */
+.footer .col:first-of-type {
+	width: 12em;
+	margin-right: 1em;
+}
 .footer .col {
-	width: 32%;
-	margin-right: 2%;
+	width: calc(100% - 26em); /* subtract total width of other .col elements */
 }
-
 .footer .col:last-of-type {
-	margin-right: 0;
+	width: 12em;
+	margin-left: 1em;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
 	.footer .col {
 		width: 100% !important;
+		position: static !important;
 		margin: 0 0 2em 0 !important;
 	}
 
-	.footer .col:last-of-type {
-		margin-bottom: 0 !important;
-	}
-
-	.footer,
-	.pagefoot > iframe {
-		height: 690px; /* adjust so everything fits */
+	.pagefoot > iframe,
+	.footer {
+		height: 770px; /* adjust so everything fits */
 	}
 }
 
@@ -318,4 +340,29 @@ img {
 	background: #BF4CB4;
 	font-weight: bold;
 	padding: 0.25em 0.5em;
+}
+
+/* Install page */
+.note-yellow {
+	color: #1E1C1C;
+	background: #fae969;
+	font-weight: bold;
+	padding: 0.25em 0.5em;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+.note-yellow a {
+	color: black;
+}
+.note-green {
+	color: #1E1C1C;
+	background: #4A9125;
+	font-weight: bold;
+	padding: 0.25em 0.5em;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+
+}
+.note-green a {
+	color: black;
 }

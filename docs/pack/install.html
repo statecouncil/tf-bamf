@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Installing BAMF</title>
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!--Page Header-->
+		<div class="pagehead">
+			<iframe src="../header.html" title="Header" ></iframe>
+		</div>
+
+		<!--Page Body-->
+		<div class="pagebody thin">
+			<!--Header Block-->
+			<div class="block">
+				<h1>Installing BAMF</h1>
+			</div>
+
+			<!--Main Block-->
+			<div class="block">
+				<p>
+					There are multiple ways to install BAMF:
+				</p>
+				<ul>
+					<li><strong>Use the installer</strong> - <span style="color: #f18149;">Coming soon!</span></li>
+					<li><strong>Basic Manual installation</strong> (see below)</li>
+					<li><strong><a href="install_advanced.html">Advanced Manual installation</a></strong></li>
+				</ul>
+				<p>
+					It is recommended that you read about the <a href="features.html">Features</a> first. If you don't want a module right now, you can always install it later.
+				</p>
+			</div>
+
+			<div class="block">
+				<h2 id="Basic Manual Installation">Basic Manual Installation</h2>
+				This guide is intended for absolute beginners. It should contain anything you need to get you mapping as quickly as possible, but leaves out advanced modules like compile pre-sets or tools.
+				<hr>
+				<p>
+					<ol>
+						<li>
+							<a href="https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">Download</a> the latest version of BAMF from TF2Maps.net. The content of the .zip should look like this:
+							<br>
+							<img src="../img/install/files-0-4.png" alt="BAMF ZIP Contents">
+						</li>
+						<li>
+							Navigate to your Team Fortress 2 installation and open it in another window. (In Steam, right-click on Team Fortress 2 and select <code>Manage</code> -> <code>Browse Local Files</code>. You're going to want to bookmark this folder as it is rather essential for mapping.)
+							<img src="../img/install/tf2_installation.png" alt="TF2 Installation">
+						</li>
+						<li>
+							In BAMF, open the <code>FGD</code> folder. Move the entire content into <code>Team Fortress/bin</code>.
+							<br>
+							<strong>Note:</strong> There is another <code>bin</code> folder in <code>Team Fortress 2/tf</code>. Ignore that one, it is never used for anything mapping-related.
+						</li>
+						<li>
+							In BAMF, open the <code>Prefabs</code> folder. Move the entire content into <code>Team Fortress/bin/Prefabs</code>. If that directory doesn't exist, create it.
+						</li>
+						<li>
+							In BAMF, open the <code>VPKs</code> folder. Move the entire content into <code>Team Fortress/tf/custom</code>.
+							<br>
+							This is where all your custom mapping assets and other TF2 mods are stored.
+						</li>
+						<li>
+							Open Hammer (or <a href="../tools/hammer++.html">Hammer++</a>). Navigate to <code>Tools</code> &#8594; <code>Options...</code>, then select the <code>Game Configurations</code> tab.
+							<br>
+							Delete the existing entry in the <code>Game Data files</code> section by selecting and clicking <code>Remove</code>.
+							<br>
+							<img src="../img/install/fgd_delete.png" alt="Deleting Game Data File">
+							<br>
+							Then add the new Game Data File by clicking <code>Add</code> and navigating to <code>Team Fortress 2/bin/tf-brokk.fgd</code>.
+							<br>
+							<img src="../img/install/fgd_add.png" alt="Adding Game Data File">
+							<br>
+							At the bottom of the same options window, make sure the <code>Prefab Directory</code> is set like this:
+							<img src="../img/install/prefab_config_hammer.png" alt="Prefab file path in Hammer">
+						</li>
+						That's it! You can now start mapping.
+						<br><br>
+						<strong>Bonus:</strong> The <code>VMFs</code> and <code>Gamemodes</code> folders contain a variety of reference material that should help you get started. Move those to wherever you keep your projects. Thanks and have fun.
+					</ol>
+				</p>
+			</div>
+
+		<!--Page Footer-->
+		<div class="pagefoot">
+			<iframe src="../footer.html" title="Footer" ></iframe>
+		</div>
+	</body>
+</html>
