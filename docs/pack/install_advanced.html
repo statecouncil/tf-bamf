@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Installing BAMF</title>
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!--Page Header-->
+		<div class="pagehead">
+			<iframe src="../header.html" title="Header" ></iframe>
+		</div>
+
+		<!--Page Body-->
+		<div class="pagebody thin">
+			<!--Header Block-->
+			<div class="block">
+				<h1>Advanced Manual Installation</h1>
+			</div>
+
+			<!--Main Block-->
+			<div class="block">
+				<h2 id="Installing Individual BAMF Modules">Installing Individual BAMF Modules</h2>
+				This page is intended for advanced mappers who already know how to use Hammer, install custom content, and understand basic compile theory. If you're not sure whether this applies to you, consider following the <a href="install.html#Basic Manual Installation">Basic Installation Guide</a> first and then returning here.
+				<hr>
+				<p>
+					<ol>
+						<li>
+							Look through the <a href="features.html">Features</a> and decide which modules you would like to install. Note that some modules have requirements.
+							<br>
+							If you  followed the <a href="install.html#Basic Manual Installation">Basic Installation Guide</a>, then you already installed the FGD, VMFs, and Prefab modules.
+						</li>
+						<li>
+							<a href="https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">Download</a> the latest version of BAMF from TF2Maps.net. The content of the .zip should look like this:
+							<br>
+							<img src="../img/install/files-0-4.png" alt="BAMF ZIP Contents">
+						</li>
+						<li>
+							Follow the individual installation and usage instructions below.
+						</li>
+					</ol>
+				</p>
+			</div>
+
+			<div class="block">
+				<h2 id="VPK Module">VPK Module</h2>
+				<hr>
+				<p>
+					The "VPK" module currently consists of two .vpk files and a loose folder. This is because the loose folder (Extra Materials) needs to be packed into the map, and CompilePal currently cannot read VPKs. This makes packing assets into VPKs a consistent method of assuring game files don't accidentally end up inside your map file.
+				</p>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Paste the content of <code>tf-bamf/VPKs/</code> into <code>Team Fortress 2/tf/custom/</code>.
+						<br>
+						A correct path would look like <code>Team Fortress 2/tf/custom/BAMF FGD Assets.vpk</code> or <code>Team Fortress 2/tf/custom/BAMF Extra Materials/materials/tools/toolshint.vmt</code>.
+						<br>
+						See the <a href="../contents-and-features.html">Contents & Features</a> page for more information on what each sub-module contains.
+						<br>
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						You can find the new materials in your material browser in Hammer. Materials in the Extra Materials sub-module will need to be packed into a map using CompilePal or shared with your collaborators.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="FGD Module with Radshadowman and Propper support">FGD Module</h2>
+				<hr>
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-green"><a href="#VPK Module">VPK: BAMF FGD Assets</a></span>
+					<span class="note-yellow"><a href="../tools/hammer++.html">Hammer++</a></span>
+				</p>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Paste the content of the <code>tf-bamf/FGD/</code> directory into <code>Team Fortress 2/bin/</code>.
+						<br>
+						Do NOT paste it into <code>Team Fortress 2/tf/bin/</code>.
+						<br>
+						Do NOT paste it into <code>Team Fortress 2/bin/x64/</code>.
+						<br>
+						In Hammer, open Tools &#8594; Options &#8594; Game Configurations, remove all existing Game Configurations, then add <code>tf-brokk.fgd</code> as the only new one. You do not need a separate Propper FGD to be able to use Propper.
+					</li>
+					<li><strong>Configuration:</strong> <em>(Optional)</em>
+						<br>
+						Open <code>Team Fortress 2/tf/bin/tf-bamf.fgd</code> in the text editor of your choice and adjust the options at the very start of the document. You can enable or disable the lines in the entity window there, among other things.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						Once installed, the FGD will work out of the box. You will notice more and improved entity keyvalues and descriptions in Hammer. See the Textureshadows page on how to use RadShadowMan to automatically enable textureshadows on all static props in your map.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="Prefab Module">Prefab Module</h2>
+				<hr>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag the content of the <code>tf-bamf/Prefabs/</code> directory into <code>Team Fortress 2/bin/Prefabs/</code>. If that directory does not exist, create it. Make sure your Prefab Directory is configured correctly in Hammer/Hammer++ under Tools &#8594; Options &#8594; Game Configurations &#8594; Prefab Directory.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						In Hammer, select the <strong>Entity Tool</strong>. Select the category of prefab you want to place in the <strong>Categories</strong> dropdown menu in the bottom right. Select the prefab you want to place in the <strong>Objects</strong> dropdown menu just below. Place the prefab by clicking into the 3D Viewport, just like you would when placing a point entity. Move and rotate as usual.
+						<br>
+						All prefabs are grouped to make placement easier. Stay in Group Select mode to move the whole thing at once and press <strong>CTRL+B</strong> to align to the grid, if necessary. Most prefabs have a skip brush surrounding them for that purpose, which can be deleted once the prefab is placed correctly.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="Game Mode Module">Game Mode Module</h2>
+				<hr>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag the content of the <code>tf-bamf/Gamemodes</code> directory anywhere you want.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						You can open the VMFs in Hammer just like any other VMF. Copy what you need and paste into your map. Some game modes have additional files that you need to place properly.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="VMF Module">VMF Module</h2>
+				<hr>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag the content of the <code>tf-bamf/VMFs/</code> directory anywhere you want.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						You can open the VMFs in Hammer just like any other VMF.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="Compile Configuration Module - CompilePal">Compile Configuration Module - CompilePal</h2>
+				<hr>
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-yellow"><a href="../tools/compilepal.html">CompilePal, duh</a></span>
+				</p>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag the content of <code>tf-bamf/Compile Configs/CompilePal/</code> into the directory that contains your CompilePalX.exe.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						Compile your map using the <strong>BAMF TF2 Super Duper</strong> preset in CompilePal.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="Tool - RadShadowMan">Tool - RadShadowMan</h2>
+				<hr>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag <code>Tools/Radshadowman/RadShadowMan.exe</code> into <code>Team Fortress 2/bin/</code>.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						<q>Compile</q> your map using the RadShadowMan configuration in either Hammer++ or CompilePal.
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h2 id="Tool - Propper">Tool - Propper</h2>
+				<hr>
+				<p style="text-align: center;">
+					<strong>Requires:</strong>
+					<span class="note-green"><a href="#FGD Module with Radshadowman and Propper support">FGD</a></span>
+				</p>
+				<p>
+					If you are not using <span class="note-green"><a href="#Compile Configuration Module - CompilePal">Compile Configuration - CompilePal</a></span>, you will need to create your own compile configuration.
+
+				</p>
+				<ul>
+					<li><strong>Installation:</strong>
+						<br>
+						Drag <code>Tools/Propper/propper.exe</code> into <code>Team Fortress 2/bin/</code>.
+					</li>
+					<li><strong>Usage:</strong>
+						<br>
+						<q>Compile</q> your map using the Propper configuration in either Hammer++ or CompilePal.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--Page Footer-->
+		<div class="pagefoot">
+			<iframe src="../footer.html" title="Footer" ></iframe>
+		</div>
+	</body>
+</html>
