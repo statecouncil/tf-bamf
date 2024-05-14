@@ -1,10 +1,10 @@
-		  `7MM"""Yp,      db      `7MMM.     ,MMF'`7MM"""YMM
-			MM    Yb     ;MM:       MMMb    dPMM    MM    `7
-			MM    dP    ,V^MM.      M YM   ,M MM    MM   d  
-			MM"""bg.   ,M  `MM      M  Mb  M' MM    MM""MM  
-			MM    `Y   AbmmmqMA     M  YM.P'  MM    MM   Y  
-			MM    ,9  A'     VML    M  `YM'   MM    MM      
-		  .JMMmmmd9 .AMA.   .AMMA..JML. `'  .JMML..JMML.    
+          `7MM"""Yp,      db      `7MMM.     ,MMF'`7MM"""YMM
+            MM    Yb     ;MM:       MMMb    dPMM    MM    `7
+            MM    dP    ,V^MM.      M YM   ,M MM    MM   d  
+            MM"""bg.   ,M  `MM      M  Mb  M' MM    MM""MM  
+            MM    `Y   AbmmmqMA     M  YM.P'  MM    MM   Y  
+            MM    ,9  A'     VML    M  `YM'   MM    MM      
+          .JMMmmmd9 .AMA.   .AMMA..JML. `'  .JMML..JMML.    
 
            A TF2 MAPPING STARTER PACK OF THE MODERN ERA
 
@@ -29,7 +29,7 @@ iteration for testing purposes.
 Check out https://bamf.tf/pack/features.html for a full feature list.
 
 
-			### ### ### FEATURE SHORTLIST: ### ### ###
+             ### ### ### FEATURE SHORTLIST: ### ### ###
 			
 	- More dev materials!
 	- More entities in hammer!
