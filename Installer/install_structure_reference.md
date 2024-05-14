@@ -1,4 +1,4 @@
-Follow instructions on https://bamf.tf/installation.html or compare with contents of docs/installation.html
+Follow instructions on https://bamf.tf/pack/install.html or compare with contents of docs/installation.html
 
 Do NOT include "installer" and "docs" directories and dotfiles!
 
@@ -125,7 +125,7 @@ Select location where VMFs should be saved ("mapsrc")
 
 ##########################################################################
 
-**Page 5** - FINISHED
+**Page 6** - FINISHED
 
 Installation successful! Merasmus will now return to his castle. [picture of racoon here]
 
