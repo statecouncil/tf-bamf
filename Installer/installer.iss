@@ -1,10 +1,11 @@
 ; Not exactly stolen, but strongly inspired by Greenshot: https://github.com/greenshot/greenshot/blob/release/1.3/installer/innosetup/setup.iss
 
-#define MyAppName "BAMF Installer"
+#define MyAppName "TF-BAMF Installer"
 #define MyAppVersion "0.4"
 #define MyAppPublisher "Brokk"
 #define MyAppURL "https://bamf.tf/"
 #define MyAppRepoURL "https://github.com/statecouncil/tf-bamf"
+#define BuildDir ".\"
 #define BAMFDir "..\"
 #define FGDDir "..\FGD"
 #define PrefabsDir "..\Prefabs"
@@ -25,20 +26,36 @@ Compression=lzma
 SolidCompression=yes
 DisableStartupPrompt=False
 DisableWelcomePage=False
+WizardImageFile={#BuildDir}\welcome_raw.bmp
+WizardSmallImageFile={#BuildDir}\header_raw.bmp
+DisableWelcomePage=False
+WizardStyle=modern
+ShowLanguageDialog=no
 
-[Types]
-Name: "default"; Description: "{cm:default}"
-Name: "full"; Description: "{code:FullInstall}"
-Name: "basic"; Description: "{code:BasicInstall}"
-Name: "custom"; Description: "{code:CustomInstall}"; Flags: iscustom
+[Types]                   
+Name: "full"; Description: "Full installation"
+Name: "compact"; Description: "Compact installation"
+Name: "custom"; Description: "Custom Installation"; Flags: iscustom
 
 [Components]
-Name: "greenshot"; Description: "TF-BAMF"; Types: default full bamf-only custom; Flags: fixed
-Name: "components\FGDs"; Description: "FGDs"; Types: full custom; Flags: disablenouninstallwarning
-Name: "components\Prefabs"; Description: "Prefabs"; Types: full custom; Flags: disablenouninstallwarning
-Name: "components\VPKs"; Description: "VPKs"; Types: full custom; Flags: disablenouninstallwarning
-Name: "components\VMFs"; Description: "VMFs"; Types: full custom; Flags: disablenouninstallwarning
-Name: "components\Gamemodes"; Description: "Gamemodes"; Types: full custom; Flags: disablenouninstallwarning
+Name: "bamf"; Description: "TF-BAMF"; Types: full compact custom; Flags: fixed
+Name: "hammer"; Description: "Hammer"; Types: custom; Flags: disablenouninstallwarning
+Name: "hammer\fgd"; Description: "FGD"; Types: full compact custom; Flags: disablenouninstallwarning
+Name: "hammer\expert_sequences"; Description: "Expert Compile sequences for Propper and Radshadowman"; Types: full custom; Flags: disablenouninstallwarning
+Name: "hammer\advanced_sequences"; Description: "Advanced CompilePal sequences"; Types: full custom; Flags: disablenouninstallwarning
+Name: "tools"; Description: "Tools"; Types: full custom; Flags: disablenouninstallwarning
+Name: "tools\radshadowman"; Description: "Radshadowman"; Types: full custom; Flags: disablenouninstallwarning
+Name: "tools\Propper"; Description: "Propper"; Types: full custom; Flags: disablenouninstallwarning
+Name: "assets"; Description: "Assets"; Types: full custom; Flags: disablenouninstallwarning
+Name: "assets\fdg_vpk"; Description: "FGD Assets (VPK)"; Types: full compact custom; Flags: disablenouninstallwarning
+Name: "assets\material_vpk"; Description: "Material Tag Overhaul (VPK)"; Types: full compact custom; Flags: disablenouninstallwarning
+Name: "assets\material_extra"; Description: "Extra Materials (Loose Files)"; Types: full custom; Flags: disablenouninstallwarning
+Name: "assets\surfaceprop"; Description: "Surfaceprop Overhaul (Loose Files)  "; Types: full custom; Flags: disablenouninstallwarning
+Name: "prefabs"; Description: "Prefabs"; Types: full compact custom; Flags: disablenouninstallwarning
+Name: "gamemodes"; Description: "Gamemode Prefabs"; Types: full compact custom; Flags: disablenouninstallwarning     
+Name: "examples"; Description: "Examples"; Types: full custom; Flags: disablenouninstallwarning
+Name: "examples\valve"; Description: "Valve-owned Maps (VMF)"; Types: full custom; Flags: disablenouninstallwarning
+Name: "examples\community"; Description: "Community-owned Maps (VMF)"; Types: full custom; Flags: disablenouninstallwarning
 
 [Tasks]
 ; possibly redundant, remove if functionality is achieved without
@@ -60,7 +77,7 @@ Source: {#BAMFDir}\README.md; DestDir: {app}\BAMF_README.md; Flags: ignoreversio
 [Messages]
 
 
-
+; add code for verifying TF2 Location
 [Code]
 function FullInstall(Param : String) : String;
 begin
@@ -72,7 +89,7 @@ begin
 	result := SetupMessage(msgCustomInstallation);
 end;
 
-function BasicInstall(Param : String) : String;
+function CompactInstall(Param : String) : String;
 begin
-	result := SetupMessage(msgBasicInstallation);
+	result := SetupMessage(msgCompactInstallation);
 end;
