@@ -62,36 +62,78 @@ blablabla license.txt
 
 1 [x] - **Hammer Stuff**  
 	a [x] - FGD
-			The most complete and thorough FGD currently available for TF2.
+			desc: The most complete and thorough FGD currently available for TF2.
+			files: Everything in FGD/ >>>except<<< FGD/x64/
+			target: Team Fortress 2/bin/
+
 	b [ ] - "Expert Compile" sequences for Propper and Radshadowman in Hammer++
-			Adds compile pre-sets into Hammer++' "Expert Compile" window that run Propper or Radshadowman. Warning: Overwrites any other custom compile sequences you may have set up in Hammer++!
+			desc: Adds compile pre-sets into Hammer++' "Expert Compile" window that run Propper or Radshadowman. Warning: Overwrites any other custom compile sequences you may have set up in Hammer++!
+			files: Only the file FGD/x64/hammerplusplus/hammerplusplus_sequences.cfg
+			target: Team Fortress 2/bin/x64/hammerplusplus/
+
 	c [ ] - Advanced CompilePal sequences
-			Adds several useful compile pre-sets to your CompilePal installation.
+			desc: Adds several useful compile pre-sets to your CompilePal installation.
+			files: Everything in Compile Configs/Compilepal/
+			target: Compile Pal XXX.X/
+
 	d [ ] - Improved CompilePal error parser
-			Replaces Interlopers.net's default compile error checker with a hand-made custom parser. Better error explanations, designed for TF2.
+			desc: Replaces Interlopers.net's default compile error checker with a hand-made custom parser. Better error explanations, designed for TF2.
+			files:
+			target:
+
 2 [ ] - **Tools**
 	a [ ] - Radshadowman
-			Automatically creates a .rad file to force texture shadows on props. Works as a precompiler, so run as a step before your normal compile
+			desc: Automatically creates a .rad file to force texture shadows on props. Works as a precompiler, so run as a step before your normal compile
+			files: Everything in Tools/Radshadowman/
+			target: Team Fortress 2/bin/
+
 	b [ ] - Propper
-			The community's solution to TF2's outrageously low brush limits. Allows you to turn brushwork into models.
+			desc: The community's solution to TF2's outrageously low brush limits. Allows you to turn brushwork into models.
+			files: Everything in Tools/Propper
+			target: Team Fortress 2/bin/
+
 3 [ ] - **Assets**  
 	a [x] - FGD Assets (VPK)
-			Entity icons, better player spawn models.
+			desc: Entity icons, better player spawn models.
+			files: Only the file VPKs/BAMF FGD Assets.vpk
+			target: Team Fortress 2/tf/custom/
+
 	b [x] - Material Tag and Preview Overhaul (VPK)
-			Vast overhaul of stock material tags, material blend previews, water previews.
+			desc: Vast overhaul of stock material tags, material blend previews, water previews.
+			files: Only the file VPKs/BAMF Material Tag Overhaul.vpk
+			target: Team Fortress 2/tf/custom/
+
 	c [ ] - Extra Materials (Loose Files)
-			Contains various additional dev materials for use in blocking out a new project.
+			desc: Contains various additional dev materials for use in blocking out a new project.
+			files: Everything in VPKs/BAMF Extra Materials/
+			target: Team Fortress 2/tf/custom/BAMF Extra Materials/
+
 4 [x] - **Prefabs**
-			Large amount of ready-made prefabs to be used during alpha development of your map. Soundscapes, pickups, common gameplay and map elements, logic, lighting, and more.
+			desc: Large amount of ready-made prefabs to be used during alpha development of your map. Soundscapes, pickups, common gameplay and map elements, logic, lighting, and more.
+			files: Everything in Prefabs/
+			target: Team Fortress 2/bin/Prefabs/
+
 5 [x] - **Gamemode Prefabs**
-			(Almost) complete pack of prefabs used in official TF2 maps.
+			desc: (Almost) complete pack of prefabs used in official TF2 maps.
+			files: Everything in Gamemodes/
+			target: (see 5-3: mapsrc/Gamemodes/)
+
 6 [ ] - **Example VMFs**
 	a [x] - Decompiled Valve Maps
-			Decompiled versions of all Valve-made and Valve-owned maps shipped in TF2, decompiled with the latest version of bspsrc.
+			desc: Decompiled versions of all Valve-made and Valve-owned maps shipped in TF2, decompiled with the latest version of bspsrc.
+			files: Everything in VMFs/Decompiled Valve Maps/
+			target: (see 5-3: mapsrc/Decompiled Valve Maps/)
+
 	b [x] - Source SDK 2013 VMFs and artpass_valvebase
-			Valve-published VMFs of certain TF2 maps, as found in the Source SDK 2013 Multiplayer.
+			desc: Valve-published VMFs of certain TF2 maps, as found in the Source SDK 2013 Multiplayer.
+			files: Everything in VMFs/Source SDK 2013/ >>>AND<<< VMFs/artpass_valvebase
+			target: (see 5-3: mapsrc/Valve Releases/)
+
 	c [ ] - Community Map VMFs
-			Select VMFs of community-owned maps shipped in TF2 whose creators volunteered to contribute to this pack.
+			desc: Select VMFs of community-owned maps shipped in TF2 whose creators volunteered to contribute to this pack.
+			files: Everything in VMFs/Community Maps/
+			target: (see 5-3: mapsrc/Community Maps/)
+
 
 ##########################################################################
 
@@ -116,12 +158,13 @@ Radio buttons:
 
 1- Always:
 Find/select location of "Team Fortress 2/tf/gameinfo.txt"
+Or find some other method of setting TF2 installation path
 
 2- If 1c or 1d was selected:
-Find/select location of "CompilePalX.exe"
+Find location of "CompilePal via registry entry or ask for manual path
 
 3 - If any of 5 or 6 were selected:
-Select location where VMFs should be saved ("mapsrc")
+Select location where VMFs should be saved ("mapsrc") -> ask for manual path, default should be set as Team Fortress 2/mapsrc/
 
 ##########################################################################
 
