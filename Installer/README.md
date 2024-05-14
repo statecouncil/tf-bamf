@@ -18,6 +18,7 @@ TODOs:
 * Separate Installer version from TF BAMF version
 * Verify correct TF2 installation directory by aiming at Team Fortress 2/tf/gameinfo.txt
 * Check existence of Team Fortress/bin/vpk.exe prior to automatic VPK cooking
+* Create readme.txt to show users after installation (.md will probably not work, since .md typically has not default application in windows)
 
 Build-Requirements:
 * NSIS 3.09
