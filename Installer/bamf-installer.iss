@@ -1,5 +1,5 @@
 #define MyAppName "Brokk's Assorted Mapping Fixes"
-#define MyAppVersion "0.4"
+#define MyAppVersion "0.4.1"
 #define MyAppPublisher "Brokk & lco-sp"
 #define MyAppURL "https://bamf.tf/"
 #define MyAppRepoURL "https://github.com/statecouncil/tf-bamf"
@@ -31,6 +31,7 @@ OutputBaseFilename=tf-bamf-setup-{#SetupSetting("AppVersion")}
 SourceDir={#BamfDir}
 UninstallDisplayName=Brokk's Assorted Mapping Fixes {#SetupSetting("AppVersion")}
 UninstallFilesDir={app}\bin\spudlord-settings
+AppendDefaultDirName=no
 
 ; optics
 WizardImageFile={#InstallerAssetsDir}\welcome_raw.bmp
@@ -46,14 +47,16 @@ InfoBeforeFile={#InstallerAssetsDir}\bamf-readme.txt
 [Messages]
 SelectDirDesc=(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2)
 WizardSelectDir=Select your TF2 installation
-SelectDirLabel3=IMPORTANT: TF-BAMF will NOT work if it is not installed into the Team Fortress 2 folder!%nYou can find your TF2 installation by opening Steam, right-clicking onto Team Fortress 2, and selecting Manage -> Browse Local Files.
+SelectDirBrowseLabel=The path should end like this: ...steamapps\common\Team Fortress 2 
+SelectDirLabel3=IMPORTANT: BAMF will NOT work if it is not installed into the Team Fortress 2 folder!%nYou can find your TF2 installation by opening Steam, right-clicking onto Team Fortress 2, and selecting Manage -> Browse Local Files.
 WelcomeLabel1=Brokk's Assorted Mapping Fixes {#SetupSetting("AppVersion")}
 WelcomeLabel2=Merasmus will guide you through the installation process.
 FinishedHeadingLabel=Brokk's Assorted Mapping Fixes has finished installing
 FinishedLabelNoIcons=Merasmus will now return to his castle.
-ClickFinish=IMPORTANT: You need to manually change the FGD (game data) file in Hammer in order to access improved entity information and icons.
+ClickFinish=IMPORTANT: If you have installed the BAMF FGD, you need to manually change the FGD (game data) file in Hammer in order to access improved entity information and icons.
 RunEntryShellExec=Open detailed instructions for changing your FGD file
-ConfirmUninstall=Are you sure you want to remove %1? Your Prefabs folder and CompilePal installation will remain unaffected.
+ConfirmUninstall=Are you sure you want to remove %1? Your Prefabs and CompilePal installation as well as your map files will remain unaffected.
+InfoBeforeLabel=Read this or perish.
 
 
 [Types]
@@ -71,7 +74,7 @@ Name: "custom"; Description: "Custom Installation"; Flags: iscustom
 ; Name: ""; Description: ""; Types: full custom; Flags: disablenouninstallwarning
 
 Name: "hammer"; Description: "Hammer Stuff"; Types: full custom; Flags: disablenouninstallwarning
-Name: "hammer\fgd"; Description: "FGD"; Types: full custom compact; Flags: disablenouninstallwarning
+Name: "hammer\fgd"; Description: "FGD (requires FGD Assets!)"; Types: full custom compact; Flags: disablenouninstallwarning
 Name: "hammer\compilesequences_tools"; Description: "Hammer++ compile sequences for Propper and Radshadowman"; Types: full custom; Flags: disablenouninstallwarning
 Name: "hammer\compilesequences_compilepal"; Description: "Advanced CompilePal sequences"; Types: full custom; Flags: disablenouninstallwarning
 
@@ -125,10 +128,10 @@ Source: "{#BamfDir}\VPKs\BAMF Extra Materials\*"; DestDir: "{app}\tf\custom\BAMF
 Source: "{#BamfDir}\Prefabs\*"; DestDir: "{app}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
 Source: "{#BamfDir}\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
 
-Source: "{#BamfDir}\VMFs\Decompiled Valve Maps\*"; DestDir: "{code:GetVMFDir|0}\Decompiled Valve Maps"; Components: vmfs\valve_decompiled; Flags: recursesubdirs
-Source: "{#BamfDir}\VMFs\Source SDK 2013\*"; DestDir: "{code:GetVMFDir|0}\Valve Releases"; Components: vmfs\valve_released; Flags: recursesubdirs
-Source: "{#BamfDir}\VMFs\artpass_valvebase\*"; DestDir: "{code:GetVMFDir|0}\Valve Releases\artpass_valvebase"; Components: vmfs\valve_released; Flags: recursesubdirs
-Source: "{#BamfDir}\VMFs\Community Maps\*"; DestDir: "{code:GetVMFDir|0}\Community Maps"; Components: vmfs\community; Flags: recursesubdirs
+Source: "{#BamfDir}\VMFs\Decompiled Valve Maps\*"; DestDir: "{code:GetVMFDir|0}\Decompiled Valve Maps"; Components: vmfs\valve_decompiled; Flags: recursesubdirs uninsneveruninstall
+Source: "{#BamfDir}\VMFs\Source SDK 2013\*"; DestDir: "{code:GetVMFDir|0}\Valve Releases"; Components: vmfs\valve_released; Flags: recursesubdirs uninsneveruninstall
+Source: "{#BamfDir}\VMFs\artpass_valvebase\*"; DestDir: "{code:GetVMFDir|0}\Valve Releases\artpass_valvebase"; Components: vmfs\valve_released; Flags: recursesubdirs uninsneveruninstall
+Source: "{#BamfDir}\VMFs\Community Maps\*"; DestDir: "{code:GetVMFDir|0}\Community Maps"; Components: vmfs\community; Flags: recursesubdirs uninsneveruninstall 
 
 
 [Code]
@@ -154,7 +157,7 @@ begin
   DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}'));
 
   DirPageVMF := CreateInputDirPage(
-    wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder. Mapfiles can be accessed via Hammer.', '(Default: Steam\steamapps\common\Team Fortress 2\mapsrc)', False, '');
+    wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder. Mapfiles can be accessed via Hammer.', '(Default: ...steamapps\common\Team Fortress 2\mapsrc)', False, '');
   DirPageVMF.Add('Path:');
   DirPageVMF.Values[0] := GetPreviousData('Directory2', ExpandConstant('{commonpf32}\Steam\steamapps\common\Team Fortress 2\mapsrc'));
 end;
