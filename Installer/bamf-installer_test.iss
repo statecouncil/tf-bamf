@@ -43,6 +43,7 @@ OutputBaseFilename=tf-bamf-setup-{#SetupSetting("AppVersion")}
 SourceDir=D:\GitHub\tf-bamf
 InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 UninstallDisplayName=Brokk's Assorted Mapping Fixes {#SetupSetting("AppVersion")}
+UninstallFilesDir={app}\bin\spudlord-settings
 
 
 [Messages]
@@ -127,7 +128,7 @@ Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetVMFD
 Source: "D:\GitHub\tf-bamf\Prefabs\*"; Excludes: "D:\GitHub\tf-bamf\Prefabs\_todo_prefabs.txt"; DestDir: "{code:GetVMFDir|0}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
 Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Installer\assets\how_to_change_fgd.txt"; DestDir: "{app}"; Flags: ignoreversion replacesameversion isreadme
+Source: "{#SourcePath}\assets\how_to_change_fgd.txt"; DestDir: "{app}"; Flags: ignoreversion replacesameversion isreadme
 
 [Code]
 var
