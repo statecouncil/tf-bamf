@@ -39,8 +39,10 @@ LicenseFile=D:\GitHub\tf-bamf\docs\license.txt
 AllowRootDirectory=No
 AllowUNCPath=No
 OutputDir=D:\GitHub\tf-bamf\Installer\builds
+OutputBaseFilename=tf-bamf-setup-{AppVersion}
 SourceDir=D:\GitHub\tf-bamf
 InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
+UninstallDisplayName=Brokk's Assorted Mapping Fixes {AppVersion}
 
 
 [Messages]
@@ -92,14 +94,14 @@ Name: "vmfs\valve_released"; Description: "Source SDK 2013 VMFs and artpass_valv
 Name: "vmfs\community"; Description: "Community-Contributed Map VMFs"; Types: full custom; Flags: disablenouninstallwarning
 
 
-[Tasks]
+;[Tasks]
 ; GroupDescription NEEDS to be identical for grouped tasks
-Name: "fgd_settings_propper_yes"; Description: "Enable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
-Name: "fgd_settings_propper_no"; Description: "Disable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
+;Name: "fgd_settings_propper_yes"; Description: "Enable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
+;Name: "fgd_settings_propper_no"; Description: "Disable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
 
-Name: "fgd_spawnmodel_abs"; Description: "Use A Boojum Snark's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
-Name: "fgd_spawnmodel_puddy"; Description: "Use Puddy's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
-Name: "fgd_spawnmodel_default"; Description: "Use default 'Cordon Freeman' model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
+;Name: "fgd_spawnmodel_abs"; Description: "Use A Boojum Snark's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
+;Name: "fgd_spawnmodel_puddy"; Description: "Use Puddy's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
+;Name: "fgd_spawnmodel_default"; Description: "Use default 'Cordon Freeman' model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
 
 
 [Files]
@@ -121,6 +123,8 @@ Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetVMFD
 
 Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{code:GetVMFDir|0}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
 Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
+
+Source: "D:\GitHub\tf-bamf\Installer\assets\how_to_change_fgd.txt"; DestDir: "{app}"; Flags: ignoreversion replacesameversion isreadme
 
 [Code]
 var
