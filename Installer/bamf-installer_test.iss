@@ -92,22 +92,22 @@ Name: "fgd_spawnmodel_default"; Description: "Use default 'Cordon Freeman' model
 [Files]
 ; Set the following paths: #TF2Dir, #CompilePalDir, #VMFDir
 
-Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{code:GetDir|0}\bin"; Components: hammer\fgd; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{code:GetDir|0}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
-Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "{code:GetDir|1}\Compiling"; DestDir: "{#CompilePalDir}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{app}\bin"; Components: hammer\fgd; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{app}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "{code:GetDir|0}\Compiling"; DestDir: "{#CompilePalDir}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
 
 ; parser not finished
 ; Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling\*"; DestDir: "{#CompilePalDir}\Compiling"; Components: hammer\errorparser; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Tools\Radshadowman\*"; DestDir: "{code:GetDir|0}\bin"; Components: tools\radshadowman; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\Tools\Radshadowman\*"; DestDir: "{app}\bin"; Components: tools\radshadowman; Flags: recursesubdirs
 Source: "D:\GitHub\tf-bamf\Tools\Propper\*"; DestDir: "{code:GetDir|0}\bin"; Components: tools\propper; Flags: recursesubdirs
 
 Source: "D:\GitHub\tf-bamf\VPKs\BAMF FGD Assets.vpk"; DestDir: "{code:GetDir|0}\tf\custom"; Components: assets\fgd; Flags: recursesubdirs
 Source: "D:\GitHub\tf-bamf\VPKs\BAMF Material Tag Overhaul.vpk"; DestDir: "{code:GetDir|0}\tf\custom"; Components: assets\materialtags; Flags: recursesubdirs
 Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetDir|0}\tf\custom\BAMF Extra Materials"; Components: assets\extramaterials; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{code:GetDir|2}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
-Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetDir|2}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{code:GetDir|1}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetDir|1}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
 
 [Code]
 var
@@ -126,13 +126,11 @@ begin
   { add directory input page items }
   DirPage.Add('Prompt 1');
   DirPage.Add('Prompt 2');
-  DirPage.Add('Prompt 3');
   { assign default directories for the items from the previously stored data; if }
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
   DirPage.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}\tf-bamf\directory1'));
   DirPage.Values[1] := GetPreviousData('Directory2', ExpandConstant('{commonpf}\tf-bamf\directory2'));
-  DirPage.Values[2] := GetPreviousData('Directory3', ExpandConstant('{commonpf}\tf-bamf\directory3'));
 end;
 
 procedure RegisterPreviousData(PreviousDataKey: Integer);
@@ -140,5 +138,4 @@ begin
   { store chosen directories for the next run of the setup }
   SetPreviousData(PreviousDataKey, 'Directory1', DirPage.Values[0]);
   SetPreviousData(PreviousDataKey, 'Directory2', DirPage.Values[1]);
-  SetPreviousData(PreviousDataKey, 'Directory3', DirPage.Values[2]);
 end;
