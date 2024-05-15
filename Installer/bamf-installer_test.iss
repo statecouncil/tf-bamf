@@ -9,12 +9,6 @@
 #define InstallerAssetsDir "{#SourcePath}\Assets"
 #define BamfDir "{#SourcePath}\.."
 
-; change these
-#define TF2Dir "..\"
-#define CompilePalDir "..\"
-#define VMFDir "..\"
-
-
 [Setup]
 AppId={{E8912FEF-28D2-42C1-8C65-FE8D62199FF5}
 AppName=Brokk's Assorted Mapping Fixes
@@ -66,6 +60,7 @@ Name: "full"; Description: "Full installation"
 
 ; equal to https://bamf.tf/pack/install.html#Basic%20Manual%20Installation
 Name: "compact"; Description: "Basic installation"
+
 
 Name: "custom"; Description: "Custom Installation"; Flags: iscustom
 
