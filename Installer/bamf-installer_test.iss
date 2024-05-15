@@ -29,7 +29,7 @@ WizardSmallImageFile=D:\GitHub\tf-bamf\Installer\assets\icon.bmp
 WizardStyle=modern
 ShowLanguageDialog=no
 AppVersion=0.4                          
-DefaultDirName=BAMF
+DefaultDirName={commonpf}\tf-bamf
 
 EnableDirDoesntExistWarning=No
 AppCopyright=BAMF is licensed under CC BY-SA 4.0. We are not affiliated with Valve.
@@ -92,24 +92,53 @@ Name: "fgd_spawnmodel_default"; Description: "Use default 'Cordon Freeman' model
 [Files]
 ; Set the following paths: #TF2Dir, #CompilePalDir, #VMFDir
 
-Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{#TF2Dir}\bin"; Components: hammer\fgd; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{#TF2Dir}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
-Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling"; DestDir: "{#CompilePalDir}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{code:GetDir|0}\bin"; Components: hammer\fgd; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{code:GetDir|0}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "{code:GetDir|1}\Compiling"; DestDir: "{#CompilePalDir}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
 
 ; parser not finished
 ; Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling\*"; DestDir: "{#CompilePalDir}\Compiling"; Components: hammer\errorparser; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Tools\Radshadowman\*"; DestDir: "{#TF2Dir}\bin"; Components: tools\radshadowman; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\Tools\Propper\*"; DestDir: "{#TF2Dir}\bin"; Components: tools\propper; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\Tools\Radshadowman\*"; DestDir: "{code:GetDir|0}\bin"; Components: tools\radshadowman; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\Tools\Propper\*"; DestDir: "{code:GetDir|0}\bin"; Components: tools\propper; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\VPKs\BAMF FGD Assets.vpk"; DestDir: "{#TF2Dir}\tf\custom"; Components: assets\fgd; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\VPKs\BAMF Material Tag Overhaul.vpk"; DestDir: "{#TF2Dir}\tf\custom"; Components: assets\materialtags; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{#TF2Dir}\tf\custom\BAMF Extra Materials"; Components: assets\extramaterials; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\VPKs\BAMF FGD Assets.vpk"; DestDir: "{code:GetDir|0}\tf\custom"; Components: assets\fgd; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\VPKs\BAMF Material Tag Overhaul.vpk"; DestDir: "{code:GetDir|0}\tf\custom"; Components: assets\materialtags; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetDir|0}\tf\custom\BAMF Extra Materials"; Components: assets\extramaterials; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{#TF2Dir}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
-Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{#VMFDir}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
+Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{code:GetDir|2}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetDir|2}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\VMFs\Decompiled Valve Maps\*"; DestDir: "{#VMFDir}\Decompiled Valve Maps"; Components: vmfs\valve_decompiled; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\VMFs\Source SDK 2013\*"; DestDir: "{#VMFDir}\Valve Releases"; Components: vmfs\valve_released; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\VMFs\artpass_valvebase\*"; DestDir: "{#VMFDir}\Valve Releases\artpass_valvebase"; Components: vmfs\valve_released; Flags: recursesubdirs
-Source: "D:\GitHub\tf-bamf\VMFs\Community Maps\*"; DestDir: "{#VMFDir}\Community Maps"; Components: vmfs\community; Flags: recursesubdirs
+[Code]
+var
+  DirPage: TInputDirWizardPage;
+
+function GetDir(Param: String): String;
+begin
+  Result := DirPage.Values[StrToInt(Param)];
+end;
+
+procedure InitializeWizard;
+begin
+  { create a directory input page }
+  DirPage := CreateInputDirPage(
+    wpSelectDir, 'Caption', 'Description', 'SubCaption', False, '');
+  { add directory input page items }
+  DirPage.Add('Prompt 1');
+  DirPage.Add('Prompt 2');
+  DirPage.Add('Prompt 3');
+  { assign default directories for the items from the previously stored data; if }
+  { there are no data stored from the previous installation, use default folders }
+  { of your choice }
+  DirPage.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}\tf-bamf\directory1'));
+  DirPage.Values[1] := GetPreviousData('Directory2', ExpandConstant('{commonpf}\tf-bamf\directory2'));
+  DirPage.Values[2] := GetPreviousData('Directory3', ExpandConstant('{commonpf}\tf-bamf\directory3'));
+end;
+
+procedure RegisterPreviousData(PreviousDataKey: Integer);
+begin
+  { store chosen directories for the next run of the setup }
+  SetPreviousData(PreviousDataKey, 'Directory1', DirPage.Values[0]);
+  SetPreviousData(PreviousDataKey, 'Directory2', DirPage.Values[1]);
+  SetPreviousData(PreviousDataKey, 'Directory3', DirPage.Values[2]);
+end;
