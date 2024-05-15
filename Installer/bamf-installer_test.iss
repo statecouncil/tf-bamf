@@ -6,7 +6,8 @@
 #define MyAppURL "https://bamf.tf/"
 #define MyAppRepoURL "https://github.com/statecouncil/tf-bamf"
 
-#define InstallerAssetsDir ".\Assets"
+#define InstallerAssetsDir "{#SourcePath}\Assets"
+#define BamfDir "{#SourcePath}\.."
 
 ; change these
 #define TF2Dir "..\"
@@ -112,6 +113,7 @@ Name: "vmfs\community"; Description: "Community-Contributed Map VMFs"; Types: fu
 ; Set the following paths: #TF2Dir, #CompilePalDir, #VMFDir
 
 Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{app}\bin"; Components: hammer\fgd; Flags: recursesubdirs
+Source: "{#InstallerAssetsDir}\how_to_change_fgd.txt"; DestDir: "{app}"; Components: hammer\fgd; Flags: ignoreversion replacesameversion isreadme
 Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{app}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
 Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling"; DestDir: "{code:GetCompilepalDir|0}\Compiling"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
 
@@ -127,8 +129,6 @@ Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetVMFD
 
 Source: "D:\GitHub\tf-bamf\Prefabs\*"; Excludes: "D:\GitHub\tf-bamf\Prefabs\_todo_prefabs.txt"; DestDir: "{code:GetVMFDir|0}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
 Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
-
-Source: "{#SourcePath}\assets\how_to_change_fgd.txt"; DestDir: "{app}"; Flags: ignoreversion replacesameversion isreadme
 
 [Code]
 var
