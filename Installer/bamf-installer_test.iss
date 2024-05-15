@@ -40,6 +40,7 @@ AllowRootDirectory=No
 AllowUNCPath=No
 OutputDir=D:\GitHub\tf-bamf\Installer\builds
 SourceDir=D:\GitHub\tf-bamf
+InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 
 [Types]
 ; everything we have to offer
@@ -123,7 +124,7 @@ procedure InitializeWizard;
 begin
   { create a directory input page }
   DirPage := CreateInputDirPage(
-    wpSelectDir, 'Caption', 'Description', 'SubCaption', False, '');
+    wpSelectDir, ' file paths', 'If you decide to install th', 'SubCaption', False, '');
   { add directory input page items }
   DirPage.Add('Prompt 1');
   DirPage.Add('Prompt 2');
@@ -131,6 +132,15 @@ begin
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
   DirPage.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}\tf-bamf\directory1'));
+
+  DirPage := CreateInputDirPage(
+    wpSelectDir, 'Additional file paths', 'If you decide to install th', 'SubCaption', False, '');
+  { add directory input page items }
+  DirPage.Add('Prompt 1');
+  DirPage.Add('Prompt 2');
+  { assign default directories for the items from the previously stored data; if }
+  { there are no data stored from the previous installation, use default folders }
+  { of your choice }
   DirPage.Values[1] := GetPreviousData('Directory2', ExpandConstant('{commonpf}\tf-bamf\directory2'));
 end;
 
