@@ -25,7 +25,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppRepoURL}
 Compression=lzma
 SolidCompression=yes
-DisableStartupPrompt=no
+DisableStartupPrompt=True
 WizardImageFile=compiler:{#InstallerAssetsDir}\welcome_raw.bmp
 WizardSmallImageFile=compiler:{#InstallerAssetsDir}\icon.bmp
 WizardStyle=modern
@@ -38,6 +38,8 @@ EnableDirDoesntExistWarning=yes
 AppCopyright=BAMF is licensed under CC BY-SA 4.0. We are not affiliated with Valve.
 SetupIconFile=compiler:{#InstallerAssetsDir}\favicon.ico
 LicenseFile=compiler:{#InstallerAssetsDir}\LICENSE.txt
+
+DisableWelcomePage=False
 
 
 [Types]
