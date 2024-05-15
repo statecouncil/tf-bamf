@@ -42,6 +42,10 @@ OutputDir=D:\GitHub\tf-bamf\Installer\builds
 SourceDir=D:\GitHub\tf-bamf
 InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 
+
+[Messages]
+WizardForm.SelectDirLabel.Caption=Ich habe das hier geändert
+
 [Types]
 ; everything we have to offer
 Name: "full"; Description: "Full installation"
@@ -115,7 +119,6 @@ Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"
 var
   DirPageCompilepal: TInputDirWizardPage;
   DirPageVMF: TInputDirWizardPage;
-  WizardForm.SelectDirLabel.Caption := 'Ich habe das hier geändert'
 
 function GetCompilepalDir(Param: String): String;
 begin
