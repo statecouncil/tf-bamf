@@ -23,7 +23,8 @@ AppSupportURL=https://bamf.tf
 AppUpdatesURL=https://bamf.tf
 Compression=lzma
 SolidCompression=yes
-DisableStartupPrompt=no
+DisableStartupPrompt=True
+DisableWelcomePage=False
 WizardImageFile=D:\GitHub\tf-bamf\Installer\assets\welcome_raw.bmp
 WizardSmallImageFile=D:\GitHub\tf-bamf\Installer\assets\icon.bmp
 WizardStyle=modern
@@ -94,7 +95,7 @@ Name: "fgd_spawnmodel_default"; Description: "Use default 'Cordon Freeman' model
 
 Source: "D:\GitHub\tf-bamf\FGD\*"; Excludes: "D:\GitHub\tf-bamf\FGD\x64\*"; DestDir: "{app}\bin"; Components: hammer\fgd; Flags: recursesubdirs
 Source: "D:\GitHub\tf-bamf\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{app}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
-Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "{code:GetDir|0}\Compiling"; DestDir: "{#CompilePalDir}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\*"; Excludes: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling"; DestDir: "{code:GetDir|0}\Compiling"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
 
 ; parser not finished
 ; Source: "D:\GitHub\tf-bamf\Compile Configs\Compilepal\Compiling\*"; DestDir: "{#CompilePalDir}\Compiling"; Components: hammer\errorparser; Flags: recursesubdirs
