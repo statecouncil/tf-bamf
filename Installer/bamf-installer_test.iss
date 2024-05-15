@@ -44,7 +44,7 @@ InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 
 
 [Messages]
-WizardForm.SelectDirLabel.Caption=Ich habe das hier geändert
+SelectDirDesc=Select your Team Fortress 2 installation (Default: D:\Programme\Steam\steamapps\common\Team Fortress 2)
 
 [Types]
 ; everything we have to offer
