@@ -173,3 +173,6 @@ Select location where VMFs should be saved ("mapsrc") -> ask for manual path, de
 Installation successful! Merasmus will now return to his castle. [picture of racoon here]
 
 ##########################################################################
+
+Gameconfig Hammer: Team Fortress 2/tf/gameinfo.txt
+Gameconfig Hammer++: Team Fortress 2/bin/x64/hammerplusplus/hammerplusplus_gameconfig.txt
