@@ -14,6 +14,8 @@ Feedback:
 	-install.html (using installer)
 	-install_basic.html (current install.html)
 	-install_advanced.html (unchanged)
+-change order of configurations so that Basic Installation is selected by default instead of Full Installation.
+-add requirements to component descriptions
 	
 Content for Installer page:
 -How/where to download
