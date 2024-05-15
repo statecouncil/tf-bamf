@@ -30,7 +30,7 @@ WizardSmallImageFile=D:\GitHub\tf-bamf\Installer\assets\icon.bmp
 WizardStyle=modern
 ShowLanguageDialog=no
 AppVersion=0.4                          
-DefaultDirName={commonpf}\tf-bamf
+DefaultDirName=C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2
 
 EnableDirDoesntExistWarning=No
 AppCopyright=BAMF is licensed under CC BY-SA 4.0. We are not affiliated with Valve.
@@ -44,7 +44,9 @@ InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 
 
 [Messages]
-SelectDirDesc=Select your Team Fortress 2 installation (Default: D:\Programme\Steam\steamapps\common\Team Fortress 2)
+SelectDirDesc=Select your Team Fortress 2 installation (Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2)
+WizardSelectDir=Select your TF2 installation
+SelectDirLabel3=IMPORTANT: TF-BAMF will NOT work if it is not installed into the Team Fortress 2 folder!
 
 [Types]
 ; everything we have to offer
@@ -134,20 +136,20 @@ procedure InitializeWizard;
 begin
   { create a directory input page }
   DirPageCompilepal := CreateInputDirPage(
-    wpSelectDir, ' compilepal', 'If you decide to install th', 'SubCaption', False, '');
+    wpSelectDir, ' Select the location of your CompilePal installation', "WARNING: TF-BAMF's CompilePal components will not work if this folder is not set correctly", '', False, '');
   { add directory input page items }
-  DirPageCompilepal.Add('Prompt 1');
+  DirPageCompilepal.Add('Path:');
   { assign default directories for the items from the previously stored data; if }
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
   DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}\tf-bamf\directory1'));
 
   DirPageVMF := CreateInputDirPage(
-    wpSelectDir, 'vmf file paths', 'If you decide to install th', 'SubCaption', False, '');
+    wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder', '(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\mapsrc)', False, '');
   { add directory input page items }
-  DirPageVMF.Add('Prompt 1');
+  DirPageVMF.Add('Path:');
   { assign default directories for the items from the previously stored data; if }
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
-  DirPageVMF.Values[0] := GetPreviousData('Directory2', ExpandConstant('{commonpf}\tf-bamf\directory2'));
+  DirPageVMF.Values[0] := GetPreviousData('Directory2', ExpandConstant('C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\mapsrc'));
 end;
