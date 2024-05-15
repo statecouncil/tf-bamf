@@ -35,24 +35,27 @@ DefaultDirName=C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2
 EnableDirDoesntExistWarning=No
 AppCopyright=BAMF is licensed under CC BY-SA 4.0. We are not affiliated with Valve.
 SetupIconFile=D:\GitHub\tf-bamf\docs\favicon.ico
-LicenseFile=D:\GitHub\tf-bamf\docs\license.txt
+LicenseFile=D:\GitHub\tf-bamf\license.txt
 AllowRootDirectory=No
 AllowUNCPath=No
 OutputDir=D:\GitHub\tf-bamf\Installer\builds
-OutputBaseFilename=tf-bamf-setup-{AppVersion}
+OutputBaseFilename=tf-bamf-setup-{#SetupSetting("AppVersion")}
 SourceDir=D:\GitHub\tf-bamf
 InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
-UninstallDisplayName=Brokk's Assorted Mapping Fixes {AppVersion}
+UninstallDisplayName=Brokk's Assorted Mapping Fixes {#SetupSetting("AppVersion")}
 
 
 [Messages]
 SelectDirDesc=(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2)
 WizardSelectDir=Select your TF2 installation
-SelectDirLabel3=IMPORTANT: TF-BAMF will NOT work if it is not installed into the Team Fortress 2 folder!
-WelcomeLabel1=Brokk's Assorted Mapping Fixes {AppVersion}
-WelcomeLabel2=Merasmus will guide you through the installation process.%n%nFor a full list of modules and their purpose, click here: https://bamf.tf/pack/features.html
+SelectDirLabel3=IMPORTANT: TF-BAMF will NOT work if it is not installed into the Team Fortress 2 folder!%nYou can find your TF2 installation by opening Steam, right-clicking onto Team Fortress 2, and selecting Manage -> Browse Local Files.
+WelcomeLabel1=Brokk's Assorted Mapping Fixes {#SetupSetting("AppVersion")}
+WelcomeLabel2=Merasmus will guide you through the installation process.
 FinishedHeadingLabel=Brokk's Assorted Mapping Fixes has finished installing
 FinishedLabelNoIcons=Merasmus will now return to his castle.
+ClickFinish=IMPORTANT: You need to manually change the FGD (game data) file in Hammer in order to access improved entity information and icons.
+RunEntryShellExec=Open detailed instructions for changing your FGD file
+ConfirmUninstall=Are you sure you want to remove %1? Your Prefabs folder and CompilePal installation will remain unaffected.
 
 
 [Types]
@@ -121,7 +124,7 @@ Source: "D:\GitHub\tf-bamf\VPKs\BAMF FGD Assets.vpk"; DestDir: "{code:GetVMFDir|
 Source: "D:\GitHub\tf-bamf\VPKs\BAMF Material Tag Overhaul.vpk"; DestDir: "{code:GetVMFDir|0}\tf\custom"; Components: assets\materialtags; Flags: recursesubdirs
 Source: "D:\GitHub\tf-bamf\VPKs\BAMF Extra Materials\*"; DestDir: "{code:GetVMFDir|0}\tf\custom\BAMF Extra Materials"; Components: assets\extramaterials; Flags: recursesubdirs
 
-Source: "D:\GitHub\tf-bamf\Prefabs\*"; DestDir: "{code:GetVMFDir|0}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
+Source: "D:\GitHub\tf-bamf\Prefabs\*"; Excludes: "D:\GitHub\tf-bamf\Prefabs\_todo_prefabs.txt"; DestDir: "{code:GetVMFDir|0}\bin\Prefabs"; Components: prefabs; Flags: recursesubdirs uninsneveruninstall
 Source: "D:\GitHub\tf-bamf\Gamemodes\*"; DestDir: "{code:GetVMFDir|0}\Gamemodes"; Components: gamemodes; Flags: recursesubdirs
 
 Source: "D:\GitHub\tf-bamf\Installer\assets\how_to_change_fgd.txt"; DestDir: "{app}"; Flags: ignoreversion replacesameversion isreadme
@@ -145,13 +148,13 @@ procedure InitializeWizard;
 begin
   { create a directory input page }
   DirPageCompilepal := CreateInputDirPage(
-    wpSelectDir, ' Select the location of your CompilePal installation', '', 'WARNING: TF-BAMFs CompilePal components will not work if this folder is not set correctly', False, '');
+    wpSelectDir, ' Select the location of your CompilePal installation', '', 'WARNING: TF-BAMFs CompilePal components will not work if this folder is not set correctly!', False, '');
   { add directory input page items }
   DirPageCompilepal.Add('Path:');
   { assign default directories for the items from the previously stored data; if }
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
-  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}));
+  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}'));
 
   DirPageVMF := CreateInputDirPage(
     wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder. Mapfiles can be accessed via Hammer.', '(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\mapsrc)', False, '');
