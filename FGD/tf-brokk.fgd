@@ -9261,7 +9261,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 @PointClass base(SBaseLogical, SBaseDiv, SEnableDisable, SToggle) color(100 150 255) iconsprite("editor/logic_relay") = logic_relay : "A message forwarder. Fires an OnTrigger output when it receives the Trigger input, and can be disabled to prevent this output from firing. Useful as an intermediary between one entity and another for turning on or off an I/O connection, or as a container for holding a set of outputs that can be triggered from multiple places. By default, a triggered logic_relay cannot be triggered again until all of its OnTrigger outputs have fired (it's 'sleep' period). This can be bypassed with the 'Allow Fast Retrigger' spawnflag or the 'EnableRefire' input." [
 	spawnflags(flags) = [
 		1 : "Only Trigger Once - Relay removes itself after firing OnSpawn or OnTrigger" : 0
-		2 : "Allow Fast Retrigger - logic_relay doesn't 'sleep' after triggering. Makes the relay ignore 'trigger' inputs if it still has pending outputs to fire." : 0 //thanks burguers
+		2 : "Allow Fast Retrigger - logic_relay doesn't 'sleep' after triggering, ignores Trigger inputs while firing." : 0 //thanks burguers
 	] // end spawnflags
 
 	input CancelPending(void) : "Cancel any events fired by this relay that are currently pending in the I/O event queue due to an outstanding delay. This includes ALL outputs, not just OnTrigger. BUG: May crash the game if a logic_relay sends CancelPending directly to itself."
