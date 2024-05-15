@@ -44,9 +44,14 @@ InfoBeforeFile=D:\GitHub\tf-bamf\Installer\assets\bamf-readme.txt
 
 
 [Messages]
-SelectDirDesc=Select your Team Fortress 2 installation (Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2)
+SelectDirDesc=(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2)
 WizardSelectDir=Select your TF2 installation
 SelectDirLabel3=IMPORTANT: TF-BAMF will NOT work if it is not installed into the Team Fortress 2 folder!
+WelcomeLabel1=Brokk's Assorted Mapping Fixes {AppVersion}
+WelcomeLabel2=Merasmus will guide you through the installation process.%n%nFor a full list of modules and their purpose, click here: https://bamf.tf/pack/features.html
+FinishedHeadingLabel=Brokk's Assorted Mapping Fixes has finished installing
+FinishedLabelNoIcons=Merasmus will now return to his castle.
+
 
 [Types]
 ; everything we have to offer
@@ -136,16 +141,16 @@ procedure InitializeWizard;
 begin
   { create a directory input page }
   DirPageCompilepal := CreateInputDirPage(
-    wpSelectDir, ' Select the location of your CompilePal installation', "WARNING: TF-BAMF's CompilePal components will not work if this folder is not set correctly", '', False, '');
+    wpSelectDir, ' Select the location of your CompilePal installation', '', 'WARNING: TF-BAMFs CompilePal components will not work if this folder is not set correctly', False, '');
   { add directory input page items }
   DirPageCompilepal.Add('Path:');
   { assign default directories for the items from the previously stored data; if }
   { there are no data stored from the previous installation, use default folders }
   { of your choice }
-  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}\tf-bamf\directory1'));
+  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}));
 
   DirPageVMF := CreateInputDirPage(
-    wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder', '(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\mapsrc)', False, '');
+    wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder. Mapfiles can be accessed via Hammer.', '(Default: C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\mapsrc)', False, '');
   { add directory input page items }
   DirPageVMF.Add('Path:');
   { assign default directories for the items from the previously stored data; if }
