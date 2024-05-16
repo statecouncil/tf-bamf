@@ -4,21 +4,20 @@ Mystyc Cheez
 SED
 Nick
 
-Feedback:
+Feedback and Todos:
 
 -Uninstaller seems to delete all files as intended, but leaves empty folders behind. Not ideal for things like tf/custom/Extra Materials.
 -Cannot leave dir2/dir3 paths empty even if components are not intended to be installed
 -Clarify that paths for unused components can be ignored/left at default as they won't be used
--improve how_to_change_fgd.txt, perhaps use hmtl or refer to bamf.tf
+-improve how_to_change_fgd.txt, perhaps use hmtl or refer to bamf.tf/pack/install.html directly
 -split Install section on bamf.tf into:
 	-install.html (using installer)
-	-install_basic.html (current install.html)
-	-install_advanced.html (unchanged)
+	-install-basic.html (current install.html)
+	-install-advanced.html (unchanged)
 -change order of configurations so that Basic Installation is selected by default instead of Full Installation.
 -add requirements to component descriptions
+-rework assets/bamf-readme.txt and add links
 	
 Content for Installer page:
--How/where to download
--Basic overview of pages and what they do
 -clarify BAMF can be installed over existing installations, but uninstalling and then reinstalling may be cleaner
 -clarify how to uninstall via Apps & Features, and where the uninstaller lives
