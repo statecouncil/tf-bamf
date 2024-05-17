@@ -60,11 +60,11 @@ InfoBeforeLabel=Read this or perish.
 
 
 [Types]
-; everything we have to offer
-Name: "full"; Description: "Full installation"
-
 ; equal to https://bamf.tf/pack/install.html#Basic%20Manual%20Installation
 Name: "compact"; Description: "Basic installation"
+
+; everything we have to offer
+Name: "full"; Description: "Full installation"
 
 ; whatever the user wants. We don't care
 Name: "custom"; Description: "Custom Installation"; Flags: iscustom
