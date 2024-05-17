@@ -83,7 +83,7 @@ Name: "hammer\compilesequences_compilepal"; Description: "Advanced CompilePal se
 
 Name: "tools"; Description: "Tools"; Types: full custom; Flags: disablenouninstallwarning
 Name: "tools\radshadowman"; Description: "RadShadowMan"; Types: full custom; Flags: disablenouninstallwarning
-Name: "tools\propper"; Description: "Propper"; Types: full custom; Flags: disablenouninstallwarning
+Name: "tools\propper"; Description: "Propper (requires FGD!)"; Types: full custom; Flags: disablenouninstallwarning
 
 Name: "assets"; Description: "Mapping Assets"; Types: full custom; Flags: disablenouninstallwarning
 Name: "assets\fgd"; Description: "FGD Assets"; Types: full custom compact; Flags: disablenouninstallwarning
@@ -154,7 +154,7 @@ begin
   DirPageCompilepal := CreateInputDirPage(
     wpSelectDir, ' Select the location of your CompilePal installation', '', 'WARNING: TF-BAMFs CompilePal components will not work if this folder is not set correctly!', False, '');
   DirPageCompilepal.Add('Path:');
-  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf}'));
+  DirPageCompilepal.Values[0] := GetPreviousData('Directory1', ExpandConstant('{commonpf32}\CompilePal'));
 
   DirPageVMF := CreateInputDirPage(
     wpSelectDir, 'Select the location in which you want to install map files', 'This can be any folder. Mapfiles can be accessed via Hammer.', '(Default: ...steamapps\common\Team Fortress 2\mapsrc)', False, '');
