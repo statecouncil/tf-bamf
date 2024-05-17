@@ -7,6 +7,6 @@
 
 [Installation Guide](https://bamf.tf/pack/install.html)
 
-[Contents & Features](https://bamf.tf/pack/features.html)
+[Features](https://bamf.tf/pack/features.html)
 
 ### Brokk's Assorted Mapping Fixes (BAMF) © 2024 by Brokkhouse is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
