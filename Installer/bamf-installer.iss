@@ -113,7 +113,7 @@ Name: "vmfs\community"; Description: "Community-Contributed Map VMFs"; Types: fu
 Source: "{#BamfDir}\FGD\*"; Excludes: "{#BamfDir}\FGD\x64\*"; DestDir: "{app}\bin"; Components: hammer\fgd; Flags: recursesubdirs
 Source: "{#InstallerAssetsDir}\how_to_change_fgd.txt"; DestDir: "{app}"; Components: hammer\fgd; Flags: ignoreversion replacesameversion isreadme
 Source: "{#BamfDir}\FGD\x64\hammerplusplus\hammerplusplus_sequences.cfg"; DestDir: "{app}\bin\x64\hammerplusplus"; Components: hammer\compilesequences_tools; Flags: recursesubdirs uninsneveruninstall
-Source: "{#BamfDir}\Compile Configs\Compilepal\*"; Excludes: "{#BamfDir}\Compile Configs\Compilepal\Compiling"; DestDir: "{code:GetCompilepalDir|0}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs uninsneveruninstall
+Source: "{#BamfDir}\Compile Configs\Compilepal\*"; Excludes: "{#BamfDir}\Compile Configs\Compilepal\Compiling"; DestDir: "{code:GetCompilepalDir|0}"; Components: hammer\compilesequences_compilepal; Flags: recursesubdirs
 
 ; parser not finished
 ; Source: "{#BamfDir}\Compile Configs\Compilepal\Compiling\*"; DestDir: "{#CompilePalDir}\Compiling"; Components: hammer\errorparser; Flags: recursesubdirs
