@@ -1,0 +1,6 @@
+1	Open Hammer (or Hammer++).
+2	Navigate to Tools -> Options... in the top bar.
+3	Select the Game Configurations tab in the Options window.
+4	Delete the existing entry in the Game Data files section by selecting and clicking Remove.
+5	Then add the new Game Data File by clicking Add and navigating to Team Fortress 2/bin/tf-brokk.fgd.
+6	At the bottom of the same options window, make sure the Prefab Directory is set to Team Fortress 2/bin/Prefabs.

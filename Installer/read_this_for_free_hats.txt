@@ -1,0 +1,1 @@
+If you're reading this, and you do not work on this project, be warned that anything in this folder (tf-bamf/Installer) is HIGHLY in development and may brick your TF2 installation or worse. A working BAMF installer will be announced on https://bamf.tf and on TF2Maps once it is ready.

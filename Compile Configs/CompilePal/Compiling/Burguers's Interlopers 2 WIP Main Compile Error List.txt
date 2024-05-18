@@ -1,0 +1,448 @@
+**** leaked ****
+bad planenum
+Tried parent
+PSIDE_FACING with splits
+WARNING: huge winding
+bogus brush after clip
+split removed brush
+split not on both sides
+Brush {$1}: WARNING, microbrush
+Found no matching plane for {$1}
+Material {$1} is depending on itself through materialvar {$2}! Ignoring...
+*** Error unserializing skybox texture: {$1}
+*** Error: Skybox vtf files for {$1} weren't compiled with the same size texture and/or same flags!
+Can't load skybox file {$1} to build the default cubemap!
+Error serializing default cubemap {$1}
+Generated env_cubemap patch name : {$1} too long! (max = {$2})
+Multiple references for cubemap on texture {$1}!!!
+env_cubemap pointing at deleted brushside near ({$1}, {$2}, {$3})
+CUtlRBTree overflow!
+Split face in merge list!
+Bad detail brush side
+Invalid arguments to "sprite" in detail.vbsp (model {$1})!
+Error loading studio model "{$1}"!
+Error! Too many detail props emitted on this map! (64K max!)
+Material {$1} uses unknown detail object type {$2}!
+Error! Too many detail props on this map. {$1} were not emitted!
+Found a displacement edge abutting multiple other edges.
+Warning: invalid neighbor connection on displacement near ({$1} {$2} {$3})
+Warning: overflowed {$1} displacement corner-neighbor lists.
+Displacement {$1} has bad geometry near {$2} {$3} {$4}
+Can't compile displacement physics, exiting. Texture is {$1}
+Error: displacement found on a(n) {$1} entity - not supported (entity {$2}, brush {$3})
+Trying to create a non-quad displacement! (entity {$1}, brush {$2})
+Too many unique verts, max = {$1} (map has too much brush geometry)
+Edge with too many vertices due to t-junctions. Max {$1} verts along an edge!
+Too many t-junctions to fix up! ({$1} prims, max {$2} :: {$3} indices, max {$4})
+Too many edges in map, max == {$1}
+SubdivideFace: didn't split the polygon
+error: material {$1} doesn't have a $bottommaterial
+Couldn't open {$1}
+Error writing collision data {$1}
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+!!! WARNING: Can't build collision data!
+Entity {$1} ({$2} {$3} {$4}) leaked!
+Areaportal leak ! File: {$1}
+Not a Parse error!
+FloatPlane: bad normal
+MAX_MAP_PLANES
+MAX_MAP_BRUSHSIDES
+Brush {$1}: bounds out of range
+Brush {$1}: no visible sides on brush
+ParseDispInfoChunk: nummapdispinfo > MAX_MAP_DISPINFO
+Overlay Material Name ({$1}) > OVERLAY_MAP_STRLEN ({$2})
+num_entities == MAX_MAP_ENTITIES
+Entity {$1}: func_areaportal can only be a single brush
+Could not locate gameinfo.txt for Instance Remapping at {$1}
+Could not locate 'GameData' key in {$1}
+Could not locate GameData file {$1}
+Could not open instance file {$1}
+Error opening {$1}
+duplicate plane
+mirrored plane
+plane with no normal
+luxel size of 0
+nummapbrushes == MAX_MAP_BRUSHES
+Brush {$1}: origin brushes not allowed in world
+Couldn't allocate KeyValues for {$1}!!!
+Infinite recursion in patch file?
+Failed to load KeyValues file!
+g_numvertnormalindices == MAX_MAP_VERTNORMALINDICES ({$1})
+g_numvertnormals == MAX_MAP_VERTNORMALS ({$1})
+Overlay ({$1}) at {$2} {$3} {$4} has invalid render order ({$5}).
+Overlay Material Name ({$1}) too long! > OVERLAY_MAP_STRLEN ({$2})
+Too Many Overlays!
+MAX_MAP_OVERLAYS = {$1}
+Overlay touching too many faces (touching {$1}, max {$2}
+Overlay {$1} at {$2} {$3} {$4}
+Too many water overlays!
+MAX_MAP_WATEROVERLAYS = {$1}
+Water Overlay touching too many faces (touching {$1}, max {$2})
+Portal_EntityFlood: not a leaf
+AddPortalToNode: allready included
+RemovePortalFromNode: portal not in leaf
+RemovePortalFromNode: portal not bounding leaf
+CutNodePortals_r: mislinked portal
+WARNING: node without a volume
+WARNING: BSP node with unbounded volume (material: {$1}, near {$2})
+no entities in open -- no filling
+entity reached from outside -- no filling
+WARNING: areaportal entity {$1} (brush {$2}) touches > 2 areas
+Brush {$1}): areaportal brush doesn't touch two areas
+FindUniquePoints: overflowed unique point list (size {$1}).
+Warning: area portal has {$1} verts. Could be a vbsp bug.
+MAX_MAP_PORTALVERTS (probably a broken areaportal near {$1} {$2} {$3}
+Map is split into too many unique areas (max = {$1})
+FindPortalSide: Couldn't find a good match for which brush to assign to a portal near ({$1} {$2} {$3})
+WARNING: side not found for portal
+Error! To use model "{$1}" with {$2}, it must be compiled with $staticprop!
+Error! {$1} using model "{$2}", which must be used on a dynamic entity (i.e. prop_physics). Deleted.
+Bad geometry on "{$1}"!
+Static prop {$1} outside the map ({$2}, {$3}, {$4})
+Unable to load vertex data "{$1}"
+Bad size for vertex data "{$1}"
+Error Vertex File {$1} id {$2} should be {$3}
+Error Vertex File {$1} version {$2} should be {$3}
+Error Vertex File {$1} checksum {$2} should be {$3}
+Too many unique textures, max {$1}
+Material not found!: {$1}
+Can't find surfaceprop {$1} for material {$2}, using default
+Can't find surfacepropblend {$1} for material {$2}, using default
+Too many unique texture mappings, max = {$1}
+WARNING: material not found: "{$1}"
+FindOrCreateTexInfo: Tried to create new texinfo during -onlyents compile!
+node->faces seperating CONTENTS_SOLID
+node->faces with children
+PruneNodes: node->brushlist
+Could not get the material system interface from materialsystem.dll
+Could not find factory interface in library MaterialSystem.dll
+Could not start the empty shader (shaderapiempty.dll)!
+bmodel {$1} has no head node (class '{$2}', targetname '{$3}')
+Occluder "{$1}" straddles multiple areas. This is invalid!
+Error! Entity sky_camera in solid volume! at {$1} {$2} {$3}
+Bad -embed - Can't resolve pathname for '{$1}'
+VBSP: Unknown option "{$1}"
+Generated worldvertextransition patch name : {$1} too long! (max = {$2})
+Bad leafface
+Too many detail brush faces, max = {$1}
+Too many BSP leaves, max = {$1}
+Too many brushes in one leaf, max = {$1}
+Too many faces in map, max = {$1}
+Too much brush geometry in bsp, numsurfedges == MAX_MAP_SURFEDGES
+NODRAW on terrain surface!
+MAX_MAP_NODES
+WriteDrawNodes_r: odd planenum
+Too many switched lights (error at light {$1}), max = {$2}
+Water found with no water_lod_control entity, creating a default one.
+Too many brush models in map, max = {$1}
+Opening ZIP file with unsupported compression type
+Calling AddBufferToZip with unknown compression type
+Zip: Failed decompressing LZMA data
+Unsupported compression type in Zip file: {$1}
+ZIP Output overshot buffer estimate: Estimated {$1}, actual {$2}
+CUtlLinkedList overflow! (exhausted memory allocator)
+CUtlLinkedList overflow! (exhausted index range)
+Passed non-directory to AddDirToPak [ {$1} ]
+Unknown Static Prop Lump version {$1} didn't get swapped!
+Unknown game lump '{$1}' didn't get swapped!
+Unknown occlusion lump version!
+!!! WARNING: Can't swap the physcollide lump!
+ValidateLump: odd size for lump {$1}
+ValidateLump: old version for lump {$1} in map!
+Reading unknown lump #{$1} ({$2} bytes)
+Writing unknown lump #{$1} ({$2} bytes)
+odd size for LUMP_LEAFS
+Unknown LUMP_LEAFS version
+{$1} is not a IBSP file
+{$1} is version {$2}, not {$3}
+Map has too many texinfos (has {$1}, can have at most {$2})
+Bad surface extents point: {$1} {$2} {$3}
+Bad surface extents - surface is too big to have a lightmap
+unexpected end of file
+CmdLib_FPrintf: can't allocate space for text.
+Can't create LogFile:"{$1}"
+CmdLib_InitFileSystem failed.
+File read failure
+File write failure
+FileSystem_LoadSearchPaths: Invalid parameters specified.
+FileSystem_GetBaseDir failed.
+Bad -insert_search_path - Can't resolve pathname for '{$1}'
+FileSystem_AddLoadedSearchPath - Can't resolve pathname for '{$1}'
+Tried to add {$1} as a search path.
+bOnlyUseDirectoryName=1 and pDirectoryName=NULL.
+Setup file '{$1}' doesn't exist in subdirectory '{$2}'.
+Warning: falling back to auto detection of vproject directory.
+FileSystem_GetExecutableDir failed.
+{$1} IFileSystem::Connect failed.
+FreeWinding: freed a freed winding
+{$1} IFileSystem::Init failed.
+BaseWindingForPlane: no axis found
+ClipWinding: points exceeded estimate
+ClipWinding: MAX_POINTS_ON_WINDING
+undefined base class '{$1}
+expecting ',' or ')', but found {$1}
+bad input/output type '{$1}'
+{$1}: Variable '{$2}' is multiply defined with different types.
+expecting {$1}
+expecting '{$1}', but found '{$2}'
+- too many errors; aborting.
+error including file: {$1}
+unrecognized section name {$1}
+'{$1}' is not a valid variable type
+flag sets do not have long names
+no {$1} specified
+didn't expect '=' here
+V_AppendSlash: ran out of space on {$1}.
+V_MakeAbsolutePath: _getcwd failed.
+V_MakeAbsolutePath: tried to ".." past the root.
+KeyValues Error: {$1} in file {$2}
+ReadToken overflow
+KeyValues::LoadFromFile({$1}{$2}{$3}): End / FileNotFound
+KeyValues::RecursiveSaveToFile: TODO, missing code for TYPE_COLOR.
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file {$1}
+LoadFromBuffer: missing {
+RecursiveLoadFromBuffer: recursion overflow
+RecursiveLoadFromBuffer: got EOF instead of keyname
+RecursiveLoadFromBuffer: got empty keyname
+RecursiveLoadFromBuffer: got NULL key
+RecursiveLoadFromBuffer: got } in key
+RecursiveLoadFromBuffer: got conditional between key and value
+Module {$1} is a debug build
+LZMA stream: Unexpected LZMA properties size: {$1}, expecting {$2}. Version mismatch?
+Unrecognized LZMA data
+Height and width must be equal for cubemaps!
+Depth must be 1 for cubemaps!
+Image dimensions must be multiple of 4!
+Warning! Encountered old format VTF file; please rebuild it!
+*** Encountered VTF file with an invalid minor version!
+*** Error unserializing VTF file... is the file empty?
+*** Tried to load a non-VTF file as a VTF file!
+*** Encountered VTF file with an invalid version!
+*** Encountered VTF file with an invalid full header!
+*** Encountered VTF non-square cubemap!
+*** Encountered VTF volume texture cubemap!
+*** Encountered VTF invalid texture size!
+*** Encountered VTF invalid image format!
+*** Unable to serialize... have no image data!
+unsupported image format ({$1})
+GenerateRepresentativePalette: not implemented
+vvis launcher error: can't load {$1}
+vvis launcher error: can't get factory from {$1}
+vvis launcher error: can't get IVVisDLL interface from {$1}
+DecompressVis: 0 repeat
+warning: Vis decompression overrun
+ParseEpar: token too long
+ParseEntity: { not found
+ParseEntity: EOF without closing brace
+Out of memory. AllocStackWinding: failed
+FreeStackWinding: allready free
+Dumped cluster trace!!!
+No trace generated from {$1} to {$2}
+GetModuleFileName failed.
+Can't open {$1} for database info.
+{$1} is not a valid database info file.
+{$1} - error launching '{$2}'
+VMPI_Stats_Init_Master( {$1}, {$2}, {$3} ) failed.
+VMPI_Stats_Init_Worker( {$1}, {$2}, {$3}, {$4} ) failed.
+MPI_Init failed.
+Duplicate portal {$1}
+Invalid packet in ReceiveBasePortalVis.
+Exited early, using fastvis results...
+RunMPIPortalFlow: can't open a socket to multicast on.
+RunMPIPortalFlow: CreateMulticastListenSocket failed. ({$1}).
+RunMPIPortalFlow: CreateThread failed for multicast receive thread.
+script file exceeded MAX_INCLUDES
+unknown macro token "{$1}" in {$2}
+Macro expand overflow
+Token too large on line {$1}
+unknown variable token "{$1}" in {$2}
+Line {$1} is incomplete
+Worker '{$1}' dead: {$2}
+FAILURE: '{$1}' (assert: {$2})
+Error code 0x{$1}
+invalid packet size
+--- WARNING: lost connection to '{$1}' ({$2}).
+NewWinding: {$1} points, max {$2}
+portal not done {$1} 0x{$2} 0x{$3}
+Vismap expansion overflow
+LoadPortals: GetTempPath failed.
+LoadPortals: GetTempFileName failed.
+LoadPortals( {$1} ): couldn't get file from master.
+LoadPortals: couldn't read {$1}
+LoadPortals {$1}: failed to read header
+LoadPortals {$1}: not a portal file
+The map overflows the max portal count ({$1} of max {$2})!
+LoadPortals: portal {$1} has too many points
+Bad bit in PVS
+Empty map
+Invalid cluster trace: {$1} to {$2}, valid range is 0 to {$3}
+Can't compile trace in MPI mode
+CTSListBase: Misaligned list
+{$1} - CVMPIConnection::OnError( {$2} )
+Received invalid SUBPACKET_MACHINE_NAME packet (not long enough!)
+Worker {$1} is running in SDK mode (and the master is not)!
+Error in ReadString() while reading command line.
+Error in ReadString() while reading VMPI_INTERNAL_SUBPACKET_VERIFY_EXE_NAME.
+Error in ReadString() while reading VMPI_INTERNAL_SUBPACKET_PRINT_ON_MASTER.
+VMPI_ReceiveCommandLine: timeout. Is the master running in SDK mode?
+VMPI_ReceiveExeName: timeout.
+VMPI_ReceiveExeName: mismatched exe names (master: {$1}, me: {$2}).
+-mpi_PatchWorkers: {$1} specified for count, but not enough IPs following.
+Can't bind a listen socket in port range [{$1}, {$2}].
+MPI_Init_Master: can't bind a socket
+-mpi_PatchVersion - val must be between 1.0 and 32767.0
+Error in SendTo trying to send patch request packet!
+Error in SendTo trying to send packet!
+Can't bind a port in range [{$1}, {$2}].
+ITCPConnectSocket::Update() errored out
+MPI_Init_Worker() failed
+_getcwd() failed.
+- ERROR in CreateProcess ({$1})!
+MPI_Init_Master: argc <= 0!
+VMPI running in SDK mode but Steam hasn't been run recently. Please run Steam and retry.
+VMPI running in SDK mode but incorrect SDK install detected (error {$1}).
+Failed to initialize curl library!
+Unable to parse or resolve master IP ({$1}).
+VMPI started as master, but no dependency filename specified.
+g_ConnectionMutexes[ pConnection->GetConnectionID() ]
+Invalid chunked packet
+VMPI_GetNextMessage: WaitForSingleObject returned {$1}
+VMPI_FilterPacketsForServiceDownloader filtered packetID {$1}, subPacketID {$2}
+invalid index
+(error in GetComputerName)
+Invalid call: VMPI_GetParamString( {$1} )
+Failed to get CURL handle
+CURL Error for {$1}
+Bad response from registry?
+Malformed VMPI registry data!
+VMPI_DistributeWork_DisconnectHandler( {$1} )
+Got an invalid DistributeWork packet (id: {$1}, sub: {$2}) (iCurDW: {$3}).
+State incorrect on master for DW_SUBPACKETID_WORKER_READY packet from {$1}.
+DistributeWork: got an invalid work unit index ({$1} for WU count of {$2}).
+DistributeWork_Cancel saves the day!
+DistributeWork: called more than {$1} times.
+CIPSocket::SendChunksTo: too many chunks ({$1}).
+{$1} is missing.
+{$1} is not a valid format.
+Invalid # bytes transferred ({$1}) in send thread (should be {$2})
+Unknown return value ({$1}) from WaitForMultipleObjects
+Invalid # bytes received ({$1}) in recv thread (should be {$2})
+Invalid packet size in RecvThread (size = {$1})
+Connection timed out
+CTCPConnectSocket_Listener::Create - SOMAXCONN not allowed
+CMasterMulticastThread::Init - socket() failed
+CMasterMulticastThread::Init - bind( {$1}.{$2}.{$3}.{$4}:{$5} ) failed
+CMasterMulticastThread::Init - setsockopt() failed to set broadcast mode
+CMasterMulticastThread::Init - CreateThread failed
+CMasterMulticastThread::OnChunkReceived: invalid file ({$1}) from client {$2}
+CMasterMulticastThread::OnChunkReceived: invalid chunk index ({$1}) for file {$2}
+CMasterMulticastThread::CreateVirtualFile( {$1} ) - file already exists!
+Client {$1} timed out on file {$2} (latest: {$3} / cur: {$4}).
+nWantedBytes > sizeof( allData )
+MulticastThread: WSASendTo with {$1} bytes sent {$2} bytes.
+This machine's ability to multicast may be broken. Please reboot and try again.
+CMasterMulticastThread::DecrementChunkRefCount - refcount already zero!
+Open( {$1}, {$2} ) - file access has been disabled.
+** Please delete c:mpi_tracker_*.txt and try again.
+Failed to write {$1} successfully.
+-mpi_NoScheduler found: Warning - this should only be used for testing and with 1 worker!
+DistributeWork: invalid work units packet from master
+CShuffledWorkUnitWalker: assumption on CUtlLinkedList indexing failed.
+CTSQueue: Misaligned queue
+CWorkerMulticastListener::ListenFor: Got a section of data too long ({$1} bytes).
+CreateMulticastListenSocket ({$1}.{$2}.{$3}.{$4}:{$5}) failed
+CWorkerMulticastListener::ListenFor: invalid packet received on multicast group
+FindWorkerFile( {$1} ) failed
+ListenFor(): invalid chunk index ({$1}) for file '{$2}'
+ListenFor(): invalid compressed or uncompressed size.
+ListenFor(): invalid payload length for '{$1}' ({$2} should be {$3})
+ZLibDecompress failed.
+CreateVirtualFile not supported in VMPI worker filesystem.
+GetFileTime not supported in VMPI worker filesystem.
+Can't find '{$1}' specified in vrad.redirect.
+vrad_launcher error: can't load {$1}
+vrad_launcher error: can't get factory from vrad_dll.dll
+vrad_launcher error: can't get IVRadDLL interface from vrad_dll.dll
+Bad leaf ambient for leaf {$1}
+Stack overflow in neighbors
+g_numvertnormals > MAX_MAP_VERTNORMALS
+warning - face vectors parallel to face normal. bad lighting will be produced
+no samples {$1}
+Face {$1}: (Fast)Error Building Samples and Luxels
+Face {$1}: Error Building Samples
+Face {$1}: Error Building Luxels
+unknown light specifier type - {$1}
+WARNING: light at ({$1} {$2} {$3}) has missing target
+light has _fifty_percent_distance of {$1} but _zero_percent_distance of {$2}
+can't solve quadratic for light {$1} {$2}
+WARNING: light_spot at ({$1} {$2} {$3}) has inner angle larger than 90 degrees! Clamping to 90...
+WARNING: light_spot at ({$1} {$2} {$3}) has outer angle larger than 90 degrees! Clamping to 90...
+unsupported light entity: "{$1}"
+too many lights {$1} / {$2}
+Bad dl->light.type
+visofs == -1
+WARNING: Too many light styles on a face at ({$1}, {$2}, {$3})
+IVTFTexture::Unserialize( {$1} ) failed.
+MaskOnMacroTexture: can't find worldspawn
+UnSerializeFace - invalid dface_t from {$1} (mb len: {$2}, offset: {$3})
+UnSerializeFace - invalid facelight_t from {$1} (mb len: {$2}, offset: {$3})
+UnSerializeFace - invalid sample_t from {$1} (mb len: {$2}, fl->numsamples: {$3})
+UnSerializeFace - invalid fl->light from {$1} (mb len: {$2}, offset: {$3})
+UnSerializeFace - invalid fl->luxel from {$1} (mb len: {$2}, offset: {$3})
+UnSerializeFace - invalid fl->luxelNormals from {$1} (mb len: {$2}, offset: {$3})
+Can't open '{$1}' to read lighting info.
+SampleRadial: Punting, Waiting for fix
+***** ERROR! MAX_POINTS_ON_WINDING reached!
+***** ERROR! face->firstedge + j >= ARRAYSIZE( dsurfedges )!
+Saved worker crash minidump '{$1}', size {$2} byte(s).
+Received worker crash minidump size {$1} byte(s), failed to save.
+CUtlBlockMemory overflow!
+Warning: Couldn't open texlight file {$1}.
+Too many texlights, max = {$1}
+ignoring bad texlight '{$1}' in {$2}
+Duplication of '{$1}' in file '{$2}'!
+Warning: Overriding '{$1}' from '{$2}' with '{$3}'!
+Warning: Redundant '{$1}' def in '{$2}' AND '{$3}'!
+numplanes + fakeplanes >= MAX_MAP_PLANES
+SubdividePatch: Error - Should not be here!
+zero area child patch
+Memory allocation failure
+Can't open {$1} for -dump.
+Could not find lights.rad in {$1}.
+No vis information, direct lighting only.
+Unable to load incremental lighting file in {$1}.
+Error: expected non-negative value after '-bounce'
+Error: expected a value after '-bounce'
+Error: expected positive value after '-threads'
+Error: expected a value after '-threads'
+Error: expected a filepath after '-lights'
+Error: expected a scale factor after '-extrasky'
+Error: expected an angle after '-smooth'
+Error: expected a value after '-luxeldensity'
+Error: expected an angular extent value (0..180) '-softsun'
+Error: expected a sample size after '-maxdispsamplesize'
+Error: expected positive value after '-maxchop'
+Error: expected a value after '-maxchop'
+Error: expected positive value after '-chop'
+Error: expected a value after '-chop'
+Error: expected positive value after '-dipschop'
+Error: expected a value after '-dispchop'
+Error: g_MaxDispPatchRadius < 10.0
+Error: expected a value after '-disppatchradius'
+Patch Sample Radius Clamped!
+WARNING: Bogus detail props encountered!
+Disp UV ({$1}) outside bounds!
+BuildDispSamples: WARNING - failed winding allocation
+Error! Unable to load model "{$1}"
+Error! Invalid model file "{$1}"
+Error! Invalid model version "{$1}"
+Error! To use model "{$1}" as a static prop, it must be compiled with $staticprop!
+Error! Unable to load file "{$1}"
+Error! Invalid VTX file version: {$1}, expected {$2} "{$3}"
+Error! Invalid VTX file checksum: {$1}, expected {$2} "{$3}"
+Cannot load the static props... encountered a stale map version. Re-vbsp the map.
+Unable to load vphysics DLL.
+Unable to get '{$1}' for physics interface.
+unexpected strips found
+Error allocating {$1} bytes for Vertex File '{$2}'
+Error in LoadEntsFromMapFile (in-memory file): {$1}.

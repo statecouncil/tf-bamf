@@ -10,3 +10,8 @@ SEVERITY
 3	Warning, should be fixed
 4	Error, must be fixed
 5	Fatal Error, must be fixed
+
+
+
+TODO
+- add "unknown light specifier" warning from Valve accidentally using (unsupported) comment in TF2's lights.rad

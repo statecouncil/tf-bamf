@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Installing BAMF</title>
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!--Page Header-->
+		<div class="pagehead">
+			<iframe src="../header.html" title="Header" ></iframe>
+		</div>
+
+		<!--Page Body-->
+		<div class="pagebody thin">
+			<!--Header Block-->
+			<div class="block">
+				<h1>Installing BAMF</h1>
+			</div>
+
+			<!--Main Block-->
+			<div class="block">
+				<p>
+					There are multiple ways to install BAMF:
+				</p>
+				<ul>
+					<li><strong><a href="#Installation via Installer">Use the Installer</a></strong></li>
+					<li><strong><a href="basic-manual-installation.html">Basic Manual installation</a></strong></li>
+					<li><strong><a href="advanced-manual-installation.html">Advanced Manual installation</a></strong></li>
+				</ul>
+				<p>
+					<strong>It is recommended that you read about the <a href="features.html">Features</a> first.</strong> If you don't want a module right now, you can always install it later, either manually or by running the installer again.
+				</p>
+			</div>
+
+			<div class="block">
+				<h2 id="Installation via Installer">Using the Installer</h2>
+				While the automated installer prevents you from having to manually move files around like a bloody caveman, there are still a few things you need to know.
+				<br>
+				Special thanks to Feesh, Mystyc Cheez, SED, and Nick from the TF2Maps Discord for alpha testing.
+				<hr>
+				<p>
+					<ol>
+						<li>
+							If you haven't already, grab the latest version of the BAMF Installer from <a href="https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/">TF2Maps.net</a> or from <a href="https://github.com/statecouncil/tf-bamf/releases">GitHub</a>.
+						</li>
+						<li>
+							Run the installer and accept the <a href="../license.txt">license</a>. The next page will give you a quick overview of the pack.
+						</li>
+						<li>
+							The next three pages will ask you for several file paths.
+							<ul>
+								<li><strong>TF2 installation</strong>:
+								<br>
+								Should be pretty clear. Needs to point at the folder containing tf_win64.exe.</li>
+								<li><strong>Map files</strong>:
+								<br>
+								Where you want to place reference VMFs from the <a href="features.html#Game Mode Module">Game Mode Module</a> and the <a href="features.html#VMF Module">VMF Modules</a>. Should point at an empty folder.
+								<br>
+									If you do not want to install these, leave the path in the default location. Nothing will happen to it.</li>
+								<li><strong>CompilePal installation</strong>:
+								<br>
+								The location of <a href="../tools/compilepal.html">CompilePal</a>, if you have it installed. Should point at the folder containing CompilePalX.exe.
+								<br>
+								If you don't have CompilePal or don't want the <a href="features.html#Compiling">CompilePal Sequences Modules</a> or the error parser, leave the path in the default location. Nothing will happen to it.</li>
+							</ul>
+						</li>
+						<li>
+							  Configure which modules you would like to install. Note that some modules have requirements, as stated on the <a href="features.html">Features</a> page.
+						</li>
+						<li>
+							Confirm your selection and finish the installation.
+						</li>
+						<li>
+							<strong>If you have installed the FGD Module:</strong><br>
+							Open Hammer (or <a href="../tools/hammer++.html">Hammer++</a>). Navigate to <code>Tools</code> &#8594; <code>Options...</code>, then select the <code>Game Configurations</code> tab.
+							<br>
+							Delete the existing entry in the <code>Game Data files</code> section by selecting and clicking <code>Remove</code>.
+							<br>
+							<img src="../img/install/fgd_delete.png" alt="Deleting Game Data File">
+							<br>
+							Then add the new Game Data File by clicking <code>Add</code> and navigating to <code>Team Fortress 2/bin/tf-brokk.fgd</code>.
+							<br>
+							<img src="../img/install/fgd_add.png" alt="Adding Game Data File">
+							</li>
+							<li>
+								<strong>If you have installed the Prefabs Module:</strong><br>
+							At the bottom of the same options window, make sure the <code>Prefab Directory</code> is set like this:
+							<img src="../img/install/prefab_config_hammer.png" alt="Prefab file path in Hammer">
+						</li>
+						And with that you're done. Happy mapping!
+					</ol>
+				</p>
+			</div>
+		</div>
+
+		<!--Page Footer-->
+		<div class="pagefoot">
+			<iframe src="../footer.html" title="Footer" ></iframe>
+		</div>
+	</body>
+</html>
