@@ -8685,54 +8685,54 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 
 	// ITEM ENTITIES //
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_large.mdl") = item_ammopack_full : "Full ammo pack for players. Restores 100% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_large.mdl") = item_ammopack_full : "Full ammo pack for players. Restores 100% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_ammopack_full
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_medium.mdl") = item_ammopack_medium : "Medium ammo pack for players. Restores 50% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_medium.mdl") = item_ammopack_medium : "Medium ammo pack for players. Restores 50% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_ammopack_medium
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_small.mdl") = item_ammopack_small : "Small ammo pack for players. Restores 20% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/ammopack_small.mdl") = item_ammopack_small : "Small ammo pack for players. Restores 20% of ammo and metal when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_ammopack_small
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/bots/bot_worker/bot_worker_powercore.mdl") = item_bonuspack : "The power core that the players collect in robot destruction." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/bots/bot_worker/bot_worker_powercore.mdl") = item_bonuspack : "The power core that the players collect in robot destruction." [
 ] // end item_bonuspack
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_small.mdl") = item_currencypack_custom : "Custom creditspickup from MvM." [ // TODO: How much currency?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_small.mdl") = item_currencypack_custom : "Custom creditspickup from MvM." [ // TODO: How much currency?
 	spawnflags(flags) = [
 		1073741824: "Never Respawn" : 1
 	] // end spawnflags
 ] // end item_currencypack_custom
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_large.mdl") = item_currencypack_large : "Large credits pickup from MvM." [ // TODO: How much currency?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_large.mdl") = item_currencypack_large : "Large credits pickup from MvM." [ // TODO: How much currency?
 ] // end item_currencypack_large
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_medium.mdl") = item_currencypack_medium : "Medium credits pickup from MvM." [ // TODO: How much currency?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_medium.mdl") = item_currencypack_medium : "Medium credits pickup from MvM." [ // TODO: How much currency?
 ] // end item_currencypack_medium
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_small.mdl") = item_currencypack_small : "Small credits pickup from MvM." [ // TODO: How much currency?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/currencypack_small.mdl") = item_currencypack_small : "Small credits pickup from MvM." [ // TODO: How much currency?
 ] // end item_currencypack_small
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_medium.mdl") = item_healthammokit : "Small health kit AND small ammo pack." [ // TODO: How much health/ammo?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_medium.mdl") = item_healthammokit : "Small health kit AND small ammo pack." [ // TODO: How much health/ammo?
 ] // end item_healthammokit
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_large.mdl") = item_healthkit_full : "Full health kit for players. Restores 100% of health when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_large.mdl") = item_healthkit_full : "Full health kit for players. Restores 100% of health when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_healthkit_full
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_medium.mdl") = item_healthkit_medium : "Medium health kit for players. Restores 50% of health when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_medium.mdl") = item_healthkit_medium : "Medium health kit for players. Restores 50% of health when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_healthkit_medium
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_small.mdl") = item_healthkit_small : "Small health kit for players. Restores 20.5% of health when picked up. Respawns after 10 seconds when picked up." [
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/medkit_small.mdl") = item_healthkit_small : "Small health kit for players. Restores 20.5% of health when picked up. Respawns after 10 seconds when picked up." [
 ] // end item_healthkit_small
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_crit.mdl") = item_powerup_crit : "Temporary Crit Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_crit.mdl") = item_powerup_crit : "Temporary Crit Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
 ] // end item_powerup_crit
 
 // HA! FICOOL LISTED THIS ONE OUT OF ALPHABETICAL ORDER! I BEAT YOU! YOU FOOL! YOU ABSOLUTE BUFFOON! YOU BUMBLING IDIOT! GIT OWNED NERD!
 // sorry im getting really bored ok copy-pasting isnt fun
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_strength.mdl") = item_powerup_rune : "Temporary Strength Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_strength.mdl") = item_powerup_rune : "Temporary Strength Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
 ] // end item_powerup_rune
 
-@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_uber.mdl") = item_powerup_uber : "Temporary Uber Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
+@PointClass base(SPowerupModel, SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) size(-1 -1 -8, 1 1 0) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/pickups/pickup_powerup_uber.mdl") = item_powerup_uber : "Temporary Uber Powerup. Powerup effect wears off. Powerup respawns automatically." [ // TODO: How long does it last and how long to respawn?
 ] // end item_powerup_uber
 
 @PointClass base(SBaseEntity, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/can.mdl") = item_sodacan : "Half-Life legacy: A beverage created from a Beverage Dispenser (env_beverage). Uses models/can.mdl, you will need to provide your own as it is missing." [ // TODO: Effect on pickup?
@@ -8789,7 +8789,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		1 : "Yes"
 	] // end VisibleWhenDisabled
 ] // end item_teamflag_keys_2
-@PointClass base(SFlagModel, SBaseEntity, SBaseDiv, SEnableDisable, STFTeam, item_teamflag_keys_1, SModelDynamic, item_teamflag_keys_2, SPropDynamicIO, SModelSettings, SRenderModes, SBaseBreakableModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/flag/briefcase.mdl") = item_teamflag : "Team Fortress 2 flag entity. Used for the intelligence in Capture the Flag, the bomb in Mann vs Machine, robot cores in Robot Destruction, and point drops in Player Destruction." [
+@PointClass base(SFlagModel, SBaseEntity, SBaseDiv, SEnableDisable, STFTeam, item_teamflag_keys_1, SModelDynamic, item_teamflag_keys_2, SPropDynamicIO, SModelSettings, SRenderModes, SBaseBreakableModel) size(-1 -1 -16, 1 1 -8) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/flag/briefcase.mdl") = item_teamflag : "Team Fortress 2 flag entity. Used for the intelligence in Capture the Flag, the bomb in Mann vs Machine, robot cores in Robot Destruction, and point drops in Player Destruction." [
 	input ForceDrop(void) : "Force the flag to be dropped if it's being carried by a player."
 	input ForceGlowDisabled(bool) : "Toggle the glow effect for this flag. 0 = normal behavior, 1 = glow disabled"
 	input ForceReset(void) : "Force the flag to be dropped if it's being carried by a player, then reset the flag to its original position."
