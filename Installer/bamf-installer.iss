@@ -55,7 +55,7 @@ FinishedHeadingLabel=Brokk's Assorted Mapping Fixes has finished installing
 FinishedLabelNoIcons=Merasmus will now return to his castle.
 ClickFinish=IMPORTANT: If you have installed the BAMF FGD, you need to manually change the FGD (game data) file in Hammer in order to access improved entity information and icons.
 RunEntryShellExec=Open detailed instructions for changing your FGD file
-ConfirmUninstall=Are you sure you want to remove %1? Your Prefabs and CompilePal installation as well as your map files will remain unaffected.
+ConfirmUninstall=Are you sure you want to remove %1? Your Prefabs and map files will remain unaffected.
 InfoBeforeLabel=Read this or perish.
 
 
