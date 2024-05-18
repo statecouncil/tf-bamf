@@ -26,7 +26,7 @@
         "error_description": "A [sub:2] should be brush-based, but doesn't have a brush tied to it. This can happen for instance when you tie the brushes of this entity to another entity in 'Ignore groups'-mode.",
         "error_solution": "Find the entity and delete it. In Hammer: 'Map' -> 'Entity Report' and search for the targetname or classname.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/[sub:2]"
+            "https://developer.valvesoftware.com/wiki/[sub:2]",
 			"https://developer.valvesoftware.com/wiki/Hammer_Entity_Report_Dialog"
         ]
     },
@@ -126,8 +126,8 @@
         "error_description": "You have too many entities in your map. The mentioned entity is simply the first one that didn't fit in the buffer. The exact limit depends on your Source Engine branch, but is typically 8192.",
         "error_solution": "The most common cause of this error is too many Detail Props - reduce the amount of surfaces the use them. If this doesn't solve the issue, use fewer props, overlays, or cubemaps. Note that even if this error is gone, you may still have edict limit issues in-game.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/Entity_limit"
-			"https://developer.valvesoftware.com/wiki/Category:Internal_entities"
+            "https://developer.valvesoftware.com/wiki/Entity_limit",
+			"https://developer.valvesoftware.com/wiki/Category:Internal_entities",
 			"https://developer.valvesoftware.com/wiki/Edict_t"
         ]
     },
@@ -138,7 +138,7 @@
         "error_description": "For some deranged reason you are using a Goldsrc method to set the origin of a brush entity in a Source Engine map, and failed to use the ORIGIN texture on all sides of that origin brush.",
         "error_solution": "Simply replace the offending ORIGIN textures. Find the brush using 'View' -> 'Go To Brush Number...' ([sub:1]). On a side note, if you turn on helpers (the diamond shaped button in the right, top bar) you can specify an origin without the use of origin-brushes. much easier and safer. The origin-brush is just there for compatibility with hl1 maps, there is absolutely no reason for you to use this method at all.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/Tool_textures_(GoldSrc)"
+            "https://developer.valvesoftware.com/wiki/Tool_textures_(GoldSrc)",
 			"https://developer.valvesoftware.com/wiki/Tool_textures_(Source)"
         ]
     },
@@ -233,8 +233,8 @@
         "error_description": "You have too many entities in your map. The exact limit depends on your Source Engine branch, but is typically 8192.",
         "error_solution": "The most common cause of this error is too many Detail Props - reduce the amount of surfaces the use them. If this doesn't solve the issue, use fewer props, overlays, or cubemaps. Note that even if this error is gone, you may still have edict limit issues in-game.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/Entity_limit"
-			"https://developer.valvesoftware.com/wiki/Category:Internal_entities"
+            "https://developer.valvesoftware.com/wiki/Entity_limit",
+			"https://developer.valvesoftware.com/wiki/Category:Internal_entities",
 			"https://developer.valvesoftware.com/wiki/Edict_t"
         ]
     },
@@ -245,7 +245,7 @@
         "error_description": "One of the brush-based entities in your map doesn't have any brushes tied to it.",
         "error_solution": "Find the entity in Hammer: 'Map' -> 'Entity Report'. Once found, either delete the entity or tie a (few) brush(es) to it. A brush-based entity without brushes tied to it is unlikely to do anything at all.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/Brush_entity"
+            "https://developer.valvesoftware.com/wiki/Brush_entity",
 			"https://developer.valvesoftware.com/wiki/[sub:1]"
         ]
     },
@@ -306,7 +306,7 @@
         "error_description": "Vrad.exe did not have enough memory to finish its task. There are two causes: 1) You are running low on memory (RAM + Pagefile). 2) Vrad.exe is choking on some very complicated bit of your map, causing it to ask for a lot of memory which doesn't exist. This issue occurs most often with very large, very open maps, or particularly detailed ones with many lightmaps.",
         "error_solution": "If you are running low on free memory (check Task Manager) try increasing the pagefile if you aren't letting Windows take care of it. If not, use cordon tools to isolate the problemarea in your map (might be a broken brush, or simply too complex geometry) and see what you can do to fix it. Consider reducing lightmap resolution on larger surfaces or complex objects. Try running VRAD only in LDR or HDR, as using -both will require (almost) double the memory.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/VRAD"
+            "https://developer.valvesoftware.com/wiki/VRAD",
 			"https://developer.valvesoftware.com/wiki/VRAD_HDR_Crash_Fix"
         ]
     },
@@ -543,8 +543,8 @@
         "error_description": "One of your textures is scripted to emit detail props (the grass thingies that appear on displacements), but the detail props specified are not defined in the mod's data files.",
         "error_solution": "Use a different detail sprites file. In Hammer: 'Map' -> 'Map Properties...' -> 'Detail .vbsp File' and select a different entry from the drop-down or type in your own. The default, 'detail_lakeside.vbsp' should be compatible with most materials.",
         "error_references": [
-            "https://developer.valvesoftware.com/wiki/Displacement_Grass"
-			"https://developer.valvesoftware.com/wiki/Detail_props"
+            "https://developer.valvesoftware.com/wiki/Displacement_Grass",
+			"https://developer.valvesoftware.com/wiki/Detail_props",
 			"https://tf2maps.net/abs/detail_sprites_info.html"
         ]
     },
@@ -552,18 +552,18 @@
         "severity": "0",
         "regex": "MaterialSystem_Interface_t\\:\\:AllocateLightmap\\s+\\:\\s+lightmap\\s+\\(([\\d\\.,-]+)x([\\d\\.,-]+)\\)\\s+too\\s+big\\s+to\\s+fit\\s+page\\s+\\(([\\d\\.,-]+)x([\\d\\.,-]+)\\)\n",
         "error_short": "MaterialSystem_Interface_t::AllocateLightmap : lightmap ([sub:1]x[sub:1]) too big to fit page ([sub:1]x[sub:1])",
-        "error_description": "I don't know the exact cause, but ive heard rumours that it can be caused by:-lightmaps not set to a legal size (power of 2)-big displacements in combination with too small lightmapscale. (seems commonest)-invalid brushes -invalid displacements ",
-        "error_solution": "You may want to start by hiding all your displacements and see if the error persists. If it does, check every lightmapscale in your level first, (using the tool above), or just selecting your entire level and enter a legal size for all brushes) and if that won't help, use visgroups or cordon tools to break your level apart.",
+        "error_description": "The exact cause of this error is hard to determine, but it likely has to do with displacement lighting.",
+        "error_solution": "If there are any displacements with obvious bad lighting in-game, that might be your first clue. Otherwise, you may need to check all of your displacements by hand using visgroups and hiding/unhiding them.",
         "error_references": [
-            "Reference: Finding the cause of unknown "
+            ""
         ]
     },
     {
         "severity": "5",
         "regex": "MAX_MAP_MODELS\n",
         "error_short": "MAX_MAP_MODELS",
-        "error_description": "See MAX_MAP_MODELS ",
-        "error_solution": "",
+        "error_description": "You have too many brush-based entities (doors, func_breakable, trains, that sorta stuff). Func_detail is the only entity not counted.",
+        "error_solution": "Use models instead, or reduce the amount of these entities.",
         "error_references": [
             ""
         ]
@@ -572,10 +572,11 @@
         "severity": "1",
         "regex": "MAX_TEXLIGHTS\n",
         "error_short": "MAX_TEXLIGHTS",
-        "error_description": "Maximum:128Description:Your lights.rad has too many entries (there is a maximum of 128 entries) the rest will be skipped.",
-        "error_solution": "",
+        "error_description": "Your lights.rad has too many entries (there is a maximum of 128 entries) the rest will be skipped. This error won't break anything, and the map will run fine.",
+        "error_solution": "Take a look at your lights.rad file and see if you can reduce its content.",
         "error_references": [
-            ""
+            "https://developer.valvesoftware.com/wiki/Lights.rad",
+            "https://developer.valvesoftware.com/wiki/RAD_file"
         ]
     },
     {
@@ -585,17 +586,17 @@
         "error_description": "These warnings can be completely ignored, they have nothing to do with your map (but with crappy programming by Valve!).",
         "error_solution": "Become a Valve programmer and fix the problem. ",
         "error_references": [
-            ""
+            "https://www.valvesoftware.com/jobs"
         ]
     },
     {
         "severity": "1",
         "regex": "Multiple\\s+references\\s+for\\s+cubemap\\s+on\\s+texture\\s+([\\w\\/\\\\_\\-\\.]+)\\!\\!\\!\n",
         "error_short": "Multiple references for cubemap on texture [sub:1]!!!",
-        "error_description": "You can specify for each cubemap which faces should be using it. However, each face can only have one cubemap attached to itself this way. If you want the face to use multiple cubemaps you shouldn't tie them statically to cubemaps this way, but split the face (into multiple brushes).",
-        "error_solution": "I hope you can find out by the name of the texture which face vbsp is talking about, because that's the only reference you have. No nifty stuff will help you find the problem, you have to check each texture or cubemap individually to find it. Or just leave it, as far as i know it defaults to one of the two env_cubemaps anyway, so it wont harm you one bit if you leave it. ",
+        "error_description": "You can specify for each cubemap which faces should be using it. However, each face can only have one cubemap attached to itself this way. If you want the face to use multiple cubemaps you shouldn't tie them statically to cubemaps this way, but split the face (into multiple brushes). Note that this error won't break anything, the brush face will simply default to one of the two cubemaps.",
+        "error_solution": "Check your env_cubemap entities until you find two that reference the same face. If it doesn't cause any visual issues, ignore it.",
         "error_references": [
-            ""
+            "https://developer.valvesoftware.com/wiki/Env_cubemap"
         ]
     },
     {
@@ -603,19 +604,21 @@
         "regex": "no\\s+samples\\s+x\n",
         "error_short": "no samples x",
         "error_description": "Vrad.exe is freaking out over some part of geometry in your map. Did you recently add any complicated/oddshaped brushes?",
-        "error_solution": "Find the brush(es) vrad doesn't like and remove or fix them.",
+        "error_solution": "Find the brush(es) vrad doesn't like and remove or fix them. See if Hammer's problem checker (alt+p) turns up anything.",
         "error_references": [
-            "Reference: Finding the cause of unknown "
+            ""
         ]
     },
     {
         "severity": "0",
         "regex": "No\\s+such\\s+variable\\s+\"\\$hdrbasetexture\"\\s+for\\s+material\\s+\"([^\"]+)\"\n",
         "error_short": "No such variable \"$hdrbasetexture\" for material \"[sub:1]\"",
-        "error_description": "You have used a non-hdr skybox texture, while the compile tools expect a hdr skybox instead.",
+        "error_description": "You have used a non-HDR skybox texture, while the compile tools expect a HDR skybox instead.",
         "error_solution": "Either make a HDR skybox, change your skybox to a HDR one or ignore this error. See below for a detailed fix.",
         "error_references": [
-            "WIKI: HDR skyboxHow to fix this error "
+            "https://www.interlopers.net/forum/viewtopic.php?t=9170",
+            "https://developer.valvesoftware.com/wiki/HDR_Skybox_Creation",
+            "https://developer.valvesoftware.com/wiki/HDR"
         ]
     },
     {
@@ -623,29 +626,35 @@
         "regex": "NODRAW\\s+on\\s+terrain\\s+surface\\!\n",
         "error_short": "NODRAW on terrain surface!",
         "error_description": "You aren't allowed to have the \"tools/nodraw\" texture one a displacement.",
-        "error_solution": "There are two possible causes, you accidently covered a displacement face in nodraw or you accidently made a hidden face a displacement. In order to fix it in either cases, uncheck the \"auto\" visgroup, then check only the \"displacements\" visgroup. Now, look round the map see if nodraw is anywhere you wanted a real texture. If found open the material browser and find and replace the nodraw texture with any other texture. If there's no vibisible displacement faces with nodraw you'll probably want to destroy them. Open the material browser, check \"Only show used textures\", select NoDraw and press \"Mark\". Open up the face edit sheet, and click \"Destroy\" on the displacement tab.",
+        "error_solution": "There are two possible causes, you accidently covered a displacement face in nodraw or you accidently made a hidden face a displacement. In order to fix it in either cases, uncheck the \"auto\" visgroup, then check only the \"displacements\" visgroup. Now, look round the map see if nodraw is anywhere you wanted a real texture. If found, open the material browser and find and replace the nodraw texture with any other texture. If there's no vibisible displacement faces with nodraw you'll probably want to destroy them. Open the material browser, check \"Only show used textures\", select NoDraw and press \"Mark\". Open up the face edit sheet, and click \"Destroy\" on the displacement tab.",
         "error_references": [
-            " Reference: Finding the unfindable "
+            ""
         ]
     },
     {
         "severity": "5",
         "regex": "numvertexes\\s+\\=\\=\\s+MAX_MAP_VERTS\n",
         "error_short": "numvertexes == MAX_MAP_VERTS",
-        "error_description": "You have too many vertices in your map (point from which brushes are made). In other words, your map is too big or too detailed.",
+        "error_description": "You have too many vertices in your map (points from which brushes are made). In other words, your map is too big or too detailed.",
         "error_solution": "Delete or simplify some of your brushes. Perhaps you can convert parts of your map into brushes, or in case of singleplayer maps, divide the map up into multiple parts with a level change?",
         "error_references": [
             "MAX_MAP_VERTS "
         ]
+
+        "error_description": "You have too many vertices in your map. Vertices are the points from which brushes are made. The exact limit depends on your Source Engine branch, but is typically 65536.",
+        "error_solution": "Reduce the number of brushes in your map. Replace brushwork with models, merge brushes together, use less complex geometry.",
+        "error_references": [
+            "https://developer.valvesoftware.com/wiki/Brush"
+        ]
     },
     {
-        "severity": "3",
+        "severity": "1",
         "regex": "Occluder\\s+\"([^\"]+)\"\\s+straddles\\s+multiple\\s+areas\\.\\s+This\\s+is\\s+invalid\\!\n",
         "error_short": "Occluder \"[sub:1]\" straddles multiple areas. This is invalid!",
-        "error_description": "This error means you have a func_occluder (by the name of [sub:1]) that is touching an areaportal or is inside a brush that's touching two area's. ( An area is a part of your map closed off by a areaportals and world-brushes)",
+        "error_description": "This error means you have a func_occluder (by the name of [sub:1]) that is touching an areaportal or is inside a brush that is touching two areas. (An area is a part of your map closed off by a areaportals and world-brushes)",
         "error_solution": "Move or delete the occluder or areaportal(s).",
         "error_references": [
-            ""
+            "https://developer.valvesoftware.com/wiki/Func_occluder"
         ]
     },
     {
