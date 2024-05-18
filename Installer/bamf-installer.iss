@@ -19,8 +19,15 @@ AppUpdatesURL={#MyAppRepoURL}
 AppCopyright=BAMF is licensed under CC BY-SA 4.0. We are not affiliated with Valve.
 
 ; functional
-Compression=lzma
+
+; hardcore compression
+Compression=lzma/ultra64
+
+; less hardcore compression
+; Compression=lzma/ultra64
+
 SolidCompression=yes
+
 DirExistsWarning=no
 EnableDirDoesntExistWarning=yes
 DefaultDirName=C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2
