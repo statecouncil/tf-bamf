@@ -6,7 +6,7 @@ Nick
 
 Feedback and Todos:
 
--Uninstaller seems to delete all files as intended, but leaves empty folders behind. Not ideal for things like tf/custom/Extra Materials. @lco-sp: Could not reproduce, verfiy with tester!
+-Uninstaller seems to delete all files as intended, but leaves empty folders behind. Not ideal for things like tf/custom/Extra Materials. @lco-sp: Could not reproduce, verifiy with tester!
 -Cannot leave dir2/dir3 paths empty even if components are not intended to be installed
 -Clarify that paths for unused components can be ignored/left at default as they won't be used
 -improve how_to_change_fgd.txt, perhaps use hmtl or refer to bamf.tf/pack/install.html directly
