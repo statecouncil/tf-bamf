@@ -5,7 +5,7 @@
 ### A TF2 Mapping Starter Pack of the modern era.
 [Download](https://tf2maps.net/downloads/bamf-brokks-assorted-mapping-fixes.17579/)
 
-[Installation Guide](https://bamf.tf/pack/install.html)
+[Installation Guide](https://bamf.tf/pack/installation.html)
 
 [Features](https://bamf.tf/pack/features.html)
 
