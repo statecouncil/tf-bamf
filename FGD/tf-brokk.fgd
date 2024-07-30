@@ -10402,7 +10402,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		2 : "Watch Player - Sets the Look At target to the last !activator of the Enable input" : 0
 		4 : "Freeze Player - Ignore player input (can still taunt/suicide), doesn't properly follow paths or parents if unchecked" : 1 // TODO: Can still be teleported, and still faces Look At target?
 		32 : "Make Players Non-Solid (while looking through this camera)" : 0
-		64 : "Interruptable by Player - Disable if last !activator presses any key, requires Freeze Player to be unchecked" : 0
+		64 : "Interruptible by Player - Disable if last !activator presses any key, requires Freeze Player to be unchecked" : 0
 		8 : "Infinite Hold Time - Don't auto-Disable when Hold Time expires" : 1
 		16 : "Snap to Goal Angles - Instantly rotate to Look At target on Enable (otherwise smoothly glide to face target)" : 1
 	] // end spawnflags
