@@ -1842,7 +1842,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 	maxpropscreenwidth(float) : "Start Fade Pixels" : -1 : "Number of pixels wide at which all props in the level start to fade (<0 = use End Fade Pixels). This number is ignored if the prop has a specific fade distance specified."
 	minpropscreenwidth(float) : "End Fade Pixels" : 0 : "Minimum number of pixels wide at which the prop is visible (0 = don't fade out). This number is ignored if the prop has a specific fade distance specified."
-	maxoccludeearea(float) : "Max Occludee Area" : "0.0" : "Prevents occlusion testing for models that take up more than X% of the screen."
+	maxoccluderarea(float) : "Max occluder Area" : "0.0" : "Prevents occlusion testing for models that take up more than X% of the screen."
 	minoccluderarea(float) : "Min Occluder Area" : "0.0" : "Prevents occluders from functioning if they take up less than X% of the screen."
 
 	_minlight(float) : "Map Geometry Minimum Light Level" : "0.0" : "Forces the minimum intensity of light part of the map geometry to be at least this. Expressed as a float from 0.0 to 2.0, with 0.0 being pitch black (default) and 2.0 being fullbright. Does not affect props or entities."
