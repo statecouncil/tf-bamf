@@ -4772,7 +4772,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		22 : "Random Pitch Fast"
 		23 : "Incremental Spinup"
 		24 : "Alien"
-		25 : "Bizzare"
+		25 : "Bizarre"
 		26 : "Planet X"
 		27 : "Haunted"
 	] // end preset
