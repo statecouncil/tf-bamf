@@ -13,14 +13,6 @@
 @include "spudlord-settings/default.fgd"
 
 
-
-	// SETTING: PROPPER SUPPORT //
-	
-@include "spudlord-settings/propper.fgd"
-
-// This FGD supports the TF2 version of Propper by default. If you don't want the Propper entities to appear in your entity browser, simply comment out the line above. You still need the actual propper.exe compiler. More info: tf2maps.net/threads/guide-getting-propper-working-nowdays.38589/
-
-
 	// SETTING: LINE DIVIDERS //
 	
 //@include "spudlord-settings/linediv.fgd"
