@@ -1,20 +1,100 @@
 versioninfo
 {
 	"editorversion" "400"
-	"editorbuild" "4624"
-	"mapversion" "171"
+	"editorbuild" "8868"
+	"mapversion" "172"
 	"formatversion" "100"
 	"prefab" "1"
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "1"
+}
+palette_plus
+{
+	"color0" "255 255 255"
+	"color1" "255 255 255"
+	"color2" "255 255 255"
+	"color3" "255 255 255"
+	"color4" "255 255 255"
+	"color5" "255 255 255"
+	"color6" "255 255 255"
+	"color7" "255 255 255"
+	"color8" "255 255 255"
+	"color9" "255 255 255"
+	"color10" "255 255 255"
+	"color11" "255 255 255"
+	"color12" "255 255 255"
+	"color13" "255 255 255"
+	"color14" "255 255 255"
+	"color15" "255 255 255"
+}
+colorcorrection_plus
+{
+	"name0" ""
+	"weight0" "1"
+	"name1" ""
+	"weight1" "1"
+	"name2" ""
+	"weight2" "1"
+	"name3" ""
+	"weight3" "1"
+}
+light_plus
+{
+	"samples_sun" "6"
+	"samples_ambient" "40"
+	"samples_vis" "256"
+	"texlight" ""
+	"incremental_delay" "0"
+	"bake_dist" "1024"
+	"radius_scale" "1"
+	"brightness_scale" "1"
+	"ao_scale" "0"
+	"bounced" "1"
+	"incremental" "1"
+	"supersample" "0"
+	"bleed_hack" "1"
+	"soften_cosine" "0"
+	"debug" "0"
+	"cubemap" "1"
+}
+postprocess_plus
+{
+	"enable" "1"
+	"copied_from_controller" "1"
+	"bloom_scale" "1"
+	"bloom_exponent" "2.5"
+	"bloom_saturation" "1"
+	"auto_exposure_min" "0.5"
+	"auto_exposure_max" "2"
+	"tonemap_percent_target" "60"
+	"tonemap_percent_bright_pixels" "2"
+	"tonemap_min_avg_luminance" "3"
+	"tonemap_rate" "1"
+	"vignette_enable" "0"
+	"vignette_start" "1"
+	"vignette_end" "2"
+	"vignette_blur" "0"
+}
+bgimages_plus
+{
 }
 world
 {
 	"id" "52221"
-	"mapversion" "171"
+	"mapversion" "172"
 	"classname" "worldspawn"
-	"skyname" "sky_tf2_04"
-	"maxpropscreenwidth" "-1"
-	"detailvbsp" "detail.vbsp"
+	"_minlight" "0.0"
 	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxoccludeearea" "0.0"
+	"maxpropscreenwidth" "-1"
+	"minoccluderarea" "0.0"
+	"skyname" "sky_tf2_04"
 	group
 	{
 		"id" "52222"
@@ -30,6 +110,7 @@ entity
 {
 	"id" "52223"
 	"classname" "trigger_multiple"
+	"angles" "0 0 0"
 	"filtername" "filter_red"
 	"origin" "8 0 64"
 	"spawnflags" "1"
@@ -37,10 +118,10 @@ entity
 	"wait" "1"
 	connections
 	{
-		"OnStartTouchAll" "door_red_trackdoor_&i,Open,,0,-1"
-		"OnEndTouchAll" "door_red_trackdoor_&i,Close,,0,-1"
-		"OnStartTouchAll" "door_red_trackdoor_&i_prop,SetAnimation,open,0,-1"
-		"OnEndTouchAll" "door_red_trackdoor_&i_prop,SetAnimation,close,0,-1"
+		"OnStartTouchAll" "door_red_trackdoor_&iOpen0-1"
+		"OnEndTouchAll" "door_red_trackdoor_&iClose0-1"
+		"OnStartTouchAll" "door_red_trackdoor_&i_propSetAnimationopen0-1"
+		"OnEndTouchAll" "door_red_trackdoor_&i_propSetAnimationclose0-1"
 	}
 	solid
 	{
@@ -49,6 +130,13 @@ entity
 		{
 			"id" "6"
 			"plane" "(-128 -192 144) (-128 192 144) (144 192 144)"
+			vertices_plus
+			{
+				"v" "-128 -192 144"
+				"v" "-128 192 144"
+				"v" "144 192 144"
+				"v" "144 -192 144"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -60,6 +148,13 @@ entity
 		{
 			"id" "5"
 			"plane" "(-128 192 -16) (-128 -192 -16) (144 -192 -16)"
+			vertices_plus
+			{
+				"v" "-128 192 -16"
+				"v" "-128 -192 -16"
+				"v" "144 -192 -16"
+				"v" "144 192 -16"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -71,6 +166,13 @@ entity
 		{
 			"id" "4"
 			"plane" "(-128 -192 -16) (-128 192 -16) (-128 192 144)"
+			vertices_plus
+			{
+				"v" "-128 -192 -16"
+				"v" "-128 192 -16"
+				"v" "-128 192 144"
+				"v" "-128 -192 144"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -82,6 +184,13 @@ entity
 		{
 			"id" "3"
 			"plane" "(144 192 -16) (144 -192 -16) (144 -192 144)"
+			vertices_plus
+			{
+				"v" "144 192 -16"
+				"v" "144 -192 -16"
+				"v" "144 -192 144"
+				"v" "144 192 144"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -93,6 +202,13 @@ entity
 		{
 			"id" "2"
 			"plane" "(-128 192 -16) (144 192 -16) (144 192 144)"
+			vertices_plus
+			{
+				"v" "-128 192 -16"
+				"v" "144 192 -16"
+				"v" "144 192 144"
+				"v" "-128 192 144"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -104,6 +220,13 @@ entity
 		{
 			"id" "1"
 			"plane" "(144 -192 -16) (-128 -192 -16) (-128 -192 144)"
+			vertices_plus
+			{
+				"v" "144 -192 -16"
+				"v" "-128 -192 -16"
+				"v" "-128 -192 144"
+				"v" "144 -192 144"
+			}
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -122,8 +245,6 @@ entity
 	{
 		"color" "117 154 0"
 		"groupid" "52222"
-		"visgroupid" "12"
-		"visgroupid" "14"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "HOLE SIZE: 300x120"
@@ -134,6 +255,7 @@ entity
 {
 	"id" "52226"
 	"classname" "func_door"
+	"angles" "0 0 0"
 	"disablereceiveshadows" "0"
 	"disableshadows" "0"
 	"dmg" "0"
@@ -162,6 +284,13 @@ entity
 		{
 			"id" "12"
 			"plane" "(2 -150 128) (2 150 128) (7 150 128)"
+			vertices_plus
+			{
+				"v" "2 -150 128"
+				"v" "2 150 128"
+				"v" "7 150 128"
+				"v" "7 -150 128"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -173,6 +302,13 @@ entity
 		{
 			"id" "11"
 			"plane" "(2 150 0) (2 -150 0) (7 -150 0)"
+			vertices_plus
+			{
+				"v" "2 150 0"
+				"v" "2 -150 0"
+				"v" "7 -150 0"
+				"v" "7 150 0"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -184,6 +320,13 @@ entity
 		{
 			"id" "10"
 			"plane" "(2 -150 0) (2 150 0) (2 150 128)"
+			vertices_plus
+			{
+				"v" "2 -150 0"
+				"v" "2 150 0"
+				"v" "2 150 128"
+				"v" "2 -150 128"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -195,6 +338,13 @@ entity
 		{
 			"id" "9"
 			"plane" "(7 150 0) (7 -150 0) (7 -150 128)"
+			vertices_plus
+			{
+				"v" "7 150 0"
+				"v" "7 -150 0"
+				"v" "7 -150 128"
+				"v" "7 150 128"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -206,6 +356,13 @@ entity
 		{
 			"id" "8"
 			"plane" "(2 150 0) (7 150 0) (7 150 128)"
+			vertices_plus
+			{
+				"v" "2 150 0"
+				"v" "7 150 0"
+				"v" "7 150 128"
+				"v" "2 150 128"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -217,6 +374,13 @@ entity
 		{
 			"id" "7"
 			"plane" "(7 -150 0) (2 -150 0) (2 -150 128)"
+			vertices_plus
+			{
+				"v" "7 -150 0"
+				"v" "2 -150 0"
+				"v" "2 -150 128"
+				"v" "7 -150 128"
+			}
 			"material" "METAL/CHICKEN_WIRE001"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -235,8 +399,6 @@ entity
 	{
 		"color" "117 154 0"
 		"groupid" "52222"
-		"visgroupid" "12"
-		"visgroupid" "14"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "HOLE SIZE: 300x120"
@@ -248,6 +410,7 @@ entity
 	"id" "52229"
 	"classname" "prop_dynamic"
 	"angles" "0 180 0"
+	"DisableBoneFollowers" "1"
 	"disablereceiveshadows" "0"
 	"disableshadows" "1"
 	"ExplodeDamage" "0"
@@ -257,7 +420,9 @@ entity
 	"MaxAnimTime" "10"
 	"MinAnimTime" "5"
 	"model" "models/props_well/main_entrance_door.mdl"
+	"modelscale" "1.0"
 	"PerformanceMode" "0"
+	"physdamagescale" "1.0"
 	"pressuredelay" "0"
 	"RandomAnimation" "0"
 	"renderamt" "255"
@@ -275,8 +440,6 @@ entity
 	{
 		"color" "117 154 0"
 		"groupid" "52222"
-		"visgroupid" "12"
-		"visgroupid" "14"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "HOLE SIZE: 300x120"
@@ -290,6 +453,8 @@ entity
 	"angles" "0 180 0"
 	"fademindist" "-1"
 	"fadescale" "1"
+	"lightmapresolutionx" "32"
+	"lightmapresolutiony" "32"
 	"model" "models/props_well/main_entrance_door_frame.mdl"
 	"solid" "6"
 	"origin" "0 0 0"
@@ -297,8 +462,6 @@ entity
 	{
 		"color" "117 154 0"
 		"groupid" "52222"
-		"visgroupid" "12"
-		"visgroupid" "14"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"comments" "HOLE SIZE: 300x120"

@@ -1,8 +1,8 @@
 versioninfo
 {
 	"editorversion" "400"
-	"editorbuild" "8864"
-	"mapversion" "4"
+	"editorbuild" "8866"
+	"mapversion" "5"
 	"formatversion" "100"
 	"prefab" "1"
 }
@@ -11,7 +11,7 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "16"
+	"nGridSpacing" "8"
 }
 palette_plus
 {
@@ -61,7 +61,24 @@ light_plus
 	"soften_cosine" "0"
 	"debug" "0"
 	"cubemap" "1"
-	"hdr" "0"
+}
+postprocess_plus
+{
+	"enable" "1"
+	"copied_from_controller" "1"
+	"bloom_scale" "1"
+	"bloom_exponent" "2.5"
+	"bloom_saturation" "1"
+	"auto_exposure_min" "0.5"
+	"auto_exposure_max" "2"
+	"tonemap_percent_target" "60"
+	"tonemap_percent_bright_pixels" "2"
+	"tonemap_min_avg_luminance" "3"
+	"tonemap_rate" "1"
+	"vignette_enable" "0"
+	"vignette_start" "1"
+	"vignette_end" "2"
+	"vignette_blur" "0"
 }
 bgimages_plus
 {
@@ -69,13 +86,16 @@ bgimages_plus
 world
 {
 	"id" "27"
-	"mapversion" "4"
+	"mapversion" "5"
 	"classname" "worldspawn"
+	"_minlight" "0.0"
 	"angles" "0 0 0"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
 	"linedivider1" "----------------------------------------------------------------------------------------------------------"
+	"maxoccludeearea" "0.0"
 	"maxpropscreenwidth" "-1"
+	"minoccluderarea" "0.0"
 	"skyname" "sky_tf2_04"
 	solid
 	{
@@ -383,12 +403,14 @@ entity
 	"disablereceiveshadows" "0"
 	"disableshadows" "0"
 	"effects" "0"
+	"fademindist" "-1"
 	"fadescale" "1"
 	"linedivider1" "----------------------------------------------------------------------------------------------------------"
 	"linedivider3" "----------------------------------------------------------------------------------------------------------"
 	"linedivider4" "----------------------------------------------------------------------------------------------------------"
 	"maxdxlevel" "0"
 	"mindxlevel" "0"
+	"modelscale" "1.0"
 	"renderamt" "255"
 	"rendercolor" "255 255 255"
 	"renderfx" "0"
@@ -398,10 +420,10 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"texframeindex" "0"
-	"origin" "0 0 0"
+	"origin" "0 0 8"
 	editor
 	{
-		"color" "0 0 200"
+		"color" "200 200 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"

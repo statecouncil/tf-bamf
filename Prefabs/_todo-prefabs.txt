@@ -2,5 +2,4 @@ TODO
 Setup style oneway gates
 lights 0.5 quadratic and 20 linear
 Slide Large Exit Only Team Doors
-HDR Anti Blindness
 Rework Track Prefabs 
