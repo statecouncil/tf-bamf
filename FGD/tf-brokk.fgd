@@ -738,7 +738,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end SRotateDistance
 
 @BaseClass = SSolidBSP [
-	solidbsp(choices) : "Solid Type" : 0 : "How to calculate collisions. BSP is more rudimentarty but allows more stable collision with players." = [
+	solidbsp(choices) : "Solid Type" : 0 : "How to calculate collisions. BSP is more rudimentary but allows more stable collision with players." = [
 		0 : "VPhysics"
 		1 : "BSP"
 	] // end solidbsp
@@ -1728,7 +1728,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	attach1(target_destination) : "Entity 1" : ""
 	attach2(target_destination) : "Entity 2" : ""
 	constraintsystem(target_destination) : "Constraint System Manager" :  : "The name of a phys_constraintsystem that this constraint should be a part of. All constraints on a set of entities should be placed in the same system, or they will fight each other during simulation."
-	forcelimit(float) : "Force Limit to Break (lbs)" : 0 : "The amount of force an impact must apply to the constraint to break it. A way of calculating this is to set it to the mass of an object that would break this constraint if it were resting on the constrainted objects."
+	forcelimit(float) : "Force Limit to Break (lbs)" : 0 : "The amount of force an impact must apply to the constraint to break it. A way of calculating this is to set it to the mass of an object that would break this constraint if it were resting on the constrained objects."
 	torquelimit(float) : "Torque Limit to Break (lbs * distance)" : 0 : "The amount of torque required to break the constraint. A way of calculating this is to multiply any reference mass by the resting distance (from the center of mass of the object) needed to break the constraint."
 	breaksound(sound) : "Play Sound on Break" :  : "A sound played when the constraint is broken."
 	teleportfollowdistance(float) : "Follow teleport distance" : 0 : "If one object teleports more than this many units away it will cause the other constrained object to teleport to an appropriate relative position."
@@ -1763,7 +1763,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input DisableAndEndTouch(void) : "Disable this trigger and immediately fire OnEndTouch for any touching entities, including for entities which started touching via the StartTouch input. OnEndTouch fires marginally faster than with the Disable input."
 	input Enable(void) : "Enable this trigger. If the trigger was previously disabled, it will fire OnStartTouch for any touching entities."
 	input EndTouch(void) : "Behave as though the !caller entity just exited the trigger, firing OnEndTouch if the !caller was previously considered to be touching this trigger. The !caller of this input will become the !activator of the OnEndTouch output. OnEndTouch will be fired even if the trigger is disabled."
-	input StartTouch(void) : "Behave as though the !caller entity just entered the trigger, firing OnStartTouch if the !caller passes this trigger's filters (even if the !caller is already considered to be touching this trigger). The !caller of this input will become the !activator of the OnStartTouch output. Any other effects associated with touching this trigger, such as a trigger_cataput's launch velocity, may also be applied to the !caller. OnStartTouch will be fired even if the trigger is disabled (AddOutput spawnflags can be used as a workaround)."
+	input StartTouch(void) : "Behave as though the !caller entity just entered the trigger, firing OnStartTouch if the !caller passes this trigger's filters (even if the !caller is already considered to be touching this trigger). The !caller of this input will become the !activator of the OnStartTouch output. Any other effects associated with touching this trigger, such as a trigger_catapult's launch velocity, may also be applied to the !caller. OnStartTouch will be fired even if the trigger is disabled (AddOutput spawnflags can be used as a workaround)."
 	input TouchTest(void) : "Test whether any valid entities are currently touching this trigger, firing OnTouching if this is true and OnNotTouching otherwise."
 
 	// So I figured out the cause of this bug... When a trigger is EndTouched by an entity, it checks its entire list of touching entities for any entities which either don't exist, or are dead players. If any dead players are on the list, it removes that player without calling OnEndTouch. GG volvo. (Oddly enough, doesn't affect killed entities or disconnected players...)
@@ -1960,9 +1960,9 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		// 18: "Small tech deny"
 		// 19: "Click and combine screen fuzz"
 		// 20: "Roomy beep"
-		// 21: "Lever or Wheel: turn + move sqeek"
+		// 21: "Lever or Wheel: turn + move squeak"
 		// 22: "Lever or Wheel: latch + release gas"
-		// 23: "Lever or Wheel: ratchet + sqeek"
+		// 23: "Lever or Wheel: ratchet + squeak"
 		// 24: "Lever or Wheel: large ratchet"
 		// 25: "Lever or Wheel: clanky + gas release"
 		// 26: "Lever or Wheel: latch + large metal thud"
@@ -2006,9 +2006,9 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		// 18: "Small tech deny"
 		// 19: "Click and combine screen fuzz"
 		// 20: "Roomy beep"
-		// 21: "Lever or Wheel: turn + move sqeek"
+		// 21: "Lever or Wheel: turn + move squeak"
 		// 22: "Lever or Wheel: latch + release gas"
-		// 23: "Lever or Wheel: ratchet + sqeek"
+		// 23: "Lever or Wheel: ratchet + squeak"
 		// 24: "Lever or Wheel: large ratchet"
 		// 25: "Lever or Wheel: clanky + gas release"
 		// 26: "Lever or Wheel: latch + large metal thud"
@@ -2052,9 +2052,9 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		// 18: "Small tech deny"
 		// 19: "Click and combine screen fuzz"
 		// 20: "Roomy beep"
-		// 21: "Lever or Wheel: turn + move sqeek"
+		// 21: "Lever or Wheel: turn + move squeak"
 		// 22: "Lever or Wheel: latch + release gas"
-		// 23: "Lever or Wheel: ratchet + sqeek"
+		// 23: "Lever or Wheel: ratchet + squeak"
 		// 24: "Lever or Wheel: large ratchet"
 		// 25: "Lever or Wheel: clanky + gas release"
 		// 26: "Lever or Wheel: latch + large metal thud"
@@ -2305,7 +2305,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		1 : "Yes"
 	] // end StartDisabled
 	Color(color255) : "Particle Color (R G B)" : "255 255 255" : "Color of the particles."
-	Alpha(integer) : "Particle Translucency (0 - 255)" : 30 : "Transluceny of the particles."
+	Alpha(integer) : "Particle Translucency (0 - 255)" : 30 : "Translucency of the particles."
 	SpawnRate(integer) : "Particle Per Second" : 40 : "Number of particles to spawn, per second."
 	SpeedMax(string) : "Maximum Particle Speed" : 13 : "Maximum speed that the particles can move after spawning."
 	LifetimeMin(string) : "Minimum Particle Lifetime" : 3 : "Minimum number of seconds until each particle dies. Particles live for a random duration between this and 'Maximum Particle Lifetime'."
@@ -2392,7 +2392,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	output OnDeath(void) : "Fires when the target is killed."
 ] // end func_guntarget
 
-@SolidClass base(SPreservedEntity, SBaseEntityOrigin, SBaseDynamicBrush) = func_illusionary : "Legacy support. Use func_brush instead. A basic brush entity which has no collisions to anything. WARNING: This entity will not be rotated currectly when used inside a (rotated) instance. Func_brush works fine." [
+@SolidClass base(SPreservedEntity, SBaseEntityOrigin, SBaseDynamicBrush) = func_illusionary : "Legacy support. Use func_brush instead. A basic brush entity which has no collisions to anything. WARNING: This entity will not be rotated correctly when used inside a (rotated) instance. Func_brush works fine." [
 ] // end func_illusionary
 
 @BaseClass = func_lod_keys [
@@ -2774,7 +2774,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		3 : "Teleporter Entrance"
 		4 : "Teleporter Exit"
 	] // end object_type
-	face_entity(target_destination) : "Must Face zrntity" :  : "If this is not empty, the built object must face the point this entity is at."
+	face_entity(target_destination) : "Must Face entity" :  : "If this is not empty, the built object must face the point this entity is at."
 	face_entity_fov(float) : "Facing Angle FOV Tolerance" : 90 : "If the 'must face entity' property is set, this is the tolerance aka field-of-view when facing that entity (in degrees)."
 
 	spawnflags(flags) = [
@@ -3003,9 +3003,9 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		// 18 : "Small tech deny"
 		// 19 : "Click and combine screen fuzz"
 		// 20 : "Roomy beep"
-		// 21 : "Lever or Wheel: turn + move sqeek"
+		// 21 : "Lever or Wheel: turn + move squeak"
 		// 22 : "Lever or Wheel: latch + release gas"
-		// 23 : "Lever or Wheel: ratchet + sqeek"
+		// 23 : "Lever or Wheel: ratchet + squeak"
 		// 24 : "Lever or Wheel: large ratchet"
 		// 25 : "Lever or Wheel: clanky + gas release"
 		// 26 : "Lever or Wheel: latch + large metal thud"
@@ -4774,7 +4774,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		22 : "Random Pitch Fast"
 		23 : "Incremental Spinup"
 		24 : "Alien"
-		25 : "Bizzare"
+		25 : "Bizarre"
 		26 : "Planet X"
 		27 : "Haunted"
 	] // end preset
@@ -6715,7 +6715,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	] // end spawnflags
 
 	input Amplitude(string) : "Set the amplitude (0-16)"
-	input Frequency(string) : "Set the frequence. Should be a value between 0 and 255, where 0.1 = jerk, and 255.0 = rumble."
+	input Frequency(string) : "Set the frequency. Should be a value between 0 and 255, where 0.1 = jerk, and 255.0 = rumble."
 	input StartShake(void) : "Start the shake."
 	input StopShake(void) : "Stop the shake."
 ] // end env_shake
@@ -8129,7 +8129,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 @PointClass base(SBaseLogical, SBaseDiv) color(100 150 255) iconsprite("editor-ficool2/game_weapon_manager") = game_weapon_manager : "An entity used to limit the number of a particular weapon type in the world. Useful in places where NPCs are spawning rapidly, dying, and dropping weapons. Does not function in multiplayer." [
 	weaponname(string) : "Weapon Classname" :  : "Classname of the weapon type to limit."
 	maxpieces(integer) : "Max Allowed in Level"	: 0 : "The maximum amount of the specified weapon type allowed in the world."
-	ammomod(float)	   : "Ammo modifier" : 1 : 	"Modifier for ammount of ammo dropped by a weapon."
+	ammomod(float)	   : "Ammo modifier" : 1 : 	"Modifier for amount of ammo dropped by a weapon."
 
 	input SetAmmoModifier(float): "Adjust the ammo modifier."
 	input SetMaxPieces(integer): "Set the maximum amount of the specified weapon type allowed."
@@ -9455,7 +9455,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 	// NPC ENTITIES //
 
-@PointClass base(SModel, SBaseEntity, SBaseDiv, SModelSkin, SModelBodyGroup, SBaseNPC, SBaseDynamicModel) color(150 0 200) sphere(fademindist) sphere(fademaxdist) studioprop() = npc_furniture : "An entity used when an otherwise inanimate object needs to synchronise animation with an NPC in a scene or scripted_sequence. This usually means a piece of furniture or a door that an NPC needs to manipulate." [
+@PointClass base(SModel, SBaseEntity, SBaseDiv, SModelSkin, SModelBodyGroup, SBaseNPC, SBaseDynamicModel) color(150 0 200) sphere(fademindist) sphere(fademaxdist) studioprop() = npc_furniture : "An entity used when an otherwise inanimate object needs to synchronize animation with an NPC in a scene or scripted_sequence. This usually means a piece of furniture or a door that an NPC needs to manipulate." [
 	input DisablePlayerCollision(void) : "Enable the player to collide with this entity."
 	input EnablePlayerCollision(void) : "Disable the player from colliding with this entity."
 ] // end npc_furniture
@@ -9850,7 +9850,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	attach1(target_destination) : "Attached Object" :  : "Object to apply the force to."
 	speed(string) : "Rotation Speed" : "0" : "Angular speed (units are degress/second)"
 	spinup(string) : "Spin up time" : "1" : "spin up time in seconds (also affects the rate at which speed changes happen)"
-	inertiafactor(float) : "System Interia Scale" : "1.0" : "Make this larger if the object being driven is constrained to a set of heavier objects."
+	inertiafactor(float) : "System Inertia Scale" : "1.0" : "Make this larger if the object being driven is constrained to a set of heavier objects."
 	axis(vecline) : "Rotation Axis" :  : "The point to the origin of the entity whose line the rotation axis."
 
 	spawnflags(flags) = [
@@ -10031,7 +10031,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input SetCustomModelVisibleToSelf (bool) : "Set if the custom model is visible to the player, in thirdperson."
 	input SetFogController(string) : "Sets the fog controller to use."
 	input SetForcedTauntCam(bool) : "Forces the player into thirdperson mode. 1 - force into thirdperson, 0 - force into firstperson."
-	input SetHudVisibility(bool) : "Hides or displays the HUD. The menu can still be accessed, and some HUD elements such as kill icons may still be visible. Players cannot switch weapons while the HUD is invisible. 1 = visibile, 0 = invisible."
+	input SetHudVisibility(bool) : "Hides or displays the HUD. The menu can still be accessed, and some HUD elements such as kill icons may still be visible. Players cannot switch weapons while the HUD is invisible. 1 = visible, 0 = invisible."
 	input TriggerLootIslandAchievement(void) : "Hardcoded to only function on certain official maps. Used to give the player various achievements upon escaping from the underworld."
 	input TriggerLootIslandAchievement2(void) : "Does nothing."
 
@@ -10215,7 +10215,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	PropName(target_destination) : "Prop Name" :  : "Name of the prop to control."
 	PoseParameterName(string) : "Pose Parameter Name" :  : "Name of the pose parameter to control."
 	PoseValue(float) : "Pose Parameter Value" : "0.0" : "Normalized value for the pose parameter from 0.0 and 1.0 (maps to min and max range). Suffers from rounding or overflow errors, the only fix is to constantly set a new value using SetPoseValue."
-	InterpolationTime(float) : "Interpolation Time" : 0 : "Number of seconds (0.0 to 10.0) for client to match absolue pose values."
+	InterpolationTime(float) : "Interpolation Time" : 0 : "Number of seconds (0.0 to 10.0) for client to match absolute pose values."
 	InterpolationWrap(choices) : "Interpolation Wrap?" : 0 : "Should wrap from 0.0 to 1.0 when interpolating." = [
 		0 : "No"
 		1 : "Yes"
@@ -10405,7 +10405,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		2 : "Watch Player - Sets the Look At target to the last !activator of the Enable input" : 0
 		4 : "Freeze Player - Ignore player input (can still taunt/suicide), doesn't properly follow paths or parents if unchecked" : 1 // TODO: Can still be teleported, and still faces Look At target?
 		32 : "Make Players Non-Solid (while looking through this camera)" : 0
-		64 : "Interruptable by Player - Disable if last !activator presses any key, requires Freeze Player to be unchecked" : 0
+		64 : "Interruptible by Player - Disable if last !activator presses any key, requires Freeze Player to be unchecked" : 0
 		8 : "Infinite Hold Time - Don't auto-Disable when Hold Time expires" : 1
 		16 : "Snap to Goal Angles - Instantly rotate to Look At target on Enable (otherwise smoothly glide to face target)" : 1
 	] // end spawnflags
@@ -11191,14 +11191,14 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		1 : "Yes"
 	] // end show_in_hud
 
-	input AddTeamTime(string) : "Input takes a string (space delimited) with the team number and the time to be added (in seconds) because of the team (2 for red, 3 for blue, and 0 for no team...but you could just use AddTime for that). Added time cannot excede the max timer length. Example: 2 600 (adds 10 minutes because of team red)"
-	input AddTime(integer) : "Add time to the timer (in seconds). Added time cannot excede the max timer length."
+	input AddTeamTime(string) : "Input takes a string (space delimited) with the team number and the time to be added (in seconds) because of the team (2 for red, 3 for blue, and 0 for no team...but you could just use AddTime for that). Added time cannot exceed the max timer length. Example: 2 600 (adds 10 minutes because of team red)"
+	input AddTime(integer) : "Add time to the timer (in seconds). Added time cannot exceed the max timer length."
 	input AutoCountdown(bool) : "Turn off/on the auto-countdown feature (0 no, 1 yes)." // TODO: What is this?
 	input Pause(void) : "Pause the timer."
 	input Restart(void) : "Restart the timer."
 	input Resume(void) : "Resume the timer."
 	//input RoundSpawn(void) : "Forces this entity to spawn. Fired automatically at the start of a round."
-	input SetMaxTime(integer) : "Set the max timer length to this value (in seconds). The timer's time will never excede this value."
+	input SetMaxTime(integer) : "Set the max timer length to this value (in seconds). The timer's time will never exceed this value."
 	input SetSetupTime(integer) : "Set the setup time length to this value (in seconds)."
 	input SetTime(integer) : "Set the timer to this value (in seconds)."
 	input ShowInHUD(bool) : "Show this timer in the HUD (0 no, 1 yes)."
