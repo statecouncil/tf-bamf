@@ -2192,6 +2192,19 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 @BaseClass = func_respawnroomvisualizer_keys [
 	respawnroomname(target_destination) : "Associated Respawn Room" :  : "Optionally the name of a func_respawnroom that this entity is visualizing. This entity will have its team matched to that for the func_respawnroom, and will update its team if the func_respawnroom ever changes team. Overrides the Team keyvalue if specified."
+	rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on this entity. Some/most of these are intended for sprites, and may or may not work on other entities. See developer.valvesoftware.com/wiki/Render_Modes for more info." = [ //Set to Color by default to help with sorting issues
+		0 : "Normal"
+		1 : "Color"
+		2 : "Texture"
+		3 : "Glow"
+		4 : "Solid/Alphatest"
+		5 : "Additive"
+		6 : "Environmental (Not drawn)"
+		7 : "Additive Fractional Frame"
+		8 : "Alpha Add"
+		9 : "World Space Glow"
+		10 : "Don't Render (EF_NODRAW)"
+	] // end rendermode
 	solid_to_enemies(choices) : "Solid to Enemies?" : 1 : "Determines if this area is solid to enemy players." = [
 		0 : "No"
 		1 : "Yes"
@@ -2268,6 +2281,8 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end func_detail_blocker
 
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, SMoveDir, SMoveLip, SBaseBrushDoor, SBaseDynamicBrush) = func_door : "A brush entity for use as a player-useable door." [
+
+	movedir(angle) : "Move Direction (Pitch Yaw Roll)" : "-90 0 0" : "The direction the entity will move when it is opened/pressed." //changed to go straight up since that's what most tf2 doors do -Brokk
 ] // end func_door
 
 @SolidClass base(func_door) = func_water : "Legacy support for Half-Life. Same functionality as func_water_analog, although this entity borrows its code from func_door (rather than func_movelinear)." [
@@ -2678,19 +2693,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 @SolidClass base(SBaseTrigger, SBaseDiv, STFTeam) color(255 150 50) = func_respawnroom : "Designates a respawn room for a team. Players whose team matches this entity will be able to change class and loadout without dying within its volume, and engineers are blocked from building in it." [
 //duplicated Render Mode to set default to Color since that is the most common fix for render order issues and won't break anything else. -Brokk
-rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on this entity. Some/most of these are intended for sprites, and may or may not work on other entities. See developer.valvesoftware.com/wiki/Render_Modes for more info." = [ // Declared in const.h
-		0 : "Normal"
-		1 : "Color"
-		2 : "Texture"
-		3 : "Glow"
-		4 : "Solid/Alphatest"
-		5 : "Additive"
-		6 : "Environmental (Not drawn)"
-		7 : "Additive Fractional Frame"
-		8 : "Alpha Add"
-		9 : "World Space Glow"
-		10 : "Don't Render (EF_NODRAW)"
-	] // end rendermode
 	input SetActive(void) : "Sets the respawn room as active."
 	input SetInactive(void) : "Sets the respawn room as inactive."
 	input ToggleActive(void) : "Toggles the respawn room between active and inactive."
@@ -2924,7 +2926,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, func_traincontrols_keys, SBaseDynamicBrush) = func_traincontrols : "When +used by the player, this entity overrides the player's controls to let them drive a train." [
 ] // end func_traincontrols
 
-@SolidClass base(SPreservedEntity, SBaseEntityOrigin, SBaseDiv, SEnableDisable) = func_upgradestation : "The upgrade station area for MvM, where players buy upgrades." [
+@SolidClass base(SPreservedEntity, STrigger) = func_upgradestation : "The upgrade station area for MvM, where players buy upgrades." [
 ] // end func_upgradestation
 
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, SEnableDisable) = func_vehicleclip : "Acts as a functional clip or barrier affecting vehicle entities, such as prop_vehicle_driveables. Should be used with the tools/toolscontrolclip texture." [
@@ -8765,7 +8767,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		0 : "Increment score"
 		1 : "Increment capture count"
 	] // end ScoringType
-	PointValue(integer) : "Point Value (PD/RD)" : 1 : "Only used for Player Destruction or Robot Destruction. How many points this flag is worth."
+	PointValue(integer) : "Point Value (PD/RD)" : 0 : "Only used for Player Destruction or Robot Destruction. How many points this flag is worth. RD default is 0, PD default is 1."
 	ReturnBetweenWaves(choices) : "Return Between Waves?" : 1 : "Only used for Mann vs Machine. Determines if the flag should return home between waves." = [
 		0 : "No"
 		1 : "Yes"
@@ -9705,7 +9707,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 
 
 @PointClass base(SBasePath) cylinder(255 255 255, targetname, targetname, radius, targetname, target, radius) cylinder(150 150 150, targetname, targetname, radius, targetname, altpath, radius) sidelist(sides) size(-1 -1 -48, 1 1 -8) line(255 255 255, targetname, target) line(150 150 150, targetname, altpath) sphere(radius) studio("models/editor-bamf/locomotive_helper.mdl") = path_track : "An entity used to build paths for other entities to follow. Each path_track is a node on the path, each holding the name of the next path_track in the path." [
-	model(choices) : "Helper Model (Hammer Only)" : "models/empty.mdl" : "Model this entity should appear as in Hammer, to assist with placement or identification. Any model can be specified, not just ones listed here. This will NOT affect how the entity appears in-game. If the Empty option causes this entity to disappear from the 3D view, you can still find it via the 2D view or Map -> Entity Report." = [
+	model(choices) : "Helper Model (Hammer Only)" : "models/editor-bamf/locomotive_helper.mdl" : "Model this entity should appear as in Hammer, to assist with placement or identification. Any model can be specified, not just ones listed here. This will NOT affect how the entity appears in-game. If the Empty option causes this entity to disappear from the 3D view, you can still find it via the 2D view or Map -> Entity Report." = [
 		"" : "None (Default Cube)" //This will actually place a cube instead, completely covering the iconsprite (if there is one). Use "No Model" if you just want to see the iconsprite.
 		"models/empty.mdl" : "Empty (Check 2D view!)"
 		"models/editor-puddy/hngineer.mdl" : "Dev Engineer by Puddy"
@@ -9715,6 +9717,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 		"models/editor-ficool2/cone_helper_gray.mdl" : "Gray Cone Helper"
 		"models/editor/axis_helper_thick.mdl" : "Thick Axis Helper"
 		"models/editor/camera.mdl" : "Camera Helper"
+		"models/editor-bamf/locomotive_helper.mdl" : "Cute little locomotive helper made by Tumby"
 	] // end model
 	altpath(target_destination) : "Branch Path Target" :  : "An alternate entity to function as the next node in the path, which can be toggled on and off over the main path. Useful for making branching paths. By default, entities will be sent to the Next Path Target; use the ToggleAlternatePath / EnableAlternatePath inputs to make the Branch Path active. Not all entities pay attention to this."
 	speed(float) : "New Train Speed" : 0 : "If nonzero, when an entity reaches this path_track, it will set its speed to this speed. This speed must be a positive value that is less than the entity's max speed (if it has such). A value of 0 will cause no change in the entity's speed. For train entities, a positive value must be specified for them to properly reverse over the path."
@@ -11440,7 +11443,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
 	input SetGlowColor(color255) : "Set the glow color, with alpha. Format: <R> <G> <B> <A>, 0-255 for each"
 ] // end tf_glow
 
-@PointClass base(SBaseEntity) color(200 200 200) studioprop("models\props_halloween\gargoyle_ghost.mdl") = tf_halloween_gift_spawn_location : "The Halloween Gift spawn locations." [
+@PointClass base(SBaseEntity) color(200 200 200) studioprop("models/props_halloween/gargoyle_ghost.mdl") = tf_halloween_gift_spawn_location : "The Halloween Gift spawn locations." [
 ] // end tf_halloween_gift_spawn_location
 
 @PointClass base(SBaseLogical, SBaseDiv) color(100 150 255) iconsprite("editor-abs/tf_logic_arena") = tf_logic_arena : "Handles arena logic and outputs." [
@@ -12214,7 +12217,7 @@ rendermode(choices) : "Render Mode" : 1 : "Set a non-standard rendering mode on 
     input Trigger(void) : "Triggers the skybox change."
 ]
 
-@PointClass base(STargetname) iconsprite("editor/logic_script.vmt") = logic_script :
+@PointClass base(STargetname, SBaseIO) iconsprite("editor/logic_script.vmt") = logic_script :
 	"An entity that acts as a container for scripts"
 [
 	Group00(target_destination) : "EntityGroup[0]" : : "Entity group 0"
