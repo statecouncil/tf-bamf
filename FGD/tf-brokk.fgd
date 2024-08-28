@@ -8740,6 +8740,9 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 @PointClass base(SBaseEntity, SBaseDynamicModel) color(200 200 200) sphere(fademindist) sphere(fademaxdist) studioprop("models/can.mdl") = item_sodacan : "Half-Life legacy: A beverage created from a Beverage Dispenser (env_beverage). Uses models/can.mdl, you will need to provide your own as it is missing." [ // TODO: Effect on pickup?
 ] // end item_sodacan
 
+@PointClass base(SBaseEntity, SBaseItem, SModelSkin, SModelBodyGroup, SBaseDynamicModel) sphere(fademindist) sphere(fademaxdist) studioprop("models/items/car_battery01.mdl") = item_armor : "Half-Life legacy: Armor pickup, doesn't do anything. Can be picked up if player's armor value is manually set to negative. Useful for custom gamemodes." [ // TODO-BROKK: Check for custom I/O
+] // end item_armor
+
 // NOTE FROM FICOOL: item_teamflag uses prop_dynamic base in code??
 // A bunch of keyvalues and other features from prop_dynamic don't work, so don't inherit those
 // TODO: Get rid of some of the useless Breakable keyvalues? Find/create a breakable dynamic model for testing breakable teamflag properties
