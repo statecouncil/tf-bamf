@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Surfaceprops</title>
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css" media="screen">
+	</head>
+	<body class="water-page">
+		<!--Page Header-->
+		<div class="pagehead">
+			<iframe src="../header.html" title="Header" ></iframe>
+		</div>
+
+		<!--Page Body-->
+		<div class="pagebody">
+			<!--Header Block-->
+			<div class="block">
+				<h1>Surfaceprops</h1>
+				An examination of TF2's available material surface properties.
+			</div>
+
+			<!--Intro Block-->
+			<div class="block">
+				<p>
+					infobla
+					<br>
+				</p><p>
+					For more information about Surfaceprops in the Source Engine, read the VDC: <a href="https://developer.valvesoftware.com/wiki/$surfaceprop" title="$surfaceprop - Valve Developer Community">https://developer.valvesoftware.com/wiki/$surfaceprop</a>
+				</p>
+			</div>
+
+			<!--Surface Block-->
+			<div class="block">
+				<h2 id="Surface Materials">Data and Examples</h2>
+            blablabla
+				<hr>
+
+				<h3>swamp/water/water_murky</h3>
+				<div class="row">
+					<div class="col"> <!--left-->
+						<img src="../img/water-info-sheet/swamp/water/water_murky.png" title="swamp/water/water_murky" width="200" height="200" alt="An in-game screenshot of the water with the number 170. The number is pointing at the fog.">
+					</div>
+					<div class="col"> <!--right-->
+						<p><span class="regular">Regular Water</span></p>
+						<table>
+							<tr>
+								<th>Fog Settings</th>
+								<td style="color:#fff;background:rgb(35,32,20)"><span class="key">$FogColor:</span> {35&nbsp;32&nbsp;20}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 170</td>
+							</tr><tr>
+								<th>Refraction Settings</th>
+								<td><span class="key">$RefractAmount:</span> 0.32</td>
+							</tr><tr>
+								<th>TextureScroll Proxy</th>
+								<td><span class="key">Rate:</span> 0.02&emsp;<span class="key">Angle:</span> 10 (east)</td>
+							</tr><tr>
+								<th>Bottom Material</th>
+								<td><code>swamp/water/water_murky_beneath.vmt</code></td>
+							</tr>
+						</table>
+						<p>
+							The VMT includes the line <code>"$basetexture" "swamp/water/water_murky"</code>. This base texture is 4 times larger than the normal-map texture, so the game scales up the normal-map accordingly. However, the <code>Water</code> shader does not actually render base textures, so the increased scale was most likely unintentional.
+						</p>
+					</div>
+				</div>
+
+				<hr>
+
+				<h3>swamp/water/water_swamp</h3>
+				<div class="row">
+					<div class="col"> <!--left-->
+						<img src="../img/water-info-sheet/swamp/water/water_swamp.png" title="swamp/water/water_swamp" width="200" height="200" alt="An in-game screenshot of the water with the number 100. The number is pointing at the fog.">
+					</div>
+					<div class="col"> <!--right-->
+						<p><span class="regular">Regular Water</span></p>
+						<table>
+							<tr>
+								<th>Fog Settings</th>
+								<td style="color:#fff;background:rgb(27,26,21)"><span class="key">$FogColor:</span> {27&nbsp;26&nbsp;21}&emsp;<span class="key">$FogStart:</span> 0&emsp;<span class="key">$FogEnd:</span> 100</td>
+							</tr><tr>
+								<th>Refraction Settings</th>
+								<td><span class="key">$RefractAmount:</span> 0.06</td>
+							</tr><tr>
+								<th>TextureScroll Proxy</th>
+								<td><span class="key">Rate:</span> 0.6&emsp;<span class="key">Angle:</span> 10 (east)</td>
+							</tr><tr>
+								<th>Bottom Material</th>
+								<td><code>water/water_2fort_beneath.vmt</code></td>
+							</tr><tr>
+								<th>Fallback Materials</th>
+								<td><span class="key">&lt;dx90:</span> <code>water/water_2fort_dx80</code>&emsp;<span class="key">Water_DX60:</span> <code>nature/water_dx70</code></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<hr>
+
+			</div>
+		</div>
+
+		<!--Page Footer-->
+		<div class="pagefoot">
+			<iframe src="../footer.html" title="Footer" ></iframe>
+		</div>
+	</body>
+</html>
