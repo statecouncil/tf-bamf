@@ -1,5 +1,5 @@
 #define MyAppName "Brokk's Assorted Mapping Fixes"
-#define MyAppVersion "0.4.1"
+#define MyAppVersion "0.5"
 #define MyAppPublisher "Brokk & lco-sp"
 #define MyAppURL "https://bamf.tf/"
 #define MyAppRepoURL "https://github.com/statecouncil/tf-bamf"
@@ -108,8 +108,6 @@ Name: "vmfs\community"; Description: "Community-Contributed Map VMFs"; Types: fu
 ; disabled for now, user will have to modify fgd themself
 ;[Tasks]
 ; GroupDescription NEEDS to be identical for grouped tasks
-;Name: "fgd_settings_propper_yes"; Description: "Enable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
-;Name: "fgd_settings_propper_no"; Description: "Disable built-in Propper entities"; GroupDescription: "This FGD supports Propper by default. If you would rather use your own Propper FGD, disable it here and include it manually in Hammer."; Components: hammer\fgd; Flags: exclusive
 
 ;Name: "fgd_spawnmodel_abs"; Description: "Use A Boojum Snark's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
 ;Name: "fgd_spawnmodel_puddy"; Description: "Use Puddy's Engineer model"; GroupDescription: "Change the appearance of hammer's info_player_teamspawn entity."; Components: hammer\fgd; Flags: exclusive
@@ -126,7 +124,6 @@ Source: "{#BamfDir}\Compile Configs\Compilepal\*"; Excludes: "{#BamfDir}\Compile
 ; Source: "{#BamfDir}\Compile Configs\Compilepal\Compiling\*"; DestDir: "{#CompilePalDir}\Compiling"; Components: hammer\errorparser; Flags: recursesubdirs
 
 Source: "{#BamfDir}\Tools\Radshadowman\*"; DestDir: "{app}\bin"; Components: tools\radshadowman; Flags: recursesubdirs
-Source: "{#BamfDir}\Tools\Propper\*"; DestDir: "{app}\bin"; Components: tools\propper; Flags: recursesubdirs
 
 Source: "{#BamfDir}\VPKs\BAMF FGD Assets.vpk"; DestDir: "{app}\tf\custom"; Components: assets\fgd; Flags: recursesubdirs
 Source: "{#BamfDir}\VPKs\BAMF Material Tag Overhaul.vpk"; DestDir: "{app}\tf\custom"; Components: assets\materialtags; Flags: recursesubdirs
