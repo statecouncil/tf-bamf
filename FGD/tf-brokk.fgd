@@ -8948,10 +8948,11 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 @PointClass base(STargetname, SBaseIO, SLight, SBaseDiv, SLightFalloff) color(255 255 255) iconsprite("editor-ficool2/light") light() sphere(_fifty_percent_distance) sphere(_zero_percent_distance) sphere(_hardfalloff) sphere(_distance) = light : "An invisible omnidirectional lightsource that emits pre-calculated lighting. If not given a targetname, the light is entirely static. If given a targetname, the light is turned into a switchable light that can be turned on and off at no cost to in-game performance. Switchable lights will not do light bouncing, the map's file size will be larger, and VRAD will take longer as a result. See developer.valvesoftware.com/wiki/Naming_Lights for more info." [
 ] // end light
 
-@PointClass base(SBaseAnglesLight, SLight, SBaseDiv) color(255 255 255) iconsprite("editor-ficool2/light_directional") light() = light_directional : "A directional light with no falloff that only emits from skybox textures, similar to sunlight emitted by a light_environment. Only works with Slartibarty's modified VRAD.\n" +
-	"NOTE: Although this entity can be used as a switchable light, it alone cannot be switched as TF2 does not recognize the entity class. Having an official light class with the same name as this entity in the map will allow this light to be toggled." [
-	SunSpreadAngle(float) : "Sun Spread Angle" : 5 : "The angular extent of the light for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
-] // end light_directional
+//@PointClass base(SBaseAnglesLight, SLight, SBaseDiv) color(255 255 255) iconsprite("editor-ficool2/light_directional") light() = light_directional : "A directional light with no falloff that only emits from skybox textures, similar to sunlight emitted by a light_environment. Only works with Slartibarty's modified VRAD.\n" +
+	//"NOTE: Although this entity can be used as a switchable light, it alone cannot be switched as TF2 does not recognize the entity class. Having an official light class with the same name as this entity in the map will allow this light to be toggled." [
+	//SunSpreadAngle(float) : "Sun Spread Angle" : 5 : "The angular extent of the light for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
+//] // end light_directional
+//Spud why the hell did you add this, nothing else requires the Slammin compilers -Brokk
 
 @BaseClass = light_environment_keys [
 	_ambient(color255) : "Ambient" : "255 255 255 20" : "Color and brightness of diffuse skylight."
