@@ -1,6 +1,6 @@
 //----- AN FGD FIT FOR A LORD -----//
 //         https://bamf.tf/
-//	Last updated 28th August 2024
+//	Last updated 31th August 2024
 
 
 //----- USER SETTINGS -----//
@@ -8960,7 +8960,8 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	_ambientHDR(color255) : "Ambient HDR" : "-1 -1 -1 1" : "Override for Ambient when compiling HDR lighting. Defaults to -1 -1 -1 1, which means the same as LDR."
 	_AmbientScaleHDR(float) : "Ambient HDR Scale" : "1" : "Amount to scale the ambient light by when compiling for HDR."
 ] // end light_environment_keys
-@PointClass base(SBaseAnglesLight, SLight, SBaseDiv, light_environment_keys, light_directional) color(255 255 255) iconsprite("editor-ficool2/light_environment") light() = light_environment : "Sets the color and angle of the light from the sun and sky. The light_environment can be named and switched akin to a normal light entity, although the quality will be noticeably worse as bounced lighting will not be simulated on a named light. See developer.valvesoftware.com/wiki/Team_Fortress_2_Sky_List for example sky lighting setups." [
+@PointClass base(SBaseAnglesLight, SLight, SBaseDiv, light_environment_keys) color(255 255 255) iconsprite("editor-ficool2/light_environment") light() = light_environment : "Sets the color and angle of the light from the sun and sky. The light_environment can be named and switched akin to a normal light entity, although the quality will be noticeably worse as bounced lighting will not be simulated on a named light. See developer.valvesoftware.com/wiki/Team_Fortress_2_Sky_List for example sky lighting setups." [
+	SunSpreadAngle(float) : "Sun Spread Angle" : 5 : "The angular extent of the light for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
 ] // end light_environment
 
 // Doesn't actually use the pitch keyvalue despite every FGD claiming it does
@@ -12091,7 +12092,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 @PointClass base(SBaseEntity) iconsprite("editor-ficool2/wheel_of_doom_spiral") = wheel_of_doom_spiral : "The spiral effect created by the wheel_of_doom entity." [
 ] // end wheel_of_doom_spiral
 
-@PointClass base(Targetname, Parentname, Angles) worldtext() = point_worldtext : 
+@PointClass base(STargetname, SParentname, SAngles) worldtext() = point_worldtext : 
     "An entity that displays a text message oriented in the world, at its origin."
 [
     message(string) : "Entity Message" : "" : "Text Message. Newline characters are accepted"
@@ -12278,7 +12279,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end point_commentary_node
 
 
-@PointClass base(STargetname, SEnableDisable, SToggle, SAngles, Studiomodel, SBaseDynamicModel) studio("models/items/ammopack_medium.mdl") sphere(fademindist) sphere(fademaxdist) = tf_ammo_pack : "Used for the medium ammopacks, crit pumpkins, or smissmas presents that can be dropped by players. Not usually placed manually." []
+@PointClass base(STargetname, SEnableDisable, SToggle, SAngles, SHelperModel, SBaseDynamicModel) studio("models/items/ammopack_medium.mdl") sphere(fademindist) sphere(fademaxdist) = tf_ammo_pack : "Used for the medium ammopacks, crit pumpkins, or smissmas presents that can be dropped by players. Not usually placed manually." []
 
 //congrats you've scrolled all the way down to the end of this document, here's your reward. -Brokk
 @PointClass iconsprite("editor/obsolete") = func_gameplay : "Yeah you wish this was real didn't you" [
