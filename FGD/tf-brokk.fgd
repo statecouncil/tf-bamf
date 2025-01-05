@@ -1,6 +1,6 @@
 //----- AN FGD FIT FOR A LORD -----//
 //         https://bamf.tf/
-//	Last updated 31th August 2024
+//	Last updated 7th September 2024
 
 
 //----- USER SETTINGS -----//
@@ -511,7 +511,7 @@
 ] // end SAngles
 // For entities with inverted pitch and a separate pitch keyvalue
 @BaseClass = SAnglesPitchInv [
-	angles(angle_negative_pitch) : "Pitch Yaw Roll (Y Z X)" : "0 0 0" : "This entity's orientation in the world, with the pitch being inverted. Pitch is rotation around the Y axis (side view), Yaw is rotation around the Z axis (top view), and Roll is rotation around the X axis (front view). Contrary to popular belief, specifying the pitch in a separate keyvalue is unnecessary."
+	angles(angle_negative_pitch) : "Pitch Yaw Roll (X Y Z)" : "0 0 0" : "This entity's orientation in the world, with the pitch being inverted. Pitch is rotation around the Y axis (side view), Yaw is rotation around the Z axis (top view), and Roll is rotation around the X axis (front view). Contrary to popular belief, specifying the pitch in a separate keyvalue is unnecessary."
 	// Leaving the pitch keyvalue out doesn't break anything. Game just uses the pitch value from angles if this keyvalue is not included. I'VE BEEN LIED TO MY ENTIRE LIFE
 	// If you want to have the pitch keyvalue in your lights, see the User Settings. Note that the pitch keyvalue will ALWAYS override the Pitch Yaw Roll if it is included; you can't really switch back and forth on a whim.
 	// Pitch keyvalue moved to PitchInv baseclass and inherited by SBaseAnglesLight
@@ -10623,7 +10623,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 // This doesn't even inherit any physics keyvalues!
 @BaseClass = prop_ragdoll_keys [
-	angleOverride(string) : "Override Animation" :  : "Filled in by the engine via hammer_update_entity, do not edit by hand except to clear."
+	angleOverride(string) : "Override Animation" :  : "Filled in by the engine via hammer_update_entity, do not edit by hand except to clear, or for use with Hammer++' Physics Tool."
 	sequence(integer) : "Sequence" :  : "Animation sequence to spawn the ragdoll in, by index NOT name!"
 ] // end prop_ragdoll_keys
 @PointClass base(SModel, SBaseEntity, SBaseDiv, prop_ragdoll_keys, SEnableDisable, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(255 100 0) sphere(fademindist) sphere(fademaxdist) studioprop() = prop_ragdoll : "A prop that physically simulates and can be articulated with internal joints. The joint constraints are part of the physics model. Very expensive to simulate." [
