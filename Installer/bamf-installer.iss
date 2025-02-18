@@ -1,5 +1,5 @@
 #define MyAppName "Brokk's Assorted Mapping Fixes"
-#define MyAppVersion "0.5.1"
+#define MyAppVersion "0.6.0"
 #define MyAppPublisher "Brokk & lco-sp"
 #define MyAppURL "https://bamf.tf/"
 #define MyAppRepoURL "https://github.com/statecouncil/tf-bamf"

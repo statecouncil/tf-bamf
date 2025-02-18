@@ -6277,7 +6277,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	use_angles(choices) : "Use Angles for Fog Direction?" : 0 : "Use Pitch Yaw Roll for the Fog Blend direction instead of Primary Fog Direction. There isn't much use for this unless you want the direction to rotate." = [
 		0 : "No"
 		1 : "Yes"
-	]] // end use_angles
+	] // end use_angles
 	fogRadial(choices) : "Use Radial Fog?" : 1 : "Use radial fog instead of planar-based fog. Usually looks better than planar." = [
 		0 : "No"
 		1 : "Yes"
@@ -8798,7 +8798,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 // END UPDATE FROM BROKK
 
 
-@BaseClass base(DXLevelChoice) = RopeKeyFrame
+@BaseClass base(SBaseEntity	) = RopeKeyFrame
 [
 	spawnflags(Flags) = 
 	[
