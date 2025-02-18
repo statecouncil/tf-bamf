@@ -1,0 +1,232 @@
+DebugMenu{width 768
+height 576
+Player/Game{Noclip{command noclip}
+Resupply{command "impulse 101"}
+"Respawn dead"{command "ent_create game_forcerespawn targetname _btm_fr;wait 10;ent_fire _btm_fr forceteamrespawn 2;ent_fire _btm_fr forceteamrespawn 3;wait 10;ent_remove _btm_fr"}
+"Respawn all"{command mp_forcerespawnplayers}
+"Add 10000 health"{command "hurtme -10000"}
+"Toggle Buddha mode"{command buddha}
+"Enable invisibility"{command "addcond 66"}
+"Disable invisibility"{command "removecond 66"}
+"Enable critical hits"{command "addcond 11"}
+"Disable critical hits"{command "removecond 11"}
+"Timescale 0.2"{command "host_timescale 0.2"}
+"Timescale 0.5"{command "host_timescale 0.5"}
+"Timescale 1.0"{command "host_timescale 1.0"}
+"Timescale 5.0"{command "host_timescale 5.0"}
+"Remove death visuals"{command "r_cleardecals;ent_remove_all tf_ragdoll;ent_remove_all tf_ammo_pack;ent_remove_all tf_dropped_weapon"}
+"Skip waiting for players"{command "mp_waitingforplayers_cancel 1"}
+"Toggle freeze time"{incrementcvar "tf_player_movement_restart_freeze 0 1 1"}
+"Disable respawn time"{togglecvar mp_disable_respawn_times}
+"Draw spawn points"{command map_showspawnpoints}
+"Show respawn times"{command mp_showrespawntimes}
+"Restart game"{command "mp_restartgame_immediate 1"}
+"Restart round"{command "mp_restartround 1"}
+"List rounds"{command tf_listrounds}
+"Capture control point(s)"{command "ent_fire trigger_capture_area capturecurrentcp"}
+"Simulate multiple cappers"{incrementcvar "mp_simulatemultiplecappers 1 16 1"}
+"Pause timer"{command "ent_fire team_round_timer pause"}
+"Resume timer"{command "ent_fire team_round_timer resume"}
+"Set timer to 0:01"{command "ent_fire team_round_timer settime 1"}
+"Add 1:00 to timer"{command "ent_fire team_round_timer addtime 60"}
+"Subtract 1:00 from timer"{command "ent_fire team_round_timer addtime -60"}
+"Subtract 0:30 from timer"{command "ent_fire team_round_timer addtime -30"}
+"Subtract 0:15 from timer"{command "ent_fire team_round_timer addtime -15"}
+}
+Clipping/Performance{"Brush models"{incrementcvar "r_drawbrushmodels 0 2 1"}
+"Hide func_detail"{togglecvar r_drawfuncdetail}
+"Static props"{incrementcvar "r_drawstaticprops 0 2 1"}
+"Clip brushes"{incrementcvar "r_drawclipbrushes 0 2 1"}
+"Toggle VPhys. wireframe"{command "exec _/clipv"}
+Areaportals{togglecvar r_drawportals}
+Visleaves{incrementcvar "mat_leafvis 0 3 1"}
+"Disable PVS"{togglecvar r_novis}
+"Lock PVS"{togglecvar r_lockpvs}
+Wireframe{incrementcvar "mat_wireframe 0 3 3"}
+Fullbright{incrementcvar "mat_fullbright 0 2 1"}
+"Lightmap grid"{togglecvar mat_luxels}
+"Light info"{togglecvar r_drawlightinfo}
+}
+Bots/Sentry{Add{command bot}
+"Add to BLU"{command "bot -team blue"}
+"Add to RED"{command "bot -team red"}
+"Add invincible"{command "bot -targetdummy"}
+"Add and teleport"{command "bot -teleport"}
+"Kick all"{command "bot_kick all"}
+"Kick RED"{command "bot_kick red"}
+"Kick BLU"{command "bot_kick blue"}
+"Kill all"{command "bot_kill all"}
+"Kill RED"{command "bot_kill red"}
+"Kill BLU"{command "bot_kill blue"}
+Mimic{togglecvar bot_mimic}
+"Mimic inverse"{togglecvar bot_mimic_inverse}
+"Mimic yaw"{incrementcvar "bot_mimic_yaw_offset 0 270 90"}
+Attack1{togglecvar bot_forceattack}
+Attack2{togglecvar bot_forceattack2}
+Jump{togglecvar bot_jump}
+Crouch{togglecvar bot_crouch}
+"Warp team here"{command tf_bot_warp_team_to_me}
+Mirror{command "bot_mirror all"}
+"Force all Scout"{command "bot_changeclass all scout"}
+"Force all Soldier"{command "bot_changeclass all soldier"}
+"Force all Pyro"{command "bot_changeclass all pyro"}
+"Force all Demoman"{command "bot_changeclass all demoman"}
+"Force all Heavy"{command "bot_changeclass all heavyweapons"}
+"Force all Engineer"{command "bot_changeclass all engineer"}
+"Force all Medic"{command "bot_changeclass all medic"}
+"Force all Sniper"{command "bot_changeclass all sniper"}
+"Force all Spy"{command "bot_changeclass all spy"}
+"Select weapon slot"{incrementcvar "bot_selectweaponslot -1 3 1"}
+"Remove weapons"{command "bot_drop all"}
+Resupply{command bot_refill}
+"Create RED sentry"{command "ent_create obj_sentrygun teamnum 2 skin 2 defaultupgrade 2 spawnflags 12"}
+"Create BLU sentry"{command "ent_create obj_sentrygun teamnum 3 skin 3 defaultupgrade 2 spawnflags 12"}
+"Create RED dispenser"{command "ent_create obj_dispenser teamnum 2 skin 2 defaultupgrade 2 spawnflags 12"}
+"Create BLU dispenser"{command "ent_create obj_dispenser teamnum 3 skin 3 defaultupgrade 2 spawnflags 12"}
+"Make building RED"{command "ent_fire !picker setteam 2;ent_fire !picker skin 0"}
+"Make building BLU"{command "ent_fire !picker setteam 3;ent_fire !picker skin 1"}
+}
+Entities{Developer{incrementcvar "developer 0 2 1"}
+"Show triggers (all)"{command showtriggers_toggle}
+"Show triggers (nobuild)"{command "showtriggers_toggle func_nobuild"}
+"Draw messages (3D)"{togglecvar ent_messages_draw}
+"Draw messages"{command ent_messages}
+"Draw messages (all)"{command "ent_messages *"}
+"Pause/resume I/O"{command ent_pause}
+"Step through I/O (+1)"{command "ent_step 1"}
+"Step through I/O (+2)"{command "ent_step 2"}
+"Step through I/O (+5)"{command "ent_step 5"}
+"Cancel pending ent_fires"{command ent_cancelpendingentfires}
+"Toggle picker"{command picker}
+"Absolute box"{command ent_absbox}
+"Bounding box"{command ent_bbox}
+Pivot{command ent_pivot}
+Name{command ent_name}
+Text{command ent_text}
+"Rotate entity -90"{command "ent_rotate -90"}
+"Rotate entity +90"{command "ent_rotate 90"}
+Remove{command ent_remove}
+Attachments{command ent_attachments}
+"Show response criteria"{command ent_show_response_criteria}
+"View offset"{command ent_viewoffset}
+}
+"Nav. editing"{Edit{togglecvar nav_edit}
+Save{command nav_save}
+Load{command nav_load}
+Analyze{command nav_analyze}
+"Snap to grid"{incrementcvar "nav_snap_to_grid 0 64 8"}
+"Begin area"{command nav_begin_area}
+"End area"{command nav_end_area}
+"Toggle selecting"{command nav_toggle_selecting}
+"Toggle deselecting"{command nav_toggle_deselecting}
+"Begin drag selecting"{command nav_begin_drag_selecting}
+"End drag selecting"{command nav_end_drag_selecting}
+"Begin drag deselecting"{command nav_begin_drag_deselecting}
+"End drag deselecting"{command nav_end_drag_deselecting}
+"Toggle in selected set"{command nav_toggle_in_selected_set}
+"Toggle selected set"{command nav_toggle_selected_set}
+"Add to selected set"{command nav_add_to_selected_set}
+"Remove from sel. set"{command nav_remove_from_selected_set}
+"Recall selected set"{command nav_recall_selected_set}
+Mark{command nav_mark}
+Unmark{command nav_unmark}
+"Begin shift X/Y"{command nav_begin_shift_xy}
+"End shift X/Y"{command nav_end_shift_xy}
+Delete{command nav_delete}
+"Delete marked"{command nav_delete_marked}
+Connect{command nav_connect}
+Disconnect{command nav_disconnect}
+"Disc. outgoing 1-ways"{command nav_disconnect_outgoing_oneways}
+Splice{command nav_splice}
+Split{command nav_split}
+"Chop selected"{command nav_chop_selected}
+"Subdivide 5"{command "nav_subdivide 5"}
+"Subdivide 10"{command "nav_subdivide 10"}
+Merge{command nav_merge}
+"Check file consistency"{command nav_check_file_consistency}
+"Check floor"{command nav_check_floor}
+"Check stairs"{command nav_check_stairs}
+"Clear attribute"{command nav_clear_attribute}
+"Clear selected set"{command nav_clear_selected_set}
+"Compress ID"{command nav_compress_id}
+"Coplanar slope limit"{incrementcvar "nav_coplanar_slope_limit 0 1 0.01"}
+"Coplanar slope limit (displacement)"{incrementcvar "nav_coplanar_slope_limit_displacement 0 1 0.1"}
+"Corner adjust adjacent"{incrementcvar "nav_corner_adjust_adjacent 0 32 1"}
+"Corner lower"{command nav_corner_lower}
+"Corner place on ground"{command nav_corner_place_on_ground}
+"Corner raise"{command nav_corner_raise}
+"Corner select"{command nav_corner_select}
+"Create area at feet"{togglecvar nav_create_area_at_feet}
+"Create place on ground"{togglecvar nav_create_place_on_ground}
+"Debug blocked"{togglecvar nav_debug_blocked}
+"Displacement test"{incrementcvar "nav_displacement_test 0 20000 1000"}
+"Drag sel. vol. Z max. offset"{incrementcvar "nav_drag_selection_volume_zmax_offset 0 128 16"}
+"Drag sel. vol. Z min. offset"{incrementcvar "nav_drag_selection_volume_zmin_offset 0 128 16"}
+"Draw limit"{incrementcvar "nav_draw_limit 100 1000 100"}
+"Dump sel. set pos."{command nav_dump_selected_set_positions}
+"Flood select"{command nav_flood_select}
+"Gen. cliffs approx."{command nav_gen_cliffs_approx}
+"Lower drag volume max."{command nav_lower_drag_volume_max}
+"Lower drag volume min."{command nav_lower_drag_volume_min}
+"Make sniper spots"{command nav_make_sniper_spots}
+"Max view distance"{incrementcvar "nav_max_view_distance 1500 10000 500"}
+"Max vis. delta list length"{incrementcvar "nav_max_vis_delta_list_length 64 256 32"}
+"Potentially vis. dot tol."{incrementcvar "nav_potentially_visible_dot_tolerance 0 1 0.01"}
+"Don't quicksave"{togglecvar nav_quicksave}
+"Raise drag volume max."{command nav_raise_drag_volume_max}
+"Raise drag volume min."{command nav_raise_drag_volume_min}
+"Remove jump areas"{command nav_remove_jump_areas}
+"Select blocked areas"{command nav_select_blocked_areas}
+"Select damaging areas"{command nav_select_damaging_areas}
+"Select half space"{command nav_select_half_space}
+"Select invalid areas"{command nav_select_invalid_areas}
+"Select larger than"{command nav_select_larger_than}
+"Select obstructed areas"{command nav_select_obstructed_areas}
+"Select orphans"{command nav_select_orphans}
+"Select overlapping"{command nav_select_overlapping}
+"Select radius 50"{command "nav_select_radius 50"}
+"Select stairs"{command nav_select_stairs}
+"Show approach points"{togglecvar nav_show_approach_points}
+"Show area info"{incrementcvar "nav_show_area_info 0.5 5 0.5"}
+"Show compass"{togglecvar nav_show_compass}
+"Show continguous"{togglecvar nav_show_continguous}
+"Show danger"{togglecvar nav_show_danger}
+"Show dumped positions"{command nav_show_dumped_positions}
+"Show func_nav_avoid"{togglecvar nav_show_func_nav_avoid}
+"Show func_nav_prefer"{togglecvar nav_show_func_nav_prefer}
+"Show func_nav_prerequisite"{togglecvar nav_show_func_nav_prerequisite}
+"Show light intensity"{togglecvar nav_show_light_intensity}
+"Show node grid"{togglecvar nav_show_node_grid}
+"Show node ID"{incrementcvar "nav_show_node_id -1 1 1"}
+"Show nodes"{togglecvar nav_show_nodes}
+"Show player counts"{togglecvar nav_show_player_counts}
+"Show potentially visible"{togglecvar nav_show_potentially_visible}
+"Simplify selected"{command nav_simplify_selected}
+"Slope limit"{incrementcvar "nav_slope_limit 0 1 0.1"}
+"Slope tolerance"{incrementcvar "nav_slope_tolerance 0 1 0.1"}
+"Solid props"{togglecvar nav_solid_props}
+"Store selected set"{command nav_store_selected_set}
+Strip{command nav_strip}
+"Test stairs"{command nav_test_stairs}
+"Update blocked"{command nav_update_blocked}
+"Update lighting"{command nav_update_lighting}
+"Warp to mark"{command nav_warp_to_mark}
+"World center"{command nav_world_center}
+}
+"Nav. generation"{Generate{command nav_generate}
+"Area max. size"{incrementcvar "nav_area_max_size 0 250 50"}
+"Mark walkable"{command nav_mark_walkable}
+"Clear walkable marks"{command nav_clear_walkable_marks}
+"Don't gen. fencetops"{togglecvar nav_generate_fencetops}
+"Don't fix jump areas"{togglecvar nav_generate_fixup_jump_areas}
+"Generate incremental"{command nav_generate_incremental}
+"Generate incremental range"{incrementcvar "nav_generate_incremental_range 1000 5000 1000"}
+"Generate incremental tol."{incrementcvar "nav_generate_incremental_tolerance 0 1024 64"}
+"Don't gen. jump conn."{togglecvar nav_generate_jump_connections}
+}
+Screenshots{Developer{incrementcvar "developer 0 2 1"}
+"Enable screenshot mode"{command "exec _screenshot_on"}
+"Disable screenshot mode"{command "exec _screenshot_off"}
+"JPEG Quality"{incrementcvar "jpeg_quality 95 100 5"}
+}
+}

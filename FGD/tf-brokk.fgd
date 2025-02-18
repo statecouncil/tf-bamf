@@ -1,6 +1,6 @@
-//----- AN FGD FIT FOR A LORD -----//
+//----- AN FGD FIT FOR A LORD - BROKK EDITION -----//
 //         https://bamf.tf/
-//	Last updated 7th September 2024
+//	Last updated 18th Febuary 2025
 
 
 //----- USER SETTINGS -----//
@@ -511,7 +511,7 @@
 ] // end SAngles
 // For entities with inverted pitch and a separate pitch keyvalue
 @BaseClass = SAnglesPitchInv [
-	angles(angle_negative_pitch) : "Pitch Yaw Roll (X Y Z)" : "0 0 0" : "This entity's orientation in the world, with the pitch being inverted. Pitch is rotation around the Y axis (side view), Yaw is rotation around the Z axis (top view), and Roll is rotation around the X axis (front view). Contrary to popular belief, specifying the pitch in a separate keyvalue is unnecessary."
+	angles(angle_negative_pitch) : "Pitch Yaw Roll (Y Z X)" : "0 0 0" : "This entity's orientation in the world, with the pitch being inverted. Pitch is rotation around the Y axis (side view), Yaw is rotation around the Z axis (top view), and Roll is rotation around the X axis (front view). Contrary to popular belief, specifying the pitch in a separate keyvalue is unnecessary."
 	// Leaving the pitch keyvalue out doesn't break anything. Game just uses the pitch value from angles if this keyvalue is not included. I'VE BEEN LIED TO MY ENTIRE LIFE
 	// If you want to have the pitch keyvalue in your lights, see the User Settings. Note that the pitch keyvalue will ALWAYS override the Pitch Yaw Roll if it is included; you can't really switch back and forth on a whim.
 	// Pitch keyvalue moved to PitchInv baseclass and inherited by SBaseAnglesLight
@@ -1391,7 +1391,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		7 : "Additive Fractional Frame"
 		8 : "Alpha Add"
 		9 : "World Space Glow"
-		10 : "Don't Render (EF_NODRAW)"
+		10 : "Don't Render"
 	] // end rendermode
 	rendercolor(color255) : "Color (R G B)" : "255 255 255" : "Controls a color tint for the entity. Use white (255 255 255) for no modification to color. Black (0 0 0) completely hides the entity's textures."
 	renderamt(integer) : "Transparency" : 255 : "Transparency amount: 0 is invisible, 255 is fully visible. Requires a Render Mode other than Normal."
@@ -1858,7 +1858,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 	// COLOR ENTITIES //
 
-@SolidClass base(SBaseTrigger, SBaseDiv) color(255 150 50) = color_correction_volume : "A color correction lookup table is faded in or out when a player enters or leaves its volume. Fade time is configurable." [
+@SolidClass base(SBaseTrigger, SBaseDiv) color(255 150 50) = color_correction_volume : "A color correction lookup table is faded in or out when a player enters or leaves its volume. Fade time is configurable. Affects all players in an online game, making it quite useless in TF2." [
 	filename(string) : "Lookup Table Filename" :  : "Path to the .raw file containing the lookup table."
 	maxweight(float) : "Maximum Weight" : "1.0" : "This is the maximum weight for this lookup."
 	fadeDuration(float) : "Lookup Fade Duration" : "10.0" : "How fast the effect fades in or out when the viewer enters or exits."
@@ -1882,7 +1882,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	current(integer) : "Speed of Current" : 0 : "The speed of the water current in the volume, used to move the bubbles."
 ] // end env_bubbles_keys
 @SolidClass base(SBaseEntity, SBaseDiv, env_bubbles_keys, SBaseDynamicBrush, SToggle) = env_bubbles : "An entity used to create a volume in which to spawn bubbles. The brush itself is ordinarily visible by default; this FGD changes the default Render Mode to 'Don't Render' so the volume is not visible. To make the brush visible, change the Render Mode to 'Normal'." [
-	rendermode(choices) : "Render Mode" : 0 : "Set a non-standard rendering mode on this entity. The brush itself is visible by default, set this to 'Don't Render' to hide it." = [ // Declared in const.h
+	rendermode(choices) : "Render Mode" : 10 : "Set a non-standard rendering mode on this entity. The brush itself is visible by default, set this to 'Don't Render' to hide it." = [ // Declared in const.h
 		0 : "Normal"
 		1 : "Color"
 		2 : "Texture"
@@ -2438,7 +2438,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"bomb_carrier" : "bomb_carrier"
 		"common" : "common (is NOT part of a mission)"
 		"mission_sentry_buster" : "mission_sentry_buster"
-		"mission_sniper" : "misison_sniper"
+		"mission_sniper" : "mission_sniper"
 		"mission_spy" : "mission_spy"
 		"scout" : "scout"
 		"soldier" : "soldier"
@@ -2654,8 +2654,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 // -Also if it has a model, it... becomes that model? And changes its size to that model? And then turns invisible? The fuck, why? (Seen in C_FuncPhysicsRespawnZone::KeyValue and C_FuncPhysicsRespawnZone::Initialize)
 // TODO: This is all great conjecture, but none of it means anything if it doesn't behave that way in-game. TEST!
 // According to ficool it is all nuked, disabled by an #ifdef 0 somewhere. But the console commands are in-game?
-@SolidClass base(SBaseEntityOrigin) = func_proprrespawnzone : "Zone that handles respawning and distribution of clientside physics props. The classname is spelled correctly." [
-] // end func_proprespawnzone
 
 // TODO: Test
 @BaseClass = func_pushable_keys [
@@ -2919,7 +2917,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, func_traincontrols_keys, SBaseDynamicBrush) = func_traincontrols : "When +used by the player, this entity overrides the player's controls to let them drive a train." [
 ] // end func_traincontrols
 
-@SolidClass base(SPreservedEntity, STrigger) = func_upgradestation : "The upgrade station area for MvM, where players buy upgrades." [
+@SolidClass base(SPreservedEntity, STrigger, SModelSettings, SModelDynamic) = func_upgradestation : "The upgrade station area for MvM, where players buy upgrades." [
 ] // end func_upgradestation
 
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, SEnableDisable) = func_vehicleclip : "Acts as a functional clip or barrier affecting vehicle entities, such as prop_vehicle_driveables. Should be used with the tools/toolscontrolclip texture." [
@@ -5264,7 +5262,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"entity_revive_marker" : "entity_revive_marker"
 		"entity_rocket" : "entity_rocket"
 		"entity_saucer" : "entity_saucer"
-		"entity_sign" : "entity_sign"
 		"entity_soldier_statue" : "entity_soldier_statue"
 		"entity_spawn_manager" : "entity_spawn_manager"
 		"entity_spawn_point" : "entity_spawn_point"
@@ -5317,7 +5314,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"env_ragdoll_boogie" : "env_ragdoll_boogie"
 		"env_rockettrail" : "env_rockettrail"
 		"env_rotorshooter" : "env_rotorshooter"
-		"env_screeneffect" : "env_screeneffect"
 		"env_screenoverlay" : "env_screenoverlay"
 		"env_shake" : "env_shake"
 		"env_shooter" : "env_shooter"
@@ -5342,7 +5338,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"env_tracer" : "env_tracer"
 		"env_viewpunch" : "env_viewpunch"
 		"env_wind" : "env_wind"
-		"env_zoom" : "env_zoom"
 		"event_queue_saveload_proxy" : "event_queue_saveload_proxy"
 		"eyeball_boss" : "eyeball_boss"
 		"filter_activator_class" : "filter_activator_class"
@@ -5383,7 +5378,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"func_forcefield" : "func_forcefield"
 		"func_guntarget" : "func_guntarget"
 		"func_illusionary" : "func_illusionary"
-		"func_ladderendpoint" : "func_ladderendpoint"
 		"func_lod" : "func_lod"
 		"func_monitor" : "func_monitor"
 		"func_movelinear" : "func_movelinear"
@@ -5461,7 +5455,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"info_constraint_anchor" : "info_constraint_anchor"
 		"info_hint" : "info_hint"
 		"info_intermission" : "info_intermission"
-		"info_ladder_dismount" : "info_ladder_dismount"
 		"info_landmark" : "info_landmark"
 		"info_lighting_relative" : "info_lighting_relative"
 		"info_mass_center" : "info_mass_center"
@@ -6009,7 +6002,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input Activate(void) : "Enable this dispenser."
 ] // end env_beverage
 
-@PointClass base(SBaseEntity, SBaseDiv) iconsprite("editor-ficool2/env_blood") = env_blood : "An entity used to spawn blood effects." [
+@PointClass base(SBaseEntity, SBaseDiv) iconsprite("editor-ficool2/env_blood") = env_blood : "An entity used to spawn blood effects. Nonfunctional, as the corresponding (hardcoded) blood texture is missing." [
 	spraydir(angle) : "Spray Direction (Pitch Yaw Roll)" : "0 0 0" : "The general direction that the blood should spray and the direction to trace to apply the decal."
 	color(choices) : "Blood Color" : 0 = [
 		0 : "Red (Human)"
@@ -6203,7 +6196,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	output OnBeginFade(void) : "Fired when the fade has begun."
 ] // end env_fade
 
-@PointClass base(SBaseEntity, SBaseDiv, SEnableDisable) iconsprite("editor-ficool2/env_fire") = env_fire : "An entity that handles a single flame at its origin. The flame causes heat 'damage' to other env_fire entities around it, and will eventually ignite non-flaming env_fire entities nearby, causing the fire to spread. Does not create any light. Note: Plasma fire is invisible." [
+@PointClass base(SBaseEntity, SBaseDiv, SEnableDisable) iconsprite("editor-ficool2/env_fire") = env_fire : "An entity that handles a single flame at its origin. The flame causes heat 'damage' to other env_fire entities around it, and will eventually ignite non-flaming env_fire entities nearby, causing the fire to spread. Does not create any light. Note: Plasma fire is invisible. Note 2: Nonfunctional in TF2 as the particle does not exist." [
 	health(integer) : "Duration" : 30 : "Amount of time the fire will burn."
 	firesize(integer) : "Size" : 64 : "Height (in world units) of the flame."
 	fireattack(integer) : "Attack" : 4 : "Amount of time the fire takes to grow to full strength."
@@ -6285,6 +6278,10 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		0 : "No"
 		1 : "Yes"
 	] // end use_angles
+	fogRadial(choices) : "Use Radial Fog?" : 1 : "Use radial fog instead of planar-based fog. Usually looks better than planar." = [
+		0 : "No"
+		1 : "Yes"
+	] // end fogRadial
 	foglerptime(float) : "Interpolate Time" : "0.0" : "Fade time for the StartFogTransition input, in seconds."
 
 	spawnflags(flags) = [
@@ -6314,30 +6311,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 	input Use(void) : "Triggers the effect."
 ] // end env_funnel
-
-@PointClass base(SBaseLogical, SBaseDiv, SGlobalStates) color(100 255 100) iconsprite("editor-ficool2/env_global") = env_global : "An entity to control global states. The value of global states persists across rounds and even changelevels. This entity can create and control custom globals, not just listed ones.\n" +
-	"BUG: The counter keyvalue and output do not work, due to sharing the same name." [
-	initialstate(choices) : "Initial State" : 0 : "What the initial state of this global should be, if the 'Set Initial State' keyvalue is defined." = [
-		0 : "Off"
-		1 : "On"
-		2 : "Dead"
-	] // end initialstate
-	//counter(integer) : "Counter" : 0 : "An integer counter value associated with this global. Does not function due to sharing a name with an output, resulting in neither working."
-
-	spawnflags(flags) = [
-		1 : "Set Initial State - Whether this entity defines the global state when the map starts." : 0
-	] // end spawnflags
-
-	input AddToCounter(integer) : "Adds to the counter value of this global. Negative numbers subtract."
-	input GetCounter(void) : "Fires this entity's Counter output."
-	input SetCounter(integer) : "Sets the counter value of this global."
-	input Remove(void) : "Set state of global to DEAD."
-	input Toggle(void) : "Toggles state of global between ON and OFF."
-	input TurnOff(void) : "Set state of global to OFF."
-	input TurnOn(void) : "Set state of global to ON."
-
-	//output Counter(integer) : "Outputs the integer value of this entity. May depend on global state. Does not function due to sharing a name with an output, resulting in neither working."
-] // end env_global
 
 @PointClass base(SBaseEntity, SBaseDiv, SEnableDisable) iconsprite("editor-ficool2/env_gunfire") line(255 255 255, targetname, target) = env_gunfire : "This entity creates a gunfire effect which can be dynamically controlled and pointed at a target, to give the illusion of a weapon firing without an actual weapon entity being used. The visual effect will be identical to an actual weapon firing, but causes no damage." [
 	target(target_destination) : "Target" :  : "The target to shoot at."
@@ -6422,7 +6395,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input Width(float) : "Set the width of the laser, in pixels (1 - 25.5)."
 ] // end env_laser
 
-@PointClass base(SBaseEntity, SBaseDiv) size(-2 -2 -2, 2 2 2) sphere(MinDist) sphere(MaxDist) sphere(OuterMaxDist) sphere(GlowProxySize) sprite("sprites/light_glow01") = env_lightglow : "An entity that puts an additive glow in the world, mostly used over light sources." [
+@PointClass base(SBaseEntity, SBaseDiv) size(-2 -2 -2, 2 2 2) sphere(MinDist) sphere(MaxDist) sphere(OuterMaxDist) sphere(GlowProxySize) studio("models/editor/axis_helper_thick.mdl") = env_lightglow : "An entity that puts an additive glow in the world, mostly used over light sources." [
 	rendercolor(color255) : "Color (R G B)" : "255 255 255" : "Glow color."
 	VerticalGlowSize(integer) : "Vertical Size" : 30 : "Vertical glow size in units."
 	HorizontalGlowSize(integer) : "Horizontal Size" : 30 : "Horizontal glow size in units."
@@ -7095,7 +7068,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"entity_revive_marker" : "entity_revive_marker"
 		"entity_rocket" : "entity_rocket"
 		"entity_saucer" : "entity_saucer"
-		"entity_sign" : "entity_sign"
 		"entity_soldier_statue" : "entity_soldier_statue"
 		"entity_spawn_manager" : "entity_spawn_manager"
 		"entity_spawn_point" : "entity_spawn_point"
@@ -7148,7 +7120,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"env_ragdoll_boogie" : "env_ragdoll_boogie"
 		"env_rockettrail" : "env_rockettrail"
 		"env_rotorshooter" : "env_rotorshooter"
-		"env_screeneffect" : "env_screeneffect"
 		"env_screenoverlay" : "env_screenoverlay"
 		"env_shake" : "env_shake"
 		"env_shooter" : "env_shooter"
@@ -7173,7 +7144,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"env_tracer" : "env_tracer"
 		"env_viewpunch" : "env_viewpunch"
 		"env_wind" : "env_wind"
-		"env_zoom" : "env_zoom"
 		"event_queue_saveload_proxy" : "event_queue_saveload_proxy"
 		"eyeball_boss" : "eyeball_boss"
 		"filter_activator_class" : "filter_activator_class"
@@ -7214,7 +7184,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"func_forcefield" : "func_forcefield"
 		"func_guntarget" : "func_guntarget"
 		"func_illusionary" : "func_illusionary"
-		"func_ladderendpoint" : "func_ladderendpoint"
 		"func_lod" : "func_lod"
 		"func_monitor" : "func_monitor"
 		"func_movelinear" : "func_movelinear"
@@ -7292,7 +7261,6 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"info_constraint_anchor" : "info_constraint_anchor"
 		"info_hint" : "info_hint"
 		"info_intermission" : "info_intermission"
-		"info_ladder_dismount" : "info_ladder_dismount"
 		"info_landmark" : "info_landmark"
 		"info_lighting_relative" : "info_lighting_relative"
 		"info_mass_center" : "info_mass_center"
@@ -8653,7 +8621,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	radius(float) : "Radius" : 120 : "Range at which node connections will be affected."
 ] // end info_radial_link_controller
 
-@PointClass base(SPreservedEntity, SHelperModel, SBaseEntity) iconsprite("editor-ficool2/info_target") studio() = info_target : "An entity that does nothing and simply exists to be referenced by other entities. Very useful as a positioning entity for other entities to refer to (i.e. the endpoint of an env_beam)" [ // TODO: Why does this entity behave so wonkily?
+@PointClass base(SPreservedEntity, SBaseEntity) iconsprite("editor-ficool2/info_target") studio() = info_target : "An entity that does nothing and simply exists to be referenced by other entities. Very useful as a positioning entity for other entities to refer to (e.g. the endpoint of an env_beam)" [ // TODO: Why does this entity behave so wonkily?
 	spawnflags(flags) = [
 		1 : "Transmit to client (respect PVS)" : 0
 	] // end spawnflags
@@ -8825,65 +8793,87 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 // which i never considered
 // END UPDATE FROM FICOOL -Brokk
 
+// 2025 UPDATE FROM BROKK:
+// fully removed custom rope classes because h++ does not do well with them. Replaced with base.fgd ropes. If they still break then I am... at the end of my rope.
+// END UPDATE FROM BROKK
 
-// Tested in stock TF2 Hammer, these classes are fairly different from the official rope classes but they don't break rope rendering as far as I can tell...
-@BaseClass = keyframe_rope_keys_1 [
-	NextKey(target_destination) : "Next KeyFrame" :  : "Name of the next keyframe along this keyframe path."
-	Slack(integer) : "Slack" : 50 : "How much extra length the next length of rope has. Zero means it has the length between its two endpoints in the editor."
-	PositionInterpolator(choices) : "Position Interpolator" : 2 : "Method of generating the curve followed by this rope." = [
+
+@BaseClass base(SBaseEntity	) = RopeKeyFrame
+[
+	spawnflags(Flags) = 
+	[
+		1 :  "Auto Resize" : 0
+	]
+
+	Slack(integer) : "Slack" : 25 : "How much extra length the rope has (by default it has the length between its two endpoints in the editor)."
+
+	Type(choices) : "Type" : 0 =
+	[
+		0  : "Rope"
+		1  : "Semi-rigid"
+		2  : "Rigid"
+	]
+
+	Subdiv(integer) : "Subdivision" : 2 : "Number of subdivisions between each rope segment. Maximum value is 8. Higher values make smoother ropes, but are slower to render."
+
+	Barbed(choices) : "Barbed" : 0 : "Test effect that makes the rope look sharper and more barbed." =
+	[
+		0 : "No"
+		1 : "Yes"
+	] 
+	
+	Width(string) : "Width (1-64)" : "2" : "Width of the rope."
+
+	TextureScale(string) : "Texture Scale" : "1" : "This changes the texture resolution. The default resolution is 4 pixels per inch. Larger values stretch the texture and smaller values scrunch it up."
+	
+	Collide(choices) : "Collide with world" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	Dangling(choices) : "Start Dangling" : 0 : "When set to Yes, the rope starts out detached from its target endpoint." =
+	[
+		0 : "No"
+		1 : "Yes"
+	] 
+
+	Breakable(choices) : "Breakable" : 0 : "When set to yes, the rope can be detached from either endpoint when shot." =
+	[
+		0 : "No"
+		1 : "Yes"
+	] 
+
+	RopeMaterial(material) : "Rope Material" : "cable/cable.vmt" : "The material to use when rendering the rope."
+
+	// Inputs
+	input SetScrollSpeed(float) : "Set the speed at which the texture scrolls."
+	input SetForce(string) : "Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z)."
+	input Break(void) : "Break the rope, if it's marked to do so."
+
+	NoWind(choices) : "Disable Wind" : 0 : "When set to Yes, the rope will no longer act as though it's being affected by wind." =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+]
+
+@KeyFrameClass base(STargetname, SParentname, RopeKeyFrame) studio("models/editor/axis_helper_thick.mdl") keyframe() = keyframe_rope : 
+	"A node entity that marks a point in a rope. The first node in the rope should be a move_rope, followed by 1 or more keyframe_ropes."
+[
+]
+
+@MoveClass base(STargetname, SParentname, RopeKeyFrame) studio("models/editor/axis_helper.mdl") animator() = move_rope : 
+	"The first node in set of nodes that are used to place ropes in the world. It should connect to 1 or more keyframe_rope entities."
+[
+	PositionInterpolator(choices) : "Position Interpolator" : 2 : "Curve Type. Currently only type 2 (Rope) is fully supported." =
+	[
 		0 : "Linear"
 		1 : "Catmull-Rom Spline"
 		2 : "Rope"
-	] // end PositionInterpolator
-	Collide(choices) : "Collide with World?" : 0 : "Whether or not this rope collides with world geometry." = [
-		0 : "No"
-		1 : "Yes"
-	] // end Collide
-	NoWind(choices) : "Disable Wind?" : 0 : "When set to Yes, the rope will not be affected by wind." = [
-		0 : "No"
-		1 : "Yes"
-	] // end NoWind
-	//Breakable(choices) : "Breakable?" : 0 : "When set to yes, the rope can be detached from either endpoint when shot." = [ // Nonfunctional
-	//	0 : "No"
-	//	1 : "Yes"
-	//] // end Breakable
-	Dangling(choices) : "Start Dangling?" : 0 : "When set to Yes, the rope connecting this entity to its Next KeyFrame will start detached from the Next KeyFrame. If this entity has no Next KeyFrame, a short rope will be created to hang from this point." = [
-		0 : "No"
-		1 : "Yes"
-	] // end Dangling
-] // end keyframe_rope_keys_1
-@BaseClass = keyframe_rope_keys_2 [
-	RopeMaterial(material) : "Rope Material" : "cable/cable.vmt" : "The material to use when rendering the rope."
-	TextureScale(float) : "Texture Scale" : "1.0" : "This scales the texture resolution. The default resolution is 4 pixels per HU. Larger values stretch the texture and smaller values scrunch it up."
-	Width(float) : "Width (1-64)" : "2.0" : "Width of the rope in Hammer units."
-	Type(choices) : "Flexibility" : 0 : "Used to calculate how many points this rope will bend at. The number of visual segments is a combination of this number and the number of Subdivisions." = [
-		0 : "Rope (8)"
-		1 : "Semi-rigid (2)"
-		2 : "Rigid (0)"
-	] // end Type
-	Subdiv(integer) : "Subdivisions" : 2 : "Number of subdivisions between each rope segment. Maximum value is 8. Higher values make smoother ropes, but are slower to render."
-	Barbed(choices) : "Barbed?" : 0 : "Test effect intended to make the rope look sharper and more barbed. In practice, makes the rope look like a collection of intertwined ropes. Not very noticeable at low slack values." = [
-		0 : "No"
-		1 : "Yes"
-	] // end Barbed
-] // end keyframe_rope_keys_2
-@KeyFrameClass base(SPreservedEntity, SBaseEntity, SBaseDiv, keyframe_rope_keys_1, SClassDiv1, keyframe_rope_keys_2, SClassDiv2) animator() keyframe() studio("models/editor/axis_helper_thick.mdl") = keyframe_rope : "A node entity that marks a point in a rope. Identical to move_rope.\n" +
-	"TIP: keyframe_rope and move_rope actually represent the same entity class and, with the correct FGD modifications, can be used interchangeably with no drawbacks or errors. This FGD provides the modifications necessary for both entities to be used interchangeably. (For an FGD modification that can be used alongside the ABS or stock FGDs and provides the same interchangeability, see http://src-ents.shoutwiki.com/wiki/CRopeKeyframe#FGD_Code.)" [
-	MoveSpeed(integer) : "Speed" : 1 : "Does nothing in-game. Must be a positive integer for Hammer rope previews to work."
-
-	spawnflags(flags) = [
-		1 : "Auto Resize" : 0
-	] // end spawnflags
-
-	input Break(void) : "Break off any ropes connected to this node."
-	input SetForce(string) : "Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z)."
-	//input SetScrollSpeed(float) : "Set the speed at which the texture scrolls." // Doesn't do anything
-] // end keyframe_rope
-
-@MoveClass base(keyframe_rope) animator() keyframe() studio("models/editor/axis_helper_thick.mdl") = move_rope : "A node entity that marks a point in a rope. Identical to keyframe_rope.\n" +
-	"TIP: keyframe_rope and move_rope actually represent the same entity class and, with the correct FGD modifications, can be used interchangeably with no drawbacks or errors. This FGD provides the modifications necessary for both entities to be used interchangeably. (For an FGD modification that can be used alongside the ABS or stock FGDs and provides the same interchangeability, see src-ents.shoutwiki.com/wiki/CRopeKeyframe#FGD_Code.)" [
-] // end move_rope
-
+	]
+]
 
 
 	// LIGHT ENTITIES //
@@ -10172,6 +10162,11 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input Hurt(void) : "Force a single fire, damaging either the Target Entity or all entities within the radius." // TODO: Respects the Delay?
 	input TurnOff(void) : "Disable this entity. It will stop damaging entities."
 	input TurnOn(void) : "Enable this entity. It will start damaging entities everytime it fires, and refire based upon the specified Delay."
+	
+	spawnflags(flags) = [
+		1 : "Start Active" : 0
+		2 : "Bypass ÜberCharge" : 0
+	] // end spawnflags
 ] // end point_hurt
 
 @PointClass base(SBaseLogical) color(100 150 255) iconsprite("editor-ficool2/point_intermission") = point_intermission : "Entity that ends the match and triggers an intermission. Seems to have the same effect as game_end: In Team Fortress 2, this freezes all players, shows the scoreboard, and after a few seconds, forces a map change. To end a round normally with a winner, use game_round_win." [
@@ -10623,7 +10618,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 // This doesn't even inherit any physics keyvalues!
 @BaseClass = prop_ragdoll_keys [
-	angleOverride(string) : "Override Animation" :  : "Filled in by the engine via hammer_update_entity, do not edit by hand except to clear, or for use with Hammer++' Physics Tool."
+	angleOverride(string) : "Override Animation" :  : "Filled in by the engine via hammer_update_entity, do not edit by hand except to clear."
 	sequence(integer) : "Sequence" :  : "Animation sequence to spawn the ragdoll in, by index NOT name!"
 ] // end prop_ragdoll_keys
 @PointClass base(SModel, SBaseEntity, SBaseDiv, prop_ragdoll_keys, SEnableDisable, SModelSkin, SModelBodyGroup, SBaseDynamicModel) color(255 100 0) sphere(fademindist) sphere(fademaxdist) studioprop() = prop_ragdoll : "A prop that physically simulates and can be articulated with internal joints. The joint constraints are part of the physics model. Very expensive to simulate." [
@@ -10902,6 +10897,10 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		1 : "Yes"
 	] // end fogblend
 	fogdir(vector) : "Primary Fog Direction" : "1 0 0" : "A vector (given by three space-separated numbers X Y Z) which points from the Secondary Fog Color towards the Primary Fog Color."
+	fogRadial(choices) : "Use Radial Fog?" : 1 : "Use radial fog instead of planar-based fog. Usually looks better than planar." = [
+		0 : "No"
+		1 : "Yes"
+	] // end fogRadial
 ] // end sky_camera
 
 
@@ -11423,6 +11422,10 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		0 : "No (Damage attacker and enemies)"
 		1 : "Yes (Damage everyone)"
 	] // end friendlyfire
+	passActivator(choices) : "Pass Activator" : 0 : "Pass the activator in the OnDetonate output" =	[
+		0 : "No"
+		1 : "Yes"
+	] //end passActivator
 ] // end tf_generic_bomb_keys
 @PointClass base(SModel, SBaseEntity, SBaseDiv, SModelSkin, SModelBodyGroup, SHealth, tf_generic_bomb_keys, SBaseDynamicModel) sphere(radius) sphere(fademindist) sphere(fademaxdist) studioprop() = tf_generic_bomb : "An explosive hazard. Identical to tf_pumpkin_bomb, but more customizable. Removes itself from the map after exploding." [
 	health(integer) : "Bomb Health" : 1 : "How much damage the bomb must take to explode."
@@ -12308,7 +12311,7 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end func_gameplay
 
 // TODO:
-// -waterbullet (http://src-ents.shoutwiki.com/wiki/Waterbullet), env_particlefire, env_physimpact, env_physwire, env_quadraticbeam, env_screeneffect, env_sniperdot, , info_cameralink, target_cdaudio, test_sidelist, trigger_cdaudio, trigger_changelevel
+// -waterbullet (http://src-ents.shoutwiki.com/wiki/Waterbullet), env_particlefire, env_physimpact, env_physwire, env_quadraticbeam, env_sniperdot, , info_cameralink, target_cdaudio, test_sidelist, trigger_cdaudio, trigger_changelevel
 // -Re-add dxlevel keyvalues?
 // -idk a bunch of stuff, ctrl-f for TODO to find it
 
