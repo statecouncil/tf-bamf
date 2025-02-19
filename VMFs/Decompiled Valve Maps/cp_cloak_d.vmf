@@ -6,7 +6,7 @@ world
 	"detailvbsp" "detail.vbsp"
 	"detailmaterial" "detail/detailsprites"
 	"mapversion" "260"
-	"comment" "Decompiled by BSPSource v1.4.4 from cp_cloak"
+	"comment" "Decompiled by BSPSource v1.4.6.1 from cp_cloak"
 	"classname" "worldspawn"
 	solid
 	{
