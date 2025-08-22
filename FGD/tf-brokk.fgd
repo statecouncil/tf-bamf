@@ -11496,6 +11496,8 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
         9 : "Halloween or Full Moon"
         10 : "Halloween or Full Moon or Valentines Day"
         11 : "April Fools"
+		12 : "Rick May Tribute"
+		13 : "Summer"
     ] // end holiday_type
 	tauntInHell(choices) : "Taunt In Hell?" : 0 : "Should players taunt when teleported to Hell?" = [
 		0 : "No"
