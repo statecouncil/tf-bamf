@@ -9752,6 +9752,18 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 
 
 
+	// RD ENTITIES //
+
+@PointClass base(SBaseEntity, SBaseDiv, SEngieBuilding, SDispenserTrigger, SDispenserTriggerDefault) wirebox(helper_trigger_mins, helper_trigger_maxs) = rd_robot_dispenser : "Invisible dispenser used by the robots in Robot Destruction. Does not dispense ammo. Heal rate is fixed to 5 HP/s." [
+	defaultupgrade(choices) : "Starting Upgrade Level (Display Only)" : 0 : "Starting upgrade level of the object. Has no effect, as the dispenser is hardcoded to be level 1 upon spawning." = [
+		0 : "Level 1"
+	] // end defaultupgrade
+	helper_trigger_mins(vector) : "Default Trigger (Display Only)" : "-128 -128 -128" : "Keyvalue to display the size of the default touch trigger. Has no effect in-game. Hardcoded to be 128HU."
+	helper_trigger_maxs(vector) : "Default Trigger (Display Only)" : "128 128 128" : "Keyvalue to display the size of the default touch trigger. Has no effect in-game. Hardcoded to be 128HU."
+] // end rd_robot_dispenser
+
+
+
 	// PHYS ENTITIES //
 
 @PointClass base(SBaseConstraint) color(150 50 50) iconsprite("editor/phys_ballsocket") = phys_ballsocket : "A constraint that keeps the position of two objects fixed, relative to the constraint's origin. It does not affect rotation." [
