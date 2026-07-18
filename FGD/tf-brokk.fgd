@@ -1,6 +1,7 @@
 //----- AN FGD FIT FOR A LORD - BROKK EDITION -----//
 //         https://bamf.tf/
-//	Last updated 18th Febuary 2025
+//	Last updated 17th July 2026
+
 
 
 //----- USER SETTINGS -----//
@@ -290,10 +291,11 @@
     ] // end Logic
 	"Lights" [
 		"light"
-		"light_directional"
+		"light_directional" // Supported by VRAD++
 		"light_dynamic"
 		"light_environment"
 		"light_glspot"
+		"light_projected" // Exlucsive to VRAD++
 		"light_spot"
 	] // end Lights
 ] // end Entities
@@ -1560,6 +1562,12 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	] // end disablereceiveshadows
 	_minlight(float) : "Minimum Light Level" :  : "The minimum level of ambient light that hits these brushes."
 	texframeindex(integer) : "ToggleTexture Frame" :  : "The starting frame number for any ToggleTexture materials on this entity. This keyvalue can be changed with AddOutput as an alternative to using env_texturetoggle, but there will be a slight delay before the texture changes. Does not work with materials lacking the ToggleTexture proxy."
+	vbsp_nobevel(boolean) : "No Bevel" : "0" : "Only supported by VBSP++. If set, bevel faces aren't emitted on angled geometry. This reduces brushsides at the cost of less accurate collision on corners." //Yes, this also works for brush entities. Confirmed by ficool on 17/7/26.
+	vrad_brush_pair_edges(choices) : "Toggle Geometric Edge Pairing?" : 1 : "Only supported by VRAD++. Determines if this entity will fix up lighting seams with world geometry. Disable if you wish to not use this fixup." =
+	[
+		0 : "Do not fix up lighting seams with world geometry."
+		1 : "Fix up lighting seams with world geometry."
+	] // end vrad_brush_pair_edges
 ] // end SBaseDynamicBrush
 
 // NOTE: This does not include the skin, bodygroup, hitboxset, and texframeindex keyvalues, as some entities override these values on spawn.
@@ -2267,11 +2275,17 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end func_croc
 
 @SolidClass color(0 175 0) = func_detail : "An entity that turns its brushes into detail brushes. Detail brushes do NOT contribute to visibility in the PVS. World geometry is not clipped to detail brushes, so if you have a small detail clump attached to a wall, the wall won't be cut up by the detail brush. func_detail is great for high-frequency brush geometry that's visual detail only. It is also ideal for reducing a map's VVIS compile time." [
+	vbsp_nobevel(boolean) : "No Bevel" : "0" : "Only supported by VBSP++. If set, bevel faces aren't emitted on angled geometry. This reduces brushsides at the cost of less accurate collision on corners."
 ] // end func_detail
 
-//@SolidClass = func_detail_blocker : "This entity only works with certain custom VBSP compilers. A brush entity that prevents displacement detail sprites from being placed by VBSP inside its volume. Is entirely unrelated to func_detail." [
-//] // end func_detail_blocker
+@SolidClass = func_detail_blocker : "This entity only works with certain custom VBSP compilers, such as VBSP++. A brush entity that prevents displacement detail sprites from being placed by VBSP inside its volume. Is entirely unrelated to func_detail." [
+] // end func_detail_blocker
 //DNE in stock compilers -Brokk
+//Uncommenting since this is supported with the ++ tools. - Sae.
+
+@SolidClass color(0 175 0) = func_detail_illusionary : "Only supported by VBSP++. An entity that is identical to func_detail, only lacking collision. Use this for small detail pieces that you'd rather not have the player collide with." [
+	vbsp_nobevel(boolean) : "No Bevel" : "0" : "If set, bevel faces aren't emitted on angled geometry. This reduces brushsides at the cost of less accurate collision on corners."
+] // end func_detail_illusionary
 
 @SolidClass base(SBaseEntityOrigin, SBaseDiv, SMoveDir, SMoveLip, SBaseBrushDoor, SBaseDynamicBrush) = func_door : "A brush entity for use as a player-useable door." [
 
@@ -2499,6 +2513,11 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	input Disable(void) : "Disable this entity, causing all bots controlled by this entity to return to their normal behavior."
 	input Enable(void) : "Enable this entity and begin controlling the behavior of all bots touching its volume."
 ] // end func_nav_prerequisite
+
+@SolidClass = func_nobevel :
+	"Only supported by VBSP++. Defines a region to not bevel collision, in order to reduce brushsides count. Only should be used in areas where players can't touch the brush."
+[
+] // end func_nobevel
 
 @SolidClass base(SBaseTrigger, SBaseDiv, STFTeam) color(255 150 50) = func_nobuild : "A trigger entity which prevents Engineers from building in the specific area it contains while enabled. The 'Team' keyvalue can be used to make this entity only block Engineers on the specified team.\n" +
 	"NOTE: This entity only blocks engineers from placing/redeploying buildings in its area while enabled. If the entity is turned on or moved, any buildings already in its volume will not be destroyed.\n" +
@@ -5506,8 +5525,10 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		"keyframe_track" : "keyframe_track"
 		"light" : "light"
 		"light_dynamic" : "light_dynamic"
+		"light_directional" : "light_directional"
 		"light_environment" : "light_environment"
 		"light_glspot" : "light_glspot"
+		"light_projected" : "light_projected"
 		"light_spot" : "light_spot"
 		"logic_active_autosave" : "logic_active_autosave"
 		"logic_auto" : "logic_auto"
@@ -8937,13 +8958,15 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 ] // end SLightFalloff
 
 @PointClass base(STargetname, SBaseIO, SLight, SBaseDiv, SLightFalloff) color(255 255 255) iconsprite("editor-ficool2/light") light() sphere(_fifty_percent_distance) sphere(_zero_percent_distance) sphere(_hardfalloff) sphere(_distance) = light : "An invisible omnidirectional lightsource that emits pre-calculated lighting. If not given a targetname, the light is entirely static. If given a targetname, the light is turned into a switchable light that can be turned on and off at no cost to in-game performance. Switchable lights will not do light bouncing, the map's file size will be larger, and VRAD will take longer as a result. See developer.valvesoftware.com/wiki/Naming_Lights for more info." [
+	_light_radius(float) : "Light Radius" : 0 : "Only supported by VRAD++. Radius of the light for casting soft shadows (0 is hard shadows). Soft shadows take significantly longer to compile." // end _light_radius
 ] // end light
 
-//@PointClass base(SBaseAnglesLight, SLight, SBaseDiv) color(255 255 255) iconsprite("editor-ficool2/light_directional") light() = light_directional : "A directional light with no falloff that only emits from skybox textures, similar to sunlight emitted by a light_environment. Only works with Slartibarty's modified VRAD.\n" +
-	//"NOTE: Although this entity can be used as a switchable light, it alone cannot be switched as TF2 does not recognize the entity class. Having an official light class with the same name as this entity in the map will allow this light to be toggled." [
-	//SunSpreadAngle(float) : "Sun Spread Angle" : 5 : "The angular extent of the light for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
-//] // end light_directional
+@PointClass base(SBaseAnglesLight, SLight, SBaseDiv) color(255 255 255) iconsprite("editor-ficool2/light_directional") light() = light_directional : "A directional light with no falloff that only emits from skybox textures, similar to sunlight emitted by a light_environment. Only works with Slartibarty's modified VRAD and VRAD++.\n" +
+	"NOTE: Although this entity can be used as a switchable light, it alone cannot be switched as TF2 does not recognize the entity class. Having an official light class with the same name as this entity in the map will allow this light to be toggled. This issue is fixed with VRAD++, which renames this to light_spot on compile." [
+	SunSpreadAngle(float) : "Sun Spread Angle" : 5 : "The angular extent of the light for casting soft shadows. Higher numbers are more diffuse. 5 is a good starting value."
+] // end light_directional
 //Spud why the hell did you add this, nothing else requires the Slammin compilers -Brokk
+//Uncommenting this, since VRAD++ supports this. -Sae.
 
 @BaseClass = light_environment_keys [
 	_ambient(color255) : "Ambient" : "255 255 255 20" : "Color and brightness of diffuse skylight."
@@ -9006,8 +9029,16 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 	_cone(integer) : "Outer (Fading) Angle" : 45 : "The angle of the outer spotlight beam."
 	_exponent(integer) : "Focus" : 1 : "Changes the distance between the umbra and penumbra cone - higher values make the edge of the light more blurred."
 ] // end light_spot_keys
+
+@PointClass base(SBaseAnglesLight, SLight, SBaseDiv, light_spot_keys, SClassDiv1, SLightFalloff) color(255 255 255) light() lightcone() lightprop("models/editor/spot.mdl") sphere(_fifty_percent_distance) sphere(_zero_percent_distance) sphere(_hardfalloff) sphere(_distance)  = light_projected :
+	"Only supported by VRAD++. An invisible and directional spotlight that projects a texture, similar to env_projectedtexture but lightmapped. Gets renamed to light_spot on compile in order to retain functionality similar to light_spot."
+[
+	texturename(string)	: "Texture Name" : "effects/flashlight001" : "The texture which this entity projects. Must be a VTF file (not VMT), relative to /materials." // TODO: See env_projectedtextures todo involving it's respective keyvalue.
+] // end light_projected
+
 @PointClass base(SBaseAnglesLight, SLight, SBaseDiv, light_spot_keys, SClassDiv1, SLightFalloff) color(255 255 255) light() lightcone() lightprop("models/editor/spot.mdl") sphere(_fifty_percent_distance) sphere(_zero_percent_distance) sphere(_hardfalloff) sphere(_distance) = light_spot : "An invisible and directional spotlight.\n" +
 	"BUG: This entity may rotate improperly when placed inside of an instance. To avoid this bug, enable the pitch keyvalue in tf2_spud.fgd's settings and set the light_spot's pitch in the 'Pitch Yaw Roll' keyvalue to the opposite of the 'Pitch Override' keyvalue." [
+	_light_radius(float) : "Light Radius" : 0 : "Only supported by VRAD++. Radius of the light for casting soft shadows (0 is hard shadows). Soft shadows take significantly longer to compile." // end _light_radius
 ] // end light_spot
 
 
@@ -10456,6 +10487,11 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		0: "No"
 		1: "Yes"
 	] // end DisableBoneFollowers
+	vrad_model_cast_shadows(choices) : "VRAD Shadows" : 0 : "Only supported by VRAD++. Set this if this brush casts VRAD static shadows. Static shadows are either baked from the first frame of sequence 0, or from the first frame of Default Animation keyvalue. This also disables dynamic render to texture shadows." =
+	[
+		0 : "No"
+		1 : "Yes"
+	] // end vrad_model_cast_shadows
 ] // end prop_dynamic_keys
 @PointClass base(SModel, SBaseEntity, SBaseDiv, SCollisions, SEnableDisable, SModelSkin, SModelBodyGroup, SClassDiv1, SPropDynamicIO, prop_dynamic_keys, SBaseDynamicModel, SBaseBreakableModel) color(255 100 0) sphere(fademindist) sphere(fademaxdist) studioprop() = prop_dynamic : "A prop capable of playing animations and being moved (by being parented to other entities). Dynamic props can also be used as breakable objects, but the model must either natively support being used as a breakable or it must be used with an *_override entity class." [
 	spawnflags(flags) = [
@@ -10679,6 +10715,11 @@ target(target_destination) : "Entity to point at. Will overwrite the entity's an
 		//4 : "Oriented Bounding Box, constrained to Yaw only" // prop_static, prop_dynamic: Nonsolid
 		//5 : "Custom (defined per-entity, if not defined the entity will have bizarre collision behavior)" // prop_static, prop_dynamic: Nonsolid
 	] // end solid
+	disableambientocclusion(choices) : "Disable Ambient Occlusion with vertex lighting" : 0 : "Only supported by VBSP++ and VRAD++. Prevents this prop from casting ambient occlusion shadows when compiling with ambient occlusion." =
+	[
+		0 : "No"
+		1 : "Yes"
+	] // end disableambientocclusion
 ] // end prop_static
 
 @BaseClass = prop_vehicle_keys [
